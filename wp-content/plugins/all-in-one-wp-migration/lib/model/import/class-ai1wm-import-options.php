@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2014-2018 ServMask Inc.
+ * Copyright (C) 2014-2020 ServMask Inc.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,52 +23,63 @@
  * ╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
  */
 
-class Ai1wm_Report_Controller {
+if ( ! defined( 'ABSPATH' ) ) {
+	die( 'Kangaroos cannot jump here' );
+}
 
-	public static function report( $params = array() ) {
+class Ai1wm_Import_Options {
 
-		// Set params
-		if ( empty( $params ) ) {
-			$params = stripslashes_deep( $_POST );
+	public static function execute( $params, Ai1wm_Database $mysql = null ) {
+		global $wpdb;
+
+		// Set progress
+		Ai1wm_Status::info( __( 'Preparing options...', AI1WM_PLUGIN_NAME ) );
+
+		// Get database client
+		if ( is_null( $mysql ) ) {
+			if ( empty( $wpdb->use_mysqli ) ) {
+				$mysql = new Ai1wm_Database_Mysql( $wpdb );
+			} else {
+				$mysql = new Ai1wm_Database_Mysqli( $wpdb );
+			}
 		}
 
-		// Set secret key
-		$secret_key = null;
-		if ( isset( $params['secret_key'] ) ) {
-			$secret_key = trim( $params['secret_key'] );
+		$tables = $mysql->get_tables();
+
+		// Get base prefix
+		$base_prefix = ai1wm_table_prefix();
+
+		// Get mainsite prefix
+		$mainsite_prefix = ai1wm_table_prefix( 'mainsite' );
+
+		// Check WP sitemeta table exists
+		if ( in_array( "{$mainsite_prefix}sitemeta", $tables ) ) {
+
+			// Get fs_accounts option value (Freemius)
+			$result = $mysql->query( "SELECT meta_value FROM `{$mainsite_prefix}sitemeta` WHERE meta_key = 'fs_accounts'" );
+			if ( ( $row = $mysql->fetch_assoc( $result ) ) ) {
+				$fs_accounts = get_option( 'fs_accounts', array() );
+				$meta_value  = maybe_unserialize( $row['meta_value'] );
+
+				// Update fs_accounts option value (Freemius)
+				if ( ( $fs_accounts = array_merge( $fs_accounts, $meta_value ) ) ) {
+					if ( isset( $fs_accounts['users'], $fs_accounts['sites'] ) ) {
+						update_option( 'fs_accounts', $fs_accounts );
+					} else {
+						delete_option( 'fs_accounts' );
+						delete_option( 'fs_dbg_accounts' );
+						delete_option( 'fs_active_plugins' );
+						delete_option( 'fs_api_cache' );
+						delete_option( 'fs_dbg_api_cache' );
+						delete_option( 'fs_debug_mode' );
+					}
+				}
+			}
 		}
 
-		// Set e-mail
-		$email = null;
-		if ( isset( $params['ai1wm_email'] ) ) {
-			$email = trim( $params['ai1wm_email'] );
-		}
+		// Set progress
+		Ai1wm_Status::info( __( 'Done preparing options.', AI1WM_PLUGIN_NAME ) );
 
-		// Set message
-		$message = null;
-		if ( isset( $params['ai1wm_message'] ) ) {
-			$message = trim( $params['ai1wm_message'] );
-		}
-
-		// Set terms
-		$terms = false;
-		if ( isset( $params['ai1wm_terms'] ) ) {
-			$terms = (bool) $params['ai1wm_terms'];
-		}
-
-		try {
-			// Ensure that unauthorized people cannot access report action
-			ai1wm_verify_secret_key( $secret_key );
-		} catch ( Ai1wm_Not_Valid_Secret_Key_Exception $e ) {
-			exit;
-		}
-
-		$model = new Ai1wm_Report;
-
-		// Send report
-		$errors = $model->add( $email, $message, $terms );
-
-		echo json_encode( array( 'errors' => $errors ) );
-		exit;
+		return $params;
 	}
 }
