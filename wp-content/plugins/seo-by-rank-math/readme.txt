@@ -5,7 +5,7 @@ Tags: seo, sitemap, google search console, schema, redirection, WordPress SEO
 Tested up to: 5.8
 Requires at least: 5.6
 Requires PHP: 7.2
-Stable tag: 1.0.76.1
+Stable tag: 1.0.79
 License: GPL-2.0+
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 
@@ -581,15 +581,15 @@ Please drop us an email at support@rankmath.com and we would be more than happy 
 
 == Changelog ==
 
-= 1.0.76.1 [Nov 11, 2021] =
-* Fixed: [Content AI](https://rankmath.com/kb/how-to-use-content-ai/#credits-usage) was not showing any Credits after updating the plugin
-* Fixed: [Keyword Tooltip](https://rankmath.com/kb/how-to-use-content-ai/#num-7-1-use-keyword-in) was not showing any data when Post content was empty
-* Fixed: Dark mode styling of [Content AI](https://rankmath.com/kb/how-to-use-content-ai/) in the Elementor editor
-
-= 1.0.76 [Nov 08, 2021] =
-* Added: [HUGE!] Introducing [Content AI](https://rankmath.com/content-ai/) - Your personal AI assistant for writing SEO Optimized Content!I assistant
-* Fixed: PHP warning after enabling the [Web Stories](https://rankmath.com/kb/google-web-stories/) moduleies/) module
-* Fixed: [Homepage SEO](https://rankmath.com/kb/homepage-meta-title-and-description/) settings were not displaying when no static page was selected as the homepage
-* Fixed: Content Analysis was wrongly counting the links without href as internal links
+= 1.0.79 [Dec 22, 2021] =
+* Added: [HUGE!] Enhanced [Sharing on Slack](https://rankmath.com/kb/slack-enhanced-sharing/)
+* Improved: Renamed `Exclude this Image from sitemap` label to make it more contextualized
+* Fixed: PHP warning when using the [`rank_math_contact_info` shortcode](https://rankmath.com/kb/local-seo/#contact-info-shortcode)
+* Fixed: [Thumbnail Overlay](https://rankmath.com/kb/meta-box-social-tab/#add-icon-overlay-to-thumbnails) was not working on the server where `allow_url_fopen` is not enabled
+* Fixed: SEO data was not updating on Classic editor when the `Enter` key is used to submit the form
+* Fixed: Saving a page with Firefox using Divi Backend editor was showing an error on some setups
+* Fixed: Editing a product made with Divi Backend editor was showing a popup
+* Fixed: Product short description was not updating after editing a product using Divi Backend editor
+* Fixed: Deleting [Focus keyword](https://rankmath.com/kb/general-tab/#the-focus-keyword-section) was not working after the last update
 
 Full changelog can be found here - **[Rank Math SEO changelog](https://rankmath.com/changelog/?utm_source=Plugin&utm_medium=Changelog&utm_campaign=WP)**
