@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (C) 2014-2018 ServMask Inc.
+ * Copyright (C) 2014-2020 ServMask Inc.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,20 +22,25 @@
  * ███████║███████╗██║  ██║ ╚████╔╝ ██║ ╚═╝ ██║██║  ██║███████║██║  ██╗
  * ╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
  */
-?>
 
-<div class="error">
-	<p>
-		<?php
-		printf(
-			__(
-				'All in One WP Migration is not able to create <strong>%s</strong> file. ' .
-				'Try to change permissions of the parent folder or send us an email at ' .
-				'<a href="mailto:support@servmask.com">support@servmask.com</a> for assistance.',
-				AI1WM_PLUGIN_NAME
-			),
-			AI1WM_STORAGE_INDEX
-		)
-		?>
-	</p>
-</div>
+if ( ! defined( 'ABSPATH' ) ) {
+	die( 'Kangaroos cannot jump here' );
+}
+
+class Ai1wm_Import_Permalinks {
+
+	public static function execute( $params ) {
+		global $wp_rewrite;
+
+		// Set progress
+		Ai1wm_Status::info( __( 'Getting WordPress permalinks settings...', AI1WM_PLUGIN_NAME ) );
+
+		// Get using permalinks
+		$params['using_permalinks'] = (int) $wp_rewrite->using_permalinks();
+
+		// Set progress
+		Ai1wm_Status::info( __( 'Done getting WordPress permalinks settings.', AI1WM_PLUGIN_NAME ) );
+
+		return $params;
+	}
+}

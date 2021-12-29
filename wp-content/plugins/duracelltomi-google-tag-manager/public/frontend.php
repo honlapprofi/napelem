@@ -3,7 +3,7 @@ define( 'GTM4WP_WPFILTER_COMPILE_DATALAYER', 'gtm4wp_compile_datalayer' );
 define( 'GTM4WP_WPFILTER_COMPILE_REMARKTING', 'gtm4wp_compile_remarkering' );
 define( 'GTM4WP_WPFILTER_AFTER_DATALAYER', 'gtm4wp_after_datalayer' );
 define( 'GTM4WP_WPFILTER_GETTHEGTMTAG', 'gtm4wp_get_the_gtm_tag' );
-define( 'GTM4WP_WPACTION_ADDGLOBALVARS', 'gtm4wp_add_global_vars' );
+define( 'GTM4WP_WPFILTER_ADDGLOBALVARS', 'gtm4wp_add_global_vars' );
 
 $GLOBALS['gtm4wp_container_code_written'] = false;
 
@@ -123,15 +123,16 @@ function gtm4wp_add_basic_datalayer_data( $dataLayer ) {
 		}
 	}
 
-	if ( $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_USERROLE ] || $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_USEREMAIL ] || $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_USERREGDATE ] ) {
+	if ( $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_USERROLE ] || $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_USEREMAIL ] || $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_USERREGDATE ] || $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_USERNAME ] ) {
 		$current_user = wp_get_current_user();
 
 		if ( $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_USERROLE ] ) {
-			$dataLayer['visitorType'] = ( empty( $current_user->roles[0] ) ? 'visitor-logged-out' : $current_user->roles[0] );
+			$dataLayer['visitorType'] = ( $current_user->ID == 0 ? 'visitor-logged-out' : implode(",", $current_user->roles) );
 		}
 
 		if ( $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_USEREMAIL ] ) {
 			$dataLayer['visitorEmail'] = ( empty( $current_user->user_email ) ? '' : $current_user->user_email );
+			$dataLayer['visitorEmailHash'] = ( empty( $current_user->user_email ) ? '' : hash( 'sha256', $current_user->user_email ) );
 		}
 
 		if ( $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_USERREGDATE ] ) {
@@ -485,26 +486,26 @@ function gtm4wp_wp_loaded() {
 
 							if ( is_object( $weatherdata ) ) {
 								set_transient( 'gtm4wp-weatherdata-' . esc_attr( $client_ip ), $weatherdata, 60 * 60 );
-								setcookie( 'gtm4wp_last_weatherstatus', 'Weather data loaded.' );
+								setcookie( 'gtm4wp_last_weatherstatus', 'Weather data loaded.', 0, "/", "", false, true );
 							} else {
-								setcookie( 'gtm4wp_last_weatherstatus', 'Openweathermap.org did not return processable data: ' . var_export( $weatherdata, true ) );
+								setcookie( 'gtm4wp_last_weatherstatus', 'Openweathermap.org did not return processable data: ' . var_export( $weatherdata, true ), 0, "/", "", false, true );
 							}
 						} else {
 							if ( is_wp_error( $weatherdata ) ) {
-								setcookie( 'gtm4wp_last_weatherstatus', 'Openweathermap.org request error: ' . $weatherdata->get_error_message() );
+								setcookie( 'gtm4wp_last_weatherstatus', 'Openweathermap.org request error: ' . $weatherdata->get_error_message(), 0, "/", "", false, true );
 							} else {
-								setcookie( 'gtm4wp_last_weatherstatus', 'Openweathermap.org returned status code: ' . $weatherdata['response']['code'] );
+								setcookie( 'gtm4wp_last_weatherstatus', 'Openweathermap.org returned status code: ' . $weatherdata['response']['code'], 0, "/", "", false, true );
 							}
 						}
 					}
 				} else {
-					setcookie( 'gtm4wp_last_weatherstatus', 'ipstack.com did not return lat-lng data: ' . var_export( $gtm4wp_geodata, true ) );
+					setcookie( 'gtm4wp_last_weatherstatus', 'ipstack.com did not return lat-lng data: ' . var_export( $gtm4wp_geodata, true ), 0, "/", "", false, true );
 				}
 			} else {
 				if ( is_wp_error( $gtm4wp_geodata ) ) {
-					setcookie( 'gtm4wp_last_weatherstatus', 'ipstack.com request error: ' . $gtm4wp_geodata->get_error_message() );
+					setcookie( 'gtm4wp_last_weatherstatus', 'ipstack.com request error: ' . $gtm4wp_geodata->get_error_message(), 0, "/", "", false, true );
 				} else {
-					setcookie( 'gtm4wp_last_weatherstatus', 'ipstack.com returned status code: ' . $gtm4wp_geodata['response']['code'] );
+					setcookie( 'gtm4wp_last_weatherstatus', 'ipstack.com returned status code: ' . $gtm4wp_geodata['response']['code'], 0, "/", "", false, true );
 				}
 			}
 		}
@@ -538,7 +539,7 @@ function gtm4wp_get_the_gtm_tag() {
 		foreach ( $_gtm_codes as $one_gtm_code ) {
 			$_gtm_tag .= '
 <noscript><iframe src="https://' . $_gtm_domain_name . '/ns.html?id=' . $one_gtm_code . $_gtm_env . '"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
+height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>';
 		}
 
 		$_gtm_tag .= '
@@ -559,13 +560,13 @@ function gtm4wp_enqueue_scripts() {
 	global $gtm4wp_options, $gtp4wp_plugin_url;
 
 	if ( $gtm4wp_options[ GTM4WP_OPTION_INTEGRATE_WPCF7 ] ) {
-		$in_footer = apply_filters( 'gtm4wp_' . GTM4WP_OPTION_INTEGRATE_WPCF7, false );
-		wp_enqueue_script( 'gtm4wp-contact-form-7-tracker', $gtp4wp_plugin_url . 'js/gtm4wp-contact-form-7-tracker.js', array( 'jquery' ), GTM4WP_VERSION, $in_footer );
+		$in_footer = apply_filters( 'gtm4wp_' . GTM4WP_OPTION_INTEGRATE_WPCF7, true );
+		wp_enqueue_script( 'gtm4wp-contact-form-7-tracker', $gtp4wp_plugin_url . 'js/gtm4wp-contact-form-7-tracker.js', array(), GTM4WP_VERSION, $in_footer );
 	}
 
 	if ( $gtm4wp_options[ GTM4WP_OPTION_EVENTS_FORMMOVE ] ) {
-		$in_footer = apply_filters( 'gtm4wp_' . GTM4WP_OPTION_EVENTS_FORMMOVE, false );
-		wp_enqueue_script( 'gtm4wp-form-move-tracker', $gtp4wp_plugin_url . 'js/gtm4wp-form-move-tracker.js', array( 'jquery' ), GTM4WP_VERSION, $in_footer );
+		$in_footer = apply_filters( 'gtm4wp_' . GTM4WP_OPTION_EVENTS_FORMMOVE, true );
+		wp_enqueue_script( 'gtm4wp-form-move-tracker', $gtp4wp_plugin_url . 'js/gtm4wp-form-move-tracker.js', array(), GTM4WP_VERSION, $in_footer );
 	}
 
 	if ( $gtm4wp_options[ GTM4WP_OPTION_EVENTS_YOUTUBE ] ) {
@@ -587,10 +588,50 @@ function gtm4wp_enqueue_scripts() {
 }
 
 function gtm4wp_wp_footer() {
-	global $gtm4wp_options;
+	global $gtm4wp_options, $gtm4wp_datalayer_name;
 
 	if ( GTM4WP_PLACEMENT_FOOTER == $gtm4wp_options[ GTM4WP_OPTION_GTM_PLACEMENT ] ) {
 		gtm4wp_the_gtm_tag();
+	}
+
+	$has_html5_support = current_theme_supports( 'html5' );
+
+	if ( $gtm4wp_options[ GTM4WP_OPTION_EVENTS_NEWUSERREG ] ) {
+		$user_logged_in = array_key_exists( "gtm4wp_user_logged_in", $_COOKIE ) ?
+			filter_var( $_COOKIE[ "gtm4wp_user_logged_in" ], FILTER_VALIDATE_INT )
+			: 0;
+
+		if ( $user_logged_in ) {
+			echo "
+<script" . ( $has_html5_support ? '' : ' type="text/javascript"' ) . ">
+	if ( window." . $gtm4wp_datalayer_name . " ) {
+		window." . $gtm4wp_datalayer_name . ".push({
+			'event': 'gtm4wp.userLoggedIn'
+		});
+	}
+</script>";
+
+			unset( $_COOKIE[ "gtm4wp_user_logged_in" ] );
+		}
+	}
+
+	if ( $gtm4wp_options[ GTM4WP_OPTION_EVENTS_USERLOGIN ] ) {
+		$user_registered = array_key_exists( "gtm4wp_user_registered", $_COOKIE ) ?
+			filter_var( $_COOKIE[ "gtm4wp_user_registered" ], FILTER_VALIDATE_INT )
+			: 0;
+
+		if ( $user_registered ) {
+			echo "
+<script" . ( $has_html5_support ? '' : ' type="text/javascript"' ) . ">
+	if ( window." . $gtm4wp_datalayer_name . " ) {
+		window." . $gtm4wp_datalayer_name . ".push({
+			'event': 'gtm4wp.userRegistered'
+		});
+	}
+</script>";
+
+			unset( $_COOKIE[ "gtm4wp_user_registered" ] );
+		}
 	}
 }
 
@@ -640,8 +681,8 @@ function gtm4wp_wp_header_top( $echo = true ) {
 	var gtm4wp_datalayer_name = "' . $gtm4wp_datalayer_name . '";
 	var ' . $gtm4wp_datalayer_name . ' = ' . $gtm4wp_datalayer_name . ' || [];';
 
-	// Load in the global variables from gtm4wp_add_global_vars / GTM4WP_WPACTION_ADDGLOBALVARS filter
-	$_gtm_top_content .= apply_filters( GTM4WP_WPACTION_ADDGLOBALVARS, '', true );
+	// Load in the global variables from gtm4wp_add_global_vars / GTM4WP_WPFILTER_ADDGLOBALVARS filter
+	$_gtm_top_content .= apply_filters( GTM4WP_WPFILTER_ADDGLOBALVARS, '' );
 
 	if ( $gtm4wp_options[ GTM4WP_OPTION_SCROLLER_ENABLED ] ) {
 		$_gtm_top_content .= '
@@ -842,18 +883,27 @@ j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=
 }
 
 function gtm4wp_wp_login() {
-	setcookie( 'gtm4wp_user_logged_in', '1', 0, '/' );
+	setcookie(
+		"gtm4wp_user_logged_in",
+		"1",
+		0,
+		"/",
+		"",
+		(false !== strstr( get_option( 'home' ), 'https:' )) && is_ssl(),
+		true
+	);
 }
 
 function gtm4wp_user_register() {
-	setcookie( 'gtm4wp_user_registered', '1', 0, '/' );
-}
-
-function gtm4wp_user_reg_login_script() {
-	global $gtp4wp_plugin_url;
-
-	$in_footer = apply_filters( 'gtm4wp_user_reg_login_script', true );
-	wp_enqueue_script( 'gtm4wp-user-reg-login-script', $gtp4wp_plugin_url . 'js/gtm4wp-users.js', array( 'jquery' ), GTM4WP_VERSION, $in_footer );
+	setcookie(
+		"gtm4wp_user_registered",
+		"1",
+		0,
+		"/",
+		"",
+		(false !== strstr( get_option( 'home' ), 'https:' )) && is_ssl(),
+		true
+	);
 }
 
 function gtm4wp_rocket_excluded_inline_js_content( $pattern ) {
@@ -861,6 +911,32 @@ function gtm4wp_rocket_excluded_inline_js_content( $pattern ) {
 	$pattern[] = 'gtm4wp';
 
 	return $pattern;
+}
+
+function gtm4wp_wp_init() {
+	if ( array_key_exists( "gtm4wp_user_logged_in", $_COOKIE ) ) {
+		setcookie(
+			"gtm4wp_user_logged_in",
+			"",
+			-10000,
+			"/",
+			"",
+			(false !== strstr( get_option( 'home' ), 'https:' )) && is_ssl(),
+			true
+		);
+	}
+
+	if ( array_key_exists( "gtm4wp_user_registered", $_COOKIE ) ) {
+		setcookie(
+			"gtm4wp_user_registered",
+			"",
+			-10000,
+			"/",
+			"",
+			(false !== strstr( get_option( 'home' ), 'https:' )) && is_ssl(),
+			true
+		);
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'gtm4wp_enqueue_scripts' );
@@ -873,6 +949,7 @@ add_action( 'wp_head', 'gtm4wp_wp_header_top', 1, 0 );
 add_action( 'wp_footer', 'gtm4wp_wp_footer' );
 add_action( 'wp_loaded', 'gtm4wp_wp_loaded' );
 add_filter( GTM4WP_WPFILTER_COMPILE_DATALAYER, 'gtm4wp_add_basic_datalayer_data' );
+add_action( 'init', 'gtm4wp_wp_init' );
 
 // to be able to easily migrate from other Google Tag Manager plugins
 add_action( 'body_open', 'gtm4wp_wp_body_open' );
@@ -906,10 +983,8 @@ if ( isset( $GLOBALS['gtm4wp_options'] ) && ( $GLOBALS['gtm4wp_options'][ GTM4WP
 
 if ( isset( $GLOBALS['gtm4wp_options'] ) && ( $GLOBALS['gtm4wp_options'][ GTM4WP_OPTION_EVENTS_USERLOGIN ] ) ) {
 	add_action( 'wp_login', 'gtm4wp_wp_login' );
-	add_action( 'wp_enqueue_scripts', 'gtm4wp_user_reg_login_script' );
 }
 
 if ( isset( $GLOBALS['gtm4wp_options'] ) && ( $GLOBALS['gtm4wp_options'][ GTM4WP_OPTION_EVENTS_NEWUSERREG ] ) ) {
 	add_action( 'user_register', 'gtm4wp_user_register' );
-	add_action( 'wp_enqueue_scripts', 'gtm4wp_user_reg_login_script' );
 }

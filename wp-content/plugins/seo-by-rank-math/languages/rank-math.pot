@@ -1430,6 +1430,16 @@ msgstr ""
 msgid "NEW!"
 msgstr ""
 
+#. translators: %d: minutes
+#. translators: %s expands to a unit of time (e.g. 1 minute).
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Less than a minute"
+msgstr ""
+
 msgid "Post ID"
 msgstr ""
 
@@ -1795,6 +1805,9 @@ msgid "Site disconnected successfully."
 msgstr ""
 
 msgid "Site token"
+msgstr ""
+
+msgid "URL to get HTML tags for."
 msgstr ""
 
 msgid "No meta rows found to update."
@@ -3386,7 +3399,7 @@ msgstr ""
 msgid "%s archives"
 msgstr ""
 
-msgid "Exclude this image from sitemap"
+msgid "Exclude this attachment from sitemap"
 msgstr ""
 
 #. translators: the placeholder is for the sitemap base url.
@@ -3760,6 +3773,16 @@ msgstr ""
 msgid "Automatically add <code>target=\"_blank\"</code> attribute for external links appearing in your posts, pages, and other post types to make them open in a new browser tab or window. The attribute is dynamically applied when the content is displayed, and the stored content is not changed."
 msgstr ""
 
+msgid "Headless CMS Support"
+msgstr ""
+
+#. translators: placeholder is a link to "Read more".
+msgid "Enable this option to register a REST API endpoint that returns the HTML meta tags for a given URL. %s"
+msgstr ""
+
+msgid "Read more"
+msgstr ""
+
 msgid "Show SEO Score to Visitors"
 msgstr ""
 
@@ -3957,6 +3980,12 @@ msgid "Author Archive Description"
 msgstr ""
 
 msgid "Author archive meta description. SEO options for specific author archives can be set with the meta box in the user profiles."
+msgstr ""
+
+msgid "Slack Enhanced Sharing"
+msgstr ""
+
+msgid "When the option is enabled and an author archive is shared on Slack, additional information will be shown (name & total number of posts)."
 msgstr ""
 
 msgid "Add SEO Controls"
@@ -4180,6 +4209,12 @@ msgstr ""
 msgid "Headline"
 msgstr ""
 
+msgid "Default rich snippet selected when creating a new location."
+msgstr ""
+
+msgid "Local Business"
+msgstr ""
+
 #. translators: post type name
 #. translators: post type name
 msgid "%s Robots Meta"
@@ -4220,6 +4255,18 @@ msgid "Thumbnail for Facebook"
 msgstr ""
 
 msgid "Image displayed when your page is shared on Facebook and other social networks. Use images that are at least 1200 x 630 pixels for the best display on high resolution devices."
+msgstr ""
+
+msgid "When the option is enabled and a product is shared on Slack, additional information will be shown (price)."
+msgstr ""
+
+msgid "When the option is enabled and a product is shared on Slack, additional information will be shown (price & availability)."
+msgstr ""
+
+msgid "When the option is enabled and a page is shared on Slack, additional information will be shown (time to read)."
+msgstr ""
+
+msgid "When the option is enabled and a post is shared on Slack, additional information will be shown (author name & time to read)."
 msgstr ""
 
 msgid "Add SEO controls for the editor screen to customize SEO options for posts in this post type."
@@ -4310,6 +4357,9 @@ msgstr ""
 
 #. translators: taxonomy name
 msgid "%s Archives Advanced Robots Meta"
+msgstr ""
+
+msgid "When the option is enabled and a term from this taxonomy is shared on Slack, additional information will be shown (the total number of items with this term)."
 msgstr ""
 
 msgid "Add the SEO Controls for the term editor screen to customize SEO options for individual terms in this taxonomy."
@@ -4802,6 +4852,9 @@ msgstr ""
 msgid "Select the post type you use for Content AI."
 msgstr ""
 
+msgid "Click to refresh the available credits."
+msgstr ""
+
 #. translators: 1. Credits left 2. Buy more credits link
 msgid "%1$s credits left. Upgrade to get more credits from %2$s."
 msgstr ""
@@ -5041,12 +5094,6 @@ msgstr[1] ""
 #. translators: %s expands to a unit of time (e.g. 1 hour).
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: %s expands to a unit of time (e.g. 1 minute).
-msgid "%d minute"
-msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
 

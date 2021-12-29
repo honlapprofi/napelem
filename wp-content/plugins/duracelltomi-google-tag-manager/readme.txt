@@ -4,8 +4,8 @@ Donate link: https://gtm4wp.com/
 Tags: google tag manager, tag manager, gtm, google, adwords, google adwords, google ads, adwords remarketing, google ads remarketing, remarketing, google analytics, analytics, facebook ads, facebook remarketing, facebook pixel, google optimize, personalisation
 Requires at least: 3.4.0
 Requires PHP: 5.6
-Tested up to: 5.7.2
-Stable tag: 1.13.1
+Tested up to: 5.8.2
+Stable tag: 1.14.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -232,6 +232,32 @@ https://gtm4wp.com/how-to-articles/how-to-exclude-admin-users-from-being-tracked
 6. Scroll tracking
 
 == Changelog ==
+
+= 1.14.1 =
+
+* Bugfixes
+
+= 1.14 =
+
+* Added: support for tracking WooCommerce Block based product lists, except the "All Products" block
+* Added: support for [new_customer parameter](https://support.google.com/google-ads/answer/9917012?hl=en-AU#zippy=%2Cinstall-with-google-tag-manager) for Google Smart Shopping campaigns
+* Added: SHA256 hashed versions of data layer variables containing email addresses: customerBillingEmailHash on WooCommerce order received pages and visitorEmailHash on generic uses cases
+* Added: WooCommerce - if for some reason is_order_received_page() reports false on the order received page, woocommerce_thankyou hook will be used as backup
+* Updated: removed jQuery dependency from plugin modules: contact form 7 integration, form move tracker, Vimeo, YouTube, Soundcloud, partly WooCommerce
+* Updated: moved the hidden helper span element in products lists to the end of the product box to make more compatible with themes
+* Updated: more consistent retrieval of product categories  - by [Dekadinious](https://github.com/Dekadinious)
+* Updated: gtm4wp_product_readded_to_cart cookie replaced with a WooCommerce session variable to use fewer cookies in this plugin
+* Updated: gtm4wp_user_logged_in, gtm4wp_user_registered and gtm4wp_last_weatherstatus cookies are now HTTP only cookies
+* Updated: replaced deprecated jQuery method and event usage in WP admin
+* Updated: added rel="noopener" to links pointing to external sites on WP admin page
+* Updated: Hiding the iframe tag from assistive technologies as it provides no functionality for the end user. This will also alleviate a11y audit warnings.
+* Fixed: proper values for visitorType data layer variable
+* Fixed: replaced unsafe usage of eval() in WooCommerce QuickView plugin integration
+* Fixed: type check of the order ID obtained from a cookie before using the value
+* Fixed: navigation issues in Safari if browser loads previous page from cache. GTM4WP will now force Safari to always reload pages.
+* Fixed: Do not trigger browser change event in WooCommerce checkout page submit event handler. It caused issues with other 3rd party plugins.
+* Fixed: HTML5 detection. - by [Sjoerd](https://github.com/sjoerdkoelewijn)
+* Fixed: Username not included in datalayer if no other user attribute is included - by [StaymanHou](https://github.com/StaymanHou)
 
 = 1.13.1 =
 
@@ -715,6 +741,14 @@ Please report all bugs found in my plugin using the [contact form on my website]
 * First beta release
 
 == Upgrade Notice ==
+
+= 1.14.1 =
+
+Bugfix release
+
+= 1.14 =
+
+Initial support for WooCommerce Blocks, removed jQuery usage in JavaScript codes (except for WooCommerce related codes)
 
 = 1.13.1 =
 
