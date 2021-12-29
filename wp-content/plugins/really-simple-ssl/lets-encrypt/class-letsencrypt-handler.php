@@ -56,7 +56,7 @@ class rsssl_letsencrypt_handler {
 			Connector::getInstance()->useStagingServer( false );
 			Logger::getInstance()->setDesiredLevel( Logger::LEVEL_DISABLED );
 
-			if ( !get_option('rsssl_disable_ocsp') ) {
+			if ( !rsssl_get_value( 'disable_ocsp' ) ) {
 				Certificate::enableFeatureOCSPMustStaple();
 			}
 
@@ -665,8 +665,8 @@ class rsssl_letsencrypt_handler {
 					        }
 					    } else {
 					    	//if OCSP is not disabled yet, and the order status is not invalid, we disable ocsp, and try again.
-					    	if ( !get_option('rsssl_disable_ocsp' ) ) {
-							    update_option('rsssl_disable_ocsp', true);
+					    	if ( !rsssl_get_value( 'disable_ocsp' ) ) {
+							    RSSSL_LE()->field->save_field('disable_ocsp', true);
 							    $response->action = 'retry';
 							    $response->status = 'warning';
 							    $response->message = __("OCSP not supported, the certificate will be generated without OCSP.","really-simple-ssl");
@@ -1071,6 +1071,33 @@ class rsssl_letsencrypt_handler {
 			$action = 'continue';
 			$status = 'success';
 			$message = __("The required directories have the necessary writing permissions.", "really-simple-ssl" );
+		}
+		return new RSSSL_RESPONSE($status, $action, $message);
+	}
+
+	/**
+	 * Verify if a host has been selected, and if so, if this host supports LE, or if it's already active
+	 */
+	public function check_host(){
+		$action = 'continue';
+		$status = 'success';
+		$message = __("We have not detected any known hosting limitations.", "really-simple-ssl" );
+		$host = rsssl_get_other_host();
+		if ( $host === 'none' ) $host = false;
+		if ( isset(RSSSL_LE()->config->hosts[$host]) ){
+			if ( RSSSL_LE()->config->hosts[$host]['free_ssl_available'] === 'paid_only' ) {
+				$action = 'stop';
+				$status = 'error';
+				$message = sprintf(__("According to our information, your hosting provider does not allow any kind of SSL installation, other then their own paid certificate. For an alternative hosting provider with SSL, see this %sarticle%s.","really-simple-ssl"), '<a target="_blank" href="https://really-simple-ssl.com/hosting-providers-with-free-ssl">', '</a>');
+			}
+
+			if ( RSSSL_LE()->config->hosts[$host]['free_ssl_available'] === 'activated_by_default' ) {
+				$url = RSSSL_LE()->config->hosts[$host]['ssl_installation_link'];
+				$action = 'continue';
+				$status = 'error';
+				$message = sprintf(__("According to our information, your hosting provider supplies your account with an SSL certificate by default. Please contact your %shosting support%s if this is not the case.","really-simple-ssl"), '<a target="_blank" href="'.$url.'">', '</a>').'&nbsp'.
+				       __("After completing the installation, you can let Really Simple SSL automatically configure your site for SSL by using the 'Activate SSL' button.","really-simple-ssl");
+			}
 		}
 		return new RSSSL_RESPONSE($status, $action, $message);
 	}
