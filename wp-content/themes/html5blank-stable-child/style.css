@@ -1,0 +1,60 @@
+/*
+	Theme Name: HTML5 Blank Child
+	Template: html5blank-stable
+	Theme URI: http://html5blank.com
+	Description: HTML5 Blank WordPress Child Theme
+	Version: 1.4.3
+	Author: Todd Motto (@toddmotto)
+	Author URI: http://toddmotto.com
+	Tags: Blank, HTML5, CSS3
+
+	License: MIT
+	License URI: http://opensource.org/licenses/mit-license.php
+*/
+
+.latest-posts {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0px auto;
+    background-color: #fff;
+    border-top: 10px solid var( --e-global-color-abb94f9 );
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.latest-title {
+    width: 100%;
+    text-align: center;
+}
+.latest-title h1 {
+    margin-top: 0px;
+}
+
+.post-grid {
+    display: flex;
+    width: 100%;
+}
+
+.post-grid article {
+    width: 33.33%;
+    min-height: 250px;
+    position: relative;
+}
+
+.post-loop-content {
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    background-image: linear-gradient(180deg, #02417A45 0%, var( --e-global-color-b2db115 ) 100%);
+    color: #fff;
+    transition: 0.5s;
+    min-height: 170px;
+}
+
+.post-loop-content:hover {
+    background-color: var( --e-global-color-b2db115 );
+}
+
+.post-loop-content h1, .post-loop-content a {
+    color: #fff;
+}

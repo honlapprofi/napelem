@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>A tárhely tulajdonosa még nem töltötte fel a honlap tartalmát</title>
+		<link rel="shortcut icon" href="https://static.mhosting.hu/cp/favicon.ico" />
+		<link href="https://static.mhosting.hu/cp/bootstrap.css" rel="stylesheet">
+    
+		<style type="text/css">
+			* {
+				font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+				font-size:14px;
+			}
+
+			body {
+				font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+				overflow-x: hidden;       
+			}
+
+			body.cp {
+				background:#fff;
+				background-color:#fff !important;
+				margin: 0px;
+			}
+
+			body .acontainer {
+				background: #0e99d8; /* Old browsers */
+				background: -moz-radial-gradient(center, ellipse cover, #0e99d8 0%, #0d5999 99%); /* FF3.6-15 */
+				background: -webkit-radial-gradient(center, ellipse cover, #0e99d8 0%,#0d5999 99%); /* Chrome10-25,Safari5.1-6 */
+				background: radial-gradient(ellipse at center, #0e99d8 0%,#0d5999 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				ilter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e99d8', endColorstr='#0d5999',GradientType=1 ); /* IE6-9 */
+				height:100%;
+				background-repeat: no-repeat;
+						-moz-background-size: cover;
+						-o-background-size: cover;
+						-webkit-background-size: cover;
+						background-size: cover;
+						background-attachment: fixed;
+			}
+
+			#login-wrapper {
+				margin-top:0;
+				margin-bottom:0;
+			}
+
+			#mhlogo {
+				width: 100%;
+				text-align: center;
+				margin: 0 auto;
+				margin-bottom: 50px;
+				margin-top: 50px;
+			}
+
+			#mhlogo img {
+				float: none;
+			}
+
+			#locale-footer {
+				margin-top: 20px;
+				margin-bottom: 10px;
+			}
+
+			#login-sub-container, .small-size #security-sub-container {
+				background-color: #eef5fd;
+				padding-top: 30px;
+				padding-bottom: 30px;
+				border-radius: 6px;
+				box-shadow: 0px 40px 30px -37px rgba(0,0,0,0.8);
+				-webkit-box-shadow: 0px 40px 30px -37px rgba(0,0,0,1);
+				-moz-box-shadow: 0px 40px 30px -37px rgba(0,0,0,1);
+				margin-bottom:60px;
+			}
+
+			.footer {
+				background:#fff;
+				width:100%;
+				display: block;
+				overflow: hidden;
+				clear: both;
+
+				padding-top:30px;
+				padding-bottom:30px;
+			}
+
+			.footer h3 {
+				padding-bottom:20px;
+			}
+
+			.footercontent {
+				padding:10px;
+				background:#fff;
+				display:block;
+				text-align:left;
+				line-height: 1.8em;
+				color:#333;
+			}
+
+			.footercontent h3 {
+				font-size: 1.17em;
+				text-align: left;
+				margin-inline-start: 0px;
+				margin-inline-end: 0px;
+				font-weight: normal;
+				line-height: 1.8em;
+				color: #333;
+			}
+
+			.footercontent a:link, a:visited, a:active {
+				color: #0f5e9f;
+				text-decoration: none;
+			}
+
+			.footercontent a:hover {
+				color: #5ca4e0;
+				text-decoration: none;
+			}
+
+			@media(max-width:480px){
+				.footercontent {
+					text-align:center;
+				}
+
+				.footercontent h3 {
+					text-align:center;
+				}
+			}
+
+			@media(min-width:481px) and (max-width:768px){
+				.footercontent {
+					text-align:center;
+				}
+
+				.footercontent h3 {
+					text-align:center;
+				}
+			}
+
+			@media(min-width:769px){
+				.footercontent {
+					text-align:left;
+				}
+			}
+
+			a { color:#005d99; text-decoration: underline}
+
+			h1 {
+				font-size: 20px;
+				color: #006bb4;
+				text-align: center;
+				padding: 20px 20px 20px;
+			}
+			h2 {
+				font-size: 20px;
+				font-weight: 700;
+				text-align: center;
+				padding: 20px 0 0;
+				color: #006bb4;
+			}
+			h3 {
+				text-align: center;
+				color: #006bb4;
+				font-weight: 700;
+			}
+
+			.justify {
+				text-align: justify;	
+			}
+
+			.center {
+				text-align: center;	
+			}
+
+			.logo {
+				text-align: center;
+				margin-bottom: 50px;
+			}
+
+			#bluebox {
+				color: #fff; 
+				background: #006bb4; 
+				padding-bottom:30px;
+				height:100%;
+				margin-top:40px;
+				padding: 20px;
+				padding-bottom: 40px;
+			}
+
+			#bluebox h2, h3 {
+				color: #fff;
+			}
+
+			#bluebox a:link {
+				color: #fff;
+				text-decoration:none;
+			}
+
+			#bluebox a:hover {
+				color: #fff;
+				text-decoration: underline;
+			}
+
+			#bluebox a:visited {
+				color: #fff;
+				text-decoration:none;
+			}
+
+			.box {
+				padding: 40px 0 0;
+			}
+			.box ul li {
+				text-align: center;
+				list-style-type: none;
+			}
+			.box ul li a {
+				text-decoration: none;
+				color: #6fbfdf;
+			}
+
+			footer {
+				padding-top:8px;	
+			}
+
+			footer .footerlink {
+				text-align: center;	
+			}
+
+			footer a {
+				text-decoration: none;
+				color: #0f5e9f;
+				font-size:13px;
+				margin:8px;
+			}
+
+			footer a:hover {
+				text-decoration: none;
+				color: #0f5e9f;
+			}
+
+			footer a:visited {
+				text-decoration: none;
+				color: #0f5e9f;
+			}
+		</style>
+	</head>
+  
+	<body class="cp">
+		<div class="acontainer">
+			<div class="container">
+				<div id="mhlogo">
+					<img src="https://static.mhosting.hu/cp/logo_w180_white.png" alt="Magyar Hosting" align="left"/>
+				</div>
+				<div id="login-sub-container">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+							<p class="logo"><a href="https://www.tarhely.com" target="_blank"><img src="https://static.mhosting.hu/cp/logo2.png" class="img-responsive" style="width:30%"/></a></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="container">
+							<div class="col-md-12">
+								<h1>
+								<p id="domain"></p>
+								<script>
+								var dom = document.domain;
+								document.getElementById("domain").innerHTML = dom;
+								</script>
+								</h1>
+								<br /><br />
+								<p class="center">A tárhely tulajdonosa még nem töltötte fel a honlap tartalmát.</p>
+								<br /><br /><br />
+								<p class="center">Ha úgy gondolja, hogy valamilyen hiba miatt látja ezt a lapot,<br />kérdésével forduljon bizalommal a nap 24 órájában elérhető ügyfélszolgálatunkhoz <a href="https://www.tarhely.com/kapcsolat">elérhetőségeink</a> egyikén!</p>						
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="footer">
+			<div class="container">
+				<div class="col-md-3 col-sm-6">
+					<div class="footercontent">
+						<h3><img src="https://static.mhosting.hu/cp/logo_h471.png" style="width:80%" /></h3>
+						Magyar Hosting Kft.<br />
+						H-1132 Budapest<br />
+						Victor Hugo u. 18-22.<br />
+						<a href="tel:+3617002323">+36 1 700 2323</a><br />
+						<a href="mailto:info@mhosting.hu">info@mhosting.hu</a>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="footercontent">
+						<h3>SSD Tárhely szolgáltatás</h3>
+						<a href="https://www.mhosting.hu/tarhely/webtarhely">Üzleti tárhely</a><br />
+						<a href="https://www.mhosting.hu/tarhely/korlatlan-es-orias-tarhely">Korlátlan tárhely</a><br />
+						<a href="https://www.mhosting.hu/tarhely/korlatlan-es-orias-tarhely">Óriás tárhely</a><br />
+						<a href="https://www.mhosting.hu/tarhely/evo-ssd-tarhely">EVO Prémium tárhely</a><br />
+						<a href="https://www.mhosting.hu/tarhely/webtarhely">Tárhely ingyen</a></div>
+					</div>
+				<div class="clearfix visible-sm-block"></div>
+				<div class="col-md-3 col-sm-6">
+					<div class="footercontent">
+						<h3>További szolgáltatások</h3>
+						<a href="https://www.mhosting.hu/domain">Domain regisztráció</a><br />
+						<a href="https://www.mhosting.hu/vps">VPS</a><br />
+						<a href="https://www.mhosting.hu/szerver-hosting">Szerver hosting</a><br />
+						<a href="https://www.mhosting.hu/dedikalt-szerver-berles">Szerver bérlés</a><br />
+						<a href="https://www.mhosting.hu/ssl-tanusitvany">SSL tanúsítvány</a>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="footercontent">
+						<h3>Infocenter</h3>
+						<a href="https://www.mhosting.hu/kapcsolat">Kapcsolat</a><br />
+						<a href="https://online.mhosting.hu/clientarea.php">Ügyfélkapu</a><br />
+						<a href="https://www.mhosting.hu/ceginfo">Rólunk</a><br />
+						<a href="https://www.mhosting.hu/gyik">GYIK</a><br />
+						<a href="https://online.mhosting.hu/knowledgebase.php">Tudásbázis</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

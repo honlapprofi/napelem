@@ -1,0 +1,21 @@
+# Ignore configuration files that may contain sensitive information.
+wp-config.php
+wp-content/uploads
+wp-content/upgrade
+wp-content/ai1wm-backups
+wp-content/wpvividbackups
+wp-content/WPvivid_Uploads/Isolate
+wp-content/wpvivid_staging
+wp-content/cache
+wp-content/et-cache
+wp-content/wflogs
+wp-content/smush-webp
+wp-content/updraft
+wp-content/blogs.dir
+wp-content/backup
+google4c433dd34f6ac246.html
+.htaccess_swift_backup
+deleteme.da4f2782b7a34d29bf7d4b9a79aebd16.php
+error_log
+.htaccess
+.htaccess.bk
