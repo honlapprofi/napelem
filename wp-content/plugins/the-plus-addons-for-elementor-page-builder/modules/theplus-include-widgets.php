@@ -55,7 +55,7 @@ if ( ! class_exists( 'L_Theplus_Widgets_Include' ) ) {
 		 * @return void
 		 */
 		public function init() {
-			add_action( 'elementor/widgets/widgets_registered', array($this, 'add_widgets' ) );
+			add_action( 'elementor/widgets/register', array($this, 'add_widgets' ) );
 			
 		}
 		
@@ -152,7 +152,7 @@ if ( ! class_exists( 'L_Theplus_Widgets_Include' ) ) {
 				foreach ( $grouped as $widget_id => $class_name ) {
 					if(in_array($widget_id,$get_option)){
 						if ( $this->include_widget( $widget_id, true ) ) {
-							$widgets_manager->register_widget_type( new $class_name() );
+							$widgets_manager->register( new $class_name() );
 						}
 					}
 				}

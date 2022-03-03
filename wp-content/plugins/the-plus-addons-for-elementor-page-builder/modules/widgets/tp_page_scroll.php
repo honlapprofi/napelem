@@ -46,7 +46,7 @@ class L_ThePlus_Page_Scroll extends Widget_Base {
 	public function get_keywords() {
 		return ['one page scroll', 'full page js', 'page piling', 'page pilling', 'multi scroll', 'page scroll', 'scroll'];
 	}
-    protected function _register_controls() {
+    protected function register_controls() {
 		$this->start_controls_section(
 			'section_page_scroll',
 			[

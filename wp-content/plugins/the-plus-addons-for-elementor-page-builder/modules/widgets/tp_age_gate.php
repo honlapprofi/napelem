@@ -41,7 +41,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
         return array('plus-essential');
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 		/* Layout Tab */
 		$this->start_controls_section(
 			'age_head_content_section',
@@ -1319,6 +1319,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 				'render_type' => 'ui',				
 				'selectors' => [
 					'{{WRAPPER}} .tp-method-1 .tp-agegate-boxes .tp-agegate-method .age_vmb i,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes .tp-agegate-method .age_verify_method_btnsubmit i,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes i' => 'font-size: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .tp-method-1 .tp-agegate-boxes .tp-agegate-method .age_vmb svg,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes .tp-agegate-method .age_verify_method_btnsubmit svg,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes svg' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}}',
 				],
             ]
         );
@@ -1346,7 +1347,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 				],				
 				'render_type' => 'ui',
 				'selectors' => [
-					'{{WRAPPER}} .tp-method-1 .tp-agegate-boxes .tp-agegate-method .age_vmb i,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes .tp-agegate-method .age_verify_method_btnsubmit i,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes i' => 'margin-right: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .tp-method-1 .tp-agegate-boxes .tp-agegate-method .age_vmb i,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes .tp-agegate-method .age_verify_method_btnsubmit i,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes i,{{WRAPPER}} .tp-method-1 .tp-agegate-boxes .tp-agegate-method .age_vmb svg,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes .tp-agegate-method .age_verify_method_btnsubmit svg,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes svg' => 'margin-left: {{SIZE}}{{UNIT}}',
 				],
 				'condition'    => [
 				 	'icon_position' => [ 'age_icon_postfix' ],
@@ -1377,7 +1378,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 				],				
 				'render_type' => 'ui',
 				'selectors' => [
-					'{{WRAPPER}} .tp-method-1 .tp-agegate-boxes .tp-agegate-method .age_vmb i,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes .tp-agegate-method .age_verify_method_btnsubmit i,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes i' => 'margin-left: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .tp-method-1 .tp-agegate-boxes .tp-agegate-method .age_vmb i,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes .tp-agegate-method .age_verify_method_btnsubmit i,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes i,{{WRAPPER}} .tp-method-1 .tp-agegate-boxes .tp-agegate-method .age_vmb svg,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes .tp-agegate-method .age_verify_method_btnsubmit svg,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes svg' => 'margin-right: {{SIZE}}{{UNIT}}',
 				],
 				'condition'    => [
 				 	'icon_position' => [ 'age_icon_prefix' ],
@@ -1391,7 +1392,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em'],				
 				'selectors' => [
-					'{{WRAPPER}} .tp-method-1 .tp-agegate-boxes .tp-agegate-method .age_vmb i,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes .tp-agegate-method .age_verify_method_btnsubmit i,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .tp-method-1 .tp-agegate-boxes .tp-agegate-method .age_vmb i,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes .tp-agegate-method .age_verify_method_btnsubmit i,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes i,{{WRAPPER}} .tp-method-1 .tp-agegate-boxes .tp-agegate-method .age_vmb svg,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes .tp-agegate-method .age_verify_method_btnsubmit svg,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes svg' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'after',
 			]
@@ -1410,6 +1411,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .tp-method-1 .tp-agegate-boxes .tp-agegate-method .age_vmb i,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes .tp-agegate-method .age_verify_method_btnsubmit i,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .tp-method-1 .tp-agegate-boxes .tp-agegate-method .age_vmb svg,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes .tp-agegate-method .age_verify_method_btnsubmit svg,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -1427,6 +1429,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .tp-method-1 .tp-agegate-boxes:hover .tp-agegate-method .age_vmb i,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes:hover .tp-agegate-method .age_verify_method_btnsubmit i,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes:hover .tp-agegate-method .tp-age-btn-yes i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .tp-method-1 .tp-agegate-boxes:hover .tp-agegate-method .age_vmb svg,{{WRAPPER}} .tp-method-2 .tp-agegate-boxes:hover .tp-agegate-method .age_verify_method_btnsubmit svg,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes:hover .tp-agegate-method .tp-age-btn-yes svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -1617,6 +1620,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 				'render_type' => 'ui',				
 				'selectors' => [
 					'{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no i' => 'font-size: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no svg' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}}',
 				],
             ]
         );
@@ -1644,7 +1648,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 				],				
 				'render_type' => 'ui',
 				'selectors' => [
-					'{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no i' => 'margin-right: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no i,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no svg' => 'margin-left: {{SIZE}}{{UNIT}}',
 				],
 				'condition'    => [
 				 	'second_icon_position' => [ 'age_scnd_icon_postfix' ],
@@ -1675,7 +1679,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 				],				
 				'render_type' => 'ui',
 				'selectors' => [
-					'{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no i' => 'margin-left: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no i,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no svg' => 'margin-right: {{SIZE}}{{UNIT}}',
 				],
 				 'condition'    => [
 				 	'second_icon_position' => [ 'age_scnd_icon_prefix' ],
@@ -1689,7 +1693,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', 'em'],				
 				'selectors' => [
-					'{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no i' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no i,{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no svg' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'separator' => 'after',
 			]
@@ -1708,6 +1712,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .tp-method-3 .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -1725,6 +1730,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .tp-method-3 .tp-agegate-boxes:hover .tp-agegate-method .tp-age-btn-no i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .tp-method-3 .tp-agegate-boxes:hover .tp-agegate-method .tp-age-btn-no svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);

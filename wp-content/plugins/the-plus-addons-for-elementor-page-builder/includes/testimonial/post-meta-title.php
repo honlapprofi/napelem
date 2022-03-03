@@ -1,4 +1,5 @@
-<?php 
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 $testimonial_title = get_post_meta(get_the_id(), 'theplus_testimonial_title', true); 
 	
 if(empty($post_title_tag)){

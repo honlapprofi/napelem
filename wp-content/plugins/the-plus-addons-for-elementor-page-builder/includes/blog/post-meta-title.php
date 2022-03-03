@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 if(!isset($post_title_tag) && empty($post_title_tag)){
 	$post_title_tag='h3';
 }

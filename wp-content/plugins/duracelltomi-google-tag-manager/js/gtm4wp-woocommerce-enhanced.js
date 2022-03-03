@@ -51,8 +51,8 @@ function gtm4wp_map_eec_to_ga4( productdata ) {
 		ga4_product.coupon = productdata.coupon;
 	}
 
-	ga4_product.google_business_vertical = window.gtm4wp_business_vertical;
-	ga4_product[ window.gtm4wp_business_vertical_id ] = gtm4wp_id_prefix + ga4_product[ "item_id" ];
+	ga4_product.google_business_vertical = gtm4wp_business_vertical;
+	ga4_product[ gtm4wp_business_vertical_id ] = gtm4wp_id_prefix + ga4_product[ "item_id" ];
 
 	return ga4_product;
 }
@@ -252,7 +252,7 @@ function gtm4wp_handle_shipping_method_change() {
 	gtm4wp_checkout_step_fired.push( 'shipping_method' );
 }
 
-document.addEventListener( 'DOMContentLoaded', function() {
+function gtm4wp_process_woocommerce_pages() {
 	window.gtm4wp_is_cart     = document.querySelector( 'body' )?.classList?.contains( 'woocommerce-cart' );
 	window.gtm4wp_is_checkout = document.querySelector( 'body' )?.classList?.contains( 'woocommerce-checkout' );
 
@@ -322,7 +322,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		let product_data;
 
 		document.querySelectorAll( '.gtm4wp_productdata,.widget-product-item' ).forEach( function( dom_productdata ) {
-			productprice = dom_productdata.getAttribute( 'gtm4wp_product_price' );
+			productprice = dom_productdata.getAttribute( 'data-gtm4wp_product_price' );
 
 			if ( typeof productprice == "string" ) {
 				productprice = parseFloat( productprice );
@@ -1188,4 +1188,19 @@ document.addEventListener( 'DOMContentLoaded', function() {
 			}
 		});
 	}
-});
+};
+
+function gtm4wp_page_loading_completed() {
+	document.removeEventListener( "DOMContentLoaded", gtm4wp_page_loading_completed );
+	window.removeEventListener( "load", gtm4wp_page_loading_completed );
+	gtm4wp_process_woocommerce_pages();
+}
+
+// code and idea borrowed from jQuery:
+// https://github.com/jquery/jquery/blob/main/src/core/ready.js
+if ( document.readyState !== "loading" ) {
+	window.setTimeout( gtm4wp_process_woocommerce_pages );
+} else {
+	document.addEventListener( "DOMContentLoaded", gtm4wp_page_loading_completed );
+	window.addEventListener( "load", gtm4wp_page_loading_completed );
+}

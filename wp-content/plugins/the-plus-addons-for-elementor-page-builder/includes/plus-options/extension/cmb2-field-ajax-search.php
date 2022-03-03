@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * @package      CMB2\Field_Ajax_Search
  * @author       Tsunoa

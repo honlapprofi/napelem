@@ -1,4 +1,6 @@
-<?php $testimonial_logo = get_post_meta(get_the_id(), 'theplus_testimonial_logo', true); 
+<?php 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+$testimonial_logo = get_post_meta(get_the_id(), 'theplus_testimonial_logo', true); 
 	
 if(!empty($testimonial_logo)){ 
 ?>

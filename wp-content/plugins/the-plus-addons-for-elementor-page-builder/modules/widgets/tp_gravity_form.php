@@ -39,7 +39,7 @@ class L_ThePlus_Gravity_Form extends Widget_Base {
         return array('plus-adapted');
     }
 		
-    protected function _register_controls() {
+    protected function register_controls() {
 		/*Layout Content start*/
 		$this->start_controls_section(
 			'content_section',

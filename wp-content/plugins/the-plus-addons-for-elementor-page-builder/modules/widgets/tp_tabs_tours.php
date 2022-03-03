@@ -44,7 +44,7 @@ class L_ThePlus_Tabs_Tours extends Widget_Base {
 		return ['tabs', 'tours', 'tabbed content'];
 	}
 	
-    protected function _register_controls() {
+    protected function register_controls() {
 		
 		$this->start_controls_section(
 			'content_section',

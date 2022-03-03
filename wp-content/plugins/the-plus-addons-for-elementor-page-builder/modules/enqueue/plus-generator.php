@@ -477,7 +477,9 @@ Class L_Plus_Generator
 				L_THEPLUS_VERSION,
 				true
 			);
-			$js_inline2 = 'var theplus_ajax_url = "'.admin_url("admin-ajax.php").'";';
+			
+			$js_inline2 = 'var theplus_ajax_url = "'.admin_url("admin-ajax.php").'";
+            var theplus_nonce = "'.wp_create_nonce("theplus-addons").'";';
 			echo wp_print_inline_script_tag($js_inline2);
 			// hook extended assets
 			do_action('theplus/after_enqueue_scripts', $this->check_cache_files());
@@ -592,7 +594,8 @@ Class L_Plus_Generator
 			wp_enqueue_script('theplus-front-js',$this->pathurl_security($js_file),['jquery'],$plus_version,true);
 		}
 		
-		$js_inline3 = 'var theplus_ajax_url = "'.admin_url("admin-ajax.php").'";';
+		$js_inline3 = 'var theplus_ajax_url = "'.admin_url("admin-ajax.php").'";
+		var theplus_nonce = "'.wp_create_nonce("theplus-addons").'";';
 		echo wp_print_inline_script_tag($js_inline3);
 		
 		// hook extended assets
@@ -850,7 +853,9 @@ Class L_Plus_Generator
 		add_action('wp', [$this, 'init_post_request_data']);
 		if(!$this->get_caching_option()){
 			add_action( 'admin_bar_menu', [ $this, 'add_plus_clear_cache_admin_bar' ], 300 );
-			add_action('wp_ajax_plus_purge_current_clear', array($this, 'theplus_current_page_clear_cache'));
+			if(current_user_can("manage_options")){
+				add_action('wp_ajax_plus_purge_current_clear', array($this, 'theplus_current_page_clear_cache'));
+			}
 		
 			if(is_user_logged_in()){
 				add_action( 'wp_head', [ $this, 'plus_purge_clear_print_style' ]);		
@@ -859,7 +864,7 @@ Class L_Plus_Generator
 		
 		add_action('wp_enqueue_scripts', array($this, 'plus_enqueue_scripts'));
 		
-		if (is_admin()) {
+		if (is_admin() && current_user_can("manage_options")) {
 			add_action('wp_ajax_smart_perf_clear_cache', array($this, 'theplus_smart_perf_clear_cache'));
 			add_action('wp_ajax_backend_clear_cache', array($this, 'theplus_backend_clear_cache'));
 		}

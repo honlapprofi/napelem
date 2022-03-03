@@ -1,7 +1,7 @@
 <?php
 namespace TheplusAddons\Widgets;
 use TheplusAddons\L_Theplus_Element_Load;
-
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // Get Elementor Template 
 function l_theplus_get_templates() {
     $templates = L_Theplus_Element_Load::elementor()->templates_manager->get_source( 'local' )->get_items();
@@ -209,7 +209,7 @@ class L_Theplus_Navigation_NavWalker extends \Walker_Nav_Menu {
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 			$classes[] = 'animate-dropdown menu-item-' . $item->ID;
 
-			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
+			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args , $depth) );
 
 			if ( $args->has_children ) {
 				if ( $args->theme_location == 'departments-menu' && $depth === 0 ) {

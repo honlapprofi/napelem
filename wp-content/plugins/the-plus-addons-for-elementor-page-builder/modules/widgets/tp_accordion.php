@@ -45,7 +45,7 @@ class L_ThePlus_Accordion extends Widget_Base {
 		return [ 'accordion', 'tabs', 'toggle' ];
 	}
 	
-    protected function _register_controls() {
+    protected function register_controls() {
 		
 		$this->start_controls_section(
 			'content_section',
@@ -334,6 +334,7 @@ class L_ThePlus_Accordion extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-accordion .elementor-tab-title .elementor-accordion-icon i:before' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-accordion .elementor-tab-title .elementor-accordion-icon svg' => 'fill: {{VALUE}};',
 				],
 				'condition' => [
 					'display_icon' => 'yes',
@@ -348,6 +349,7 @@ class L_ThePlus_Accordion extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .elementor-accordion .elementor-tab-title.active .elementor-accordion-icon i:before' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .elementor-accordion .elementor-tab-title.active .elementor-accordion-icon svg' => 'fill: {{VALUE}};',
 				],
 				'condition' => [
 					'display_icon' => 'yes',
@@ -388,6 +390,7 @@ class L_ThePlus_Accordion extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .theplus-accordion-wrapper.elementor-accordion .elementor-tab-title .elementor-accordion-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .theplus-accordion-wrapper.elementor-accordion .elementor-tab-title .elementor-accordion-icon svg' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
 				],
 				'condition' => [
 					'display_icon' => 'yes',

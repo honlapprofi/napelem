@@ -40,7 +40,7 @@ class L_ThePlus_Post_Meta extends Widget_Base {
         return array('plus-builder');
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 		
 		$this->start_controls_section(
 			'content_section',
@@ -82,6 +82,20 @@ class L_ThePlus_Post_Meta extends Widget_Base {
 				'type' => Controls_Manager::SELECT,
 				'options' => l_theplus_get_post_taxonomies(),
 				'default' => 'category',
+				'condition' => [
+					'sortfield' => 'category',
+				],
+			]
+		);
+		$repeater->add_control(
+			'category_taxonomies_load',[
+				'label' => esc_html__( 'Show','tpebl' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'default',
+				'options' => [
+					'default' => esc_html__( 'All','tpebl' ),
+					'bypost' => esc_html__( 'Current Post','tpebl' ),
+				],
 				'condition' => [
 					'sortfield' => 'category',
 				],
@@ -559,6 +573,34 @@ class L_ThePlus_Post_Meta extends Widget_Base {
 				],
 			]
 		);
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'tab_category_Typo',
+				'label' => esc_html__( 'Typography', 'tpebl' ),
+				'scheme' => Typography::TYPOGRAPHY_1,
+				'selector' => '{{WRAPPER}} .tp-meta-category a',
+			]
+		);
+		$this->add_responsive_control(
+			'tab_category_svg_icon',
+			[
+				'label' => esc_html__( 'Svg Icon Size', 'tpebl' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px','em' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 100,
+						'step' => 1,
+					],
+				],	
+				'render_type' => 'ui',
+				'selectors' => [
+					'{{WRAPPER}} .tp-post-meta-info .tp-meta-category .tp-meta-category-label svg' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
         $this->start_controls_tabs( 'tabs_category_style' );
 		$this->start_controls_tab(
 			'tab_category_normal',
@@ -576,10 +618,11 @@ class L_ThePlus_Post_Meta extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .tp-meta-category a,{{WRAPPER}} .tp-post-meta-info .tp-meta-category:after{{WRAPPER}} .tp-post-meta-info .tp-meta-category .tp-meta-category-label i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .tp-meta-category a,{{WRAPPER}} .tp-post-meta-info .tp-meta-category:after,{{WRAPPER}} .tp-post-meta-info .tp-meta-category .tp-meta-category-label i' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .tp-post-meta-info .tp-meta-category .tp-meta-category-label svg' => 'fill: {{VALUE}}',
 				],
 				'condition' => [
-				'showCategory' => 'yes',
+					'showCategory' => 'yes',
 				],
 			]
 		);
@@ -589,7 +632,7 @@ class L_ThePlus_Post_Meta extends Widget_Base {
 			[
 				'label' => esc_html__( 'Hover', 'tpebl' ),
 				'condition' => [
-				'showCategory' => 'yes',
+					'showCategory' => 'yes',
 				],
 			]
 		);
@@ -1460,10 +1503,17 @@ class L_ThePlus_Post_Meta extends Widget_Base {
 									$cateStyle = (!empty($settings['cateStyle'])) ? $settings['cateStyle'] : 'style-1';
 									
 									$category_taxonomies = !empty($item['category_taxonomies']) ? $item['category_taxonomies'] : 'category';
-									$terms = get_terms($category_taxonomies, array(
+									
+									if(!empty($item['category_taxonomies_load']) && $item['category_taxonomies_load']=='bypost'){
+										$terms=get_the_category($post_id);
+									}else{
+										$terms = get_terms($category_taxonomies, array(
 												'orderby'    => 'count',
 												'hide_empty' => 0,
+												'exclude' => array( 1 ),
 											));
+									}
+								
 									$category_list ='';
 									if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 										$i = 1;

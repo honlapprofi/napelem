@@ -40,7 +40,7 @@ class L_ThePlus_Post_Title extends Widget_Base {
         return array('plus-builder');
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 		/*Post Title*/
 		$this->start_controls_section(
 			'content_section',

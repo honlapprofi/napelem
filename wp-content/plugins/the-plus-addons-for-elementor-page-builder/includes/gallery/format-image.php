@@ -1,4 +1,5 @@
-<?php 
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	if($attachment){
 		$featured_image_id = $attachment->ID;
 	}else{

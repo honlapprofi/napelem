@@ -18,6 +18,7 @@
 			
 			if(exd!='' && exd!=undefined && (new Date(cdate) <= new Date(exd))){				
 				$('.tp-agegate-wrapper').hide();
+				container.closest("body").css("overflow","");
 			}else if(exd!='' && exd!=undefined && (new Date(cdate) > new Date(exd))){
 				localStorage.removeItem("max-age-expire");
 				$('.tp-agegate-wrapper').show();

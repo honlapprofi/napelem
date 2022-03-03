@@ -5,7 +5,7 @@ Tags: google tag manager, tag manager, gtm, google, adwords, google adwords, goo
 Requires at least: 3.4.0
 Requires PHP: 5.6
 Tested up to: 5.8.2
-Stable tag: 1.14.1
+Stable tag: 1.14.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -232,6 +232,13 @@ https://gtm4wp.com/how-to-articles/how-to-exclude-admin-users-from-being-tracked
 6. Scroll tracking
 
 == Changelog ==
+
+= 1.14.2 =
+
+* Fixed: undefined google_business_vertical
+* Fixed: missing product price in product impression data
+* Fixed: better compatibility with cache plugins and lazy load functionalities
+* Fixed: Added optional chaining operator to form move tracker code
 
 = 1.14.1 =
 
@@ -741,6 +748,10 @@ Please report all bugs found in my plugin using the [contact form on my website]
 * First beta release
 
 == Upgrade Notice ==
+
+= 1.14.2 =
+
+Bugfix release
 
 = 1.14.1 =
 

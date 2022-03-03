@@ -36,7 +36,7 @@ class L_ThePlus_Meeting_Scheduler extends Widget_Base {
 		return ['meeting scheduler','calendly','freebusy','free busy','meetingbird','meeting bird','vyte','xai','x ai'];
 	}
 
-    protected function _register_controls() {		
+    protected function register_controls() {		
 		$this->start_controls_section(
 			'content_section',
 			[

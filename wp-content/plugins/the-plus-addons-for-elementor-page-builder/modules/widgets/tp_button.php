@@ -39,7 +39,7 @@ class L_ThePlus_Button extends Widget_Base {
         return array('plus-essential');
     }
 	
-    protected function _register_controls() {
+    protected function register_controls() {
 		
 		$this->start_controls_section(
 			'content_section',
@@ -275,8 +275,8 @@ class L_ThePlus_Button extends Widget_Base {
 					'button_icon_style!' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .button-link-wrap i.button-after' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .button-link-wrap i.button-before' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .button-link-wrap .button-after' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .button-link-wrap .button-before' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -296,7 +296,8 @@ class L_ThePlus_Button extends Widget_Base {
 					'button_icon_style!' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .button-link-wrap i.btn-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .button-link-wrap .btn-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .button-link-wrap .btn-icon svg' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -352,7 +353,27 @@ class L_ThePlus_Button extends Widget_Base {
 				'selector' => '{{WRAPPER}} .pt_plus_button .button-link-wrap',
 			]
 		);
-		
+		$this->add_control(
+            'button_svg_icon',
+            [
+                'type' => Controls_Manager::SLIDER,
+				'label' => esc_html__('Svg Icon Size', 'tpebl'),
+				'default' => [
+					'unit' => 'px',
+					'size' => 20,
+				],
+				'range' => [
+					'' => [
+						'min'	=> 1,
+						'max'	=> 150,
+						'step' => 1,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .pt_plus_button .button-link-wrap svg' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+				],
+            ]
+        );
 		$this->start_controls_tabs( 'tabs_button_style' );
 
 		$this->start_controls_tab(
@@ -369,6 +390,7 @@ class L_ThePlus_Button extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .pt_plus_button .button-link-wrap' => 'color: {{VALUE}};',					
+					'{{WRAPPER}} .pt_plus_button .button-link-wrap svg' => 'fill: {{VALUE}};',					
 				],
 			]
 		);
@@ -531,6 +553,7 @@ class L_ThePlus_Button extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .pt_plus_button .button-link-wrap:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .pt_plus_button .button-link-wrap:hover svg' => 'fill: {{VALUE}};',
 					'{{WRAPPER}} .pt_plus_button.button-style-11 .button-link-wrap::before' => 'color: {{VALUE}};',					
 				],
 			]
@@ -1039,6 +1062,7 @@ class L_ThePlus_Button extends Widget_Base {
 		$before_after = $settings['before_after'];
 		$button_text = $settings['button_text'];
 		
+		$icons='';
 		if($settings["button_icon_style"]=='font_awesome'){
 			$icons=$settings["button_icon"];
 		}else if($settings["button_icon_style"]=='font_awesome_5'){
@@ -1046,8 +1070,6 @@ class L_ThePlus_Button extends Widget_Base {
 			\Elementor\Icons_Manager::render_icon( $settings['button_icon_5'], [ 'aria-hidden' => 'true' ]);
 			$icons = ob_get_contents();
 			ob_end_clean();
-		}else{
-			$icons='';
 		}
 		
 		if($before_after=='before' && !empty($icons)){
