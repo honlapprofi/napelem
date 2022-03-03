@@ -1,6 +1,6 @@
-/*! elementor - v3.5.5 - 03-02-2022 */
+/*! elementor - v3.5.6 - 28-02-2022 */
 "use strict";
-(self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["tabs"],{
+(self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["toggle"],{
 
 /***/ "../assets/dev/js/frontend/handlers/base-tabs.js":
 /*!*******************************************************!*\
@@ -96,12 +96,12 @@ class baseTabs extends elementorModules.frontend.handlers.Base {
 
       case 'Home':
         event.preventDefault();
-        $tabs.first().focus();
+        $tabs.first().trigger('focus');
         return;
 
       case 'End':
         event.preventDefault();
-        $tabs.last().focus();
+        $tabs.last().trigger('focus');
         return;
 
       default:
@@ -115,9 +115,9 @@ class baseTabs extends elementorModules.frontend.handlers.Base {
     if (nextTab) {
       nextTab.focus();
     } else if (-1 === tabIndex + direction) {
-      $tabs.last().focus();
+      $tabs.last().trigger('focus');
     } else {
-      $tabs.first().focus();
+      $tabs.first().trigger('focus');
     }
   }
 
@@ -225,10 +225,10 @@ exports["default"] = baseTabs;
 
 /***/ }),
 
-/***/ "../assets/dev/js/frontend/handlers/tabs.js":
-/*!**************************************************!*\
-  !*** ../assets/dev/js/frontend/handlers/tabs.js ***!
-  \**************************************************/
+/***/ "../assets/dev/js/frontend/handlers/toggle.js":
+/*!****************************************************!*\
+  !*** ../assets/dev/js/frontend/handlers/toggle.js ***!
+  \****************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
@@ -242,19 +242,22 @@ exports["default"] = void 0;
 
 var _baseTabs = _interopRequireDefault(__webpack_require__(/*! ./base-tabs */ "../assets/dev/js/frontend/handlers/base-tabs.js"));
 
-class Tabs extends _baseTabs.default {
+class Toggle extends _baseTabs.default {
   getDefaultSettings() {
     const defaultSettings = super.getDefaultSettings();
     return { ...defaultSettings,
-      toggleSelf: false
+      showTabFn: 'slideDown',
+      hideTabFn: 'slideUp',
+      hidePrevious: false,
+      autoExpand: 'editor'
     };
   }
 
 }
 
-exports["default"] = Tabs;
+exports["default"] = Toggle;
 
 /***/ })
 
 }]);
-//# sourceMappingURL=tabs.919de637ad8cbee0f46d.bundle.js.map
+//# sourceMappingURL=toggle.720329fccfaf33458a48.bundle.js.map

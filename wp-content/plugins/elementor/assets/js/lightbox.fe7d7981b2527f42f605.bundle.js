@@ -1,4 +1,4 @@
-/*! elementor - v3.5.5 - 03-02-2022 */
+/*! elementor - v3.5.6 - 28-02-2022 */
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["lightbox"],{
 
 /***/ "../node_modules/@babel/runtime/helpers/defineProperty.js":
@@ -482,7 +482,8 @@ module.exports = elementorModules.ViewModule.extend({
           image: options.url,
           index: 0,
           title: options.title,
-          description: options.description
+          description: options.description,
+          hash: options.hash
         }];
         options.slideshow = {
           slides,
@@ -520,6 +521,7 @@ module.exports = elementorModules.ViewModule.extend({
         type: 'image',
         id: slideshowID,
         url: element.href,
+        hash: element.getAttribute('e-action-hash'),
         title: element.dataset.elementorLightboxTitle,
         description: element.dataset.elementorLightboxDescription,
         modalOptions: {
@@ -562,7 +564,7 @@ module.exports = elementorModules.ViewModule.extend({
 
       if (-1 !== options.url.indexOf('vimeo.com')) {
         apiProvider = elementorFrontend.utils.vimeo;
-      } else if (options.url.match(/^(?:https?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com)/)) {
+      } else if (options.url.match(/^(?:https?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com|youtube-nocookie\.com)/)) {
         apiProvider = elementorFrontend.utils.youtube;
       } else {
         return;
@@ -625,7 +627,7 @@ module.exports = elementorModules.ViewModule.extend({
     $.each(socialNetworks, (key, data) => {
       const networkLabel = data.label,
             $link = $('<a>', {
-        href: this.createShareLink(key, itemUrl),
+        href: this.createShareLink(key, itemUrl, $activeSlide.attr('e-action-hash')),
         target: '_blank'
       }).text(networkLabel),
             $socialNetworkIconElement = this.isFontIconSvgExperiment ? $(data.iconElement.element) : $('<i>', {
@@ -648,17 +650,13 @@ module.exports = elementorModules.ViewModule.extend({
 
     return $linkList;
   },
-  createShareLink: function (networkName, itemUrl) {
+  createShareLink: function (networkName, itemUrl, hash = null) {
     const options = {};
 
     if ('pinterest' === networkName) {
       options.image = encodeURIComponent(itemUrl);
     } else {
-      const hash = elementorFrontend.utils.urlActions.createActionHash('lightbox', {
-        id: this.id,
-        url: itemUrl
-      });
-      options.url = encodeURIComponent(location.href.replace(/#.*/, '')) + hash;
+      options.url = encodeURIComponent(location.href.replace(/#.*/, '') + hash);
     }
 
     return ShareLink.getNetworkLink(networkName, options);
@@ -944,6 +942,10 @@ module.exports = elementorModules.ViewModule.extend({
         const $slideImage = $('<img>', imageAttributes);
         $zoomContainer.append([$slideImage, $slidePlaceholder]);
         $slide.append($zoomContainer);
+      }
+
+      if (slide.hash) {
+        $slide.attr('e-action-hash', slide.hash);
       }
 
       $slidesWrapper.append($slide);
@@ -1240,7 +1242,8 @@ module.exports = elementorModules.ViewModule.extend({
         image: this.href,
         index: slideIndex,
         title: this.dataset.elementorLightboxTitle,
-        description: this.dataset.elementorLightboxDescription
+        description: this.dataset.elementorLightboxDescription,
+        hash: this.getAttribute('e-action-hash')
       };
 
       if (slideVideo) {
@@ -1418,4 +1421,4 @@ module.exports = elementorModules.ViewModule.extend({
 /***/ })
 
 }]);
-//# sourceMappingURL=lightbox.ebe1fa827623232b9cd6.bundle.js.map
+//# sourceMappingURL=lightbox.fe7d7981b2527f42f605.bundle.js.map

@@ -1,38 +1,6 @@
-/*! elementor - v3.5.5 - 03-02-2022 */
+/*! elementor - v3.5.6 - 28-02-2022 */
 "use strict";
-(self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["accordion"],{
-
-/***/ "../assets/dev/js/frontend/handlers/accordion.js":
-/*!*******************************************************!*\
-  !*** ../assets/dev/js/frontend/handlers/accordion.js ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _baseTabs = _interopRequireDefault(__webpack_require__(/*! ./base-tabs */ "../assets/dev/js/frontend/handlers/base-tabs.js"));
-
-class Accordion extends _baseTabs.default {
-  getDefaultSettings() {
-    const defaultSettings = super.getDefaultSettings();
-    return { ...defaultSettings,
-      showTabFn: 'slideDown',
-      hideTabFn: 'slideUp'
-    };
-  }
-
-}
-
-exports["default"] = Accordion;
-
-/***/ }),
+(self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["tabs"],{
 
 /***/ "../assets/dev/js/frontend/handlers/base-tabs.js":
 /*!*******************************************************!*\
@@ -128,12 +96,12 @@ class baseTabs extends elementorModules.frontend.handlers.Base {
 
       case 'Home':
         event.preventDefault();
-        $tabs.first().focus();
+        $tabs.first().trigger('focus');
         return;
 
       case 'End':
         event.preventDefault();
-        $tabs.last().focus();
+        $tabs.last().trigger('focus');
         return;
 
       default:
@@ -147,9 +115,9 @@ class baseTabs extends elementorModules.frontend.handlers.Base {
     if (nextTab) {
       nextTab.focus();
     } else if (-1 === tabIndex + direction) {
-      $tabs.last().focus();
+      $tabs.last().trigger('focus');
     } else {
-      $tabs.first().focus();
+      $tabs.first().trigger('focus');
     }
   }
 
@@ -255,7 +223,38 @@ class baseTabs extends elementorModules.frontend.handlers.Base {
 
 exports["default"] = baseTabs;
 
+/***/ }),
+
+/***/ "../assets/dev/js/frontend/handlers/tabs.js":
+/*!**************************************************!*\
+  !*** ../assets/dev/js/frontend/handlers/tabs.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+
+var _baseTabs = _interopRequireDefault(__webpack_require__(/*! ./base-tabs */ "../assets/dev/js/frontend/handlers/base-tabs.js"));
+
+class Tabs extends _baseTabs.default {
+  getDefaultSettings() {
+    const defaultSettings = super.getDefaultSettings();
+    return { ...defaultSettings,
+      toggleSelf: false
+    };
+  }
+
+}
+
+exports["default"] = Tabs;
+
 /***/ })
 
 }]);
-//# sourceMappingURL=accordion.4d3ad59e593fbb4bbbf2.bundle.js.map
+//# sourceMappingURL=tabs.dd06203f51f30e1494d2.bundle.js.map
