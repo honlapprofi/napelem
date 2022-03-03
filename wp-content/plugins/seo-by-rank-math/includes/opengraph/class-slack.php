@@ -85,10 +85,10 @@ class Slack extends OpenGraph {
 
 		if ( $this->is_product() ) {
 			$data = $this->get_product_data();
-		} elseif ( $this->is_post() ) {
-			$data = $this->get_post_data();
 		} elseif ( $this->is_page() ) {
 			$data = $this->get_page_data();
+		} elseif ( $this->is_singular() ) {
+			$data = $this->get_post_data();
 		} elseif ( $this->is_term() ) {
 			$data = $this->get_term_data();
 		} elseif ( $this->is_author() ) {
@@ -140,12 +140,12 @@ class Slack extends OpenGraph {
 	}
 
 	/**
-	 * Check if current page is a post.
+	 * Check if current page is a post or a CPT.
 	 *
 	 * @return bool
 	 */
-	private function is_post() {
-		return Helper::get_settings( 'titles.pt_post_slack_enhanced_sharing' ) && is_singular( 'post' );
+	private function is_singular() {
+		return is_singular() && Helper::get_settings( sprintf( 'titles.pt_%s_slack_enhanced_sharing', get_post_type() ) );
 	}
 
 	/**
@@ -163,11 +163,7 @@ class Slack extends OpenGraph {
 	 * @return bool
 	 */
 	private function is_term() {
-		if ( is_category() ) {
-			return Helper::get_settings( 'titles.tax_category_slack_enhanced_sharing' );
-		} elseif ( is_tag() ) {
-			return Helper::get_settings( 'titles.tax_post_tag_slack_enhanced_sharing' );
-		} elseif ( is_tax() ) {
+		if ( is_category() || is_tag() || is_tax() ) {
 			global $wp_query;
 			return Helper::get_settings( sprintf( 'titles.tax_%s_slack_enhanced_sharing', $wp_query->get_queried_object()->taxonomy ) );
 		}
@@ -195,7 +191,7 @@ class Slack extends OpenGraph {
 		$data    = [];
 		$product = \wc_get_product( $post );
 
-		$data[ __( 'Price', 'rank-math' ) ]        = strip_tags( \wc_price( $product->get_price() ) ); // phpcs:ignore
+		$data[ __( 'Price', 'rank-math' ) ]        = $this->get_product_price( $product );
 		$data[ __( 'Availability', 'rank-math' ) ] = $this->get_product_availability( $product );
 
 		return $data;
@@ -209,8 +205,8 @@ class Slack extends OpenGraph {
 	private function get_edd_product_data() {
 		global $post;
 
-		$data    = [];
-		$data[ __( 'Price', 'rank-math' ) ] = strip_tags( \edd_price( $post->ID, false ) ); // phpcs:ignore
+		$data                               = [];
+		$data[ __( 'Price', 'rank-math' ) ] = wp_strip_all_tags( \edd_price( $post->ID, false ) );
 
 		return $data;
 	}
@@ -229,6 +225,29 @@ class Slack extends OpenGraph {
 		}
 
 		return $availability_text;
+	}
+
+	/**
+	 * Get price of WooCommerce product.
+	 * Gets price range for variable products.
+	 *
+	 * @param object $product Product object.
+	 *
+	 * @return string
+	 */
+	private function get_product_price( $product ) {
+		$price = wp_strip_all_tags( \wc_price( $product->get_price() ) );
+		if ( $product->is_type( 'variable' ) ) {
+			$lowest  = \wc_format_decimal( $product->get_variation_price( 'min', false ), \wc_get_price_decimals() );
+			$highest = \wc_format_decimal( $product->get_variation_price( 'max', false ), \wc_get_price_decimals() );
+
+			$price = wp_strip_all_tags( \wc_price( $lowest ) . ' - ' . \wc_price( $highest ) );
+			if ( $lowest === $highest ) {
+				$price = wp_strip_all_tags( \wc_price( $lowest ) );
+			}
+		}
+
+		return $price;
 	}
 
 	/**
@@ -255,7 +274,7 @@ class Slack extends OpenGraph {
 	private function get_page_data() {
 		global $post;
 
-		$data = [];
+		$data                                      = [];
 		$data[ __( 'Time to read', 'rank-math' ) ] = $this->calculate_time_to_read( $post );
 
 		return $data;
@@ -301,8 +320,13 @@ class Slack extends OpenGraph {
 			return $data;
 		}
 
-		$label          = get_post_type_object( get_post_type() )->labels->name;
-		$data[ $label ] = $term->category_count;
+		$label            = __( 'Items', 'rank-math' );
+		$post_type_object = get_post_type_object( get_post_type() );
+		if ( is_object( $post_type_object ) && isset( $post_type_object->labels->name ) ) {
+			$label = $post_type_object->labels->name;
+		}
+
+		$data[ $label ] = ( ! empty( $term->category_count ) ? $term->category_count : $term->count );
 
 		return $data;
 	}

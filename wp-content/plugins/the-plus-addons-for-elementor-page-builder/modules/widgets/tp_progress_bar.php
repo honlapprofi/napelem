@@ -45,7 +45,7 @@ class L_ThePlus_Progress_Bar extends Widget_Base {
 		return [ 'pie chart', 'progress bar', 'chart'];
 	}
 
-    protected function _register_controls() {
+    protected function register_controls() {
 		
 		/* Progress Bar */
 		

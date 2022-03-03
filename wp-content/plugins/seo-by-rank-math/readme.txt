@@ -2,10 +2,10 @@
 Contributors: rankmath
 Plugin link: https://rankmath.com/?utm_source=LP&utm_campaign=WP
 Tags: seo, sitemap, google search console, schema, redirection, WordPress SEO
-Tested up to: 5.8
+Tested up to: 5.9
 Requires at least: 5.6
 Requires PHP: 7.2
-Stable tag: 1.0.79
+Stable tag: 1.0.82.1
 License: GPL-2.0+
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 
@@ -144,7 +144,7 @@ Even with significantly more features than other plugins, Rank Math SEO loads am
 
 * **Quick Edit SEO Details** - Go through a lot of posts/pages quickly by ensuring they are optimized for search engines. Quickly edit multiple SEO fields at once using Rank Math SEO.
 
-* **[Instant Indexing for Bing](https://rankmath.com/blog/bing-indexing-api/)** - Get your content instantly indexed by Bing. Enter a few key details and you are all set and ready to go.
+* **[Instant Indexing for Bing & Yandex](https://rankmath.com/kb/how-to-use-indexnow/)** - Get your content instantly indexed by Bing & Yandex using their IndexNow API.
 
 * **[Instant Indexing for Google](https://rankmath.com/blog/google-indexing-api/)** - Instantly getting indexed by Google used to be reserved to huge brands and large websites. Not anymore. Just about anyone can take advantage of Google’s Instant Indexing feature using Rank Math SEO.
 
@@ -270,7 +270,6 @@ Even with significantly more features than other plugins, Rank Math SEO loads am
 * **Search Engine Verification Tools**
 	* Bing Site Verification
 	* Baidu Site Verification
-	* Alexa Site Verification
 	* Yandex Site Verification
 	* **Google Site Verification**
 	* Pinterest Site Verification
@@ -368,7 +367,7 @@ and many more
 ✔ Open External Links in New Tabs
 ✔ Nofollow External Links
 ✔ `Noindex` Paginated, Archive, Search Result Pages
-✔ Instant Indexing for Bing [Also Google using our <a href="https://rankmath.com/blog/google-indexing-api/" target="_blank">Instant Indexing Plugin</a>]
+✔ Instant Indexing for Bing & Yandex [Also Google using our <a href="https://rankmath.com/blog/google-indexing-api/" target="_blank">Instant Indexing Plugin</a>]
 
 **WooCommerce SEO**
 ✔ Automatic Schema for WooCommerce Products
@@ -581,15 +580,29 @@ Please drop us an email at support@rankmath.com and we would be more than happy 
 
 == Changelog ==
 
-= 1.0.79 [Dec 22, 2021] =
-* Added: [HUGE!] Enhanced [Sharing on Slack](https://rankmath.com/kb/slack-enhanced-sharing/)
-* Improved: Renamed `Exclude this Image from sitemap` label to make it more contextualized
-* Fixed: PHP warning when using the [`rank_math_contact_info` shortcode](https://rankmath.com/kb/local-seo/#contact-info-shortcode)
-* Fixed: [Thumbnail Overlay](https://rankmath.com/kb/meta-box-social-tab/#add-icon-overlay-to-thumbnails) was not working on the server where `allow_url_fopen` is not enabled
-* Fixed: SEO data was not updating on Classic editor when the `Enter` key is used to submit the form
-* Fixed: Saving a page with Firefox using Divi Backend editor was showing an error on some setups
-* Fixed: Editing a product made with Divi Backend editor was showing a popup
-* Fixed: Product short description was not updating after editing a product using Divi Backend editor
-* Fixed: Deleting [Focus keyword](https://rankmath.com/kb/general-tab/#the-focus-keyword-section) was not working after the last update
+= 1.0.82.1 [Feb 11, 2022] =
+* Fixed: WooCommerce Variable products with the query string in URL were not working well when the [Remove Product Base](https://rankmath.com/kb/general-settings/#remove-base) option was enabled
+
+= 1.0.82 [Feb 09, 2022] =
+* Added: [New options](https://i.rankmath.com/LoMD3n) to debug the IndexNow API related issues
+* Added: Support for Cyrillic characters in the Content Analysis, now languages like Russian are supported
+* Added: Support for ImageMagick extension
+* Added: [New filter](https://rankmath.com/kb/filters-hooks-api-developer/#change-sitemap-caching-mode) to change the Sitemap caching method
+* Improved: Made several significant code improvements in the Analytics Module that have made the plugin even FASTER and lighter
+* Improved: Made several improvements in [Content AI](https://rankmath.com/content-ai/) to make it easy to understand
+* Improved: Plugin performance by removing duplicate queries
+* Improved: Don't submit `noindex` posts to the [IndexNow API](https://rankmath.com/kb/how-to-use-indexnow/) after updating the post
+* Improved: Warning shown below the Thumbnail Overlay field
+* Fixed: JS errors in Gutenberg editor after disabling the PRO version
+* Fixed: Content analysis was not analyzing the main post content on the pages that were using Divi's dynamic Header & Footer templates
+* Fixed: PHP warning on Divi's frontend editor when WP File Manager plugin was active
+* Fixed: Searching for encoded [404 URLs](https://rankmath.com/kb/advanced-404-monitor/) was not working
+* Fixed: Too many redirections error on some setups when [Remove Product Base](https://rankmath.com/kb/general-settings/#remove-base) option was enabled
+* Fixed: Editing a Focus Keyword was not working
+* Fixed: Content AI's [Recommended keywords](https://rankmath.com/kb/how-to-use-content-ai/#keywords) were not detecting accented characters in the Content area
+* Fixed: SEO panel was getting closed after removing the Focus keyword in the Divi Page Builder
+* Fixed: [Slack sharing](https://rankmath.com/kb/slack-enhanced-sharing/) was showing the wrong product price for the Product variant
+* Fixed: PHP errors on some sites
+* Removed: [Alexa Verification field](https://rankmath.com/kb/verify-your-site-with-alexa/#how-to-set-up-your-site-on-alexa) from the General Settings as it is no longer used
 
 Full changelog can be found here - **[Rank Math SEO changelog](https://rankmath.com/changelog/?utm_source=Plugin&utm_medium=Changelog&utm_campaign=WP)**

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 add_action( 'cmb2_admin_init', 'l_theplus_ele_team_memmber_setting_metaboxes' );
 /**
  * Define the metabox and field configurations.

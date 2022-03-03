@@ -1,5 +1,6 @@
 <?php	
 use Elementor\Plugin;
+use Elementor\Utils;
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -60,12 +61,22 @@ class L_Theplus_Elementor_Plugin_Options
         );
 		$this->widget_listout();
 		$this->plus_extra_listout();
-		add_action( 'admin_post_theplus_widgets_opts_save', array( $this,'theplus_widgets_opts_save_action') );
-		add_action('wp_ajax_theplus_widget_search', array($this, 'theplus_widget_search'));
+		if(current_user_can("manage_options")){
+			add_action( 'admin_post_theplus_widgets_opts_save', array( $this,'theplus_widgets_opts_save_action') );
+			add_action('wp_ajax_theplus_widget_search', array($this, 'theplus_widget_search'));
+		}		
+		
 		
 		//Elementor widget
-		add_action( 'elementor/widgets/widgets_registered', array( $this, 'tp_ele_unregister_widgets' ), 15 );
-		add_action( 'admin_post_tp_ele_widgets_opts_save', array( $this,'ele_widgets_opts_save_action') );
+		add_action( 'elementor/widgets/register', array( $this, 'tp_ele_unregister_widgets' ), 15 );
+		if(current_user_can("manage_options")){
+			add_action( 'admin_post_tp_ele_widgets_opts_save', array( $this,'ele_widgets_opts_save_action') );
+		}
+		
+		add_action('wp_ajax_tp_admin_rateus_notice',	array($this,'tp_rateus_notice_dismiss'));
+		add_action('wp_ajax_tp_admin_rateus_notice_never',	array($this,'tp_rateus_notice_dismiss_ever'));
+		
+		add_action( 'init', array( $this,'tp_ele_pro_default_wid_save') );
 		
     }
     
@@ -83,6 +94,111 @@ class L_Theplus_Elementor_Plugin_Options
 			'theme-elements',
 		);
 	}	
+	
+	public function tp_ele_pro_default_wid_save(){
+		$option_name='ele_default_plus_options';
+		$value='1';
+		$deprecated = null;
+		$autoload = 'no';
+		if ( is_admin() && get_option( $option_name ) !== false ) {
+		} else if( is_admin() ){
+			$default_load=get_option( 'theplus_elementor_widget' );
+			if ( $default_load !== false && $default_load!='' ) {
+				add_option( $option_name,$value, $deprecated, $autoload );
+			}else{
+				$widgets_list = $this->tp_ele_get_registered_widgets();
+				$ele_wid_options=get_option( 'theplus_elementor_widget' );
+				$ele_wid_options['elementor_check_elements']= array_keys($widgets_list);
+				add_option( 'theplus_elementor_widget',$ele_wid_options, $deprecated, $autoload );
+				add_option( $option_name,$value, $deprecated, $autoload );
+			}
+		}
+		
+		/*@sinnce 5.0.5*/
+		if ( defined( 'ELEMENTOR_VERSION' ) &&  version_compare( ELEMENTOR_VERSION, '3.5.2', '>=' ) ) {
+			$option_name_ele350reset ='ele350_default_plus_options';
+			if ( is_admin() && get_option( $option_name_ele350reset ) !== false ) {
+			} else if( is_admin() ){
+				$widgets_list = $this->tp_ele_get_registered_widgets();
+				$ele_wid_options=[];
+				$ele_wid_options['elementor_check_elements']= array_keys($widgets_list);				
+				update_option( 'theplus_elementor_widget',$ele_wid_options, $deprecated, $autoload );
+				update_option( $option_name_ele350reset,$value, $deprecated, $autoload );
+			}
+		}
+		
+		if(defined( 'ELEMENTOR_PRO_VERSION' ) && Utils::has_pro()){
+			$option_name_pro ='elepro_default_plus_options';
+			if ( is_admin() && get_option( $option_name_pro ) !== false ) {
+			} else if( is_admin() ){
+				$widgets_list = $this->tp_ele_get_registered_widgets();
+				$ele_wid_options=[];
+				$ele_wid_options['elementor_check_elements']= array_keys($widgets_list);				
+				update_option( 'theplus_elementor_widget',$ele_wid_options, $deprecated, $autoload );
+				update_option( $option_name_pro,$value, $deprecated, $autoload );
+			}
+			
+			if(function_exists( 'WC' )){
+				$option_name_pro_wc ='eleprowc_default_plus_options';
+				if ( is_admin() && get_option( $option_name_pro_wc ) !== false ) {
+				} else if( is_admin() ){
+					$widgets_list = $this->tp_ele_get_registered_widgets();
+					$ele_wid_options=[];
+					$ele_wid_options['elementor_check_elements']= array_keys($widgets_list);				
+					update_option( 'theplus_elementor_widget',$ele_wid_options, $deprecated, $autoload );
+					update_option( $option_name_pro_wc,$value, $deprecated, $autoload );
+				}
+			}			
+			
+			if(defined( 'WPCF7_VERSION' )){
+				$option_name_pro_cf7 ='eleprocf7_default_plus_options';
+				if ( is_admin() && get_option( $option_name_pro_cf7 ) !== false ) {
+				} else if( is_admin() ){
+					$widgets_list = $this->tp_ele_get_registered_widgets();
+					$ele_wid_options=[];
+					$ele_wid_options['elementor_check_elements']= array_keys($widgets_list);				
+					update_option( 'theplus_elementor_widget',$ele_wid_options, $deprecated, $autoload );
+					update_option( $option_name_pro_cf7,$value, $deprecated, $autoload );
+				}
+			}
+			
+			if(defined( 'FLUENTFORM_VERSION' )){
+				$option_name_pro_ff ='eleproff_default_plus_options';
+				if ( is_admin() && get_option( $option_name_pro_ff ) !== false ) {
+				} else if( is_admin() ){
+					$widgets_list = $this->tp_ele_get_registered_widgets();
+					$ele_wid_options=[];
+					$ele_wid_options['elementor_check_elements']= array_keys($widgets_list);				
+					update_option( 'theplus_elementor_widget',$ele_wid_options, $deprecated, $autoload );
+					update_option( $option_name_pro_ff,$value, $deprecated, $autoload );
+				}
+			}			
+			
+			if(defined( 'MC4WP_VERSION' )){
+				$option_name_pro_mc ='elepromc_default_plus_options';
+				if ( is_admin() && get_option( $option_name_pro_mc ) !== false ) {
+				} else if( is_admin() ){
+					$widgets_list = $this->tp_ele_get_registered_widgets();
+					$ele_wid_options=[];
+					$ele_wid_options['elementor_check_elements']= array_keys($widgets_list);				
+					update_option( 'theplus_elementor_widget',$ele_wid_options, $deprecated, $autoload );
+					update_option( $option_name_pro_mc,$value, $deprecated, $autoload );
+				}
+			}
+			
+			if(class_exists( 'Popup_Maker' )){
+				$option_name_pro_pm ='elepropm_default_plus_options';
+				if ( is_admin() && get_option( $option_name_pro_pm ) !== false ) {
+				} else if( is_admin() ){
+					$widgets_list = $this->tp_ele_get_registered_widgets();
+					$ele_wid_options=[];
+					$ele_wid_options['elementor_check_elements']= array_keys($widgets_list);				
+					update_option( 'theplus_elementor_widget',$ele_wid_options, $deprecated, $autoload );
+					update_option( $option_name_pro_pm,$value, $deprecated, $autoload );
+				}
+			}
+		}
+	}
 	
 	/**
      * Version 5.0
@@ -114,27 +230,10 @@ class L_Theplus_Elementor_Plugin_Options
 		
 		asort( $widgets );
 		$this->widgets = $widgets;
-		$option_name='ele_default_plus_options';
-		$value='1';
-		$deprecated = null;
-		$autoload = 'no';
-		if ( is_admin() && get_option( $option_name ) !== false ) {
-		} else if( is_admin() ){
-			$default_load=get_option( 'theplus_elementor_widget' );
-			if ( $default_load !== false && $default_load!='' ) {
-				add_option( $option_name,$value, $deprecated, $autoload );
-			}else{
-				$ele_wid_options=get_option( 'theplus_elementor_widget' );
-				$ele_wid_options['elementor_check_elements']= array_keys($widgets);
-				add_option( 'theplus_elementor_widget',$ele_wid_options, $deprecated, $autoload );
-				add_option( $option_name,$value, $deprecated, $autoload );
-			}
-
-		}
 		
 		return $widgets;
 	}
-	
+
 	public function ele_widgets_opts_save_action() {
 		$action_page = 'theplus_elementor_widget';
 		if(isset($_POST["ele-submit-key"]) && !empty($_POST["ele-submit-key"]) && $_POST["ele-submit-key"]=='Save'){
@@ -183,7 +282,7 @@ class L_Theplus_Elementor_Plugin_Options
 		if(!empty($selected_widgets) && isset($selected_widgets['elementor_check_elements'])){			
 		$get_unreg = array_diff($elewid,$selected_widgets['elementor_check_elements']);
 			foreach ( $get_unreg as $key => $widget ) {
-				$elementor->widgets_manager->unregister_widget_type( $widget );
+				$elementor->widgets_manager->unregister( $widget );
 			}
 		}
 	}
@@ -208,8 +307,44 @@ class L_Theplus_Elementor_Plugin_Options
             $this,
             'add_options_page'
         ));
-    }
-    
+    }    
+		
+	// Admin dismiss notice foreever
+	public function tp_rateus_notice_dismiss_ever(){
+		if ( ! check_ajax_referer( 'theplus-addons', 'security', false ) ) {
+			wp_send_json_error( esc_html__('Invalid security', 'tpebl') );
+		}
+		
+		if ( ! current_user_can('install_plugins') ) {
+			wp_send_json_error( esc_html__('Invalid User', 'tpebl') );
+		}
+		
+		if(get_option('tp-rateus-notice') ===false){
+			add_option('tp-rateus-notice','never');
+		}else{
+			update_option('tp-rateus-notice','never');
+		}
+		wp_send_json_success();
+	}
+	
+	// Admin dismiss notice
+	public function tp_rateus_notice_dismiss(){		
+		if ( ! check_ajax_referer( 'theplus-addons', 'security', false ) ) {
+			wp_send_json_error( esc_html__('Invalid security', 'tpebl') );
+		}
+		
+		if ( ! current_user_can('install_plugins') ) {
+			wp_send_json_error( esc_html__('Invalid User', 'tpebl') );
+		}
+		
+		if(get_option('tp-rateus-notice') ===false){
+			add_option('tp-rateus-notice',date('M d, Y', strtotime("+14 day")));
+		}else{
+			update_option('tp-rateus-notice',date('M d, Y', strtotime("+14 day")));
+		}
+		wp_send_json_success();
+	}
+	
     /**
      * Register our setting to WP
      * @since  1.0.0
@@ -468,6 +603,15 @@ class L_Theplus_Elementor_Plugin_Options
 				'tag' => 'free',
 				'labelIcon' => '<svg xmlns="http://www.w3.org/2000/svg" width="16.867" height="23" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216zm-148.9 88.3l-81.2-59c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h14c6.6 0 12 5.4 12 12v146.3l70.5 51.3c5.4 3.9 6.5 11.4 2.6 16.8l-8.2 11.3c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>',
 				'keyword' => ['count down'],
+			],
+			'tp_coupon_code' => [
+				'label' => esc_html__('Coupon Code','tpebl'),
+				'demoUrl' => 'https://theplusaddons.com/widgets/coupon-code/',
+				'docUrl' => '#doc',
+				'videoUrl' => '#',
+				'tag' => 'pro',
+				'labelIcon' => '<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="tags" class="svg-inline--fa fa-tags fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" width="16.867" height="23" viewBox="0 0 640 512"><path d="M625.941 293.823L421.823 497.941c-18.746 18.746-49.138 18.745-67.882 0l-1.775-1.775 22.627-22.627 1.775 1.775c6.253 6.253 16.384 6.243 22.627 0l204.118-204.118c6.238-6.239 6.238-16.389 0-22.627L391.431 36.686A15.895 15.895 0 0 0 380.117 32h-19.549l-32-32h51.549a48 48 0 0 1 33.941 14.059L625.94 225.941c18.746 18.745 18.746 49.137.001 67.882zM252.118 32H48c-8.822 0-16 7.178-16 16v204.118c0 4.274 1.664 8.292 4.686 11.314l211.882 211.882c6.253 6.253 16.384 6.243 22.627 0l204.118-204.118c6.238-6.239 6.238-16.389 0-22.627L263.431 36.686A15.895 15.895 0 0 0 252.118 32m0-32a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.746 18.746-49.138 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118V48C0 21.49 21.49 0 48 0h204.118zM144 124c-11.028 0-20 8.972-20 20s8.972 20 20 20 20-8.972 20-20-8.972-20-20-20m0-28c26.51 0 48 21.49 48 48s-21.49 48-48 48-48-21.49-48-48 21.49-48 48-48z"></path></svg>',
+				'keyword' => ['coupon','promo code','code','discount'],
 			],
 			'tp_dark_mode' => [
 				'label' => esc_html__('Dark Mode','tpebl'),
@@ -919,6 +1063,24 @@ class L_Theplus_Elementor_Plugin_Options
 				'labelIcon' => '<svg xmlns="http://www.w3.org/2000/svg" width="16.867" height="23" viewBox="0 0 320 512"><path d="M288 288H32c-28.4 0-42.8 34.5-22.6 54.6l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c20-20.1 5.7-54.6-22.7-54.6zM160 448L32 320h256L160 448zM32 224h256c28.4 0 42.8-34.5 22.6-54.6l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128C-10.7 189.5 3.6 224 32 224zM160 64l128 128H32L160 64z"/></svg>',
 				'keyword' => ['scroll navigation'],
 			],
+			'tp_search_bar' => [
+				'label' => esc_html__('Search bar','tpebl'),
+				'demoUrl' => 'https://theplusaddons.com/plus-search-filters/advanced-wp-ajax-searchbar/',
+				'docUrl' => '#',
+				'videoUrl' => '#',
+				'tag' => 'pro',
+				'labelIcon' => '<svg xmlns="http://www.w3.org/2000/svg" width="16.867" height="23" viewBox="0 0 512 512"><path d="M508.5 481.6l-129-129c-2.3-2.3-5.3-3.5-8.5-3.5h-10.3C395 312 416 262.5 416 208 416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c54.5 0 104-21 141.1-55.2V371c0 3.2 1.3 6.2 3.5 8.5l129 129c4.7 4.7 12.3 4.7 17 0l9.9-9.9c4.7-4.7 4.7-12.3 0-17zM208 384c-97.3 0-176-78.7-176-176S110.7 32 208 32s176 78.7 176 176-78.7 176-176 176z"/></svg>',
+				'keyword' => ['search bar'],
+			],
+			'tp_search_filter' => [
+				'label' => esc_html__('WP Search Filters','tpebl'),
+				'demoUrl' => 'https://theplusaddons.com/plus-search-filters/',
+				'docUrl' => '#',
+				'videoUrl' => '#',
+				'tag' => 'pro',
+				'labelIcon' => '<svg xmlns="http://www.w3.org/2000/svg" width="16.867" height="23" viewBox="0 0 512 512"><path d="M25.07 140.44a11.93 11.93 0 0 0 16.91.09L96 87.86V472a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V88.08l53.94 52.35a12 12 0 0 0 16.92 0l5.64-5.66a12 12 0 0 0 0-17l-84.06-82.3a11.94 11.94 0 0 0-16.87 0l-84 82.32a12 12 0 0 0-.09 17zM276 192h152a20 20 0 0 0 20-20V52a20 20 0 0 0-20-20H276a20 20 0 0 0-20 20v120a20 20 0 0 0 20 20zm12-128h128v96H288zm196 192H284a28 28 0 0 0-28 28v168a28 28 0 0 0 28 28h200a28 28 0 0 0 28-28V284a28 28 0 0 0-28-28zm-4 192H288V288h192z"></path></svg>',
+				'keyword' => ['search filter'],
+			],
 			'tp_site_logo' => [
 				'label' => esc_html__('Site Logo','tpebl'),
 				'demoUrl' => 'https://theplusaddons.com/widgets/elementor-header-navigation-builder/',
@@ -999,6 +1161,15 @@ class L_Theplus_Elementor_Plugin_Options
 				'tag' => 'pro',
 				'labelIcon' => '<svg xmlns="http://www.w3.org/2000/svg" width="16.867" height="23" viewBox="0 0 576 512"><path d="M384 96c88.426 0 160 71.561 160 160 0 88.426-71.561 160-160 160H192c-88.426 0-160-71.561-160-160 0-88.425 71.561-160 160-160h192m0-32H192C85.961 64 0 149.961 0 256s85.961 192 192 192h192c106.039 0 192-85.961 192-192S490.039 64 384 64zm0 304c61.856 0 112-50.144 112-112s-50.144-112-112-112-112 50.144-112 112c0 28.404 10.574 54.339 27.999 74.082C320.522 353.335 350.548 368 384 368z"/></svg>',
 				'keyword' => ['switcher'],
+			],
+			'tp_syntax_highlighter' => [
+				'label' => esc_html__('Syntax Highlighter','tpebl'),
+				'demoUrl' => 'https://theplusaddons.com/widgets/source-code-syntax-highlighter/',
+				'docUrl' => '#doc',
+				'videoUrl' => '#',
+				'tag' => 'pro',
+				'labelIcon' => '<svg aria-hidden="true" focusable="false" data-prefix="fad" data-icon="brackets-curly" class="svg-inline--fa fa-brackets-curly fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" width="16.867" height="23" viewBox="0 0 576 512"><g class="fa-group"><path class="fa-secondary" d="M566.64 233.37a32 32 0 0 1 0 45.25l-45.25 45.25a32 32 0 0 0-9.39 22.64V384a96 96 0 0 1-96 96h-48a16 16 0 0 1-16-16v-32a16 16 0 0 1 16-16h48a32 32 0 0 0 32-32v-37.48a96 96 0 0 1 28.13-67.89L498.76 256l-22.62-22.62A96 96 0 0 1 448 165.47V128a32 32 0 0 0-32-32h-48a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h48a96 96 0 0 1 96 96v37.48a32 32 0 0 0 9.38 22.65l45.25 45.24z" opacity="0.4"></path><path class="fa-primary"  d="M208 32h-48a96 96 0 0 0-96 96v37.48a32.12 32.12 0 0 1-9.38 22.65L9.38 233.37a32 32 0 0 0 0 45.25l45.25 45.25A32.05 32.05 0 0 1 64 346.51V384a96 96 0 0 0 96 96h48a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16h-48a32 32 0 0 1-32-32v-37.48a96 96 0 0 0-28.13-67.89L77.26 256l22.63-22.63A96 96 0 0 0 128 165.48V128a32 32 0 0 1 32-32h48a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path></g></svg>',
+				'keyword' => ['syntax highlighter','code','php','html','css','text box'],
 			],
 			'tp_table' => [
 				'label' => esc_html__('Table','tpebl'),
@@ -1698,7 +1869,36 @@ class L_Theplus_Elementor_Plugin_Options
 						$output .= $out;
 					$output .='</div>';
 				$output .='</div>';
-			
+				
+				/*rate us*/
+				if( get_option('tp-rateus-notice') !='never' && ( get_option('tp-rateus-notice') === false || get_option('tp-rateus-notice') < date('M d, Y')) ){
+					if(get_option('tp-rateus-notice') === false){
+						add_option('tp-rateus-notice',date('M d, Y', strtotime("+14 day")));
+					}else{
+						$output .= '<div class="theplus-rateus-wrapper">
+					<div class="theplus-rateus-close"><a href="#">X</a></div>
+						<div class="theplus-rateus-title">'.esc_html__("Thank you for selecting the The Plus Addons to Supercharge your Elementor workflow, we would love to hear your experience.",'tpebl').'</div>
+							<div class="theplus-rateus-description">'.esc_html__("Please consider taking a few seconds, to share your valuable review",'tpebl').'</div>
+							<div class="theplus-rateus-button">
+								<div class="theplus-rateus-button-iwill"><a href="https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/reviews/?filter=5" target="_blank">'.esc_html__("Sure, I will ❤",'tpebl').'</a></div>
+								<div class="theplus-rateus-button-done"><a href="#">'.esc_html__("Already done 😊",'tpebl').'</a></div>
+								<div class="theplus-rateus-button-sep">|</div>
+								<div class="theplus-rateus-button-help">';
+								if(defined('THEPLUS_VERSION')){
+									$output .= '<a href="https://store.posimyth.com/helpdesk" target="_blank">'.esc_html__("Need Help? 😥",'tpebl').'</a>';
+								}else{
+									$output .= '<a href="https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/" target="_blank">'.esc_html__("Need Help? 😥",'tpebl').'</a>';
+								}								
+								
+								$output .= '</div>
+							</div>
+						</div>';
+					}
+					
+				}
+				
+				/*rate us*/
+				
 				/*Content Options*/
 				$output .='<div class="theplus-settings-form-wrapper form-'.$tab_forms[0]['id'].'">';
 				

@@ -1,10 +1,10 @@
-=== The Plus Addons for Elementor Page Builder ===
+=== The Plus Addons for Elementor ===
 Contributors: posimyththemes, ankitposimyth, nirmalkavaiya, sagarpatel124
 Tags: Elementor, elementor widgets, elements, elementor addon, elementor templates, elementor widgets, extensions
 Requires at least: 5.7.0
 Tested up to: 5.8
 Requires PHP: 5.6
-Stable tag: 5.0.2
+Stable tag: 5.0.5
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -12,16 +12,16 @@ Next plugin needed after Installing Elementor. Add Extra 120+ Widgets & 300+ Pre
 
 == Description ==
 
-Introducing The Plus Addons for Elementor with more than <strong>120+ Dynamic Premium widgets, 300+ UI Essential Blocks & 18+ Ready-to-use templates</strong> with the most advanced functionalities including Blog builder, Woo Builder, Mega Menu, Filtered Gallery and much more to supercharge your Elementor like never before.Whether you're working on your Perfect blog, creating a sale generating online store or building a website for your next big idea, you can do it all with Elementor when you have [The Plus Addons for Elementor](https://theplusaddons.com/).
+Introducing The Plus Addons for Elementor with more than <strong>120+ Powerful Widgets & Extension, 300+ UI Essential Blocks & 18+ Ready-to-use templates</strong> with the most advanced functionalities including Blog builder, Woo Builder, Mega Menu, Filtered Gallery and much more to supercharge your Elementor like never before. Whether you're working on your Perfect blog, creating a sale generating online store or building a website for your next big idea, you can do it all with Elementor when you have [The Plus Addons for Elementor](https://theplusaddons.com/).
 
-Enjoy a Complete<strong> No-Code experience</strong> and build everything with your simple mouse clicks. <strong>No Technical knowledge</strong> required, just plug-in and Get Started.Crafted with care and love to seamlessly integrate for smooth & happy workflow to impress your clients. Perfect for <strong>Bloggers, Freelancer, Marketer, Agency Owners, Designers</strong> and anyone who loves using Elementor giving  you the freedom to innovate.
+Enjoy a Complete<strong> No-Code experience</strong> and build everything with your simple mouse clicks. <strong>No Technical knowledge</strong> required, just plug-in and Get Started.Crafted with care and love to seamlessly integrate for smooth & happy workflow to impress your clients. Perfect for <strong>Bloggers, Freelancers, Marketers, Agency Owners, Designers</strong> and anyone who loves using Elementor giving you the freedom to innovate.
 
-| <strong> [ ⚡ SUPERCHARGE MY SITE NOW ](https://theplusaddons.com/pricing)</strong> |
+| <strong> [ ⚡ SUPERCHARGE MY SITE NOW ](https://theplusaddons.com/)</strong> |
 
 ~~~~~~~~~~~~~~~~
 
 <strong> Quick Navigation Links</strong>
-[ 🌐 Visit Website](https://theplusaddons.com/) | [ 📹 Video Guides](https://www.youtube.com/watch?v=y2KrybXgwV8&list=PLFRO-irWzXaLK9H5opSt88xueTnRhqvO5)| [ 📑 Documentations](https://docs.posimyth.com/tpae/) | [ 🛣️ Roadmap](http://roadmap.theplusaddons.com/) | [ 👥 Join Community](https://www.facebook.com/groups/theplus4elementor) |[ 🤝 Free Support](https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/") | [ ⭐ Premium Support](https://posimyth.ticksy.com/)
+[ 🌐 Visit Website](https://theplusaddons.com/) | [ 📹 Video Guides](https://www.youtube.com/watch?v=y2KrybXgwV8&list=PLFRO-irWzXaLK9H5opSt88xueTnRhqvO5)| [ 📑 Documentations](https://docs.posimyth.com/tpae/) | [ 🛣️ Roadmap](http://roadmap.theplusaddons.com/) | [ 👥 Join Community](https://www.facebook.com/groups/theplus4elementor) |[ 🤝 Free Support](https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/) | [ ⭐ Premium Support](https://store.posimyth.com/helpdesk/)
 
  
 
@@ -51,7 +51,7 @@ https://www.youtube.com/watch?v=yG_oyhz-oAY
 * <strong>Supports RTL | WPML</strong> or any Translation | <strong>Multisite</strong><br><br><br>
 * <strong>Optimized Code Delivery</strong> with <strong>Ultra Light Modular</strong> backend architecture<br><br><br>
 * <strong>SEO Friendly,  A/B Tested Designs</strong> and <strong>Mobile Friendly</strong><br><br><br>
-* Compatible with most <strong>WordPress themes</strong><br><br><br>
+* Compatible with most <strong>WordPress themes like <strong>Nexter, Blocksy , Kadence, Astra, OceanWP, GeneratePress, Neve etc.</strong><br><br><br>
 
 and much more explore more below
 
@@ -79,19 +79,19 @@ https://www.youtube.com/watch?v=2bdeeu6sZPw
 4. <strong>[Countdown](https://theplusaddons.com/widgets/countdown/)</strong> - Create amazing dynamic countdown designs. It’s suitable for coming soon, under maintenance, and other timer sections. Create Urgency to boost sales
 5. <strong>[Heading Title](https://theplusaddons.com/widgets/heading-titles/)</strong> - Simple and Multi Purpose Heading title options with magic scroll, tooltip, scroll animation and Full Typography options for WordPress using Elementor.
 6. <strong>[Infobox](https://theplusaddons.com/widgets/infobox/)</strong> - Amazing widget to show important information in your website .Infobox is proven and with breakthrough UI/UX element for WordPress using Elementor.
-7. <strong>[Navigation Menu Lite](https://theplusaddons.com/widgets/elementor-header-navigation-builder/)</strong> - Using Plain Theme, Theme builder or elementor pro and looking forward to have navigation menu? Here you go using this option. Create extraordinary navigation bars with unlimited opportunities
-8. <strong>[Piechart](https://theplusaddons.com/widgets/piechart/)</strong> - Most basic web element designed creative way to showcase your charts in a visually appealing way. Customise Pie Chart in Elementor the way you want and You will have multiple options of It’s animations on First Load and Scroll.
-9. <strong>[Post Searchs](https://theplusaddons.com/widgets/search-bar/)</strong> - Make all your pages searchable using amazing search bar widget, which search using wordpress’s main search function. Design with tons of options.
-10. <strong>[Pricing Tables](https://theplusaddons.com/widgets/pricing-table/)</strong> - We care for your money, So It’s most amazing and designed based on AB tested philosophies to make it Elite pricing table for WordPress using Elementor.
-11. <strong>[Progress Bar](https://theplusaddons.com/widgets/progress-bar/)</strong> - Use this widget for multipurpose way to show your progress bar, skill bar, value bar, percentage bar or any other kind of Value in Progress bar format in Elementor using this amazing, versatile and fully customisable widget.
-12. <strong>[Social Icon](https://theplusaddons.com/widgets/social-icon/)</strong> - Your handy tool to create amazing social media icons and setup links. It have tons of social icon styles to use in WordPress using Elementor
+7. <strong>[Navigation Menu Lite](https://theplusaddons.com/widgets/elementor-header-navigation-builder/)</strong> - Using Plain Theme, Theme builder or elementor pro and looking forward to having a navigation menu? Here you go using this option. Create extraordinary navigation bars with unlimited opportunities
+8. <strong>[Piechart](https://theplusaddons.com/widgets/piechart/)</strong> - Most basic web elements are designed in a creative way to showcase your charts visually appealing way. Customise Pie Chart in Elementor the way you want and You will have multiple options of Its animations on First Load and Scroll.
+9. <strong>[Post Searchs](https://theplusaddons.com/widgets/search-bar/)</strong> - Make all your pages searchable using an amazing search bar widget, which searches using WordPress's main search function. Design with tons of options.
+10. <strong>[Pricing Tables](https://theplusaddons.com/widgets/pricing-table/)</strong> - We care for your money, So It’s most amazing and designed based on AB tested philosophies to make it an Elite pricing table for WordPress using Elementor.
+11. <strong>[Progress Bar](https://theplusaddons.com/widgets/progress-bar/)</strong> - Use this widget for a multipurpose way to show your progress bar, skill bar, value bar, percentage bar or any other kind of Value in Progress bar format in Elementor using this amazing, versatile and fully customisable widget.
+12. <strong>[Social Icon](https://theplusaddons.com/widgets/social-icon/)</strong> - Your handy tool to create amazing social media icons and set up links. It has tons of social icon styles to use in WordPress using Elementor
 13. <strong>[Video](https://theplusaddons.com/widgets/videos/)</strong> - Brilliant tool with Powerful options to showcase your Youtube, vimeo and Self-hosted videos in style for WordPress using Elementor.
 14. <strong>[Heading Animation](https://theplusaddons.com/widgets/heading-animation/)</strong> - Elite tool to showcase multiple text with incredible typing animations with lots of customisation options for WordPress using Elementor.
-15. <strong>[Flipbox](https://theplusaddons.com/widgets/flipbox/)</strong> - Showcase your services and eye catchy content with most attractive and with powerful UX structure on WordPress using Elementor.
-16. <strong>[Smooth Scroll](https://theplusaddons.com/widgets/smooth-scroll/)</strong> - Some pages of your site needs amazing smooth experience. You can do it using this plugin to have smooth scroll effect for amazing UX in your elementor website.
+15. <strong>[Flipbox](https://theplusaddons.com/widgets/flipbox/)</strong> - Showcase your services and eye-catchy content with most attractive and with powerful UX structure on WordPress using Elementor.
+16. <strong>[Smooth Scroll](https://theplusaddons.com/widgets/smooth-scroll/)</strong> - Some pages of your site needs amazing smooth experience. You can do it using this plugin to have a smooth scroll effect for amazing UX in your elementor website.
 17. <strong>[Accordions](https://theplusaddons.com/widgets/accordion/)</strong> - Sensational way to showcase your accordions with crafted design styles and options to create uniquely for WordPress using Elementor.
 18. <strong>[Tabs/Tours](https://theplusaddons.com/widgets/tabs-tours/)</strong> - Presenting most advanced and powerful Tabs and Tours style collection with unlimited customisation options for WordPress using Elementor.
-19. <strong>[Full Page](https://theplusaddons.com/widgets/best-page-scrolling-options-for-elementor/#full-piling)</strong> - This widget is the combination of Full Page JS, Multi Scroll JS, Horizontal Scroll and Page Piling JS. Which are most popular in unique one page websites.
+19. <strong>[Full Page](https://theplusaddons.com/widgets/best-page-scrolling-options-for-elementor/#full-piling)</strong> - This widget is the combination of Full Page JS, Multi Scroll JS, Horizontal Scroll and Page Piling JS. Which are most popular in unique one-page websites.
 20. <strong>[Caldera Forms](https://theplusaddons.com/widgets/caldera-forms/)</strong> - Proven Look and Feel of Caldera Forms with elegant improvements to get amazing UI and UX for all your forms in WordPress using Elementor.
 21. <strong>[Contact form 7](https://theplusaddons.com/widgets/contact-form-7/)</strong> - Proven Look and Feel of Contact form 7 forms with elegant improvements to get amazing UI and UX for all your forms in WordPress using Elementor.
 22. <strong>[Everest Forms](https://theplusaddons.com/widgets/everest-forms/)</strong> - Proven Look and Feel of Everest Forms with elegant improvements to get amazing UI and UX for all your forms in WordPress using Elementor.
@@ -108,9 +108,9 @@ https://www.youtube.com/watch?v=2bdeeu6sZPw
 [Style 2](https://theplusaddons.com/testimonial/#style-two-carousel) | [Style 4](https://theplusaddons.com/testimonial/#style-four-normal-carousel)
 30. <strong>[Client Logos](https://theplusaddons.com/pluslisting/#plus-clients)</strong> - Showcase your company client logos with amazing layout options.
 [Grid](https://theplusaddons.com/team-member/#grid-section) | [Masonry](https://theplusaddons.com/widgets/clients/#masonry-layout)
-31. <strong>[Equal Height(Developer Friendly)ADVANCED](https://theplusaddons.com/plus-extras/equal-height/)</strong> - Using this option, You can setup equal height for your listing loops as well as with your standard widgets. This can be expand to long to equal height any same widgets by tracking their div structure or their common CSS class.
-32. <strong>[Wrapper Link](https://theplusaddons.com/plus-extras/wrapper-link/)</strong> - You can add link on your whole section/row, Column and any widget using this option. It can be easily added and open in same tab or new tab. 
-33. <strong>[Age Gate](https://theplusaddons.com/widgets/age-gate/)</strong> - Use an Age gate verification for your Elementor site to protect content of you site based on age with date of birth, Yes or No questions
+31. <strong>[Equal Height(Developer Friendly)ADVANCED](https://theplusaddons.com/plus-extras/equal-height/)</strong> - Using this option, You can set up equal height for your listing loops as well as with your standard widgets. This can be expanded to long to equal height any same widgets by tracking their div structure or their common CSS class.
+32. <strong>[Wrapper Link](https://theplusaddons.com/plus-extras/wrapper-link/)</strong> - You can add link on your whole section/row, Column and any widget using this option. It can be easily added and opened in the same tab or new tab. 
+33. <strong>[Age Gate](https://theplusaddons.com/widgets/age-gate/)</strong> - Use an Age gate verification for your Elementor site to protect the content of your site based on age with the date of birth, Yes or No questions
 34. <strong>[Message Box](https://theplusaddons.com/widgets/message-box/)</strong> - Create a simple alert box using creative options provided by Message Box widget for Elementor with tons of styling and customization options. Use it on your website to provide a more interactive feel to your users. 
 35. <strong> [Advanced Text Block](https://theplusaddons.com/widgets/advance-text-block/)</strong> - Add your most important text content with maximum possible options. It have all cosmetic, typographic and Responsive options as per regular needs.
 
@@ -119,49 +119,49 @@ https://www.youtube.com/watch?v=2bdeeu6sZPw
 
 ### 🏆 75+ Pro Widgets & Extensions
 
-1. <strong>[Audio Player](https://theplusaddons.com/widgets/audio-player/)</strong> - Widget to showcase your single music file or a playlist of music. It can be must have widget for entertainment category’s websites/projects
-2. <strong>[Dark Mode](https://theplusaddons.com/widgets/elementor-dark-mode/)</strong> - Best way to create dark mode feature for elementor pages and posts by adding widget in footer or header area for best possibilities. It have best in class Night Mode / Dark Mode options with unique switcher options to customise.
-3. <strong>[Instagram Feed](https://theplusaddons.com/widgets/instagram/)</strong> - Fastest and Easy to configure instagram feed widget ever made for elementor. You can get feed using access token or using just a username of instagram profile of any one. Detailed grid options for unlimited customisations and unique layout options for instagram feed.
+1. <strong>[Audio Player](https://theplusaddons.com/widgets/audio-player/)</strong> - Widget to showcase your single music file or a playlist of music. It can be a must-have widget for the entertainment category’s websites/projects
+2. <strong>[Dark Mode](https://theplusaddons.com/widgets/elementor-dark-mode/)</strong> - Best way to create dark mode feature for elementor pages and posts by adding a widget in the footer or header area for best possibilities. It has best in class Night Mode / Dark Mode options with unique switcher options to customise.
+3. <strong>[Instagram Feed](https://theplusaddons.com/widgets/instagram/)</strong> - Fastest and Easy to configure Instagram feed widget ever made for elementor. You can get feed using an access token or using just a username or the Instagram profile of anyone. Detailed grid options for unlimited customisations and unique layout options for Instagram feed.
 4. <strong>[Login/Signup](https://theplusaddons.com/widgets/login-signup-password/)</strong> - Setup WordPress Login form, WordPress member Signup form or/and Forgot password form using one compact elementor widget. Best for WordPress based membership websites.
 5. <strong>[Woo- Builder](https://theplusaddons.com/woo-builder/)</strong> -  Create a completely personalised WooCommerce store for your customers without any custom coding. Using our Ultimate WooCommerce Store Builder widget sets
 | [My Account Page](https://theplusaddons.com/woo-builder/#my-account) | [Order Track](https://theplusaddons.com/woo-builder/#order-track) | [Woo Cart](https://theplusaddons.com/woo-builder/#cart)  | [WooCheckout](https://theplusaddons.com/woo-builder/#checkout)  | [Woo Single Product Page](https://theplusaddons.com/woo-builder/#single-prodct) | [Woo Single Image](https://theplusaddons.com/woo-builder/#single-prodct) | [Woo Single Pricing](https://theplusaddons.com/woo-builder/#single-prodct) | [Woo Single Tabs](https://theplusaddons.com/woo-builder/#single-prodct) | [Woo Swatches](https://theplusaddons.com/product/ceramic-colored-pots/) | [Woo Thank You Page](https://theplusaddons.com/woo-builder/#thank-you)
-6. <strong>[Pricing List](https://theplusaddons.com/widgets/pricing-list/)</strong> - Easiest way to showcase pricing of food menu or any list of items. You can use this for restaurant menus, service list and other ways using elementor. It can be used versatile way by using It’s unique options.
-7. <strong>[Protected Content](https://theplusaddons.com/widgets/protected-content/)</strong> - Hide content from website visitors based on simple password, Multiple Passwords, or based on their wordpress user role. You may use that for coupon code options, for client panel and various usages on your website.
-8. <strong>[Stylist List](https://theplusaddons.com/widgets/stylish-list/)</strong> - Make a list with great customisation options, Unique layouts and Many value added options to reach an extra level of design for stylish list on WordPress using Elementor.
-9. <strong>[Table](https://theplusaddons.com/widgets/table/)</strong> - Create Simplest Table in Elementor or Complex Layout needs in elementor, Table widget for elementor will help you in that. It can be useful for all kind of comparison tables, Pricing Tables, or Busy Table Layouts with tons of options in Elementor.
+6. <strong>[Pricing List](https://theplusaddons.com/widgets/pricing-list/)</strong> - Easiest way to showcase pricing of food menu or any list of items. You can use this for restaurant menus, service lists and other ways using elementor. It can be used versatile way by using Its unique options.
+7. <strong>[Protected Content](https://theplusaddons.com/widgets/protected-content/)</strong> - Hide content from website visitors based on a simple passwords, Multiple Passwords, or based on their WordPress user role. You may use that for coupon code options, for client panels and various usages on your website.
+8. <strong>[Stylist List](https://theplusaddons.com/widgets/stylish-list/)</strong> - Make a list with great customisation options, Unique layouts and Many value-added options to reach an extra level of design for the stylish list on WordPress using Elementor.
+9. <strong>[Table](https://theplusaddons.com/widgets/table/)</strong> - Create Simplest Table in Elementor or Complex Layout needs in elementor, Table widget for elementor will help you in that. It can be useful for all kinds of comparison tables, Pricing Tables, or Busy Table Layouts with tons of options in Elementor.
 10. <strong>[Advanced Typography](https://theplusaddons.com/widgets/advanced-typography/)</strong> - Collection of top typography options for elementor such as knockout text, magicscroll typography, text blend mode, arc typography, circular text, underline to hover styles, shadow 3d typography, Vertical text & stroke typography options to create most advanced minimal structures.
-11. <strong>[Advanced Buttons](https://theplusaddons.com/widgets/advanced-buttons/)</strong> - Attractive, Easy to use, conversation friendly, and A/B Tested collection of buttons with multi purpose usability in elementor page builder.
-12. <strong>[Advertisement Banner](https://theplusaddons.com/widgets/advrtsment-banner/)</strong> - Make amazing CTA banners for your sale, offers, or any kind of promotional activities. Layer based hover effects makes it very unique and eye popping.
-13. <strong>[Animated Separators](https://theplusaddons.com/widgets/advanced-separators/)</strong> - Multiple row/section and column shape dividers with unique options to configure that as per your needs. Style based on wavey JS which you can implement on any place and you can adjust shape separator’s animations and It’s shape divider size.
-14. <strong>[Animated Service Boxes](https://theplusaddons.com/widgets/animated-service-boxes/)</strong> - Showcase your services, features, and other information in style using this widget of elementor. It can be used as a Animated box, Interactive banners, Info Box, Interactive cards, Animated Features, Interactive box and other ways.
-15. <strong>[Before After](https://theplusaddons.com/widgets/before-after-2/)</strong> - Introducing fastest and easiest way to compare images to showcase before after by horizontal, vertical and opacity based system for WordPress Using Elementor.
-16. <strong>[Carousel Anything](https://theplusaddons.com/widgets/carousal-anything/)</strong> - Make your carousels with all stunning options and with the power of templates of elementor. You can use any elementor widgets with various carousel options in this elementor widget.
-17. <strong>[Carousel Remote](https://theplusaddons.com/widgets/carousal-remote/)</strong> - Connect and play with any carousel of the plus addons using this widget. You can connect just using unique id and put this widget anywhere to create some creative layouts.
-18. <strong>[Circle Menu](https://theplusaddons.com/widgets/circle-menu/)</strong> - Display your call to action menu with amazing style and based on open/close method to keep it small in the beginning. It have bubble menu, flat menu and other variations.
+11. <strong>[Advanced Buttons](https://theplusaddons.com/widgets/advanced-buttons/)</strong> - Attractive, Easy to use, conversation friendly, and A/B Tested collection of buttons with multi-purpose usability in elementor page builder.
+12. <strong>[Advertisement Banner](https://theplusaddons.com/widgets/advrtsment-banner/)</strong> - Make amazing CTA banners for your sale, offers, or any kind of promotional activities. Layer based hover effects make it very unique and eye-popping.
+13. <strong>[Animated Separators](https://theplusaddons.com/widgets/advanced-separators/)</strong> - Multiple row/section and column shape dividers with unique options to configure that as per your needs. Style based on wavey JS which you can implement on any place and you can adjust shape separator’s animations and Its shape divider size.
+14. <strong>[Animated Service Boxes](https://theplusaddons.com/widgets/animated-service-boxes/)</strong> - Showcase your services, features, and other information in style using this widget of elementor. It can be used as an Animated box, Interactive banners, Info Box, Interactive cards, Animated Features, Interactive box and other ways.
+15. <strong>[Before After](https://theplusaddons.com/widgets/before-after-2/)</strong> - Introducing the fastest and easiest way to compare images to showcase before after by horizontal, vertical and opacity based system for WordPress Using Elementor.
+16. <strong>[Carousel Anything](https://theplusaddons.com/widgets/carousal-anything/)</strong> - Make your carousels with all stunning options and with the power of templates of elementor. You can use any elementor widgets with various carousal options in this elementor widget.
+17. <strong>[Carousel Remote](https://theplusaddons.com/widgets/carousal-remote/)</strong> - Connect and play with any carousel of the plus addons using this widget. You can connect just using a unique id and put this widget anywhere to create some creative layouts.
+18. <strong>[Circle Menu](https://theplusaddons.com/widgets/circle-menu/)</strong> - Display your call to action menu with amazing style and based on the open/close method to keep it small in the beginning. It has a bubble menu, flat menu and other variations.
 19. <strong>[Creative Images](https://theplusaddons.com/widgets/creative-images/)</strong> - Change the way you put images on websites, Show It with great details effects and animation based on hover/scroll in WordPress using Elementor.
-20. <strong>[Draw SVG](https://theplusaddons.com/widgets/draw-svg/)</strong> - You can use draw animation on any SVG in elementor, It can be draw on first load or You can setup that on hover draw option. You can draw SVG in Elementor Multiple Ways using multiple options to use from.
+20. <strong>[Draw SVG](https://theplusaddons.com/widgets/draw-svg/)</strong> - You can use draw animation on any SVG in elementor, It can be drawn on the first load or You can set up that on hover draw option. You can draw SVG in Elementor Multiple Ways using multiple options to use from.
 21. <strong>[Dynamic Devices](https://theplusaddons.com/widgets/device-dynamic/)</strong> - Love showcasing content inside beautiful laptops, Desktops, Mobiles and Browser Screens? This element is for you.
-22. <strong>[Hotspot/Pin Point](https://theplusaddons.com/widgets/hotspot-pin-point/)</strong> - Highlight your points or Create Hot spots on your images to showcase your points. We also have 6+ creatively picked hotspot styles and advanced tooltip with unlimited options to setup in.
+22. <strong>[Hotspot/Pin Point](https://theplusaddons.com/widgets/hotspot-pin-point/)</strong> - Highlight your points or Create Hot spots on your images to showcase your points. We also have 6+ creatively picked hotspot styles and advanced tooltips with unlimited options to set up in.
 23. <strong>[Image Cascading](https://theplusaddons.com/widgets/image-cascading/)</strong> - Biggest and most brilliant plugin for layered images, Sections with layers, Cascading layouts in WordPress using Elementor.
-24. <strong>[Lottiefiles Animations](https://theplusaddons.com/widgets/lottiefiles-animations-elementor/)</strong> - Looking animation which are quite engaging and crafter by top in class motion designers to use in your next web design project? Try this elementor widget, which will help you to achieve that just by using JSON code made from Lottiefiles.
+24. <strong>[Lottiefiles Animations](https://theplusaddons.com/widgets/lottiefiles-animations-elementor/)</strong> - Looking animation which are quite engaging and a crafter by the top in class motion designers to use in your next web design project? Try this elementor widget, which will help you to achieve that just by using JSON code made from Lottiefiles.
 [Lottiefiles On Scroll](https://theplusaddons.com/widgets/lottiefiles-on-scroll-animation-elementor/)
-25. <strong>[Morphing Sections](https://theplusaddons.com/widgets/morphing-sections/)</strong> - Wondering how to make your Blob Shape SVGs with animated morphing shape? This widget of elementor will help you to do Blob SVG Path morphing, Dynamic blob Shape Overlay in Image Gradient and Normal Color. This tool to animate blob SVGs and shape morphing in your row and column background.
-26. <strong>[Off Canvas](https://theplusaddons.com/widgets/off-canvas/)</strong> - Any Elementor Widget or menu now in a stylish way with the unique variations of Off Canvas elementor widget. Many customisation options makes it unique and multi purpose in all elementor addons.
+25. <strong>[Morphing Sections](https://theplusaddons.com/widgets/morphing-sections/)</strong> - Wondering how to make your Blob Shape SVGs with animated morphing shape? This widget of elementor will help you to do Blob SVG Path morphing, Dynamic blob Shape Overlay in Image Gradient and Normal Color. This tool animate blob SVGs and shape morphing in your row and column background.
+26. <strong>[Off Canvas](https://theplusaddons.com/widgets/off-canvas/)</strong> - Any Elementor Widget or menu now in a stylish way with the unique variations of Off-Canvas elementor widget. Many customisation options make it unique and multi-purpose in all elementor addons.
 27. <strong>[Process/Steps](https://theplusaddons.com/widgets/process-steps/)</strong> - Special Widget made for showcase process/steps with unique layout variations. It have text indicator, special steps styles and more customizability options.
-28. <strong>[Scroll Navigation](https://theplusaddons.com/widgets/one-page-scroll-navigation/)</strong> - Best widget for creation of one page scroll navigation to give feel of one page and easy to navigate on long page. It’s most popular web design trend to have one page websites and this widget will improve UX by having nice scroll navigation.
+28. <strong>[Scroll Navigation](https://theplusaddons.com/widgets/one-page-scroll-navigation/)</strong> - Best widget for creation of one-page scroll navigation to give the feel of one page and easy to navigate on a long page. It’s the most popular web design trend to have one-page websites and this widget will improve UX by having nice scroll navigation.
 29. <strong>[Time line](https://theplusaddons.com/widgets/timeline/)</strong> - All your timeline layout needs will be fulfilled using this widget of elementor. It can be useful for Organisation History Timeline, Startup Storyline, Event/Program History TimeLine, Step by Step Tutorials Timeline, and Lifetime Achievements and many more ways.
 30. <strong>[Unfold](https://theplusaddons.com/widgets/unfold-expand-toggle/)</strong> - Hide your content and Expand that on click to show more information. You can use this widget in elementor to show information with title and description as well as with elementor template.
 31. <strong>[Row Background](https://theplusaddons.com/widgets/row-background/)</strong> - Sensational piece of code to create premium, layer based and uniquely advanced Section Backgrounds in WordPress using Elementor.
 [Gallery Background](https://theplusaddons.com/widgets/row-background/gallery-background/) | [Parallax Background](https://theplusaddons.com/widgets/row-background/parallax-background/) | [Segment Background](https://theplusaddons.com/widgets/row-background/segmentation-background/) | [Special Backgrounds](https://theplusaddons.com/widgets/row-background/special-background/) | [Video Background](https://theplusaddons.com/widgets/row-background/video-background/)
 32. <strong>[Switcher](https://theplusaddons.com/widgets/switcher/)</strong> - Introducing amazing content switcher for your pricing table, Info Sections, Services and many other layouts on WordPress using Elementor.
-33. <strong>[Page Scroll](https://theplusaddons.com/widgets/best-page-scrolling-options-for-elementor/)</strong> - This widget is the combination of Full Page JS, Multi Scroll JS, Horizontal Scroll and Page Piling JS. Which are most popular in unique one page websites.
+33. <strong>[Page Scroll](https://theplusaddons.com/widgets/best-page-scrolling-options-for-elementor/)</strong> - This widget is the combination of Full Page JS, Multi Scroll JS, Horizontal Scroll and Page Piling JS. Which are most popular in unique one-page websites.
 [Page Pilling](https://theplusaddons.com/widgets/best-page-scrolling-options-for-elementor/page-piling/) | [Multi Scroll 50/50](https://theplusaddons.com/widgets/best-page-scrolling-options-for-elementor/multi-scroll/) | [Multi Scroll 30/70](https://theplusaddons.com/widgets/best-page-scrolling-options-for-elementor/multi-scroll-2/) | [Horizontal Scroll Color Change](https://theplusaddons.com/widgets/horizontal-scroll-with-background-color-change/) | [Horizontal Scroll Fix Image Change](https://theplusaddons.com/widgets/horizontal-scroll-with-fix-background-image/) | [Horizontal Scroll Image Change](https://theplusaddons.com/widgets/horizontal-scroll-with-background-image-change/)
-34. <strong>[Navigation Builder](https://theplusaddons.com/widgets/elementor-header-navigation-builder/)</strong> - All needs related to navigation and whole header section is covered under our collection of widgets for elementor. You can create search bar, woocommerce mini cart, music bar, login section, mega menu and many more using this elementor header builder widgets.
+34. <strong>[Navigation Builder](https://theplusaddons.com/widgets/elementor-header-navigation-builder/)</strong> - All needs related to navigation and whole header section is covered under our collection of widgets for elementor. You can create a search bar, woocommerce mini cart, music bar, login section, mega menu and many more using this elementor header builder widgets.
 [Horizontal Mega Menu](https://theplusaddons.com/widgets/mega-menu/#horizontal-menu) | [Vertical Mega Menu](https://theplusaddons.com/widgets/mega-menu/#vertical-menu) | [Vertical Toggle Mega Menu](https://theplusaddons.com/widgets/mega-menu/#vertical-menu)
 35. <strong>[Breadcrumb](https://theplusaddons.com/widgets/breadcrumb-bar/)</strong> - Wondering for amazing tool to showcase your text content? Infobox is proven and with breakthrough UI/UX element for WordPress using Elementor.
-36. <strong>[Mobile Menu](https://theplusaddons.com/widgets/mobile-menu/)</strong> - Special elementor widget made for mobile devices, It will give mobile application look and special menu designs for your website in this mobile first web world.
-37. <strong>[Google Map](https://theplusaddons.com/widgets/google-maps/)</strong> - Advanced or simple needs of maps, We have covered all. One of the best elementor google map widget with lots of options and multiple marker pin points.
-38. <strong>[Mailchimp Subscription](https://theplusaddons.com/widgets/mailchimp/)</strong> - Amazing Collection of Heading styles for your next project. It have simple yet elegant styles to create unlimited different Looks and Layouts.
+36. <strong>[Mobile Menu](https://theplusaddons.com/widgets/mobile-menu/)</strong> - Special elementor widget made for mobile devices, It will give mobile application look and special menu designs for your website in this mobile-first web world.
+37. <strong>[Google Map](https://theplusaddons.com/widgets/google-maps/)</strong> - Advanced or simple needs of maps, We have covered all. One of the best elementor google map widgets with lots of options and multiple marker pinpoints.
+38. <strong>[Mailchimp Subscription](https://theplusaddons.com/widgets/mailchimp/)</strong> - Amazing Collection of Heading styles for your next project. It has simple yet elegant styles to create unlimited different Looks and Layouts.
 39. <strong>[Blog Posts](https://theplusaddons.com/pluslisting/#plus-blog)</strong> - Supercharge your blog listing layouts and It's customisation options.
 [Carousel](https://theplusaddons.com/plus-blogs/carousel-blogs/) | [Grid](https://theplusaddons.com/plus-blogs/blog-styles/) | [Filter](https://theplusaddons.com/plus-blogs/blog-filter/) | [Lazy Load](https://theplusaddons.com/plus-blogs/lazy-load-blogs/) | [Load More](https://theplusaddons.com/plus-blogs/load-more-blogs/) | [Messy Columns](https://theplusaddons.com/plus-blogs/masonry-blogs/) | [Pagination](https://theplusaddons.com/plus-blogs/pagination-blogs/)
 40. <strong>[Image Gallery](https://theplusaddons.com/pluslisting/#plus-gallery)</strong> - Advanced Image Gallery styles with tons of options to create creative layouts.
@@ -180,42 +180,45 @@ https://www.youtube.com/watch?v=2bdeeu6sZPw
 46. <strong>[Dynamic Category](https://theplusaddons.com/pluslisting/dynamic-category/)</strong> - Show categories or taxonomy listing of any custom post type in style using listing methods like Grid, Masonry, Metro and Carousel options and on top of that, there is options for 3d Parallax, Mouse move parallax and Messy columns.
 47. <strong>[Dynamic Smart Showcase](https://theplusaddons.com/pluslisting/#plus-magazine-post-styles)</strong> - Supercharge your dynamic listing layouts and It's customisation options.
 [Magazine Slider](https://theplusaddons.com/pluslisting/dynamic-magazine-slider/) | [Magazine Filter](https://theplusaddons.com/pluslisting/dynamic-magazine-filter/) | [Dynamic Ticker](https://theplusaddons.com/pluslisting/dynamic-ticker/)
-48. <strong>[Mouse Cursor Icon](https://theplusaddons.com/plus-extras/mouse-cursor-icon-change/)</strong> - Using this widget you can change mouse cursor or icon, setup follow cursor image or you can setup text based mouse cursor style. Which help your visitors to know about any column or you can improve your UX.
+48. <strong>[Mouse Cursor Icon](https://theplusaddons.com/plus-extras/mouse-cursor-icon-change/)</strong> - Using this widget you can change mouse cursor or icon, setup follow cursor image or you can set up text-based mouse cursor style. Which help your visitors to know about any column or you can improve your UX.
 49. <strong>[Mouse Cursor](https://theplusaddons.com/widgets/mouse-cursor-icon-widget/)</strong> - Customize your default mouse pointer with the best custom Mouse Cursor widget for your WordPress site. 
 50. <strong>[Blog Builder: Post Navigation & Post Search](https://theplusaddons.com/blog-builder/#blog-single)</strong> Allows you to turn any post into a tool that lets visitors jump to any other post in just one click with Post Navigation. And use
 51. <strong>[Preloader & Page Transitions](https://theplusaddons.com/widgets/pre-loader/)</strong> -  Add Preloader in your Elementor site easily via the Preloader widget with Image, Icon, Text, Lottie Files , Custom Code , Shortcodes, Progress and many predefined animations
-52. <strong>[Social Feed](https://theplusaddons.com/widgets/social-feed/)</strong> -  Display your Social Feed from Facebook, Instagram, Twitter, YouTube and Vimeo within few clicks, fetch feed automatically from your social media accounts and get it displayed on your website easily with the best social media widget for WordPress.
-53. <strong>[Social Reviews](https://theplusaddons.com/widgets/social-reviews/)</strong> - Add Social Reviews & Badges from Google & Facebook, showing reviews and Ratings from your customers is the best way to get someone’s trust. The social reviews widget will automatically connect your social media reviews on your website. Saves you time and a lot of effort.
-54. <strong>[Social Sharing](https://theplusaddons.com/widgets/social-sharing/)</strong> - Add Social Sharing Icons on your WordPress website. Easily Share your page content over Facebook, Twitter, Google, LinkedIn, WhatsApp, Tumblr, Pinterest, Reddit,  and over 22 more social sharing using this 
+52. <strong>[Social Feed](https://theplusaddons.com/widgets/social-feed/)</strong> -  Display your Social Feed from Facebook, Instagram, Twitter, YouTube and Vimeo within a few clicks, fetch feed automatically from your social media accounts and get it displayed on your website easily with the best social media widget for WordPress.
+53. <strong>[Social Reviews](https://theplusaddons.com/widgets/social-reviews/)</strong> - Add Social Reviews & Badges from Google & Facebook, showing reviews and ratings from your customers is the best way to get someone’s trust. The social reviews widget will automatically connect your social media reviews to your website. Saves you time and a lot of effort.
+54. <strong>[Social Sharing](https://theplusaddons.com/widgets/social-sharing/)</strong> - Add Social Sharing Icons on your WordPress website. Easily share your page content over Facebook, Twitter, Google, LinkedIn, WhatsApp, Tumblr, Pinterest, Reddit,  and over 22 more social sharing using this 
 55. <strong>[Table of Contents](https://theplusaddons.com/widgets/table-of-contents/)</strong> - Automatically add Table of Contents without any hassle or coding. Create a Dynamic Generated Table of Contents using the best Table of Contents widget for Elementor. Automatically generate the dynamic Table of Contents for your post, page, and custom post type content.
 56. <strong>[Number Counter](https://theplusaddons.com/widgets/number-counter/)</strong> - Your all needs covered regarding showcase of numbers. This widget is with all needed options and customisation variations to make your achievements looks at it’s best.
-57. <strong>[Column Ordering In Devices](https://theplusaddons.com/plus-extras/elementor-column-improvements-upgrades-responsive/#column-order)</strong> - Now change your column order in different devices. Best for Navigation Menus and Other Creative Layouts.
-58. <strong>[Custom Media Query Breakpoints](https://theplusaddons.com/plus-extras/elementor-column-improvements-upgrades-responsive/#media-query-breakpoint)</strong> - Setup Column's Width | Margin | Padding | Visibility | Order Sequence for different breakpoints based on @Media Min/Max Width Value(You Can Add Multiple Values too using Repeater.).
-59. <strong>[Column Width(Px,%,Calc())](https://theplusaddons.com/plus-extras/elementor-column-improvements-upgrades-responsive/#column-width)</strong> - Use Pixels | Percentage | Calc Function
-60. <strong>[Sticky Column](https://theplusaddons.com/plus-extras/elementor-column-improvements-upgrades-responsive/#sticky-column)</strong> - Make Column Sticky based on height of other columns in row.
-61. <strong>[Display/Conditional Rules](https://theplusaddons.com/plus-extras/display-rules/)</strong> - Enable/Disable your any Elementor widgets based on multiple conditions and logics, Which gives you enormous possibilities for unique and out of the box logics in Marketing or Web Management Part.
-62. <strong>[Global Continuous Effects](https://theplusaddons.com/plus-extras/special-effects-parallax-3d-mouse-hover-continuous-animations-elementor-widgets/#continuous-effects)</strong> - Looking for some amazing effects for each widget? Now, You can use mouse move based parallax in elementor widgets, Special Scroll Overlay dual color effects, Tilt 3D Hover Effects, and Continuous animation effects in elementor widgets.
-63. <strong>[Global Mouse Hover Parallax](https://theplusaddons.com/plus-extras/special-effects-parallax-3d-mouse-hover-continuous-animations-elementor-widgets/#mouse-parallax)</strong> - Looking for some amazing effects for each widget? Now, You can use mouse move based parallax in elementor widgets, Special Scroll Overlay dual color effects, Tilt 3D Hover Effects, and Continuous animation effects in elementor widgets.
-64. <strong>[Global Special Overlay Color](https://theplusaddons.com/plus-extras/special-effects-parallax-3d-mouse-hover-continuous-animations-elementor-widgets/#first-section)</strong> - Looking for some amazing effects for each widget? Now, You can use mouse move based parallax in elementor widgets, Special Scroll Overlay dual color effects, Tilt 3D Hover Effects, and Continuous animation effects in elementor widgets.
-65. <strong>[Global Tilt 3D Effects](https://theplusaddons.com/plus-extras/special-effects-parallax-3d-mouse-hover-continuous-animations-elementor-widgets/#tilt-3d)</strong> - Looking for some amazing effects for each widget? Now, You can use mouse move based parallax in elementor widgets, Special Scroll Overlay dual color effects, Tilt 3D Hover Effects, and Continuous animation effects in elementor widgets.
-66. <strong>[Global Tooltip](https://theplusaddons.com/plus-extras/global-tooltips-elementor-widgets/)</strong> - In today’s two way communication, Tooltips are are popular and increase interactiveness on your website. Best Global tooltip option available in elementor. Tooltips are almost in all possible elementor widgets and with tons of customisation options of tooltip.
-67. <strong>[Cross Domain Copy Paste](https://theplusaddons.com/plus-extras/cross-domain-copy-paste-and-live-copy-elementor/)</strong> - Use "Plus Copy" to transfer your Elementor Sections, Widgets & Columns from One site to another with simple method. It will change the way you are using Plus Design Templates, You just need to Live Copy from our demo pages and Paste on your website directly.
-68. <strong>[Facebook & Google Event Tracker](https://theplusaddons.com/plus-extras/conversion-event-tracker-in-elementor/)</strong> - This feature is to track all facebook pixel and google analytics conversion events from your WordPress Website made by Elementor Page Builder. It tracks each a tag's click events and Submit button events for form builder widgets.
-69. <strong>[White Label](https://theplusaddons.com/plus-extras/white-label-branding/)</strong> - You may change each and every details of plugin to your own or your client’s. It will give personalisation to your client projects.
-70. <strong>[Grid Design Tool](https://theplusaddons.com/plus-extras/design-tool/)</strong> - Multiple elementor designer productivity & testing oriented features, Which help designers to achieve their best possible creative level.
-71. <strong>[MagicScroll Integration](https://theplusaddons.com/plus-extras/on-scroll-magic-elementor-parallax/)</strong> - Have you heard about ScrollMagic in Elementor? Most of all of our elementor widgets have ScrollMagic Options in Plus Extras to create unique layouts. This is best Scroll Magic options available in elementor till now.
-72. <strong>[On Scroll Animation Content ](https://theplusaddons.com/plus-extras/on-scroll-animations-elementor-any-widgets/)</strong> - Amazing On Scroll Animations for all your individual widgets of elementor, You can setup one time scroll animation in elementor widgets or dual scroll animation in elementor widgets. It have more than 30 Animation styles for scroll animation for elementor widgets.
-73. <strong>[Row Section Scroll Animation](https://theplusaddons.com/plus-extras/row-section-full-scroll-animation/)</strong> - Looking for Options like 3d Section | Row Animation on scroll, Reveal Animation, Content Fly animation on content, Special Content visibility options from different directions and Other effects based on scroll? Your search will end at here using this elementor widget.
-74. <strong>[Custom CSS(Section & Column)](https://theplusaddons.com/plus-extras/elementor-column-improvements-upgrades-responsive/#custom-css)</strong> - Add your custom CSS in any Row/Section or Column
-75. <strong>[18+ Premium Templates](https://theplusaddons.com/plus-design/#templates)</strong> - Your website landing page is a few clicks away using our ready made, responsive website templates. It will have more demos coming very soon.
-76. <strong>[ 300+ Premium UI Blocks](https://theplusaddons.com/plus-design/#templates)</strong> - Your website landing page is a few clicks away using our ready made, responsive website templates. It will have more demos coming very soon.
+57. <strong>[Source Code Syntax Highlighter](https://theplusaddons.com/widgets/source-code-syntax-highlighter/)</strong> -  When it comes to getting feedback or sharing your code, you need a tool that provides different colour schemes to choose from, depending on multiple codes. Say Hello to syntax highlighting for over 25+ programming languages that can be embedded as a live preview for your WordPress website.
+58. <strong>[Plus Search Filters](https://theplusaddons.com/plus-search-filters/)</strong> -  Setup most complex filter websites with ease using Plus Search Filters widget. It will change the way you build your data-rich websites with an elementor page builder.
+59. <strong>[Search Bar](https://theplusaddons.com/plus-search-filters/advanced-wp-ajax-searchbar/)</strong> -  No need to go to another page to check your search results. Check that right below your search bar and even that in the most elegant way possible using elementor page builder.
+60. <strong>[Column Ordering In Devices](https://theplusaddons.com/plus-extras/elementor-column-improvements-upgrades-responsive/#column-order)</strong> - Now change your column order in different devices. Best for Navigation Menus and Other Creative Layouts.
+61. <strong>[Custom Media Query Breakpoints](https://theplusaddons.com/plus-extras/elementor-column-improvements-upgrades-responsive/#media-query-breakpoint)</strong> - Setup Column's Width | Margin | Padding | Visibility | Order Sequence for different breakpoints based on @Media Min/Max Width Value(You Can Add Multiple Values too using Repeater.).
+62. <strong>[Column Width(Px,%,Calc())](https://theplusaddons.com/plus-extras/elementor-column-improvements-upgrades-responsive/#column-width)</strong> - Use Pixels | Percentage | Calc Function
+63. <strong>[Sticky Column](https://theplusaddons.com/plus-extras/elementor-column-improvements-upgrades-responsive/#sticky-column)</strong> - Make Column Sticky based on height of other columns in row.
+64. <strong>[Display/Conditional Rules](https://theplusaddons.com/plus-extras/display-rules/)</strong> - Enable/Disable any Elementor widgets based on multiple conditions and logic, Which gives you enormous possibilities for unique and out of the box logic in Marketing or Web Management Part.
+65. <strong>[Global Continuous Effects](https://theplusaddons.com/plus-extras/special-effects-parallax-3d-mouse-hover-continuous-animations-elementor-widgets/#continuous-effects)</strong> - Looking for some amazing effects for each widget? Now, You can use mouse move based parallax in elementor widgets, Special Scroll Overlay dual colour effects, Tilt 3D Hover Effects, and Continuous animation effects in elementor widgets.
+66. <strong>[Global Mouse Hover Parallax](https://theplusaddons.com/plus-extras/special-effects-parallax-3d-mouse-hover-continuous-animations-elementor-widgets/#mouse-parallax)</strong> - Looking for some amazing effects for each widget? Now, You can use mouse move based parallax in elementor widgets, Special Scroll Overlay dual colour effects, Tilt 3D Hover Effects, and Continuous animation effects in elementor widgets.
+67. <strong>[Global Special Overlay Color](https://theplusaddons.com/plus-extras/special-effects-parallax-3d-mouse-hover-continuous-animations-elementor-widgets/#first-section)</strong> - Looking for some amazing effects for each widget? Now, You can use mouse move based parallax in elementor widgets, Special Scroll Overlay dual colour effects, Tilt 3D Hover Effects, and Continuous animation effects in elementor widgets.
+68. <strong>[Global Tilt 3D Effects](https://theplusaddons.com/plus-extras/special-effects-parallax-3d-mouse-hover-continuous-animations-elementor-widgets/#tilt-3d)</strong> - Looking for some amazing effects for each widget? Now, You can use mouse move based parallax in elementor widgets, Special Scroll Overlay dual colour effects, Tilt 3D Hover Effects, and Continuous animation effects in elementor widgets.
+69. <strong>[Global Tooltip](https://theplusaddons.com/plus-extras/global-tooltips-elementor-widgets/)</strong> - In today’s two way communication, Tooltips are are popular and increase interactiveness on your website. Best Global tooltip option available in elementor. Tooltips are almost in all possible elementor widgets and with tons of customisation options for tooltips.
+70. <strong>[Cross Domain Copy Paste](https://theplusaddons.com/plus-extras/cross-domain-copy-paste-and-live-copy-elementor/)</strong> - Use "Plus Copy" to transfer your Elementor Sections, Widgets & Columns from One site to another with simple method. It will change the way you are using Plus Design Templates, You just need to Live Copy from our demo pages and Paste on your website directly.
+71. <strong>[Facebook & Google Event Tracker](https://theplusaddons.com/plus-extras/conversion-event-tracker-in-elementor/)</strong> - This feature is to track all Facebook pixel and google analytics conversion events from your WordPress Website made by Elementor Page Builder. It tracks each tag's click events and Submits button events for form builder widgets.
+72. <strong>[White Label](https://theplusaddons.com/plus-extras/white-label-branding/)</strong> - You may change each and every detail of plugin to your own or your client’s. It will give personalisation to your client projects.
+73. <strong>[Grid Design Tool](https://theplusaddons.com/plus-extras/design-tool/)</strong> - Multiple elementor designer productivity & testing oriented features, Which help designers to achieve their best possible creative level.
+74. <strong>[MagicScroll Integration](https://theplusaddons.com/plus-extras/on-scroll-magic-elementor-parallax/)</strong> - Have you heard about ScrollMagic in Elementor? Most of all of our elementor widgets have ScrollMagic Options in Plus Extras to create unique layouts. This is the best Scroll Magic option available in elementor till now.
+75. <strong>[On Scroll Animation Content ](https://theplusaddons.com/plus-extras/on-scroll-animations-elementor-any-widgets/)</strong> - Amazing On Scroll Animations for all your individual widgets of elementor, You can set up one-time scroll animation in elementor widgets or dual scroll animation in elementor widgets. It has more than 30 Animation styles for scroll animation for elementor widgets.
+76. <strong>[Row Section Scroll Animation](https://theplusaddons.com/plus-extras/row-section-full-scroll-animation/)</strong> - Looking for Options like 3d Section | Row Animation on scroll, Reveal Animation, Content Fly animation on content, Special Content visibility options from different directions and Other effects based on scroll? Your search will end here using this elementor widget.
+77. <strong>[Custom CSS(Section & Column)](https://theplusaddons.com/plus-extras/elementor-column-improvements-upgrades-responsive/#custom-css)</strong> - Add your custom CSS in any Row/Section or Column
+78. <strong>[18+ Premium Templates](https://theplusaddons.com/plus-design/#templates)</strong> - Your website landing page is a few clicks away using our ready-made, responsive website templates. It will have more demos coming very soon.
+79. <strong>[ 300+ Premium UI Blocks](https://theplusaddons.com/plus-design/#templates)</strong> - Your website landing page is a few clicks away using our ready-made, responsive website templates. It will have more demos coming very soon.
 
  
 
 <p><strong>If this Plugin adds value to your business, please share your valuable review ⭐️ ⭐️ ⭐️ ⭐️ ⭐️ to encourage for future improvement.<br>❤️Thank you <a href="https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/reviews/?filter=5">👉 ADD 5 STAR</a> </strong></p>
 
 ###🔍 Check our other Products
-<strong><a href="https://theplusblocks.com/">🥇 The Plus Blocks for Gutenberg</a></strong> -  Making sites on Gutenberg will never be this easy. With more than 90 Blocks to build your perfect site.
+<strong><a href="https://theplusblocks.com/">🥇 The Plus Addons for Gutenberg</a></strong> -  Making sites on Gutenberg will never be this easy. With more than 70+ Blocks to build your perfect site.
 
 <strong><a href="https://nexterwp.com/">🥇 NexterWP Theme</a></strong> - Get the complete WordPress experience with Nexter. Build on ultra light architecture with tons of features
 
@@ -232,6 +235,7 @@ https://www.youtube.com/watch?v=2bdeeu6sZPw
 
 <h3>👉 <a href="https://youtu.be/etIgVcbs_Rc"> Watch this Quick Installation Guide under ⏱️ 60 Seconds</a></h3>
 
+<em> For Gutenberg Block Editor, check <a href="https://wordpress.org/plugins/the-plus-addons-for-block-editor/">The Plus Addons for Gutenberg</a></em>
 
 == Frequently Asked Questions ==
 
@@ -239,15 +243,15 @@ https://www.youtube.com/watch?v=2bdeeu6sZPw
 
 Yes. You need to install & activate the Elementor plugin first to get access to The Plus Addons Widgets & Features.
 
-**Elementor Panel in the editor is freezed and showing spinning circle.**
+**Elementor Panel in the editor is freezed and shows a spinning circle.**
 
-Make sure your memory limit is set to 768M or higher, If you have multiple elementor addons installed and you are having issue of elementor panel loading icon and freeze.
+Make sure your memory limit is set to 768M or higher, If you have multiple elementor addons installed and you are having an issue with the elementor panel loading icon and freeze.
 
-Does this is issue of The Plus Addons? No. This is not any one’s bug/issue. It’s just because, If you want to use more widgets, Your server need more memory limit to use everything in your backend.
+Is the issue created due to The Plus Addons? No. This is not anyone’s bug/issue. It’s just because, If you want to use more widgets, Your server needs more memory limit to use everything in your backend.
 
-My Hosting Provider doesn’t allow higher memory limit, What to do? If that is the case, You just need to disable all unused widgets from The Plus Addons and all other addons you have installed. Which will reduce need of required memory limit as total number of active widgets will go down.
+My Hosting Provider doesn’t allow a higher memory limit, What to do? If that is the case, You just need to disable all unused widgets from The Plus Addons and all other addons you have installed. This will reduce the need for the required memory limit as the total number of active widgets will go down.
 
-**Everything is messed up in Backend. Or Everything looks perfectly fine in Backend but having issues on frontend.**
+**Everything is messed up in Backend. Or Everything looks perfectly fine in the Backend but has issues on the frontend.**
 
 Make sure you have removed cache from The Plus Settings -> Performance -> Purge all Cache. Also, Remove cache from all your 3rd party cache plugins. On top of that, Remove your browser cache by hard reload and/or test your site on incognito mode.
 
@@ -257,23 +261,42 @@ You need to turn on compatibility for font awesome 4 from Elementor -> Extra Set
 
 **My Backend Speed is down after installation of The Plus Addons.**
 
-We do not have any extra files to load, which reduce your backend performance. But, If you are having issue with loading in elementor panel with more delay, That means You need to increase your memory limit. If you can not increase memory limit, You need to disable all unused widgets from The Plus Settings ->Plus Widget as well as from all other Addon plugins you have installed on your website.
+We do not load any extra files, which will reduce your backend performance. But, If you are having issues with loading in the elementor panel with more delay, That means You need to increase your memory limit. If you can not increase the memory limit, You need to disable all unused widgets from The Plus Settings ->Plus Widget as well as from all other Addon plugins you have installed on your website.
 
 **My Frontend website loading Speed is down after installation of The Plus Addons.**
 
-We have most advanced caching architecture, Which will never bloat your site. Know more about our caching architecture. We have some tricks and suggestion to improve frontend performance. Have a look at here
+We have the most advanced caching architecture, Which will never bloat your site. Know more about our caching architecture. We have some tricks and suggestions to improve frontend performance. 
 
 == Screenshots ==
 1. Collection of 100+ Free & Premium Elementor Widgets and Features.
 2. We have developed this for exceptional performance for all your elementor websites.
 3. Craft your navigation menu using elementor with great layout options and flexibility. 
-4. Your all listing needs are covered under our series of listing widgets with in depth options. 
-5. Wrapper Link, Global Tool Tip, Elementor Pro Compatibility, Magic Scroll, Cross Domain copy paste and lots more extra feature to supercharge your elementor.
+4. Your all listing needs are covered under our series of listing widgets with in-depth options. 
+5. Wrapper Link, Global Tool Tip, Elementor Pro Compatibility, Magic Scroll, Cross-Domain copy paste and lots more extra features to supercharge your elementor.
 6. Build creative and unique websites using Full Page, Page Pilling, Horizontal Scroll, and Multi Scroll in elementor page builder.
-7. You most of form widgets are covered such as caldera forms, Gravity Forms, Everest Forms, Ninja Forms, Contact form 7, WP Forms and more are coming soon.
+7. Most Elementor widgets for forms are covered such as Caldera forms, Gravity Forms, Everest Forms, Ninja Forms, Contact Form 7, WP Forms and more are coming soon.
 
 
 == Changelog ==
+
+= 5.0.5 =
+Fix : Inner Section Widget not visible bug
+Fix : Bug fix and improvements
+
+= 5.0.4 =
+Update : Accordion : Font-Awesome Inline compatibility
+Update : Age Gate : Font-Awesome Inline compatibility
+Update : Button : Font-Awesome Inline compatibility
+Update : Flipbox : Font-Awesome Inline compatibility
+Update : Messagebox : Font-Awesome Inline compatibility
+Update : Postmeta : Font-Awesome Inline compatibility
+Update : Scroll Navigation : Font-Awesome Inline compatibility
+Compatibility : Compatibility with Elementor v3.4 and Elementor Pro v3.5
+
+= 5.0.3 =
+Fix : Scan widget fix in Lightspeed server
+Fix : Age Gate JS update for overflow issue in the body
+Fix : Bug fix and improvements
 
 = 5.0.2 =
 Update : Optimized Caching algorithm
@@ -284,7 +307,7 @@ Fix : Bug fix and improvements
 Added : The Plus Settings -> Plus Widgets -> Unused Widget Scan and Disable Option
 Added : Elementor Free & Pro Widgets Manager
 Added : The Plus Settings -> Performance -> Elementor Free & Pro Widgets Manager -> Unused Widget Scan and Disable Option
-Added : Options to mange inbuilt caching from The Plus Settings -> Performance 1. Smart Advanced Caching 2. On Demand Assets Loading
+Added : Options to manage inbuilt caching from The Plus Settings -> Performance 1. Smart Advanced Caching 2. On-Demand Assets Loading
 Update : Video Player : Schema Markup option
 Compatibility : WordPress 5.8 compatibility
 Compatibility : Compatibility with Elementor v 3.4
@@ -351,4 +374,4 @@ Fix : Demo Importer bug fix
 == Upgrade Notice ==
 
 = 2.0.7 =
-Notice : This is security Update. Update it soon. For More details check Changelog.
+Notice : This is a security Update. Update it soon. For More details check Changelog.

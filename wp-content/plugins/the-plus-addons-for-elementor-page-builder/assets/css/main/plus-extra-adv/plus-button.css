@@ -462,3 +462,8 @@ a.button-link-wrap:hover {
 }
 /*---------style-20-----------*/
 /*-------tp button-------*/
+html.video {overflow: inherit !important;}
+
+html.video:before {
+    content: unset !important;   
+}

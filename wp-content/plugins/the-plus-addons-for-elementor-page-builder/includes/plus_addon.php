@@ -377,13 +377,13 @@ if(!function_exists('plus_simple_crypt')){
 }
 
 
-add_action('elementor/widgets/widgets_registered', function($widgets_manager){
+add_action('elementor/widgets/register', function($widgets_manager){
   $elementor_widget_blacklist = [
   'plus-elementor-widget',
 ];
 
   foreach($elementor_widget_blacklist as $widget_name){
-    $widgets_manager->unregister_widget_type($widget_name);
+    $widgets_manager->unregister($widget_name);
   }
 }, 15);
 

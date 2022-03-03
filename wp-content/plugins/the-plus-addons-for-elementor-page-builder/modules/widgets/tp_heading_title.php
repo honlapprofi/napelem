@@ -39,7 +39,7 @@ class L_Theplus_Ele_Heading_Title extends Widget_Base {
         return array('plus-essential');
     }
 	
-	protected function _register_controls() {
+	protected function register_controls() {
 		/*tab Layout */
 		$this->start_controls_section(
 			'heading_title_layout_section',

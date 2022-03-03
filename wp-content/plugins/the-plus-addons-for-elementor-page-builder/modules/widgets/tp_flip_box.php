@@ -40,7 +40,7 @@ class L_ThePlus_Flip_Box extends Widget_Base {
         return array('plus-creatives');
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 		
 		$this->start_controls_section(
 			'content_section',
@@ -500,8 +500,8 @@ class L_ThePlus_Flip_Box extends Widget_Base {
 					'button_icon_font_style!' => '',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .button-link-wrap i.button-after' => 'margin-left: {{SIZE}}{{UNIT}};',
-					'{{WRAPPER}} .button-link-wrap i.button-before' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .button-link-wrap .button-after' => 'margin-left: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .button-link-wrap .button-before' => 'margin-right: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -591,6 +591,7 @@ class L_ThePlus_Flip_Box extends Widget_Base {
 				'render_type' => 'ui',
 				'selectors' => [
 					'{{WRAPPER}} .pt_plus_info_box .info-box-inner .service-icon' => 'font-size: {{SIZE}}{{UNIT}} !important;',
+					'{{WRAPPER}} .pt_plus_info_box .info-box-inner .service-icon svg' => 'width: {{SIZE}}{{UNIT}} !important;height: {{SIZE}}{{UNIT}} !important;',
 				],
             ]
         );
@@ -651,6 +652,7 @@ class L_ThePlus_Flip_Box extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .pt_plus_info_box .info-box-inner .service-icon:before,
 					{{WRAPPER}} .pt_plus_info_box .info-box-inner .service-icon i:before' => 'color: {{VALUE}};background: transparent;-webkit-background-clip: unset;-webkit-text-fill-color: initial;',
+					'{{WRAPPER}} .pt_plus_info_box .info-box-inner .service-icon svg' => 'fill: {{VALUE}};background: transparent;-webkit-background-clip: unset;-webkit-text-fill-color: initial;',
 				],
 				'condition' => [
 					'icon_color_option' => 'solid',
@@ -828,6 +830,7 @@ class L_ThePlus_Flip_Box extends Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .pt_plus_info_box .info-box-inner:hover .service-icon:before,
 					{{WRAPPER}} .pt_plus_info_box .info-box-inner .service-icon i:before' => 'color: {{VALUE}};background: transparent;-webkit-background-clip: unset;-webkit-text-fill-color: initial;',
+					'{{WRAPPER}} .pt_plus_info_box .info-box-inner:hover .service-icon svg' => 'fill: {{VALUE}};background: transparent;-webkit-background-clip: unset;-webkit-text-fill-color: initial;',
 				],
 				'condition' => [
 					'icon_hover_color_option' => 'solid',
@@ -1415,7 +1418,29 @@ class L_ThePlus_Flip_Box extends Widget_Base {
 				'selector' => '{{WRAPPER}} .pt_plus_button .button-link-wrap',
 			]
 		);
-		
+		$this->add_control(
+            'button_svg_icon',
+            [
+                'type' => Controls_Manager::SLIDER,
+				'label' => esc_html__('Svg Icon Size', 'tpebl'),
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 150,
+						'step' => 2,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 20,
+				],
+				'render_type' => 'ui',
+				'selectors' => [
+					'{{WRAPPER}} .pt_plus_button .button-link-wrap svg' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+				],
+            ]
+        );
 		$this->start_controls_tabs( 'tabs_button_style' );
 
 		$this->start_controls_tab(
@@ -1432,6 +1457,7 @@ class L_ThePlus_Flip_Box extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .pt_plus_button .button-link-wrap' => 'color: {{VALUE}};',					
+					'{{WRAPPER}} .pt_plus_button .button-link-wrap svg' => 'fill: {{VALUE}};',					
 				],
 			]
 		);
@@ -1550,6 +1576,7 @@ class L_ThePlus_Flip_Box extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .pt_plus_button .button-link-wrap:hover' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .pt_plus_button .button-link-wrap:hover svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);

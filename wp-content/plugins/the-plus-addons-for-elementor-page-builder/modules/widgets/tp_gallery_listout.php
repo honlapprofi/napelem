@@ -40,7 +40,7 @@ class L_ThePlus_Gallery_ListOut extends Widget_Base {
         return array('plus-listing');
     }
 	
-    protected function _register_controls() {
+    protected function register_controls() {
 		
 		$this->start_controls_section(
 			'layout_content_section',

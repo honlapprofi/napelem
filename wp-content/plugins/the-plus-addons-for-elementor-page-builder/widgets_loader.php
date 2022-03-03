@@ -148,10 +148,11 @@ final class L_Theplus_Element_Load {
 	 * @since 5.0.0
 	 */
 	public function tp_get_elementor_pages(){
-
-		if ( ! check_ajax_referer( 'theplus-addons', 'security', false ) ) {
+		
+		if ( ! wp_verify_nonce( $_REQUEST['security'], 'theplus-addons' ) ) {
 			wp_send_json_error( esc_html__('Invalid security', 'tpebl') );
 		}
+		
 		if ( ! current_user_can('install_plugins') ) {
 			wp_send_json_error( esc_html__('Invalid User', 'tpebl') );
 		}
@@ -206,8 +207,18 @@ final class L_Theplus_Element_Load {
 	}
 	
 	public function tp_check_elements_status_scan( $post_id ='', $tp_widgets_list ){
+		if ( ! wp_verify_nonce( $_REQUEST['security'], 'theplus-addons' ) ) {
+			wp_send_json_error( esc_html__('Invalid security', 'tpebl') );
+		}
+		
+		if ( ! current_user_can('install_plugins') ) {
+			wp_send_json_error( esc_html__('Invalid User', 'tpebl') );
+		}
 		if( !empty($post_id) ){
-			$meta_data = \Elementor\Plugin::$instance->documents->get( $post_id )->get_elements_data();
+			$meta_data = \Elementor\Plugin::$instance->documents->get( $post_id );
+			if (is_object($meta_data)) {
+				$meta_data = $meta_data->get_elements_data();
+			}
 			
 			if ( empty( $meta_data ) ) {
 				return '';
@@ -233,11 +244,10 @@ final class L_Theplus_Element_Load {
 	}
 	
 	function tp_disable_elements_status_scan(){
-
-		if ( ! check_ajax_referer( 'theplus-addons', 'security', false ) ) {
+		
+		if ( ! wp_verify_nonce( $_REQUEST['security'], 'theplus-addons' ) ) {
 			wp_send_json_error( esc_html__('Invalid security', 'tpebl') );
 		}
-		
 		if ( ! current_user_can('install_plugins') ) {
 			wp_send_json_error( esc_html__('Invalid User', 'tpebl') );
 		}
@@ -357,7 +367,21 @@ final class L_Theplus_Element_Load {
 				'icon' => 'fa fa-plug',
 			],
 			1
-		);		
+		);
+		$elementor->elements_manager->add_category('plus-search-filter', 
+			[
+				'title' => esc_html__( 'PlusSearchFilters', 'tpebl' ),
+				'icon' => 'fa fa-plug',
+			],
+			1
+		);
+		$elementor->elements_manager->add_category('plus-depreciated', 
+			[
+				'title' => esc_html__( 'PlusDepreciated', 'tpebl' ),
+				'icon' => 'fa fa-plug',
+			],
+			1
+		);
 	}
 	
 	function theplus_settings_links ( $links ) {
@@ -383,9 +407,8 @@ final class L_Theplus_Element_Load {
 		// Include some backend files
 		add_action( 'admin_enqueue_scripts', [ $this,'theplus_elementor_admin_css'] );
 		add_filter( 'plugin_action_links_' . L_THEPLUS_PBNAME ,[ $this, 'theplus_settings_links'] );
-		
-		
-		if( is_admin() &&  current_user_can("manage_options") ){
+				
+		if( is_admin() && current_user_can("manage_options") ){
 			add_action( 'wp_ajax_tp_get_elementor_pages', [$this, 'tp_get_elementor_pages'] );
 			add_action( 'wp_ajax_tp_check_elements_status_scan', [$this, 'tp_check_elements_status_scan'] );
 			add_action( 'wp_ajax_tp_disable_elements_status_scan', [$this, 'tp_disable_elements_status_scan'] );

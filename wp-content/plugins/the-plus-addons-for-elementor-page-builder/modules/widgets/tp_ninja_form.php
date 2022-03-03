@@ -39,7 +39,7 @@ class L_ThePlus_Ninja_form extends Widget_Base {
         return array('plus-adapted');
     }
 	
-    protected function _register_controls() {
+    protected function register_controls() {
 		/*Layout Content*/
 		$this->start_controls_section(
 			'content_section',

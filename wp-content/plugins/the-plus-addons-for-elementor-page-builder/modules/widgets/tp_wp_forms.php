@@ -31,14 +31,14 @@ class L_ThePlus_Wp_Forms extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'fa fa-envelope-open-o theplus_backend_icon';
+        return 'fa fa-envelope-open theplus_backend_icon';
     }
 
     public function get_categories() {
         return array('plus-adapted');
     }
 	
-    protected function _register_controls() {
+    protected function register_controls() {
 		/*Layout Content*/
 		$this->start_controls_section(
 			'content_section',

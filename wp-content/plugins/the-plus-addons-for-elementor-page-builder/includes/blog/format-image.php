@@ -1,4 +1,5 @@
-<?php 
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	$featured_image_url = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
 	
 	if(! empty( $featured_image_url )){

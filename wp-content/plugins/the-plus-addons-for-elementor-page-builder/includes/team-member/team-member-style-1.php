@@ -1,4 +1,5 @@
-<?php 
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 $postid=get_the_ID();
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

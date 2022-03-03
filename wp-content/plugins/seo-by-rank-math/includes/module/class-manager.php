@@ -10,6 +10,7 @@
 
 namespace RankMath\Module;
 
+use RankMath\KB;
 use RankMath\Helper;
 use RankMath\Traits\Hooker;
 use MyThemeShop\Helpers\Conditional;
@@ -164,7 +165,8 @@ class Manager {
 
 		$modules['instant-indexing'] = [
 			'title'    => esc_html__( 'Instant Indexing', 'rank-math' ),
-			'desc'     => esc_html__( 'Directly notify search engines(Bing) when pages are added, updated or removed.', 'rank-math' ),
+			// Translators: placeholder is "IndexNow API".
+			'desc'     => sprintf( esc_html__( 'Directly notify search engines like Bing & Yandex using the %s when pages are added, updated and removed, or submit URLs manually.', 'rank-math' ), '<a href="' . KB::get( 'instant-indexing' ) . '" target="_blank">' . __( 'IndexNow API', 'rank-math' ) . '</a>' ),
 			'class'    => 'RankMath\Instant_Indexing\Instant_Indexing',
 			'icon'     => 'instant-indexing',
 			'settings' => Helper::get_admin_url( 'options-instant-indexing' ),
@@ -352,6 +354,9 @@ class Manager {
 		<div class="rank-math-ui module-listing dashboard-wrapper">
 
 			<div class="grid">
+
+			<?php $this->cta(); ?>
+
 			<?php
 			foreach ( $this->modules as $module ) :
 				if ( ! $module->can_display() ) {
@@ -462,5 +467,37 @@ class Manager {
 	 */
 	public function get_module( $id ) {
 		return isset( $this->controls[ $id ] ) ? $this->controls[ $id ] : false;
+	}
+
+	/**
+	 * Show CTA if Rank Math Pro is not active.
+	 *
+	 * @return void
+	 */
+	private function cta() {
+		if ( defined( 'RANK_MATH_PRO_FILE' ) ) {
+			return;
+		}
+
+		?>
+			<div class="rank-math-box rank-math-unlock-pro-box">
+				<i class="rm-icon rm-icon-software"></i>
+				<a href="https://rankmath.com/pricing/?utm_source=Plugin&utm_medium=Unlock%20PRO%20Module%20Box&utm_campaign=WP" target="_blank" class="pro-link">
+					<header>
+						<h3><?php esc_html_e( 'Take SEO to the Next Level!', 'rank-math' ); ?></h3>
+						<ul>
+							<li><?php esc_html_e( 'Unlimited personal websites', 'rank-math' ); ?></li>
+							<li><?php esc_html_e( 'Free 15 Content AI Credits', 'rank-math' ); ?></li>
+							<li><?php esc_html_e( 'Track 500 Keywords', 'rank-math' ); ?></li>
+							<li><?php esc_html_e( 'Powerful Schema Generator', 'rank-math' ); ?></li>
+							<li><?php esc_html_e( '24/7 Support', 'rank-math' ); ?></li>
+						</ul>
+					</header>
+					<div class="status wp-clearfix">
+						<button class="button button-secondary"><?php esc_html_e( 'Buy', 'rank-math' ); ?></button>
+					</div>
+				</a>
+			</div>
+		<?php
 	}
 }

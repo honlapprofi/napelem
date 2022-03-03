@@ -38,7 +38,7 @@ class L_ThePlus_Adv_Text_Block extends Widget_Base {
         return array('plus-essential');
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 		
 		$this->start_controls_section(
 			'content_section',

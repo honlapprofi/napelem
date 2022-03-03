@@ -43,7 +43,7 @@ class L_ThePlus_Header_Extras extends Widget_Base {
 		return [ 'header search', 'search bar', 'search icon', 'cart menu', 'mini cart','woo cart', 'music', 'music header', 'music bar', 'header extra content', 'header meta content', 'header extras', 'header extra info', 'language switcher', 'header call to action' ];
 	}
 
-protected function _register_controls() {
+protected function register_controls() {
 		
 		$this->start_controls_section(
 			'meta_content_sections',

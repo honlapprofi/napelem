@@ -1002,3 +1002,5 @@ ul.slick-dots.style-6 li button:after {
 		right: 15px;
 	}
 }
+.post-inner-loop .slick-list .slick-track{width:100vw}
+.list-carousel-slick .post-inner-loop .slick-list.draggable{width:100%}

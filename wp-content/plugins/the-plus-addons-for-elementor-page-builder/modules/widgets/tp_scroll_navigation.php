@@ -40,7 +40,7 @@ class L_ThePlus_Scroll_Navigation extends Widget_Base {
         return array('plus-creatives');
     }
 	
-    protected function _register_controls() {
+    protected function register_controls() {
 		/* Scroll Navigation Menu List Start*/
 		$this->start_controls_section(
 			'content_section',
@@ -736,6 +736,31 @@ class L_ThePlus_Scroll_Navigation extends Widget_Base {
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'navigation_tooltip_svg_icon',
+			[
+				'label' => esc_html__( 'Svg Icon Size', 'tpebl' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px'],
+				'range' => [
+					'px' => [
+						'min' => 1,
+						'max' => 150,
+						'step' => 1,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 20,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .theplus-scroll-navigation .theplus-scroll-navigation__dot span.tooltiptext svg' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
+				],
+				'condition'    => [
+					'scroll_navigation_style' => 'style-1',
+				],
+			]
+		);
 		$this->add_control(
 			'navigation_tooltip_font_color_normal',
 			[
@@ -743,6 +768,7 @@ class L_ThePlus_Scroll_Navigation extends Widget_Base {
 				'type' => Controls_Manager::COLOR,					
 				'selectors' => [
 					'{{WRAPPER}} .theplus-scroll-navigation__dot .tooltiptext' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .theplus-scroll-navigation__dot .tooltiptext svg' => 'fill: {{VALUE}}',
 				],
 				'condition'    => [
 					'scroll_navigation_style' => 'style-1',
@@ -756,6 +782,7 @@ class L_ThePlus_Scroll_Navigation extends Widget_Base {
 				'type' => Controls_Manager::COLOR,					
 				'selectors' => [
 					'{{WRAPPER}} .theplus-scroll-navigation__dot .tooltiptext:hover' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .theplus-scroll-navigation__dot .tooltiptext:hover svg' => 'fill: {{VALUE}}',
 				],
 				'condition'    => [
 					'scroll_navigation_style' => 'style-1',

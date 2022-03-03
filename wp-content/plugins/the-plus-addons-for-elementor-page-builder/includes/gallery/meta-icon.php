@@ -1,4 +1,6 @@
-<?php if(!empty($settings["custom_icon_image"]["url"])){
+<?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if(!empty($settings["custom_icon_image"]["url"])){
 	$icon_content ='<img src="'.esc_url($settings["custom_icon_image"]["url"]).'" alt="'.esc_attr('zoom','tpebl').'"/>';
 }else{
 	$icon_content ='<i class="fas fa-search-plus" aria-hidden="true"></i>';

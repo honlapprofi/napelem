@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	require_once L_THEPLUS_INCLUDES_URL.'plus-options/extension/cmb2-field-ajax-search.php';
 	require_once L_THEPLUS_INCLUDES_URL.'plus-options/post-type.php';
 	

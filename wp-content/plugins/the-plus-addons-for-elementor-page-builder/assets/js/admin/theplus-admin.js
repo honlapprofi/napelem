@@ -78,6 +78,7 @@
 	jQuery(document).on( 'click', '.plus-key-notify .notice-dismiss', function() {
 		jQuery.ajax({
 			url: ajaxurl,
+			type: "post",
 			data: {
 				action: 'theplus_key_notice',
 				security: theplus_nonce
@@ -365,5 +366,33 @@
 		});		
 		/*get page end*/
 		/*unused widget end*/
+		
+		/*rate us start*/
+		$(document).ready(function($){
+			$(document).on('click', '.theplus-rateus-wrapper .theplus-rateus-close a', function() {
+				var $rateusclose = $(this).closest('.theplus-rateus-wrapper');		
+				$rateusclose.slideUp();
+				$.ajax({
+					url: theplus_ajax_url,
+					data: {
+						action: 'tp_admin_rateus_notice',
+						security: theplus_nonce,
+					}
+				})
+			});
+			
+			$(document).on('click', '.theplus-rateus-wrapper .theplus-rateus-button .theplus-rateus-button-done a', function() {
+				var $rateusclose = $(this).closest('.theplus-rateus-wrapper');		
+				$rateusclose.slideUp();
+				$.ajax({
+					url: theplus_ajax_url,
+					data: {
+						action: 'tp_admin_rateus_notice_never',
+						security: theplus_nonce,
+					}
+				})
+			});
+		});
+		/*rate us end*/
 	});
 })(window.jQuery);

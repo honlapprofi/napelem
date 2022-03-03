@@ -44,7 +44,7 @@ class L_ThePlus_Navigation_Menu_Lite extends Widget_Base {
 		return [ 'menu', 'navigation', 'header','menu bar','nav' ];
 	}
 	
-    protected function _register_controls() {
+    protected function register_controls() {
 		
 		$this->start_controls_section(
 			'navbar_sections',

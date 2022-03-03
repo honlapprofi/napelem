@@ -83,14 +83,15 @@ class Elementor {
 			'rank-math-analyzer',
 			'backbone-marionette',
 			'elementor-common-modules',
+			'rank-math-app',
 		];
 
 		$mode = \Elementor\Core\Settings\Manager::get_settings_managers( 'editorPreferences' )->get_model()->get_settings( 'ui_theme' );
-		wp_deregister_style( 'rank-math-post-metabox' );
+		wp_deregister_style( 'rank-math-editor' );
 
 		wp_enqueue_style( 'wp-components' );
 		wp_enqueue_style( 'site-health' );
-		wp_enqueue_style( 'rank-math-elementor', rank_math()->plugin_url() . 'assets/admin/css/elementor.css', [], rank_math()->version );
+		wp_enqueue_style( 'rank-math-editor', rank_math()->plugin_url() . 'assets/admin/css/elementor.css', [], rank_math()->version );
 		$media_query = '';
 		if ( 'light' !== $mode ) {
 			$media_query = 'auto' === $mode ? '(prefers-color-scheme: dark)' : 'all';
@@ -99,7 +100,7 @@ class Elementor {
 
 		Helper::add_json( 'elementorDarkMode', rank_math()->plugin_url() . 'assets/admin/css/elementor-dark.css' );
 
-		wp_enqueue_script( 'rank-math-elementor', rank_math()->plugin_url() . 'assets/admin/js/elementor.js', $deps, rank_math()->version, true );
+		wp_enqueue_script( 'rank-math-editor', rank_math()->plugin_url() . 'assets/admin/js/elementor.js', $deps, rank_math()->version, true );
 		rank_math()->variables->setup();
 		rank_math()->variables->setup_json();
 

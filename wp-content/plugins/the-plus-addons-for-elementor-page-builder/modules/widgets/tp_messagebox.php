@@ -41,7 +41,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
         return array('plus-essential');
     }
 
-    protected function _register_controls() {
+    protected function register_controls() {
 		/*Text Content */
 		$this->start_controls_section(
 			'message_box_content_section',
@@ -460,6 +460,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .messagebox-bg-box .msg-icon-content i' => 'font-size: {{SIZE}}{{UNIT}}',
+					'{{WRAPPER}} .messagebox-bg-box .msg-icon-content svg' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}}',
 				],
             ]
         );
@@ -485,7 +486,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 					'icon' => 'yes',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .messagebox-bg-box .msg-icon-content i' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}}',	
+					'{{WRAPPER}} .messagebox-bg-box .msg-icon-content' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}}',	
 				],				
             ]
         );
@@ -517,6 +518,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .messagebox-bg-box .msg-icon-content i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .messagebox-bg-box .msg-icon-content svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -529,7 +531,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 					'icon' => 'yes',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .messagebox-bg-box .msg-icon-content i' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .messagebox-bg-box .msg-icon-content' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -551,7 +553,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 			[
 				'name' => 'iconNmlBorder',
 				'label' => esc_html__( 'Border', 'tpebl' ),
-				'selector' => '{{WRAPPER}} .messagebox-bg-box .msg-icon-content i',
+				'selector' => '{{WRAPPER}} .messagebox-bg-box .msg-icon-content',
 				'condition' => [
 				   'icon' => 'yes',
 			    ],
@@ -564,7 +566,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .messagebox-bg-box .msg-icon-content i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .messagebox-bg-box .msg-icon-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
 				   'icon' => 'yes',
@@ -576,7 +578,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 			[
 				'name' => 'nmlIconShadow',
 				'label' => esc_html__( 'Box Shadow', 'tpebl' ),
-				'selector' => '{{WRAPPER}} .messagebox-bg-box .msg-icon-content i',
+				'selector' => '{{WRAPPER}} .messagebox-bg-box .msg-icon-content',
 				'condition' => [
 					'icon' => 'yes',
 				],
@@ -599,6 +601,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .messagebox-bg-box:hover .msg-icon-content i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .messagebox-bg-box:hover .msg-icon-content svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -611,7 +614,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 					'icon' => 'yes',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .messagebox-bg-box:hover .msg-icon-content i' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .messagebox-bg-box:hover .msg-icon-content' => 'background: {{VALUE}};',
 				],
 			]
 		);
@@ -633,7 +636,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 			[
 				'name' => 'iconHvrBorder',
 				'label' => esc_html__( 'Border', 'tpebl' ),
-				'selector' => '{{WRAPPER}} .messagebox-bg-box:hover .msg-icon-content i',
+				'selector' => '{{WRAPPER}} .messagebox-bg-box:hover .msg-icon-content',
 				'condition' => [
 				    'icon' => 'yes',
 			    ],
@@ -646,7 +649,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .messagebox-bg-box:hover .msg-icon-content i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .messagebox-bg-box:hover .msg-icon-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
 				    'icon' => 'yes',
@@ -658,7 +661,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 			[
 				'name' => 'hvrIconShadow',
 				'label' => esc_html__( 'Box Shadow', 'tpebl' ),
-				'selector' => '{{WRAPPER}} .messagebox-bg-box:hover .msg-icon-content i',
+				'selector' => '{{WRAPPER}} .messagebox-bg-box:hover .msg-icon-content',
 				'condition' => [
 					'icon' => 'yes',
 				],
@@ -702,6 +705,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .messagebox-bg-box .msg-dismiss-content i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .messagebox-bg-box .msg-dismiss-content svg' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};',
 				],
             ]
         );
@@ -727,7 +731,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 					'dismiss' => 'yes',
 				],
 				'selectors' => [
-					'{{WRAPPER}} .messagebox-bg-box .msg-dismiss-content i' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}}',			
+					'{{WRAPPER}} .messagebox-bg-box .msg-dismiss-content' => 'width: {{SIZE}}{{UNIT}};height: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}}',			
 				],
 				'separator' => 'after',
             ]
@@ -752,6 +756,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .messagebox-bg-box .msg-dismiss-content i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .messagebox-bg-box .msg-dismiss-content svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -761,7 +766,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 				'label' => esc_html__( 'Background Color', 'tpebl' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .messagebox-bg-box .msg-dismiss-content i' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .messagebox-bg-box .msg-dismiss-content' => 'background: {{VALUE}};',
 				],
 				'condition' => [
 					'dismiss' => 'yes',
@@ -775,7 +780,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .messagebox-bg-box .msg-dismiss-content i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .messagebox-bg-box .msg-dismiss-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
 				    'dismiss' => 'yes',
@@ -787,7 +792,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 			[
 				'name' => 'dIconNmlShadow',
 				'label' => esc_html__( 'Box Shadow', 'tpebl' ),
-				'selector' => '{{WRAPPER}} .messagebox-bg-box .msg-dismiss-content i',
+				'selector' => '{{WRAPPER}} .messagebox-bg-box .msg-dismiss-content',
 				'condition' => [
 					'dismiss' => 'yes',
 				],
@@ -813,6 +818,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .messagebox-bg-box:hover .msg-dismiss-content i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .messagebox-bg-box:hover .msg-dismiss-content svg' => 'fill: {{VALUE}};',
 				],
 			]
 		);
@@ -822,7 +828,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 				'label' => esc_html__( 'Background Color', 'tpebl' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .messagebox-bg-box:hover .msg-dismiss-content i' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .messagebox-bg-box:hover .msg-dismiss-content' => 'background: {{VALUE}};',
 				],
 				'condition' => [
 					'dismiss' => 'yes',
@@ -836,7 +842,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%' ],
 				'selectors'  => [
-					'{{WRAPPER}} .messagebox-bg-box:hover .msg-dismiss-content i' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} .messagebox-bg-box:hover .msg-dismiss-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 				'condition' => [
 				    'dismiss' => 'yes',
@@ -848,7 +854,7 @@ class L_ThePlus_MessageBox extends Widget_Base {
 			[
 				'name' => 'dIconHvrShadow',
 				'label' => esc_html__( 'Box Shadow', 'tpebl' ),
-				'selector' => '{{WRAPPER}} .messagebox-bg-box:hover .msg-dismiss-content i',
+				'selector' => '{{WRAPPER}} .messagebox-bg-box:hover .msg-dismiss-content',
 				'condition' => [
 					'dismiss' => 'yes',
 				],
