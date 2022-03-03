@@ -28,38 +28,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="ai1wm-container">
-	<div class="ai1wm-row">
-		<div class="ai1wm-left">
-			<div class="ai1wm-holder">
-				<h1>
-					<i class="ai1wm-icon-publish"></i>
-					<?php _e( 'Import Site', AI1WM_PLUGIN_NAME ); ?>
-				</h1>
+<div class="ai1wm-right">
+	<div class="ai1wm-sidebar">
+		<div class="ai1wm-segment">
 
-				<?php if ( is_readable( AI1WM_STORAGE_PATH ) && is_writable( AI1WM_STORAGE_PATH ) ) : ?>
+			<?php if ( ! AI1WM_DEBUG ) : ?>
+				<?php include AI1WM_TEMPLATES_PATH . '/common/share-buttons.php'; ?>
+			<?php endif; ?>
 
-					<form action="" method="post" id="ai1wm-import-form" class="ai1wm-clear" enctype="multipart/form-data">
+			<h2><?php _e( 'Leave Feedback', AI1WM_PLUGIN_NAME ); ?></h2>
+			<?php include AI1WM_TEMPLATES_PATH . '/common/leave-feedback.php'; ?>
 
-						<?php do_action( 'ai1wm_import_left_options' ); ?>
+			<?php do_action( 'ai1wm_sidebar_right_end' ); ?>
 
-						<?php include AI1WM_TEMPLATES_PATH . '/import/import-buttons.php'; ?>
-
-						<input type="hidden" name="ai1wm_manual_import" value="1" />
-
-					</form>
-
-					<?php do_action( 'ai1wm_import_left_end' ); ?>
-
-				<?php else : ?>
-
-					<?php include AI1WM_TEMPLATES_PATH . '/import/import-permissions.php'; ?>
-
-				<?php endif; ?>
-			</div>
 		</div>
-
-		<?php include AI1WM_TEMPLATES_PATH . '/common/sidebar-right.php'; ?>
 
 	</div>
 </div>
+
