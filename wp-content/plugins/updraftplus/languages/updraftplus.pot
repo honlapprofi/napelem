@@ -620,7 +620,7 @@ msgstr ""
 msgid "Frankfurt"
 msgstr ""
 
-#: src/addons/googlecloud.php:140, src/addons/googlecloud.php:974, src/methods/s3.php:1249
+#: src/addons/googlecloud.php:140, src/addons/googlecloud.php:974, src/methods/s3.php:1251
 msgid "Failure: No bucket details were given."
 msgstr ""
 
@@ -1056,7 +1056,7 @@ msgstr ""
 msgid "Replace with"
 msgstr ""
 
-#: src/addons/migrator.php:341, src/addons/moredatabase.php:113, src/addons/moredatabase.php:115, src/addons/moredatabase.php:117, src/addons/sftp.php:560, src/addons/sftp.php:564, src/addons/sftp.php:568, src/addons/webdav.php:316, src/admin.php:934, src/includes/class-remote-send.php:576, src/methods/addon-base-v2.php:348, src/methods/cloudfiles-new.php:181, src/methods/cloudfiles-new.php:186, src/methods/cloudfiles.php:534, src/methods/cloudfiles.php:539, src/methods/ftp.php:426, src/methods/ftp.php:430, src/methods/openstack2.php:180, src/methods/openstack2.php:185, src/methods/openstack2.php:190, src/methods/openstack2.php:195, src/methods/s3.php:1223, src/methods/s3.php:1227
+#: src/addons/migrator.php:341, src/addons/moredatabase.php:113, src/addons/moredatabase.php:115, src/addons/moredatabase.php:117, src/addons/sftp.php:560, src/addons/sftp.php:564, src/addons/sftp.php:568, src/addons/webdav.php:316, src/admin.php:934, src/includes/class-remote-send.php:576, src/methods/addon-base-v2.php:348, src/methods/cloudfiles-new.php:181, src/methods/cloudfiles-new.php:186, src/methods/cloudfiles.php:534, src/methods/cloudfiles.php:539, src/methods/ftp.php:426, src/methods/ftp.php:430, src/methods/openstack2.php:180, src/methods/openstack2.php:185, src/methods/openstack2.php:190, src/methods/openstack2.php:195, src/methods/s3.php:1225, src/methods/s3.php:1229
 msgid "Failure: No %s was given."
 msgstr ""
 
@@ -5884,7 +5884,7 @@ msgstr ""
 msgid "Cloud Files API Key"
 msgstr ""
 
-#: src/methods/cloudfiles-new.php:181, src/methods/cloudfiles.php:534, src/methods/s3.php:1223
+#: src/methods/cloudfiles-new.php:181, src/methods/cloudfiles.php:534, src/methods/s3.php:1225
 msgid "API key"
 msgstr ""
 
@@ -6266,11 +6266,11 @@ msgstr ""
 msgid "No settings were found - please go to the Settings tab and check your settings"
 msgstr ""
 
-#: src/methods/s3.php:215, src/methods/s3.php:216, src/methods/s3.php:227, src/methods/s3.php:228
+#: src/methods/s3.php:214, src/methods/s3.php:215, src/methods/s3.php:227, src/methods/s3.php:228
 msgid "Error: Failed to initialise"
 msgstr ""
 
-#: src/methods/s3.php:217, src/methods/s3.php:229
+#: src/methods/s3.php:216, src/methods/s3.php:229
 msgid "%s Error: Failed to initialise"
 msgstr ""
 
@@ -6346,11 +6346,11 @@ msgstr ""
 msgid "Enter only a bucket name or a bucket and path. Examples: mybucket, mybucket/mypath"
 msgstr ""
 
-#: src/methods/s3.php:1227
+#: src/methods/s3.php:1229
 msgid "API secret"
 msgstr ""
 
-#: src/methods/s3.php:1254
+#: src/methods/s3.php:1256
 msgid "Failure: No endpoint details were given."
 msgstr ""
 
