@@ -55,6 +55,8 @@ if ( ! class_exists( 'L_Theplus_Elements_Integration' ) ) {
 			$grouped_control = array(
 				'plus-equal-height' => 'L_Theplus_Equal_Height',
 				'plus-section-column-link' => 'L_Theplus_Section_Column_Link',
+				'plus-glass-morphism' => 'L_Theplus_Glass_Morphism',
+				'plus-adv-shadow' => 'L_Theplus_Advanced_Shadow',
 			);
 			foreach ( $grouped_control as $control_id => $class_name ) {
 				if ( $this->include_control( $control_id, true ) ) {

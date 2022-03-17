@@ -240,11 +240,11 @@ class L_ThePlus_Tabs_Tours extends Widget_Base {
 				'options' => [
 					'top' => [
 						'title' => esc_html__( 'Top', 'tpebl' ),
-						'icon' => 'fa fa-level-up',
+						'icon' => 'eicon-v-align-top',
 					],					
 					'bottom' => [
 						'title' => esc_html__( 'Bottom', 'tpebl' ),
-						'icon' => 'fa fa-level-down',
+						'icon' => 'eicon-v-align-bottom',
 					],
 				],
 				'default' => 'top',

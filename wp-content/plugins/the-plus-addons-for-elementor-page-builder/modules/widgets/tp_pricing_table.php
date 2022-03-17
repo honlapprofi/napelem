@@ -1629,7 +1629,7 @@ class L_ThePlus_Pricing_Table extends Widget_Base {
 				'options' => [
 					'top' => [
 						'title' => esc_html__( 'Top', 'tpebl' ),
-						'icon' => 'fa fa-level-up',
+						'icon' => 'eicon-v-align-top',
 					],
 					'middle' => [
 						'title' => esc_html__( 'Middle', 'tpebl' ),
@@ -1637,7 +1637,7 @@ class L_ThePlus_Pricing_Table extends Widget_Base {
 					],
 					'bottom' => [
 						'title' => esc_html__( 'Bottom', 'tpebl' ),
-						'icon' => 'fa fa-level-down',
+						'icon' => 'eicon-v-align-bottom',
 					],
 				],
 				'default' => 'top',

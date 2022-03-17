@@ -2,9 +2,9 @@
 Contributors: posimyththemes, ankitposimyth, nirmalkavaiya, sagarpatel124
 Tags: Elementor, elementor widgets, elements, elementor addon, elementor templates, elementor widgets, extensions
 Requires at least: 5.7.0
-Tested up to: 5.8
+Tested up to: 5.9
 Requires PHP: 5.6
-Stable tag: 5.0.5
+Stable tag: 5.0.7
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -35,7 +35,7 @@ https://www.youtube.com/watch?v=yG_oyhz-oAY
 * <strong>WooCommerce Store Builder</strong> for Elementor to build custom Checkout, Cart pages, Thank you page etc. 🔥<br><br><br>
 * <strong>One-Click Auto Widget Scanner</strong> to Turn off Unused Widgets (Includes Elementor FREE & PRO Widgets too)🚀<br><br><br>
 * Regularly Audited by <strong>Top Security Experts</strong> 🔐<a href="https://my.getastra.com/verify/vapt/certificates/71d36c74-6f6a-4fef-9696-26ab5cdf352f"> View Certificate </a><br><br><br>
-* <strong>Cross-Domain Copy Pasting</strong> to easily copy a piece of content images<br><br><br>
+* <strong>Free Cross-Domain Copy Pasting</strong> to easily copy a piece of content images<br><br><br>
 * <strong>FB & Google Events Tracker</strong> to help you track events, button clicks for conversions<br><br><br>
 * Vertical and Horizontal <strong>Mega Menu Builder</strong> for Elementor 🔥<br><br><br>
 * Display<strong> Facebook and Google Review</strong> directly on your site <br><br><br>
@@ -113,8 +113,9 @@ https://www.youtube.com/watch?v=2bdeeu6sZPw
 33. <strong>[Age Gate](https://theplusaddons.com/widgets/age-gate/)</strong> - Use an Age gate verification for your Elementor site to protect the content of your site based on age with the date of birth, Yes or No questions
 34. <strong>[Message Box](https://theplusaddons.com/widgets/message-box/)</strong> - Create a simple alert box using creative options provided by Message Box widget for Elementor with tons of styling and customization options. Use it on your website to provide a more interactive feel to your users. 
 35. <strong> [Advanced Text Block](https://theplusaddons.com/widgets/advance-text-block/)</strong> - Add your most important text content with maximum possible options. It have all cosmetic, typographic and Responsive options as per regular needs.
-
- 
+36. <strong> [Glass Morphism](https://theplusaddons.com/plus-extras/glass-morphism/)</strong> - Get Frosted Glass effect with blur controls to attain GlassMorphism CSS for Free in Elementor. No CSS Coding knowledge required, simply slide to add Blurry Glass effect on any Elementor widgets, section or columns
+37. <strong> [Advanced Shadow](https://theplusaddons.com/neumorphism/)</strong> - Create an amazing Shadow effect by providing box shadow, drop shadow and text shadow for any elements of your website using Neumorphism
+38. <strong>[Cross Domain Copy Paste](https://theplusaddons.com/plus-extras/cross-domain-copy-paste-and-live-copy-elementor/)</strong> - Use "Plus Copy" to transfer your Elementor Sections, Widgets & Columns from One site to another with simple method. It will change the way you are using Plus Design Templates, You just need to Live Copy from our demo pages and Paste on your website directly.
 
 
 ### 🏆 75+ Pro Widgets & Extensions
@@ -202,16 +203,15 @@ https://www.youtube.com/watch?v=2bdeeu6sZPw
 67. <strong>[Global Special Overlay Color](https://theplusaddons.com/plus-extras/special-effects-parallax-3d-mouse-hover-continuous-animations-elementor-widgets/#first-section)</strong> - Looking for some amazing effects for each widget? Now, You can use mouse move based parallax in elementor widgets, Special Scroll Overlay dual colour effects, Tilt 3D Hover Effects, and Continuous animation effects in elementor widgets.
 68. <strong>[Global Tilt 3D Effects](https://theplusaddons.com/plus-extras/special-effects-parallax-3d-mouse-hover-continuous-animations-elementor-widgets/#tilt-3d)</strong> - Looking for some amazing effects for each widget? Now, You can use mouse move based parallax in elementor widgets, Special Scroll Overlay dual colour effects, Tilt 3D Hover Effects, and Continuous animation effects in elementor widgets.
 69. <strong>[Global Tooltip](https://theplusaddons.com/plus-extras/global-tooltips-elementor-widgets/)</strong> - In today’s two way communication, Tooltips are are popular and increase interactiveness on your website. Best Global tooltip option available in elementor. Tooltips are almost in all possible elementor widgets and with tons of customisation options for tooltips.
-70. <strong>[Cross Domain Copy Paste](https://theplusaddons.com/plus-extras/cross-domain-copy-paste-and-live-copy-elementor/)</strong> - Use "Plus Copy" to transfer your Elementor Sections, Widgets & Columns from One site to another with simple method. It will change the way you are using Plus Design Templates, You just need to Live Copy from our demo pages and Paste on your website directly.
-71. <strong>[Facebook & Google Event Tracker](https://theplusaddons.com/plus-extras/conversion-event-tracker-in-elementor/)</strong> - This feature is to track all Facebook pixel and google analytics conversion events from your WordPress Website made by Elementor Page Builder. It tracks each tag's click events and Submits button events for form builder widgets.
-72. <strong>[White Label](https://theplusaddons.com/plus-extras/white-label-branding/)</strong> - You may change each and every detail of plugin to your own or your client’s. It will give personalisation to your client projects.
-73. <strong>[Grid Design Tool](https://theplusaddons.com/plus-extras/design-tool/)</strong> - Multiple elementor designer productivity & testing oriented features, Which help designers to achieve their best possible creative level.
-74. <strong>[MagicScroll Integration](https://theplusaddons.com/plus-extras/on-scroll-magic-elementor-parallax/)</strong> - Have you heard about ScrollMagic in Elementor? Most of all of our elementor widgets have ScrollMagic Options in Plus Extras to create unique layouts. This is the best Scroll Magic option available in elementor till now.
-75. <strong>[On Scroll Animation Content ](https://theplusaddons.com/plus-extras/on-scroll-animations-elementor-any-widgets/)</strong> - Amazing On Scroll Animations for all your individual widgets of elementor, You can set up one-time scroll animation in elementor widgets or dual scroll animation in elementor widgets. It has more than 30 Animation styles for scroll animation for elementor widgets.
-76. <strong>[Row Section Scroll Animation](https://theplusaddons.com/plus-extras/row-section-full-scroll-animation/)</strong> - Looking for Options like 3d Section | Row Animation on scroll, Reveal Animation, Content Fly animation on content, Special Content visibility options from different directions and Other effects based on scroll? Your search will end here using this elementor widget.
-77. <strong>[Custom CSS(Section & Column)](https://theplusaddons.com/plus-extras/elementor-column-improvements-upgrades-responsive/#custom-css)</strong> - Add your custom CSS in any Row/Section or Column
-78. <strong>[18+ Premium Templates](https://theplusaddons.com/plus-design/#templates)</strong> - Your website landing page is a few clicks away using our ready-made, responsive website templates. It will have more demos coming very soon.
-79. <strong>[ 300+ Premium UI Blocks](https://theplusaddons.com/plus-design/#templates)</strong> - Your website landing page is a few clicks away using our ready-made, responsive website templates. It will have more demos coming very soon.
+70. <strong>[Facebook & Google Event Tracker](https://theplusaddons.com/plus-extras/conversion-event-tracker-in-elementor/)</strong> - This feature is to track all Facebook pixel and google analytics conversion events from your WordPress Website made by Elementor Page Builder. It tracks each tag's click events and Submits button events for form builder widgets.
+71. <strong>[White Label](https://theplusaddons.com/plus-extras/white-label-branding/)</strong> - You may change each and every detail of plugin to your own or your client’s. It will give personalisation to your client projects.
+72. <strong>[Grid Design Tool](https://theplusaddons.com/plus-extras/design-tool/)</strong> - Multiple elementor designer productivity & testing oriented features, Which help designers to achieve their best possible creative level.
+73. <strong>[MagicScroll Integration](https://theplusaddons.com/plus-extras/on-scroll-magic-elementor-parallax/)</strong> - Have you heard about ScrollMagic in Elementor? Most of all of our elementor widgets have ScrollMagic Options in Plus Extras to create unique layouts. This is the best Scroll Magic option available in elementor till now.
+74. <strong>[On Scroll Animation Content ](https://theplusaddons.com/plus-extras/on-scroll-animations-elementor-any-widgets/)</strong> - Amazing On Scroll Animations for all your individual widgets of elementor, You can set up one-time scroll animation in elementor widgets or dual scroll animation in elementor widgets. It has more than 30 Animation styles for scroll animation for elementor widgets.
+75. <strong>[Row Section Scroll Animation](https://theplusaddons.com/plus-extras/row-section-full-scroll-animation/)</strong> - Looking for Options like 3d Section | Row Animation on scroll, Reveal Animation, Content Fly animation on content, Special Content visibility options from different directions and Other effects based on scroll? Your search will end here using this elementor widget.
+76. <strong>[Custom CSS(Section & Column)](https://theplusaddons.com/plus-extras/elementor-column-improvements-upgrades-responsive/#custom-css)</strong> - Add your custom CSS in any Row/Section or Column
+77. <strong>[18+ Premium Templates](https://theplusaddons.com/plus-design/#templates)</strong> - Your website landing page is a few clicks away using our ready-made, responsive website templates. It will have more demos coming very soon.
+78. <strong>[ 300+ Premium UI Blocks](https://theplusaddons.com/plus-design/#templates)</strong> - Your website landing page is a few clicks away using our ready-made, responsive website templates. It will have more demos coming very soon.
 
  
 
@@ -278,6 +278,22 @@ We have the most advanced caching architecture, Which will never bloat your site
 
 
 == Changelog ==
+
+= 5.0.7 =
+Fix : Polylang wpml-config.xml conflict fix
+
+= 5.0.6 =
+Compatibility : Wordpress 5.9
+Compatibility : Elementor Compatibility Tag
+Added : Cross-Domain Copy Paste
+Added : Glass Morphism option in Section
+Added : Glass Morphism option in Column
+Added : Glass Morphism option in Widget
+Added : WPML String Transition XML
+Added : Advanced Multi Box Shadow
+Added : Advanced Multi Text shadow
+Added : Advanced Multi Drop Shadow
+Fix : Few Improvements and Bug fix
 
 = 5.0.5 =
 Fix : Inner Section Widget not visible bug

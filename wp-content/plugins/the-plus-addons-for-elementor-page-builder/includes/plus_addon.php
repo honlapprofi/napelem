@@ -502,6 +502,17 @@ function l_registered_widgets(){
 				],
 			],
 		],
+		'tp-dark-mode' => [
+			'dependency' => [
+				'css' => [										
+					L_THEPLUS_PATH . DIRECTORY_SEPARATOR .'assets/css/main/darkmode/plus-dark-mode.css',
+				],
+				'js' => [
+					L_THEPLUS_PATH . DIRECTORY_SEPARATOR .'assets/js/extra/darkmode.min.js',
+					L_THEPLUS_PATH . DIRECTORY_SEPARATOR .'assets/js/main/darkmode/plus-dark-mode.min.js',
+				],
+			],
+		],
 		'tp-everest-form' => [
 			'dependency' => [
 				'css' => [					
