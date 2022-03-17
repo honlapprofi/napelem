@@ -98,6 +98,9 @@ final class L_Theplus_Element_Load {
 			require_once L_THEPLUS_INCLUDES_URL.'plus-options/includes.php';
 		}
 		
+		//@since 5.0.6
+		require L_THEPLUS_PATH.'modules/theplus-core-cp.php';
+		
 		require L_THEPLUS_INCLUDES_URL.'theplus_options.php';		
 		
 		if(!defined('THEPLUS_VERSION')){
@@ -416,6 +419,11 @@ final class L_Theplus_Element_Load {
 		
 	}	
 	
+	
+	public function tp_advanced_shadow_style() {
+		wp_enqueue_script( 'tp-advanced-shadows', L_THEPLUS_ASSETS_URL .'js/admin/tp-advanced-shadow-layout.js', array('jquery'),L_THEPLUS_VERSION, true );
+	}
+	
 	/**
 	 * ThePlus_Load constructor.
 	 */
@@ -428,6 +436,16 @@ final class L_Theplus_Element_Load {
 		if(!defined('THEPLUS_VERSION')){	
 			L_Theplus_Elements_Integration()->init();
 		}
+		
+		$plus_extras=l_theplus_get_option('general','extras_elements');
+		
+		if((isset($plus_extras) && empty($plus_extras) && empty($theplus_options)) || (!empty($plus_extras) && in_array('plus_adv_shadow',$plus_extras))){
+			add_action( 'wp_enqueue_scripts', [ $this, 'tp_advanced_shadow_style' ] );
+		}
+
+		//@since 5.0.6
+		theplus_core_cp_lite()->init();
+		
 		$this->include_widgets();		
 		l_theplus_widgets_include();
 		

@@ -152,6 +152,7 @@
     position: relative;
     height: 20px;
     width: 20px;
+    min-width:20px;
     background-color: #eee;
     display: inline-table;
     margin-right: 10px;

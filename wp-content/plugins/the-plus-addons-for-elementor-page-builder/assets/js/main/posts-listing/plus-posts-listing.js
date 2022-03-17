@@ -11,11 +11,16 @@
 			b.windowWidth = b.window.width();	
 			b.list_isotope_Posts = function() {
 				var c = function(c) {
+					var olvalue =  true;
+					if ( document.dir == "rtl" ){
+						olvalue =  false;
+					}
 					$('.list-isotope',$scope).each(function() {						
 						var e, c = $(this), d = c.data("layout-type"),f = {
 							itemSelector: ".grid-item",
 							resizable: !0,
-							sortBy: "original-order"
+							sortBy: "original-order",
+							originLeft : olvalue,
 						};
 						var uid=c.data("id");
 						var inner_c=$('.'+uid).find(".post-inner-loop");

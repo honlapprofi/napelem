@@ -715,7 +715,10 @@ class L_ThePlus_Post_Author extends Widget_Base {
 				$outputname .='<a href="'.esc_url($author_page_url).'" class="author-name tp-author-trans" rel="'.esc_attr__('author','tpebl').'" >'.$author_name.'</a>';
 			}	
 			if($ShowRole){
-				$outputrole .='<span class="tp-author-role">'.esc_html($settings['roleLabel']).get_the_author().'</span>';
+				global $authordata;
+				$author_roles = $authordata->roles;
+				$author_role = array_shift($author_roles);				
+				$outputrole .='<span class="tp-author-role">'.esc_html($settings['roleLabel']).$author_role.'</span>';
 			}
 			if($ShowAvatar){
 				$outputavatar .= '<a href="'.esc_url($author_page_url).'" rel="'.esc_attr__('author','tpebl').'" class="author-avatar tp-author-trans"><img src="'.esc_url($avatar_url).'" /></a>';
