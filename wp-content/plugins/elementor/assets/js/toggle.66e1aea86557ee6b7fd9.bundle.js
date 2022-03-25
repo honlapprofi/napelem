@@ -1,4 +1,4 @@
-/*! elementor - v3.5.6 - 28-02-2022 */
+/*! elementor - v3.6.1 - 23-03-2022 */
 "use strict";
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["toggle"],{
 
@@ -149,7 +149,7 @@ class baseTabs extends elementorModules.frontend.handlers.Base {
       'aria-selected': 'true',
       'aria-expanded': 'true'
     });
-    $requestedContent[settings.showTabFn](animationDuration, () => elementorFrontend.elements.$window.trigger('resize'));
+    $requestedContent[settings.showTabFn](animationDuration, () => elementorFrontend.elements.$window.trigger('elementor-pro/motion-fx/recalc'));
     $requestedContent.removeAttr('hidden');
   }
 
@@ -260,4 +260,4 @@ exports["default"] = Toggle;
 /***/ })
 
 }]);
-//# sourceMappingURL=toggle.720329fccfaf33458a48.bundle.js.map
+//# sourceMappingURL=toggle.66e1aea86557ee6b7fd9.bundle.js.map

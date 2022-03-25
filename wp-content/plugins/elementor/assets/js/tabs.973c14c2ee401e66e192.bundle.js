@@ -1,38 +1,6 @@
-/*! elementor - v3.5.6 - 28-02-2022 */
+/*! elementor - v3.6.1 - 23-03-2022 */
 "use strict";
-(self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["accordion"],{
-
-/***/ "../assets/dev/js/frontend/handlers/accordion.js":
-/*!*******************************************************!*\
-  !*** ../assets/dev/js/frontend/handlers/accordion.js ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _baseTabs = _interopRequireDefault(__webpack_require__(/*! ./base-tabs */ "../assets/dev/js/frontend/handlers/base-tabs.js"));
-
-class Accordion extends _baseTabs.default {
-  getDefaultSettings() {
-    const defaultSettings = super.getDefaultSettings();
-    return { ...defaultSettings,
-      showTabFn: 'slideDown',
-      hideTabFn: 'slideUp'
-    };
-  }
-
-}
-
-exports["default"] = Accordion;
-
-/***/ }),
+(self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["tabs"],{
 
 /***/ "../assets/dev/js/frontend/handlers/base-tabs.js":
 /*!*******************************************************!*\
@@ -181,7 +149,7 @@ class baseTabs extends elementorModules.frontend.handlers.Base {
       'aria-selected': 'true',
       'aria-expanded': 'true'
     });
-    $requestedContent[settings.showTabFn](animationDuration, () => elementorFrontend.elements.$window.trigger('resize'));
+    $requestedContent[settings.showTabFn](animationDuration, () => elementorFrontend.elements.$window.trigger('elementor-pro/motion-fx/recalc'));
     $requestedContent.removeAttr('hidden');
   }
 
@@ -255,7 +223,38 @@ class baseTabs extends elementorModules.frontend.handlers.Base {
 
 exports["default"] = baseTabs;
 
+/***/ }),
+
+/***/ "../assets/dev/js/frontend/handlers/tabs.js":
+/*!**************************************************!*\
+  !*** ../assets/dev/js/frontend/handlers/tabs.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "../node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+
+var _baseTabs = _interopRequireDefault(__webpack_require__(/*! ./base-tabs */ "../assets/dev/js/frontend/handlers/base-tabs.js"));
+
+class Tabs extends _baseTabs.default {
+  getDefaultSettings() {
+    const defaultSettings = super.getDefaultSettings();
+    return { ...defaultSettings,
+      toggleSelf: false
+    };
+  }
+
+}
+
+exports["default"] = Tabs;
+
 /***/ })
 
 }]);
-//# sourceMappingURL=accordion.d2a56deea36e79f3c000.bundle.js.map
+//# sourceMappingURL=tabs.973c14c2ee401e66e192.bundle.js.map

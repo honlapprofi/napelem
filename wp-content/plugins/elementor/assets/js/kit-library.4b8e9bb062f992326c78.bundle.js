@@ -1,4 +1,4 @@
-/*! elementor - v3.5.6 - 28-02-2022 */
+/*! elementor - v3.6.1 - 23-03-2022 */
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["kit-library"],{
 
 /***/ "../core/app/modules/kit-library/assets/js/components/badge.scss":
@@ -188,6 +188,201 @@
 /***/ (() => {
 
 
+
+/***/ }),
+
+/***/ "../core/app/assets/js/ui/popover-dialog/popover-dialog.js":
+/*!*****************************************************************!*\
+  !*** ../core/app/assets/js/ui/popover-dialog/popover-dialog.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+/* provided dependency */ var PropTypes = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
+
+
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireWildcard */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireWildcard.js");
+
+_Object$defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports["default"] = PopoverDialog;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
+
+function PopoverDialog(props) {
+  var targetRef = props.targetRef,
+      offsetTop = props.offsetTop,
+      offsetLeft = props.offsetLeft,
+      wrapperClass = props.wrapperClass,
+      trigger = props.trigger,
+      hideAfter = props.hideAfter,
+      popoverRef = (0, _react.useCallback)(function (popoverEl) {
+    var target = targetRef === null || targetRef === void 0 ? void 0 : targetRef.current;
+
+    if (!target) {
+      return;
+    }
+    /**
+     * Show Popover
+     */
+
+
+    /**
+     * Show Popover
+     */
+    var showPopover = function showPopover() {
+      popoverEl.style.display = 'block';
+      popoverEl.setAttribute('aria-expanded', true);
+      var targetRect = target.getBoundingClientRect(),
+          popoverRect = popoverEl.getBoundingClientRect(),
+          widthDifference = popoverRect.width - targetRect.width;
+      popoverEl.style.top = targetRect.bottom + offsetTop + 'px';
+      popoverEl.style.left = targetRect.left - widthDifference / 2 - offsetLeft + 'px'; // 16px to compensate for the arrow width.
+
+      // 16px to compensate for the arrow width.
+      popoverEl.style.setProperty('--popover-arrow-offset-end', (popoverRect.width - 16) / 2 + 'px');
+    };
+    /**
+     * Hide Popover
+     */
+
+
+    /**
+     * Hide Popover
+     */
+    var hidePopover = function hidePopover() {
+      popoverEl.style.display = 'none';
+      popoverEl.setAttribute('aria-expanded', false);
+    };
+    /**
+     * Handle the Popover's hover functionality
+     */
+
+
+    /**
+     * Handle the Popover's hover functionality
+     */
+    var handlePopoverHover = function handlePopoverHover() {
+      var hideOnMouseOut = true,
+          timeOut = null; // Show popover on hover of the target
+
+      // Show popover on hover of the target
+      target.addEventListener('mouseover', function () {
+        hideOnMouseOut = true;
+        showPopover();
+      }); // Hide popover when not overing over the target or the popover itself
+
+      // Hide popover when not overing over the target or the popover itself
+      target.addEventListener('mouseleave', function () {
+        timeOut = setTimeout(function () {
+          if (hideOnMouseOut) {
+            if ('block' === popoverEl.style.display) {
+              hidePopover();
+            }
+          }
+        }, hideAfter);
+      }); // Don't hide the popover if the user is still hovering over it.
+
+      // Don't hide the popover if the user is still hovering over it.
+      popoverEl.addEventListener('mouseover', function () {
+        hideOnMouseOut = false;
+
+        if (timeOut) {
+          clearTimeout(timeOut);
+          timeOut = null;
+        }
+      }); // Once the user stops hovering over the popover, hide it.
+
+      // Once the user stops hovering over the popover, hide it.
+      popoverEl.addEventListener('mouseleave', function () {
+        timeOut = setTimeout(function () {
+          if (hideOnMouseOut) {
+            if ('block' === popoverEl.style.display) {
+              hidePopover();
+            }
+          }
+        }, hideAfter);
+        hideOnMouseOut = true;
+      });
+    };
+    /**
+     * Handle the Popover's click functionality
+     */
+
+
+    /**
+     * Handle the Popover's click functionality
+     */
+    var handlePopoverClick = function handlePopoverClick() {
+      var popoverIsActive = false;
+      target.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (popoverIsActive) {
+          hidePopover();
+          popoverIsActive = false;
+        } else {
+          showPopover();
+          popoverIsActive = true;
+        }
+      }); // Make sure the popover doesn't close when it is clicked on.
+
+      // Make sure the popover doesn't close when it is clicked on.
+      popoverEl.addEventListener('click', function (e) {
+        e.stopPropagation();
+      }); // Hide the popover when clicking outside of it.
+
+      // Hide the popover when clicking outside of it.
+      document.body.addEventListener('click', function () {
+        if (popoverIsActive) {
+          hidePopover();
+          popoverIsActive = false;
+        }
+      });
+    };
+
+    if ('hover' === trigger) {
+      handlePopoverHover();
+    } else if ('click' === trigger) {
+      handlePopoverClick();
+    }
+  }, [targetRef]);
+  var wrapperClasses = 'e-app__popover';
+
+  if (wrapperClass) {
+    wrapperClasses += ' ' + wrapperClass;
+  }
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: wrapperClasses,
+    ref: popoverRef
+  }, props.children);
+}
+
+PopoverDialog.propTypes = {
+  targetRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({
+    current: PropTypes.any
+  })]).isRequired,
+  trigger: PropTypes.string,
+  direction: PropTypes.string,
+  offsetTop: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  offsetLeft: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  wrapperClass: PropTypes.string,
+  children: PropTypes.any,
+  hideAfter: PropTypes.number
+};
+PopoverDialog.defaultProps = {
+  direction: 'bottom',
+  trigger: 'hover',
+  offsetTop: 10,
+  offsetLeft: 0,
+  hideAfter: 300
+};
 
 /***/ }),
 
@@ -947,6 +1142,8 @@ function ItemHeader(props) {
     },
     onError: function onError(errorResponse) {
       if (401 === errorResponse.code) {
+        elementorCommon.config.library_connect.is_connected = false;
+        elementorCommon.config.library_connect.current_access_level = 0;
         updateSettings({
           is_library_connected: false,
           access_level: 0
@@ -1002,9 +1199,12 @@ function ItemHeader(props) {
       return setIsConnectDialogOpen(false);
     },
     onSuccess: function onSuccess(data) {
+      var accessLevel = data.kits_access_level || data.access_level || 0;
+      elementorCommon.config.library_connect.is_connected = true;
+      elementorCommon.config.library_connect.current_access_level = accessLevel;
       updateSettings({
         is_library_connected: true,
-        access_level: data.kits_access_level || data.access_level || 0 // BC: Check for 'access_level' prop
+        access_level: accessLevel // BC: Check for 'access_level' prop
 
       });
 
@@ -1149,19 +1349,29 @@ exports["default"] = KitList;
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
 
+__webpack_require__(/*! core-js/modules/es6.regexp.split.js */ "../node_modules/core-js/modules/es6.regexp.split.js");
+
 __webpack_require__(/*! core-js/modules/es6.array.map.js */ "../node_modules/core-js/modules/es6.array.map.js");
+
+var _router = __webpack_require__(/*! @reach/router */ "../node_modules/@reach/router/es/index.js");
 
 var _kit = _interopRequireDefault(__webpack_require__(/*! ../models/kit */ "../core/app/modules/kit-library/assets/js/models/kit.js"));
 
 var _kitListItem = _interopRequireDefault(__webpack_require__(/*! ./kit-list-item */ "../core/app/modules/kit-library/assets/js/components/kit-list-item.js"));
 
+var _newPageKitListItem = _interopRequireDefault(__webpack_require__(/*! ../../../../onboarding/assets/js/components/new-page-kit-list-item */ "../core/app/modules/onboarding/assets/js/components/new-page-kit-list-item.js"));
+
 var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
 
 function KitList(props) {
+  var _location$pathname$sp;
+
+  var location = (0, _router.useLocation)();
+  var referrer = new URLSearchParams((_location$pathname$sp = location.pathname.split('?')) === null || _location$pathname$sp === void 0 ? void 0 : _location$pathname$sp[1]).get('referrer');
   return /*#__PURE__*/_react.default.createElement(_appUi.CssGrid, {
     spacing: 24,
     colMinWidth: 290
-  }, props.data.map(function (model) {
+  }, 'onboarding' === referrer && /*#__PURE__*/_react.default.createElement(_newPageKitListItem.default, null), props.data.map(function (model) {
     return /*#__PURE__*/_react.default.createElement(_kitListItem.default, {
       key: model.id,
       model: model
@@ -2130,8 +2340,6 @@ function useKitDocumentByType(kit) {
 
 var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
 
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
-
 _Object$defineProperty(exports, "__esModule", {
   value: true
 });
@@ -2139,8 +2347,6 @@ _Object$defineProperty(exports, "__esModule", {
 exports.useKitFavoritesMutations = useKitFavoritesMutations;
 
 __webpack_require__(/*! core-js/modules/es6.array.map.js */ "../node_modules/core-js/modules/es6.array.map.js");
-
-var _kit = _interopRequireDefault(__webpack_require__(/*! ../models/kit */ "../core/app/modules/kit-library/assets/js/models/kit.js"));
 
 var _react = __webpack_require__(/*! react */ "react");
 
@@ -2284,7 +2490,6 @@ function usePlaceholderDataCallback(id) {
 
 function fetchKitItem(_ref) {
   var _ref$queryKey = (0, _slicedToArray2.default)(_ref.queryKey, 2),
-      key = _ref$queryKey[0],
       id = _ref$queryKey[1];
 
   return $e.data.get('kits/index', {
@@ -2370,7 +2575,8 @@ var defaultQueryParams = {
   order: {
     direction: 'desc',
     by: 'featuredIndex'
-  }
+  },
+  referrer: null
 };
 exports.defaultQueryParams = defaultQueryParams;
 var kitsPipeFunctions = {
@@ -3241,6 +3447,8 @@ var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
 
 var _router = __webpack_require__(/*! @reach/router */ "../node_modules/@reach/router/es/index.js");
 
+var _popoverDialog = _interopRequireDefault(__webpack_require__(/*! elementor-app/ui/popover-dialog/popover-dialog */ "../core/app/assets/js/ui/popover-dialog/popover-dialog.js"));
+
 __webpack_require__(/*! ./index-header.scss */ "../core/app/modules/kit-library/assets/js/pages/index/index-header.scss");
 
 function IndexHeader(props) {
@@ -3251,6 +3459,7 @@ function IndexHeader(props) {
       isInfoModalOpen = _useState2[0],
       setIsInfoModalOpen = _useState2[1];
 
+  var importRef = (0, _react.useRef)();
   var buttons = (0, _react.useMemo)(function () {
     return [{
       id: 'info',
@@ -3271,6 +3480,7 @@ function IndexHeader(props) {
       text: __('Import', 'elementor-pro'),
       hideText: true,
       icon: 'eicon-upload-circle-o',
+      elRef: importRef,
       onClick: function onClick() {
         return navigate('/import?referrer=kit-library');
       }
@@ -3278,7 +3488,10 @@ function IndexHeader(props) {
   }, [props.isFetching, props.refetch]);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_header.default, {
     buttons: buttons
-  }), /*#__PURE__*/_react.default.createElement(_appUi.ModalProvider, {
+  }), /*#__PURE__*/_react.default.createElement(_popoverDialog.default, {
+    targetRef: importRef,
+    wrapperClass: "e-kit-library__tooltip"
+  }, __('Import Kit', 'elementor')), /*#__PURE__*/_react.default.createElement(_appUi.ModalProvider, {
     title: __('Welcome to the Library', 'elementor'),
     show: isInfoModalOpen,
     setShow: setIsInfoModalOpen
@@ -4414,7 +4627,62 @@ Preview.propTypes = {
   id: PropTypes.string
 };
 
+/***/ }),
+
+/***/ "../core/app/modules/onboarding/assets/js/components/new-page-kit-list-item.js":
+/*!*************************************************************************************!*\
+  !*** ../core/app/modules/onboarding/assets/js/components/new-page-kit-list-item.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
+
+
+var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+_Object$defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports["default"] = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
+
+var _appUi = __webpack_require__(/*! @elementor/app-ui */ "@elementor/app-ui");
+
+__webpack_require__(/*! ../../../../kit-library/assets/js/components/kit-list-item.scss */ "../core/app/modules/kit-library/assets/js/components/kit-list-item.scss");
+
+var NewPageKitListItem = function NewPageKitListItem() {
+  return /*#__PURE__*/_react.default.createElement(_appUi.Card, {
+    className: "e-onboarding__kit-library-card e-kit-library__kit-item"
+  }, /*#__PURE__*/_react.default.createElement(_appUi.CardHeader, null, /*#__PURE__*/_react.default.createElement(_appUi.Heading, {
+    tag: "h3",
+    title: __('Blank Canvas', 'elementor'),
+    variant: "h5",
+    className: "eps-card__headline"
+  }, __('Blank Canvas', 'elementor'))), /*#__PURE__*/_react.default.createElement(_appUi.CardBody, null, /*#__PURE__*/_react.default.createElement(_appUi.CardImage, {
+    alt: __('Blank Canvas', 'elementor'),
+    src: elementorCommon.config.urls.assets + 'images/app/onboarding/Blank_Preview.jpg' || 0
+  }, /*#__PURE__*/_react.default.createElement(_appUi.CardOverlay, null, /*#__PURE__*/_react.default.createElement(_appUi.Grid, {
+    container: true,
+    direction: "column",
+    className: "e-kit-library__kit-item-overlay"
+  }, /*#__PURE__*/_react.default.createElement(_appUi.Button, {
+    className: "e-kit-library__kit-item-overlay-overview-button",
+    text: __('Create New Elementor Page', 'elementor'),
+    icon: "eicon-single-page",
+    url: elementorAppConfig.onboarding.urls.createNewPage
+  }))))));
+};
+
+var _default = _react.default.memo(NewPageKitListItem);
+
+exports["default"] = _default;
+
 /***/ })
 
 }]);
-//# sourceMappingURL=kit-library.79bbce90dedf8ef30a5c.bundle.js.map
+//# sourceMappingURL=kit-library.4b8e9bb062f992326c78.bundle.js.map
