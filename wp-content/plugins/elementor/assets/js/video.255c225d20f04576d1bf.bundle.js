@@ -1,4 +1,4 @@
-/*! elementor - v3.5.6 - 28-02-2022 */
+/*! elementor - v3.6.1 - 23-03-2022 */
 "use strict";
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["video"],{
 
@@ -21,7 +21,8 @@ class Video extends elementorModules.frontend.handlers.Base {
       selectors: {
         imageOverlay: '.elementor-custom-embed-image-overlay',
         video: '.elementor-video',
-        videoIframe: '.elementor-video-iframe'
+        videoIframe: '.elementor-video-iframe',
+        playIcon: '.elementor-custom-embed-play'
       }
     };
   }
@@ -31,7 +32,8 @@ class Video extends elementorModules.frontend.handlers.Base {
     return {
       $imageOverlay: this.$element.find(selectors.imageOverlay),
       $video: this.$element.find(selectors.video),
-      $videoIframe: this.$element.find(selectors.videoIframe)
+      $videoIframe: this.$element.find(selectors.videoIframe),
+      $playIcon: this.$element.find(selectors.playIcon)
     };
   }
 
@@ -129,6 +131,15 @@ class Video extends elementorModules.frontend.handlers.Base {
 
   bindEvents() {
     this.elements.$imageOverlay.on('click', this.handleVideo.bind(this));
+    this.elements.$playIcon.on('keydown', event => {
+      const playKeys = [13, // Enter key.
+      32 // Space bar key.
+      ];
+
+      if (playKeys.includes(event.keyCode)) {
+        this.handleVideo();
+      }
+    });
   }
 
   onInit() {
@@ -209,4 +220,4 @@ exports["default"] = Video;
 /***/ })
 
 }]);
-//# sourceMappingURL=video.7eb6cacb5dcc1e3e8551.bundle.js.map
+//# sourceMappingURL=video.255c225d20f04576d1bf.bundle.js.map

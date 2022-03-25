@@ -4,7 +4,7 @@ Tags: Elementor, elementor widgets, elements, elementor addon, elementor templat
 Requires at least: 5.7.0
 Tested up to: 5.9
 Requires PHP: 5.6
-Stable tag: 5.0.7
+Stable tag: 5.0.8
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -21,7 +21,7 @@ Enjoy a Complete<strong> No-Code experience</strong> and build everything with y
 ~~~~~~~~~~~~~~~~
 
 <strong> Quick Navigation Links</strong>
-[ 🌐 Visit Website](https://theplusaddons.com/) | [ 📹 Video Guides](https://www.youtube.com/watch?v=y2KrybXgwV8&list=PLFRO-irWzXaLK9H5opSt88xueTnRhqvO5)| [ 📑 Documentations](https://docs.posimyth.com/tpae/) | [ 🛣️ Roadmap](http://roadmap.theplusaddons.com/) | [ 👥 Join Community](https://www.facebook.com/groups/theplus4elementor) |[ 🤝 Free Support](https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/) | [ ⭐ Premium Support](https://store.posimyth.com/helpdesk/)
+[ 🌐 Visit Website](https://theplusaddons.com/) | [ 📹 Video Guides]( https://www.youtube.com/c/POSIMYTHInnovations/?sub_confirmation=1)| [ 📑 Documentations](https://docs.posimyth.com/tpae/) | [ 🛣️ Roadmap](http://roadmap.theplusaddons.com/) | [ 👥 Join Community](https://www.facebook.com/groups/theplus4elementor) |[ 🤝 Free Support](https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/) | [ ⭐ Premium Support](https://store.posimyth.com/helpdesk/)
 
  
 
@@ -278,6 +278,9 @@ We have the most advanced caching architecture, Which will never bloat your site
 
 
 == Changelog ==
+
+= 5.0.8 =
+Compatibility : Elementor 3.6 Compatibility Verified & Tag Update
 
 = 5.0.7 =
 Fix : Polylang wpml-config.xml conflict fix

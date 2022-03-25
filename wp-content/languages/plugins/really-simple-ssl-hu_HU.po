@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Really Simple SSL - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-12-24 07:36:38+0000\n"
+"PO-Revision-Date: 2022-03-23 07:19:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,11 +11,23 @@ msgstr ""
 "Language: hu\n"
 "Project-Id-Version: Plugins - Really Simple SSL - Stable (latest release)\n"
 
-#: class-admin.php:3389
+#: upgrade/upgrade-to-pro.php:549
+msgid "Your license key has reached its activation limit."
+msgstr "A licenckulcs elérte az aktiválási korlátot."
+
+#: upgrade/upgrade-to-pro.php:543
+msgid "Your license is not active for this URL."
+msgstr "Az Ön licenc-e nem aktív ezen az URL-en."
+
+#: upgrade/upgrade-to-pro.php:540
+msgid "Invalid license."
+msgstr "Érvénytelen licenc."
+
+#: class-admin.php:3430
 msgid "Black Friday sale! Get 40% Off Really Simple SSL Pro"
 msgstr "Fekete Péntek akció! Szerezd meg 40%-kkal olcsóbban a Really Simple SSL Pro-t"
 
-#: class-admin.php:4164
+#: class-admin.php:4195
 msgid "Enable High Contrast mode"
 msgstr "Nagy kontrasztú üzemmód engedélyezése"
 
@@ -23,7 +35,7 @@ msgstr "Nagy kontrasztú üzemmód engedélyezése"
 msgid "For more information, please read this %sarticle%s"
 msgstr "További információért lásd ezt a %scikket%s"
 
-#: class-admin.php:4163
+#: class-admin.php:4194
 msgid "If enabled, all the Really Simple SSL pages within the WordPress admin will be in high contrast"
 msgstr "Ha ezt engedélyezed akkor a Really Simple SSL összes oldala a WordPress adminfelületén belül magas kontrasztú üzemmódban lesz"
 
@@ -39,7 +51,7 @@ msgstr "Az OCSP stapling -et alapból engedélyezni célszerű. Letilthatod ha n
 msgid "Checking if Terms & Conditions are accepted..."
 msgstr "Ellenőrizzük hogy a felhasználási feltételek el lettek-e fogadva..."
 
-#: class-admin.php:3294
+#: class-admin.php:3322
 msgid "HttpOnly Secure cookies have been set automatically!"
 msgstr "A HttpOnly Secure sütik automatikusan be lettek állítva!"
 
@@ -51,19 +63,19 @@ msgstr "Let's Encrypt resetelése"
 msgid "Save and continue"
 msgstr "Mentés és folytatás"
 
-#: class-admin.php:3373
+#: class-admin.php:3414
 msgid "As Really Simple SSL handles all the functionality this plugin provides, we recommend to disable this plugin to prevent unexpected behaviour."
 msgstr "Mivel a Really Simple SSL minden olyan funkciót kezel, amit ez a bővítmény tudna biztosítani, ezért azt ajánljuk hogy tiltsd le ezt a bővítményt hogy megelőzzük a nem várt viselkedésből eredő problémákat."
 
-#: class-admin.php:561
+#: class-admin.php:605
 msgid "No SSL certificate has been detected."
 msgstr "Nem találtunk SSL tanúsítványt."
 
-#: class-admin.php:562
+#: class-admin.php:606
 msgid "Please %srefresh detection%s if a certificate has been installed recently."
 msgstr "Kérlek %sfuttasd újra a vizsgálatot%s , ha egy tanúsítvány nemrégiben lett telepítve."
 
-#: class-admin.php:3505
+#: class-admin.php:3543
 msgid "%sMore info%s"
 msgstr "%sTovábbi információ%s"
 
@@ -71,7 +83,7 @@ msgstr "%sTovábbi információ%s"
 msgid "If you entered your DNS records before, they need to be changed."
 msgstr "Ha beírtad a DNS rekordjaidat korábban, akkor azokat most meg kell változtatni."
 
-#: class-admin.php:4699 class-multisite.php:237
+#: class-admin.php:4667 class-multisite.php:238
 msgid "Improve security - Upgrade to Pro"
 msgstr "Fokozd a biztonságodat - Válts Pro-ra"
 
@@ -83,11 +95,7 @@ msgstr "Bővebb információ erről a bővítményről."
 msgid "Order ID mismatch, regenerate order."
 msgstr "Megrendelés azonosító nem egyezik, generáld újra a rendelést."
 
-#: class-admin.php:846
-msgid "Override SSL detection"
-msgstr "SSL-érzékelés felülírása"
-
-#: class-admin.php:3057
+#: class-admin.php:3091
 msgid "Really Simple SSL pro is not up to date. Update Really Simple SSL pro to ensure compatibility."
 msgstr "A Really Simple SSL Pro nem naprakész. Frissítsd a Really Simple SSL Pro-t hogy biztosítsd a kompatibilitást."
 
@@ -738,7 +746,7 @@ msgstr "Kérlek duplán ellenőrizd a DNS-edben lévő txt rekordot."
 msgid "Successfully generated certificate."
 msgstr "Sikeresen létrehoztuk a tanúsítványt."
 
-#: class-admin.php:2997
+#: class-admin.php:3036
 msgid "(Unknown)"
 msgstr "(ismeretlen)"
 
@@ -746,7 +754,7 @@ msgstr "(ismeretlen)"
 msgid "(unknown)"
 msgstr "(ismeretlen)"
 
-#: class-admin.php:559 lets-encrypt/wizard/templates/activate.php:58
+#: class-admin.php:598 lets-encrypt/wizard/templates/activate.php:58
 msgid "An SSL certificate has been detected"
 msgstr "Találtunk egy SSL tanúsítványt"
 
@@ -754,15 +762,16 @@ msgstr "Találtunk egy SSL tanúsítványt"
 msgid "Continue to renew."
 msgstr "Folytasd a megújítást."
 
-#: class-admin.php:3137
+#: class-admin.php:3181
 msgid "Depending on your hosting provider, %smanual installation%s may be required."
 msgstr "A tárhelyszolgáltatódtól függően, %skézi telepítés%s lehet szükséges."
 
-#: class-admin.php:3136
+#: class-admin.php:3180
 msgid "If your hosting provider auto-renews your certificate, no action is required. Alternatively, you have the option to generate an SSL certificate with Really Simple SSL."
 msgstr "Ha a tárhelyszolgáltatód automatikusan megújítja a tanúsítványodat akkor nincs teendőd. A másik lehetőség hogy generálhatsz egy SSL tanúsítványt a Really Simple SSL-lel is."
 
-#: class-admin.php:843 class-admin.php:3123 class-admin.php:3138
+#: class-admin.php:903 class-admin.php:3158 class-admin.php:3167
+#: class-admin.php:3182
 msgid "Install SSL certificate"
 msgstr "Telepítsd az SSL tanúsítványodat"
 
@@ -778,19 +787,19 @@ msgstr "Nem lehetséges a Let's Encrypt telepítése egy almappás konfiguráci�
 msgid "It is not possible to install Let's Encrypt on a subsite. Please go to the main site of your website."
 msgstr "Nem lehetséges a Let's Encrypt telepítése egy aloldalra. Kérlek menj a honlapod fő weboldalára."
 
-#: class-admin.php:3122
+#: class-admin.php:3157
 msgid "No SSL detected. Use the retry button to check again."
 msgstr "Nem észleltük az SSL-t. Kattints az ismét gombra az újraellenőrzéshez."
 
-#: class-admin.php:3139
+#: class-admin.php:3183
 msgid "Re-check"
 msgstr "Újraellenőrzés"
 
-#: class-admin.php:3124 lets-encrypt/wizard/class-wizard.php:891
+#: class-admin.php:3159 lets-encrypt/wizard/class-wizard.php:891
 msgid "Retry"
 msgstr "Ismét"
 
-#: class-admin.php:3136
+#: class-admin.php:3180
 msgid "SSL certificate will expire on %s."
 msgstr "SSL tanúsítvány lejár ekkor %s."
 
@@ -798,7 +807,7 @@ msgstr "SSL tanúsítvány lejár ekkor %s."
 msgid "SSL certificate should be generated and installed."
 msgstr "Az SSL tanúsítvány elvileg létre lett hozva és telepítve."
 
-#: class-admin.php:3306
+#: class-admin.php:3334
 msgid "Add the following lines of code to your wp-config.php."
 msgstr "Add hozzá az alábbi sorokat a wp-config.php fájlodhoz."
 
@@ -810,15 +819,15 @@ msgstr "Tartalom-biztonsági házirend hozzáadása"
 msgid "Adding a Permission Policy"
 msgstr "Jogosultsági házirend hozzáadása"
 
-#: class-admin.php:3299
+#: class-admin.php:3327
 msgid "HttpOnly Secure cookies not set."
 msgstr "HttpOnly Secure sütik nincsenek beállítva."
 
-#: class-admin.php:3314
+#: class-admin.php:3342
 msgid "Or set your wp-config.php to writable and reload this page."
 msgstr "Vagy állítsd a wp-config.php -det írhatóra és töltsd újra ezt az oldalt."
 
-#: class-admin.php:3348
+#: class-admin.php:3389
 msgid "Due to a recent update by WP Engine, we have changed your settings automatically to adapt."
 msgstr "A WP motorban nemrégiben bekövetkezett változás miatt automatikusan módosítottuk a beállításaidat, hogy alkalmazkodni tudjunk."
 
@@ -838,23 +847,23 @@ msgstr "Az ajánlott security header-ek telepítve vannak"
 msgid "SSL Status Test"
 msgstr "SSL állapot ellenőrzése"
 
-#: class-admin.php:3121
+#: class-admin.php:3156
 msgid "No SSL detected"
 msgstr "Nem észleltük az SSL-t"
 
-#: class-admin.php:4620
+#: class-admin.php:4588
 msgid "Deactivate, and revert to http. This will remove all changes by the plugin."
 msgstr "Deaktiválás és visszaváltás http-re. Ez töröl minden módosítást amit ez a bővítmény végzett."
 
-#: class-admin.php:4619
+#: class-admin.php:4587
 msgid "Deactivate, but stay on SSL."
 msgstr "Deaktiválás, de maradj SSL-en."
 
-#: class-admin.php:4638
+#: class-admin.php:4606
 msgid "Deactivate, keep https"
 msgstr "Deaktiválás, maradj https-en"
 
-#: class-admin.php:4639
+#: class-admin.php:4607
 msgid "Deactivate, revert to http"
 msgstr "Deaktiválás és visszaváltás http-re"
 
@@ -862,15 +871,15 @@ msgstr "Deaktiválás és visszaváltás http-re"
 msgid "Enable 301 redirect"
 msgstr "301-es átirányítás engedélyezése"
 
-#: class-admin.php:4160 class-multisite.php:341
+#: class-admin.php:4191 class-multisite.php:342
 msgid "Enable this option to permanently dismiss all +1 notices in the 'Your progress' tab"
 msgstr "Kapcsold be ezt az opciót hogy véglegesenen eltüntesd az összes +1 értesítést az 'Előrehaladás' fülön"
 
-#: class-admin.php:4157
+#: class-admin.php:4188
 msgid "Fire mixed content fixer with different method"
 msgstr "Vegyes-tartalom javító indítása egy másik módszerrel"
 
-#: class-admin.php:4310
+#: class-admin.php:4341
 msgid "If the setting 'stop editing the .htaccess file' is enabled, you can't change this setting."
 msgstr "Ha be van jelölve a 'Ne módosítsa többé a .htaccess fájlt' opció, akkor ezt a beállítást nem tudod módosítani."
 
@@ -894,47 +903,40 @@ msgstr "SSL nincs engedélyezve."
 msgid "Really Simple SSL is installed, but no valid SSL certificate is detected."
 msgstr "A Really Simple SSL telepítve van, de nem találtunk érvényes SSL tanúsítványt."
 
-#: class-admin.php:4102
+#: class-admin.php:4135
 msgid " You still have %s tasks open."
 msgstr "Még %s feladat van hátra."
 
-#: class-admin.php:3510
-msgid "%sEnable%s or %sdismiss%s"
-msgstr "%sEngedélyezés%s vagy %skihagyás%s"
-
-#: class-admin.php:3503
-msgid "%sMore info%s or %sdismiss%s"
-msgstr "%sTovábbi információ%s vagy %skihagyás%s"
-
-#: class-admin.php:4003
+#: class-admin.php:4030
 msgid "Completed"
 msgstr "Kész"
 
-#: class-admin.php:4108
+#: class-admin.php:4141
 msgid "Copied!"
 msgstr "Átmásolva!"
 
-#: class-admin.php:4139
+#: class-admin.php:4170
 msgid "Enable WordPress 301 redirect"
 msgstr "WordPress 301 átirányítás engedélyezése"
 
-#: class-admin.php:3876
+#: class-admin.php:3904 upgrade/upgrade-to-pro.php:137
+#: upgrade/upgrade-to-pro.php:150 upgrade/upgrade-to-pro.php:167
 msgid "Install"
 msgstr "Telepítés"
 
-#: class-admin.php:3881
+#: class-admin.php:3909 upgrade/upgrade-to-pro.php:180
 msgid "Installed"
 msgstr "Telepítve"
 
-#: class-admin.php:3938
+#: class-admin.php:3965
 msgid "Instructions manual"
 msgstr "Telepítési útmutató"
 
-#: class-admin.php:4007
+#: class-admin.php:4034
 msgid "Open"
 msgstr "Nyitva"
 
-#: class-admin.php:4138
+#: class-admin.php:4169
 msgid "Redirects all requests over HTTP to HTTPS using a PHP 301 redirect. Enable if the .htaccess redirect cannot be used, for example on NGINX servers."
 msgstr "Átirányít minden HTTP kérést HTTPS-re egy PHP 301-es átirányítás segítségével. Engedélyezd akkor, ha a .htaccess átirányítás nem használható, pl. NGINX szervereken."
 
@@ -942,7 +944,7 @@ msgstr "Átirányít minden HTTP kérést HTTPS-re egy PHP 301-es átirányítá
 msgid "301 Redirect"
 msgstr "301-es átirányítás"
 
-#: class-admin.php:837 class-site-health.php:125
+#: class-admin.php:897 class-site-health.php:125
 #: grid/templates/progress-footer.php:25
 #: lets-encrypt/wizard/config/steps.php:162
 msgid "Activate SSL"
@@ -952,19 +954,19 @@ msgstr "SSL aktiválása"
 msgid "All tasks"
 msgstr "Minden feladat"
 
-#: class-admin.php:4094 grid/templates/progress.php:37
+#: class-admin.php:4127 grid/templates/progress.php:37
 msgid "Basic SSL configuration finished! Improve your score with %sReally Simple SSL Pro%s."
 msgstr "Az alap SSL konfigurálás kész! Továbbfejlesztheted az eredményedet a %sReally Simple SSL Pro%s-val."
 
-#: class-admin.php:552 lets-encrypt/wizard/templates/activate.php:45
+#: class-admin.php:591 lets-encrypt/wizard/templates/activate.php:45
 msgid "Before you migrate, please check for: "
 msgstr "Mielőtt átállsz, kérlek ellenőrizd:"
 
-#: class-multisite.php:359
+#: class-multisite.php:360
 msgid "Choose option"
 msgstr "Válassz az alábbi lehetőségek közül"
 
-#: class-multisite.php:1039
+#: class-multisite.php:1040
 msgid "Conversion of websites completed."
 msgstr "Weboldalak konvertálása kész."
 
@@ -972,7 +974,7 @@ msgstr "Weboldalak konvertálása kész."
 msgid "Download system status"
 msgstr "Rendszerállapot letöltése"
 
-#: class-admin.php:2902
+#: class-admin.php:2941
 msgid "General"
 msgstr "Általános"
 
@@ -984,7 +986,7 @@ msgstr "Általános problémák"
 msgid "Go PRO!"
 msgstr "Válts PRO-ra!"
 
-#: class-admin.php:3086
+#: class-admin.php:3120
 msgid "https://really-simple-ssl.com/really-simple-ssl-4-a-new-dashboard"
 msgstr "https://really-simple-ssl.com/really-simple-ssl-4-a-new-dashboard"
 
@@ -1004,7 +1006,7 @@ msgstr "Információ a főoldali átirányításokról"
 msgid "Mixed Content"
 msgstr "Vegyes-tartalom"
 
-#: class-admin.php:3175
+#: class-admin.php:3219
 msgid "Mixed content fixer not enabled. Enable the option to fix mixed content on your site."
 msgstr "Vegyes-tartalom javító nincs engedélyezve. Engedélyezd az opciót hogy megjavítsd a vegyes-tartalomból eredő problémákat az oldaladon."
 
@@ -1012,23 +1014,23 @@ msgstr "Vegyes-tartalom javító nincs engedélyezve. Engedélyezd az opciót ho
 msgid "Multisite"
 msgstr "Multisite hálózat"
 
-#: class-multisite.php:91
+#: class-multisite.php:95
 msgid "No choice has been made regarding networkwide or per site activation."
 msgstr "Nem választottál a hálózati szintű vagy az oldalankénti aktiválás közül."
 
-#: class-admin.php:2981
+#: class-admin.php:3020
 msgid "No recommended redirect rules detected."
 msgstr "Nem találtunk ajánlott átirányítási szabályokat."
 
-#: class-admin.php:3772 class-multisite.php:425
+#: class-admin.php:3799 class-multisite.php:426
 msgid "Our plugins"
 msgstr "A mi bővítményeink"
 
-#: rlrsssl-really-simple-ssl.php:192
+#: rlrsssl-really-simple-ssl.php:194
 msgid "Please upgrade to the latest version to be able use the full functionality of the plugin."
 msgstr "Kérlek frissítsd a legújabb verzióra hogy a bővítmény minden funkcióját kihasználhasd."
 
-#: rlrsssl-really-simple-ssl.php:190
+#: rlrsssl-really-simple-ssl.php:192
 msgid "Plugin dependency error"
 msgstr "Plugin függőség hiba"
 
@@ -1039,7 +1041,7 @@ msgstr "Plugin függőség hiba"
 msgid "Read more"
 msgstr "Bővebb információ"
 
-#: class-admin.php:3087
+#: class-admin.php:3121
 msgid "Really Simple SSL 4.0. Learn more about our newest major release."
 msgstr "Really Simple SSL 4.0. Tudjuk meg többet a legújabb főverziónkról."
 
@@ -1051,15 +1053,15 @@ msgstr "A Really Simple SSL nem aktiválható. Ez a bővítmény legalább PHP 5
 msgid "Really Simple SSL cannot be activated. The plugin requires WordPress 4.8 or higher"
 msgstr "A Really Simple SSL nem aktiválható. Ez a bővítmény legalább WordPress 4.8-at, vagy újabbat igényel."
 
-#: class-multisite.php:1044
+#: class-multisite.php:1045
 msgid "Really Simple SSL has converted all your websites to non SSL."
 msgstr "A Really Simple SSL átkonvertálta az összes weboldaladat nem-SSL-esre."
 
-#: class-multisite.php:1041
+#: class-multisite.php:1042
 msgid "Really Simple SSL has converted all your websites to SSL."
 msgstr "A Really Simple SSL átkonvertálta az összes weboldaladat SSL-re."
 
-#: class-admin.php:3157
+#: class-admin.php:3201
 msgid "Really Simple SSL has received no response from the webpage."
 msgstr "A Really Simple SSL nem kapott választ a weboldaltól."
 
@@ -1079,23 +1081,23 @@ msgstr "Beállítások mentése"
 msgid "Server type:"
 msgstr "Szerver típusa:"
 
-#: class-multisite.php:570
+#: class-multisite.php:571
 msgid "Setup"
 msgstr "Beállítás"
 
-#: class-multisite.php:93
+#: class-multisite.php:97
 msgid "SSL is activated network wide."
 msgstr "SSL aktiválva az egész hálózatodon."
 
-#: class-admin.php:4096 grid/templates/progress.php:29
+#: class-admin.php:4129 grid/templates/progress.php:29
 msgid "SSL is activated on your site."
 msgstr "SSL aktiválva az oldaladon."
 
-#: class-multisite.php:122
+#: class-multisite.php:126
 msgid "SSL is enabled networkwide."
 msgstr "SSL aktiválva van az egész hálózatodon."
 
-#: class-admin.php:3042
+#: class-admin.php:3076
 msgid "SSL is now activated. Check if your website is secure by following this article."
 msgstr "Az SSL most már aktiválva van. Nézd meg hogy biztonságos-e már a weboldalad az alábbi cikket követve."
 
@@ -1107,15 +1109,15 @@ msgstr "SSL Nincs aktiválva"
 msgid "SSL type:"
 msgstr "SSL típusa:"
 
-#: class-multisite.php:126
+#: class-multisite.php:130
 msgid "SSL is enabled per site."
 msgstr "Az SSl engedélyezve van oldalanként külön."
 
-#: class-admin.php:3104
+#: class-admin.php:3138
 msgid "SSL is not enabled yet."
 msgstr "Az SSL még nincs engedélyezve."
 
-#: class-multisite.php:1034
+#: class-multisite.php:1035
 msgid "Site conversion in progress. Please refresh this page to check if the process has finished. It will proceed in the background."
 msgstr "Oldalak átalakítása folyamatban. Kérlek frissítsd ezt az oldalt hogy megnézd, véget ért-e már a folyamat. A háttérben dolgozik közben."
 
@@ -1123,7 +1125,7 @@ msgstr "Oldalak átalakítása folyamatban. Kérlek frissítsd ezt az oldalt hog
 msgid "SSL configuration finished!"
 msgstr "SSL konfigurálás kész!"
 
-#: class-admin.php:4098 grid/templates/progress.php:43
+#: class-admin.php:4131 grid/templates/progress.php:43
 msgid "SSL is not yet enabled on this site."
 msgstr "SSL nincs még ellenőrízve ezen az oldalon."
 
@@ -1135,28 +1137,28 @@ msgstr "Really Simple Plugins"
 msgid "Really Simple SSL Pro"
 msgstr "Really Simple SSL Pro"
 
-#: class-admin.php:2650
+#: class-admin.php:2689
 msgid "Hi, Really Simple SSL has kept your site secure for some time now, awesome! If you have a moment, please consider leaving a review on WordPress.org to spread the word. We greatly appreciate it! If you have any questions or feedback, leave us a %smessage%s."
 msgstr "Hello! A Really Simple SSL már egy hónapja biztonságossá teszi az oldaladat, ez szuper! Ha van egy perced, kérlek írj értékelést a WordPress.org -on hogy terjeszd a hírünket! Nagyon megköszönnénk! Ha pedig bármi kérdésed vagy észrevételde van, írj %süzenetet%s nekünk."
 
-#: class-admin.php:569 lets-encrypt/wizard/templates/activate.php:30
+#: class-admin.php:613 lets-encrypt/wizard/templates/activate.php:30
 #: lets-encrypt/wizard/templates/activate.php:70
 msgid "Check out Really Simple SSL Pro"
 msgstr "Ismerje meg a Really Simple SSL Pro szolgáltatást"
 
-#: class-admin.php:840 lets-encrypt/wizard/class-wizard.php:896
+#: class-admin.php:900 lets-encrypt/wizard/class-wizard.php:896
 msgid "Get ready with PRO!"
 msgstr "Válts PRO-ra!"
 
-#: class-admin.php:555
+#: class-admin.php:594
 msgid "Images, stylesheets or scripts from a domain without an SSL certificate: remove them or move to your own server"
 msgstr "Képek, stíluslapok vagy scriptek egy SSL nélküli domainről hivatkozva: ezeket töröld, vagy helyezd át őket a saját szerveredre"
 
-#: class-admin.php:2660
+#: class-admin.php:2699
 msgid "Don't show again"
 msgstr "Ne jelenjen meg újra"
 
-#: class-admin.php:3169
+#: class-admin.php:3213
 msgid "Error occurred when retrieving the webpage."
 msgstr "Hiba történt a weboldal betöltése közben."
 
@@ -1164,7 +1166,7 @@ msgstr "Hiba történt a weboldal betöltése közben."
 msgid "301 .htaccess redirect is not enabled."
 msgstr "A 301-es .htaccess átirányítás nincs engedélyezve."
 
-#: class-admin.php:4161 class-multisite.php:342
+#: class-admin.php:4192 class-multisite.php:343
 msgid "Dismiss all Really Simple SSL notices"
 msgstr "Tüntesd el az összes Really Simple SSL értesítést"
 
@@ -1172,31 +1174,27 @@ msgstr "Tüntesd el az összes Really Simple SSL értesítést"
 msgid "301 SSL redirect enabled"
 msgstr "301-es SSL átirányítás engedélyezve."
 
-#: class-admin.php:3210
+#: class-admin.php:3254
 msgid "301 redirect to https set: .htaccess redirect."
 msgstr "301-es átirányítás https-re be lett állítva: .htaccess átirányítás."
 
-#: class-admin.php:3279
-msgid "HTTP Strict Transport Security is not enabled %s(Read more)%s."
-msgstr "A HTTP Strict Transport Security nincs engedélyezve %s(További információ)%s."
-
-#: class-multisite.php:1035
+#: class-multisite.php:1036
 msgid "If the conversion does not proceed after a few minutes, click %shere%s to force the conversion process."
 msgstr "Ha a konvertálás folyamata nem halad előre pár perc után, akkor kattints %side%s hogy kényszerítsd a konvertálási folyamat megindítását."
 
-#: class-multisite.php:1033
+#: class-multisite.php:1034
 msgid "Conversion of websites %s percent complete."
 msgstr "A weboldalak konvertálása %s százaléknál tart."
 
-#: class-admin.php:2652
+#: class-admin.php:2691
 msgid "Hi, Really Simple SSL has kept your site secure for a month now, awesome! If you have a moment, please consider leaving a review on WordPress.org to spread the word. We greatly appreciate it! If you have any questions or feedback, leave us a %smessage%s."
 msgstr "Hello! A Really Simple SSL már egy hónapja biztonságossá teszi az oldaladat, ez szuper! Ha van egy perced, kérlek írj értékelést a WordPress.org -on hogy terjeszd a hírünket! Nagyon megköszönnénk! Ha pedig bármi kérdésed vagy észrevételde van, írj %süzenetet%s nekünk."
 
-#: class-admin.php:2658
+#: class-admin.php:2697
 msgid "Leave a review"
 msgstr "írj értékelést"
 
-#: class-admin.php:2659
+#: class-admin.php:2698
 msgid "Maybe later"
 msgstr "Talán később"
 
@@ -1204,27 +1202,27 @@ msgstr "Talán később"
 msgid "Once every minute"
 msgstr "Percenként"
 
-#: class-multisite.php:159
+#: class-multisite.php:160
 msgid "Activate SSL per site or install a wildcard certificate to fix this."
 msgstr "Aktiváld az SSL-t oldalanként külön vagy telepíts egy wildcard tanúsítvány ezen probléma megoldásához."
 
-#: class-admin.php:4604
+#: class-admin.php:4572
 msgid "Are you sure?"
 msgstr "Biztos vagy benne?"
 
-#: class-admin.php:4637
+#: class-admin.php:4605 upgrade/upgrade-to-pro.php:360
 msgid "Cancel"
 msgstr "Mégse"
 
-#: class-admin.php:4622
+#: class-admin.php:4590
 msgid "Deactivating the plugin while keeping SSL will do the following:"
 msgstr "Ha deaktiválod a bővítményt és megtartod az SSL-t akkor ez fog történni:"
 
-#: class-admin.php:4057
+#: class-admin.php:4093
 msgid "More info"
 msgstr "Bővebb információ"
 
-#: class-admin.php:117
+#: class-admin.php:120
 msgid "Really Simple SSL and Really Simple SSL add-ons do not process any personal identifiable information, so the GDPR does not apply to these plugins or usage of these plugins on your website. You can find our privacy policy <a href=\"%s\" target=\"_blank\">here</a>."
 msgstr "A Really Simple SSL és Really Simple SSL bővítmények nem dolgoznak fel semmilyen személyes azonosításra alkalmas információt ezért a GDPR nem vonatkozik ezekre a bővítményekre vagy ezen bővítmények használatára a weboldaladon. MEgtalálod az adatvédelmi szabályzatunkat <a href=\"%s\" target=\"_blank\">itt</a>."
 
@@ -1232,97 +1230,89 @@ msgstr "A Really Simple SSL és Really Simple SSL bővítmények nem dolgoznak f
 msgid "https://really-simple-plugins.com"
 msgstr "https://really-simple-plugins.com"
 
-#: class-admin.php:3072
-msgid "Don't forget to change your settings in Google Analytics and Search Console."
-msgstr "Ne felejtsd el átírni a beállításaidat a Google Analyticsben és a Google Search Console-on."
-
-#: class-admin.php:4156
+#: class-admin.php:4187
 msgid "If this option is set to true, the mixed content fixer will fire on the init hook instead of the template_redirect hook. Only use this option when you experience problems with the mixed content fixer.\""
 msgstr "Ha ez az opció igazra van állítva akkor a vegyes-tartalom javítója az init hook-kal fog indulni, az ideiglenes template_redirect átirányítási hook helyett. Csak akkor használd ezt az opciót ha problémát tapasztalsz a vegyes-tartalom javítóval."
 
-#: class-admin.php:568 lets-encrypt/wizard/templates/activate.php:26
+#: class-admin.php:612 lets-encrypt/wizard/templates/activate.php:26
 #: lets-encrypt/wizard/templates/activate.php:66
 msgid "You can also let the automatic scan of the pro version handle this for you, and get premium support, increased security with HSTS and more!"
 msgstr "Lehetősége van arra is, hogy a pro verzió automatikus vizsgálata kezelje ezt az Ön számára, prémium támogatást kapjon, nagyobb biztonságot a HSTS-szel stb."
 
-#: class-multisite.php:456
+#: class-multisite.php:457
 msgid "Options saved."
 msgstr "Beállitások mentve."
 
-#: class-multisite.php:338
+#: class-multisite.php:339
 msgid "Select to enable SSL networkwide or per site."
 msgstr "Válassza ezt az opciót az SSL hálózaton vagy webhelyenként történő engedélyezéséhez."
 
-#: class-multisite.php:362
+#: class-multisite.php:363
 msgid "per site"
 msgstr "webhelyenként"
 
-#: class-multisite.php:361
+#: class-multisite.php:362
 msgid "networkwide"
 msgstr "hálózaton"
 
-#: class-multisite.php:339
+#: class-multisite.php:340
 msgid "Enable SSL"
 msgstr "Engedélyezze az SSL szolgáltatást"
 
-#: class-admin.php:4277 class-admin.php:4307 class-admin.php:4384
-#: class-admin.php:4660
+#: class-admin.php:4308 class-admin.php:4338 class-admin.php:4415
+#: class-admin.php:4628
 msgid "This option is enabled on the network menu."
 msgstr "Ez az opció engedélyezve van a netwerk menüben. "
 
-#: class-multisite.php:95
+#: class-multisite.php:99
 msgid "SSL is activated per site."
 msgstr "SSL aktiválva oldalanként külön."
 
-#: class-admin.php:556 lets-encrypt/wizard/templates/activate.php:56
+#: class-admin.php:595 lets-encrypt/wizard/templates/activate.php:56
 msgid "You may need to login in again."
 msgstr "Lehet, hogy újra be kell jelentkeznie. "
 
-#: class-admin.php:4143
+#: class-admin.php:4174
 msgid "A .htaccess redirect is faster and works better with caching. Really Simple SSL detects the redirect code that is most likely to work (99% of websites), but this is not 100%. Make sure you know how to regain access to your site if anything goes wrong!"
 msgstr "A .htaccess átirányítás gyorsabb és kompatibilis a gyorsítótárazással is. A Really Simple SSL automatikusan kiválasztja azt az átirányítási kódot, ami legnagyobb valószínűséggel működni fog (az oldalak 99%-án jó), de azért nem 100%, hogy működni fog. A biztonság kedvéért tudd, hogy hogy szerezheted vissza a hozzáférést az oldaladhoz ha ez nem jól sikerül!"
 
-#: class-admin.php:4303
+#: class-admin.php:4334
 msgid "Before you enable the htaccess redirect, make sure you know how to %sregain access%s to your site in case of a redirect loop."
 msgstr "Mielőtt engedélyezed a htaccess átirányítást, mindenképp tudd, hogyan kell %svisszaszerezni a hozzáférést%s az oldaladhoz ha esetleg átirányítási ciklusba kerülnél."
 
-#: class-admin.php:4144 class-site-health.php:158
+#: class-admin.php:4175 class-site-health.php:158
 msgid "Enable 301 .htaccess redirect"
 msgstr "301 .htaccess átirányítás engedélyezése"
 
-#: class-admin.php:3198
+#: class-admin.php:3242
 msgid "No 301 redirect is set. Enable the WordPress 301 redirect in the settings to get a 301 permanent redirect."
 msgstr "A 301-es átirányítás nincs beállítva. Engedélyezze a WordPress 301 átirányítását a beállításokban, hogy 301 állandó átirányítást kapjon."
 
-#: class-admin.php:3221
+#: class-admin.php:3265
 msgid "Enable a .htaccess redirect or WordPress redirect in the settings to create a 301 redirect."
 msgstr "Engedélyezzen egy .htaccess átirányítást vagy egy WordPress átirányítást a beállításoknál, hogy létrehozzon egy 301-es átirányítást."
 
-#: class-admin.php:4133
+#: class-admin.php:4164
 msgid "In most cases you need to leave this enabled, to prevent mixed content issues on your site."
 msgstr "A legtöbb esetben bekapcsolva kell ezt hagynia, hogy megakadályozza a vegyes tartalom problémákat a webhelyén."
 
-#: class-admin.php:4150
+#: class-admin.php:4181
 msgid "If you want to customize the Really Simple SSL .htaccess, you need to prevent Really Simple SSL from rewriting it. Enabling this option will do that."
 msgstr "Ha szeretné testre szabni a Really Simple SSL .htaccess parancsot, meg kell akadályoznia, hogy a Really Simple SSL újraírja. Ennek a opciónak a bekapcsolásával ezt megteheti. "
 
-#: class-admin.php:3275
-msgid "HTTP Strict Transport Security was enabled."
-msgstr "HTTP Strict Transport Security engedélyezve volt"
-
-#: class-admin.php:3194
+#: class-admin.php:3238
 msgid "301 redirect to https set."
 msgstr "301-es átirányítás https-re be lett állítva."
 
-#: class-multisite.php:576 class-multisite.php:604
+#: class-multisite.php:577 class-multisite.php:605
 msgid "You can also let the automatic scan of the pro version handle this for you, and get premium support and increased security with HSTS included."
 msgstr "Azt is megengedheti, hogy a pro verzió automatikus beolvasása kezelje ezt az Ön számára, és prémium támogatással és nagyobb biztonsággal kapja meg a HSTS-t."
 
-#: class-admin.php:4693 class-multisite.php:231
+#: class-admin.php:4661 class-multisite.php:232
 msgid "Premium Support"
 msgstr "Prémium támogatás"
 
-#: class-multisite.php:578 class-multisite.php:606
+#: class-multisite.php:579 class-multisite.php:607
 msgid "Check out Really Simple SSL Premium"
 msgstr "Ismerje meg a Really Simple SSL Prémium szolgáltatást"
 
@@ -1334,11 +1324,11 @@ msgstr "Lépjen tovább, aktíválja az SSL-t!"
 msgid "Instructions"
 msgstr "Utasítások"
 
-#: class-multisite.php:130
+#: class-multisite.php:134
 msgid "SSL is not enabled yet"
 msgstr "Az SSL még nincs engedélyezve"
 
-#: class-admin.php:3100
+#: class-admin.php:3134
 msgid "SSL is enabled on your site."
 msgstr "Az SSL engedélyezve van az Ön oldalán."
 
@@ -1346,81 +1336,81 @@ msgstr "Az SSL engedélyezve van az Ön oldalán."
 msgid "SSL Activated"
 msgstr "SSL aktiválva"
 
-#: class-admin.php:2529
+#: class-admin.php:2568
 msgid "Because your server does not pass a variable with which WordPress can detect SSL, WordPress may create redirect loops on SSL."
 msgstr "Mivel a kiszolgáló nem ad át olyan változót, amellyel a Wordpress észlelheti az SSL-t, a Wordpress átirányítási hurkot hozhat létre SSL-ben."
 
-#: class-admin.php:2507
+#: class-admin.php:2546
 msgid "Because your site is behind a loadbalancer and is_ssl() returns false, you should add the following line of code to your wp-config.php."
 msgstr "Mivel webhelye egy terhelés elosztó mögött van, és az is_ssl () hibás értéket ad vissza, hozzá kell adnia a következő sort a wp-config.php fájlhoz."
 
-#: class-admin.php:2506
+#: class-admin.php:2545
 msgid "Your wp-config.php has to be edited, but is not writable."
 msgstr "A wp-config.php-t szerkeszteni kell, de nem írható."
 
-#: class-admin.php:2501
+#: class-admin.php:2540
 msgid "A definition of a siteurl or homeurl was detected in your wp-config.php, but the file is not writable."
 msgstr "A wp-config.php-ben egy siteurl vagy egy homeurl meghatározás lett észlelve, de a fájl nem írható."
 
-#: class-admin.php:2536
+#: class-admin.php:2575
 msgid "System detection encountered issues"
 msgstr "Rendszer észlelési problémák jelentkeztek"
 
-#: class-multisite.php:574 lets-encrypt/wizard/templates/activate.php:20
+#: class-multisite.php:575 lets-encrypt/wizard/templates/activate.php:20
 #: lets-encrypt/wizard/templates/activate.php:49
 msgid "Images, stylesheets or scripts from a domain without an SSL certificate: remove them or move to your own server."
 msgstr "Képek, stíluslapok vagy szkriptek egy ssl tanúsítvány nélküli tartományból: távolítsa el őket, vagy helyezze át a saját szerverére."
 
-#: class-multisite.php:571
+#: class-multisite.php:572
 msgid "Some things can't be done automatically. Before you migrate, please check for: "
 msgstr "Néhány dolog nem hajtható végre automatikusan. A migráció előtt kérjük, ellenőrizze:"
 
-#: class-admin.php:544 lets-encrypt/wizard/templates/last-step.php:13
+#: class-admin.php:582 lets-encrypt/wizard/templates/last-step.php:13
 msgid "Almost ready to migrate to SSL!"
 msgstr "Majdnem készen áll az SSL-re való áttérésre!"
 
-#: class-multisite.php:589
+#: class-multisite.php:590
 msgid "Networkwide activation does not check if a site has an SSL certificate. It just migrates all sites to SSL."
 msgstr "A hálózati szintű aktiválás nem ellenőrzi, hogy egy webhely rendelkezik-e SSL-tanúsítvánnyal, csak áttelepíti az összes webhelyet az SSL-re."
 
-#: class-multisite.php:586
+#: class-multisite.php:587
 msgid "Activate SSL per site"
 msgstr "SSL aktiválása webhelyenként"
 
-#: class-admin.php:50 class-cache.php:11 class-certificate.php:14
+#: class-admin.php:51 class-cache.php:11 class-certificate.php:14
 #: class-front-end.php:18 class-help.php:9 class-mixed-content-fixer.php:13
 #: class-multisite.php:28 class-site-health.php:12
 #: lets-encrypt/class-letsencrypt-handler.php:30
 msgid "%s is a singleton class and you cannot create a second instance."
 msgstr "%s egy singleton-osztály, és nem hozhat létre másodpéldányt."
 
-#: class-multisite.php:583
+#: class-multisite.php:584
 msgid "Activate SSL networkwide"
 msgstr "SSL aktiválása a hálózaton"
 
-#: class-admin.php:554 class-multisite.php:573
+#: class-admin.php:593 class-multisite.php:574
 #: lets-encrypt/wizard/templates/activate.php:19
 #: lets-encrypt/wizard/templates/activate.php:48
 msgid "Http references in your .css and .js files: change any http:// into https://"
 msgstr "Http-re hivatkozások vannak a css és JS fájljaidban: cseréld ki az összse http:// -t https:// -re"
 
-#: class-admin.php:2523
+#: class-admin.php:2562
 msgid "Or set your wp-config.php to %swritable%s and reload this page."
 msgstr "Vagy állítsd a wp-config.php -det %sírhatóra%s és töltsd újra ezt az oldalt."
 
-#: class-admin.php:2503 class-admin.php:2530
+#: class-admin.php:2542 class-admin.php:2569
 msgid "Set your wp-config.php to %swritable%s and reload this page."
 msgstr "Állítsd a %sírhatóra%s a wp-config.php fájlodat és töltsd újra ezt az oldalt."
 
-#: class-admin.php:4342
+#: class-admin.php:4373
 msgid ".htaccess is currently not %swritable%s."
 msgstr "Nem %sírható%s a .htaccess fájl."
 
-#: class-admin.php:3152
+#: class-admin.php:3196
 msgid "Mixed content fixer was successfully detected on the front-end."
 msgstr "A vegyes-tartalom javítót sikeresen megtaláltuk a weboldalad frontendjén."
 
-#: class-admin.php:2920 class-multisite.php:468
+#: class-admin.php:2959 class-multisite.php:469
 #: grid/templates/tips-tricks-footer.php:3
 msgid "Documentation"
 msgstr "Dokumentuáció"
@@ -1437,7 +1427,7 @@ msgstr "Really Simple SSL"
 msgid "https://really-simple-ssl.com"
 msgstr "https://really-simple-ssl.com"
 
-#: class-admin.php:4151
+#: class-admin.php:4182
 msgid "Stop editing the .htaccess file"
 msgstr "Fejezze be a .htaccess fájl szerkesztését"
 
@@ -1446,7 +1436,7 @@ msgstr "Fejezze be a .htaccess fájl szerkesztését"
 msgid "Save"
 msgstr "Metés"
 
-#: class-admin.php:3130
+#: class-admin.php:3174
 msgid "An SSL certificate was detected on your site."
 msgstr "SSL-tanúsítványt észleltek az oldalán."
 
@@ -1454,40 +1444,40 @@ msgstr "SSL-tanúsítványt észleltek az oldalán."
 msgid "No SSL detected."
 msgstr "Nem észleltük az SSL-t."
 
-#: class-admin.php:2865 class-admin.php:3757 class-admin.php:4131
-#: class-admin.php:4687 class-multisite.php:225 class-multisite.php:337
-#: class-multisite.php:409
+#: class-admin.php:2904 class-admin.php:3784 class-admin.php:4162
+#: class-admin.php:4655 class-multisite.php:226 class-multisite.php:338
+#: class-multisite.php:410
 msgid "Settings"
 msgstr "Beállitások"
 
-#: class-admin.php:4134
+#: class-admin.php:4165
 msgid "Mixed content fixer"
 msgstr "Vegyes-tartalom javító"
 
-#: class-admin.php:2843
+#: class-admin.php:2882
 msgid "SSL"
 msgstr "SSL"
 
-#: class-multisite.php:145
+#: class-multisite.php:146
 msgid "Because the $_SERVER[\"HTTPS\"] variable is not set, your website may experience redirect loops."
 msgstr "Mivel a $ _SERVER [\"HTTPS\"] változó nincs beállítva, webhelye átirányítási hurkot észlelhet."
 
-#: class-multisite.php:144
+#: class-multisite.php:145
 msgid "You run a Multisite installation with subfolders, which prevents this plugin from fixing your missing server variable in the wp-config.php."
 msgstr "Jelenleg egy Multisite telepítés fut almappákkal, amely megakadályozza, hogy a plugin kijavítsa a hiányzó szerverváltozót a wp-config.php-ben."
 
-#: class-admin.php:3013
+#: class-admin.php:3047
 msgid "Check again"
 msgstr "Ellenőrizze újra"
 
-#: class-admin.php:3011
+#: class-admin.php:3045
 msgid "Major security issue!"
 msgstr "Komoly biztonsági probléma!"
 
-#: class-admin.php:2842
+#: class-admin.php:2881
 msgid "SSL settings"
 msgstr "SSL beállitások"
 
-#: class-multisite.php:146
+#: class-multisite.php:147
 msgid "Activate networkwide to fix this."
 msgstr "Aktiválja hálózati szinten a probléma megoldásához."

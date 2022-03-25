@@ -1,4 +1,4 @@
-/*! elementor - v3.5.6 - 28-02-2022 */
+/*! elementor - v3.6.1 - 23-03-2022 */
 "use strict";
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["image-carousel"],{
 
@@ -102,6 +102,13 @@ class ImageCarousel extends elementorModules.frontend.handlers.SwiperBase {
       };
     }
 
+    if ('yes' === elementSettings.lazyload) {
+      swiperOptions.lazy = {
+        loadPrevNext: true,
+        loadPrevNextAmount: 1
+      };
+    }
+
     return swiperOptions;
   }
 
@@ -181,4 +188,4 @@ exports["default"] = ImageCarousel;
 /***/ })
 
 }]);
-//# sourceMappingURL=image-carousel.69ddd4d316491de45fe3.bundle.js.map
+//# sourceMappingURL=image-carousel.b69ea9450ea7e942e017.bundle.js.map

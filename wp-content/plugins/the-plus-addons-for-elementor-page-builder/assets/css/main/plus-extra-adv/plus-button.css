@@ -467,3 +467,4 @@ html.video {overflow: inherit !important;}
 html.video:before {
     content: unset !important;   
 }
+html.opacity{position:relative;opacity:1}
