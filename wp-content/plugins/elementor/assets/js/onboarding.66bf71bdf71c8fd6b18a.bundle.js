@@ -1,4 +1,4 @@
-/*! elementor - v3.6.1 - 23-03-2022 */
+/*! elementor - v3.6.2 - 04-04-2022 */
 "use strict";
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["onboarding"],{
 
@@ -1600,7 +1600,7 @@ function Account() {
     },
     labelText: __('Become a super contributor by sharing non-sensitive data.', 'elementor')
   })), !state.isLibraryConnected && /*#__PURE__*/_react.default.createElement("div", {
-    className: "e-onboarding__already-have-account-text"
+    className: "e-onboarding__footnote"
   }, /*#__PURE__*/_react.default.createElement("p", null, __('Already have one?', 'elementor') + ' ', /*#__PURE__*/_react.default.createElement("a", {
     ref: alreadyHaveAccountLinkRef,
     href: elementorAppConfig.onboarding.urls.connect + elementorAppConfig.onboarding.utms.connectCtaLink,
@@ -1996,13 +1996,15 @@ function HelloTheme() {
     nextStep: nextStep
   }, /*#__PURE__*/_react.default.createElement(_pageContentLayout.default, {
     image: elementorCommon.config.urls.assets + 'images/app/onboarding/Illustration_Hello.svg',
-    title: __('We always start with Hello.', 'elementor'),
+    title: __('Every site starts with a theme.', 'elementor'),
     actionButton: actionButton,
     skipButton: skipButton,
     noticeState: noticeState
-  }, /*#__PURE__*/_react.default.createElement("span", null, __('Every WordPress site needs a theme. Join over 1M people already using Elementor’s Hello theme and build your website exactly the way you want.', 'elementor')), /*#__PURE__*/_react.default.createElement("ul", {
+  }, /*#__PURE__*/_react.default.createElement("p", null, __('Hello is Elementor\'s official blank canvas theme optimized to build your website exactly the way you want.', 'elementor')), /*#__PURE__*/_react.default.createElement("p", null, __('Here\'s why:', 'elementor')), /*#__PURE__*/_react.default.createElement("ul", {
     className: "e-onboarding__feature-list"
-  }, /*#__PURE__*/_react.default.createElement("li", null, __('It’s a flexible, lightweight canvas', 'elementor')), /*#__PURE__*/_react.default.createElement("li", null, __('Super-fast loading time', 'elementor')), /*#__PURE__*/_react.default.createElement("li", null, __('And it’s great for SEO', 'elementor')))));
+  }, /*#__PURE__*/_react.default.createElement("li", null, __('Light-weight and fast loading', 'elementor')), /*#__PURE__*/_react.default.createElement("li", null, __('Great for SEO', 'elementor')), /*#__PURE__*/_react.default.createElement("li", null, __('Already being used by 1M+ web creators', 'elementor')))), /*#__PURE__*/_react.default.createElement("div", {
+    className: "e-onboarding__footnote"
+  }, '* ' + __('You can switch your theme later on', 'elementor')));
 }
 
 /***/ }),
@@ -2727,4 +2729,4 @@ Connect.propTypes = {
 /***/ })
 
 }]);
-//# sourceMappingURL=onboarding.eff243c8052ee52943bc.bundle.js.map
+//# sourceMappingURL=onboarding.66bf71bdf71c8fd6b18a.bundle.js.map

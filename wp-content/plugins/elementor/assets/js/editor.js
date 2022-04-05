@@ -1,4 +1,4 @@
-/*! elementor - v3.6.1 - 23-03-2022 */
+/*! elementor - v3.6.2 - 04-04-2022 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -18670,6 +18670,7 @@ var Paste = /*#__PURE__*/function (_CommandHistory) {
         var index = 'undefined' === typeof at ? targetContainer.view.collection.length : at;
         data.forEach(function (model) {
           switch (model.elType) {
+            case 'container':
             case 'section':
               {
                 // If is inner create section for `inner-section`.
@@ -22807,81 +22808,6 @@ module.exports = /*#__PURE__*/function (_Marionette$Behavior) {
 
 /***/ }),
 
-/***/ "../assets/dev/js/editor/document/ui-states/direction-mode.js":
-/*!********************************************************************!*\
-  !*** ../assets/dev/js/editor/document/ui-states/direction-mode.js ***!
-  \********************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var _Object$defineProperty = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "../node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "../node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
-
-_Object$defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.DirectionMode = exports.DIRECTION_ROW_REVERSE = exports.DIRECTION_ROW = exports.DIRECTION_COLUMN_REVERSE = exports.DIRECTION_COLUMN = void 0;
-
-var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/defineProperty */ "../node_modules/@babel/runtime-corejs2/helpers/defineProperty.js"));
-
-var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "../node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
-
-var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "../node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
-
-var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "../node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
-
-var _createSuper2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createSuper */ "../node_modules/@babel/runtime-corejs2/helpers/createSuper.js"));
-
-var _uiStateBase = _interopRequireDefault(__webpack_require__(/*! elementor-api/core/states/ui-state-base */ "../modules/web-cli/assets/js/core/states/ui-state-base.js"));
-
-var DIRECTION_ROW = 'row';
-exports.DIRECTION_ROW = DIRECTION_ROW;
-var DIRECTION_ROW_REVERSE = 'row-reverse';
-exports.DIRECTION_ROW_REVERSE = DIRECTION_ROW_REVERSE;
-var DIRECTION_COLUMN = 'column';
-exports.DIRECTION_COLUMN = DIRECTION_COLUMN;
-var DIRECTION_COLUMN_REVERSE = 'column-reverse';
-exports.DIRECTION_COLUMN_REVERSE = DIRECTION_COLUMN_REVERSE;
-
-var DirectionMode = /*#__PURE__*/function (_UiStateBase) {
-  (0, _inherits2.default)(DirectionMode, _UiStateBase);
-
-  var _super = (0, _createSuper2.default)(DirectionMode);
-
-  function DirectionMode() {
-    (0, _classCallCheck2.default)(this, DirectionMode);
-    return _super.apply(this, arguments);
-  }
-
-  (0, _createClass2.default)(DirectionMode, [{
-    key: "getId",
-    value: function getId() {
-      return 'direction-mode';
-    }
-  }, {
-    key: "getOptions",
-    value: function getOptions() {
-      var _ref;
-
-      return _ref = {}, (0, _defineProperty2.default)(_ref, DIRECTION_ROW, ''), (0, _defineProperty2.default)(_ref, DIRECTION_ROW_REVERSE, ''), (0, _defineProperty2.default)(_ref, DIRECTION_COLUMN, ''), (0, _defineProperty2.default)(_ref, DIRECTION_COLUMN_REVERSE, ''), _ref;
-    }
-  }, {
-    key: "getScopes",
-    value: function getScopes() {
-      return [window.document.body, elementor.$previewContents[0].body];
-    }
-  }]);
-  return DirectionMode;
-}(_uiStateBase.default);
-
-exports.DirectionMode = DirectionMode;
-
-/***/ }),
-
 /***/ "../assets/dev/js/editor/editor-base.js":
 /*!**********************************************!*\
   !*** ../assets/dev/js/editor/editor-base.js ***!
@@ -25704,10 +25630,12 @@ BaseElementView = BaseContainer.extend({
 
     this.$el.html5Draggable({
       onDragStart: function onDragStart(e) {
+        var _this4$options$dragga;
+
         e.stopPropagation(); // Need to stop this event when the element is absolute since it clashes with this one.
         // See `behaviors/widget-draggable.js`.
 
-        if (_this4.options.draggable.isActive) {
+        if ((_this4$options$dragga = _this4.options.draggable) !== null && _this4$options$dragga !== void 0 && _this4$options$dragga.isActive) {
           return;
         }
 
@@ -27324,17 +27252,17 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/help
 
 var _values = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/values */ "../node_modules/@babel/runtime-corejs2/core-js/object/values.js"));
 
-__webpack_require__(/*! core-js/modules/es6.string.includes.js */ "../node_modules/core-js/modules/es6.string.includes.js");
+__webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
 
 __webpack_require__(/*! core-js/modules/es7.array.includes.js */ "../node_modules/core-js/modules/es7.array.includes.js");
 
-__webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/defineProperty */ "../node_modules/@babel/runtime-corejs2/helpers/defineProperty.js"));
 
 var _inline = _interopRequireDefault(__webpack_require__(/*! elementor-views/add-section/inline */ "../assets/dev/js/editor/views/add-section/inline.js"));
 
 var _widgetResizeable = _interopRequireDefault(__webpack_require__(/*! ./behaviors/widget-resizeable */ "../assets/dev/js/editor/elements/views/behaviors/widget-resizeable.js"));
 
-var _directionMode = __webpack_require__(/*! elementor-document/ui-states/direction-mode */ "../assets/dev/js/editor/document/ui-states/direction-mode.js");
+var _containerHelper = _interopRequireDefault(__webpack_require__(/*! elementor-editor-utils/container-helper */ "../assets/dev/js/editor/utils/container-helper.js"));
 
 // Most of the code has been copied from `section.js`.
 var BaseElementView = __webpack_require__(/*! elementor-elements/views/base */ "../assets/dev/js/editor/elements/views/base.js"),
@@ -27360,7 +27288,7 @@ var ContainerView = BaseElementView.extend({
   getCurrentUiStates: function getCurrentUiStates() {
     var currentDirection = this.container.settings.get('flex_direction');
     return {
-      directionMode: currentDirection || _directionMode.DIRECTION_COLUMN
+      directionMode: currentDirection || _containerHelper.default.DIRECTION_DEFAULT
     };
   },
   behaviors: function behaviors() {
@@ -27416,13 +27344,19 @@ var ContainerView = BaseElementView.extend({
 
     return parent.view.getNestingLevel() + 1;
   },
+  getDroppableAxis: function getDroppableAxis() {
+    var _axisMap;
+
+    var isColumnDefault = _containerHelper.default.DIRECTION_DEFAULT === _containerHelper.default.DIRECTION_COLUMN,
+        currentDirection = this.getContainer().settings.get('flex_direction');
+    var axisMap = (_axisMap = {}, (0, _defineProperty2.default)(_axisMap, _containerHelper.default.DIRECTION_COLUMN, 'vertical'), (0, _defineProperty2.default)(_axisMap, _containerHelper.default.DIRECTION_COLUMN_REVERSED, 'vertical'), (0, _defineProperty2.default)(_axisMap, _containerHelper.default.DIRECTION_ROW, 'horizontal'), (0, _defineProperty2.default)(_axisMap, _containerHelper.default.DIRECTION_ROW_REVERSED, 'horizontal'), (0, _defineProperty2.default)(_axisMap, '', isColumnDefault ? 'vertical' : 'horizontal'), _axisMap);
+    return axisMap[currentDirection];
+  },
   getDroppableOptions: function getDroppableOptions() {
     var _this = this;
 
-    // Determine the axis based on the flex direction.
-    var axis = this.getContainer().settings.get('flex_direction').includes('column') ? ['vertical'] : ['horizontal'];
     return {
-      axis: axis,
+      axis: this.getDroppableAxis(),
       items: '> .elementor-element, > .elementor-empty-view .elementor-first-add',
       groups: ['elementor-element'],
       horizontalThreshold: 5,
@@ -27598,6 +27532,14 @@ var ContainerView = BaseElementView.extend({
 
       _this2.$el.html5Droppable(_this2.getDroppableOptions());
     });
+  },
+  renderOnChange: function renderOnChange(settings) {
+    BaseElementView.prototype.renderOnChange.apply(this, arguments); // Re-initialize the droppable in order to make sure the axis works properly.
+
+    if (!!settings.changed.flex_direction) {
+      this.$el.html5Droppable('destroy');
+      this.$el.html5Droppable(this.getDroppableOptions());
+    }
   },
   onDragStart: function onDragStart() {
     this.$el.html5Droppable('destroy');
@@ -33698,9 +33640,16 @@ var ContainerHelper = /*#__PURE__*/function () {
 
       try {
         switch (preset) {
-          // Single Container without sub Containers.
-          case '100':
+          // Single column Container without sub Containers.
+          case 'c100':
             newContainer = ContainerHelper.createContainer({}, target, options);
+            break;
+          // Single row Container without sub Containers.
+
+          case 'r100':
+            newContainer = ContainerHelper.createContainer({
+              flex_direction: ContainerHelper.DIRECTION_ROW
+            }, target, options);
             break;
           // Exceptional preset.
 
@@ -33796,6 +33745,7 @@ exports.ContainerHelper = ContainerHelper;
 (0, _defineProperty2.default)(ContainerHelper, "DIRECTION_COLUMN", 'column');
 (0, _defineProperty2.default)(ContainerHelper, "DIRECTION_ROW_REVERSED", 'row-reverse');
 (0, _defineProperty2.default)(ContainerHelper, "DIRECTION_COLUMN_REVERSED", 'column-reverse');
+(0, _defineProperty2.default)(ContainerHelper, "DIRECTION_DEFAULT", ContainerHelper.DIRECTION_COLUMN);
 var _default = ContainerHelper;
 exports["default"] = _default;
 
@@ -36189,6 +36139,7 @@ module.exports = elementorModules.Module.extend({
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
+/* provided dependency */ var __ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n")["__"];
 
 
 __webpack_require__(/*! core-js/modules/es6.array.slice.js */ "../node_modules/core-js/modules/es6.array.slice.js");
@@ -36294,7 +36245,7 @@ presetsFactory = {
    *
    * @returns {string}
    */
-  getContainerPreset: function getContainerPreset(presetId) {
+  generateContainerPreset: function generateContainerPreset(presetId) {
     var text = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
     var presets = {
       '33-33-33': "\n\t\t\t\t<svg viewBox=\"0 0 90 44\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n\t\t\t\t\t<rect x=\"0.5\" width=\"29\" height=\"44\" />\n\t\t\t\t\t<rect x=\"30.5\" width=\"29\" height=\"44\" />\n\t\t\t\t\t<rect x=\"60.5\" width=\"29\" height=\"44\" />\n\t\t\t\t</svg>\n\t\t\t",
@@ -36308,13 +36259,14 @@ presetsFactory = {
       '33-33-33-33-33-33': "\n\t\t\t\t<svg viewBox=\"0 0 89 44\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n\t\t\t\t\t<rect width=\"29\" height=\"21.5\"/>\n\t\t\t\t\t<rect x=\"30\" width=\"29\" height=\"21.5\"/>\n\t\t\t\t\t<rect x=\"60\" width=\"29\" height=\"21.5\"/>\n\t\t\t\t\t<rect y=\"22.5\" width=\"29\" height=\"21.5\"/>\n\t\t\t\t\t<rect x=\"30\" y=\"22.5\" width=\"29\" height=\"21.5\"/>\n\t\t\t\t\t<rect x=\"60\" y=\"22.5\" width=\"29\" height=\"21.5\"/>\n\t\t\t\t</svg>\n\t\t\t",
       '33-33-33-33-66': "\n\t\t\t\t<svg viewBox=\"0 0 89 44\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n\t\t\t\t\t<rect width=\"29\" height=\"21.5\"/>\n\t\t\t\t\t<rect x=\"30\" width=\"29\" height=\"21.5\"/>\n\t\t\t\t\t<rect x=\"60\" width=\"29\" height=\"21.5\"/>\n\t\t\t\t\t<rect y=\"22.5\" width=\"29\" height=\"21.5\"/>\n\t\t\t\t\t<rect x=\"30\" y=\"22.5\" width=\"59\" height=\"21.5\"/>\n\t\t\t\t</svg>\n\t\t\t",
       '66-33-33-66': "\n\t\t\t\t<svg viewBox=\"0 0 89 44\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n\t\t\t\t\t<rect width=\"59\" height=\"21.5\"/>\n\t\t\t\t\t<rect x=\"60\" width=\"29\" height=\"21.5\"/>\n\t\t\t\t\t<rect y=\"22.5\" width=\"29\" height=\"21.5\"/>\n\t\t\t\t\t<rect x=\"30\" y=\"22.5\" width=\"59\" height=\"21.5\"/>\n\t\t\t\t</svg>\n\t\t\t",
-      100: "\n\t\t\t\t<svg viewBox=\"0 0 90 44\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n\t\t\t\t\t<rect x=\"0.5\" width=\"89\" height=\"44\" />\n\t\t\t\t</svg>\n\t\t\t",
+      c100: "\n\t\t\t\t<svg viewBox=\"0 0 89 44\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n\t\t\t\t\t<title>".concat(__('Direction Column', 'elementor'), "</title>\n\t\t\t\t\t<rect width=\"89\" height=\"44\" />\n\t\t\t\t\t<path d=\"M43.956 24.644L42 22.748C41.848 22.596 41.672 22.52 41.472 22.52C41.28 22.52 41.108 22.596 40.956 22.748C40.804 22.9 40.728 23.076 40.728 23.276C40.728 23.476 40.804 23.652 40.956 23.804L44.304 27.056C44.456 27.208 44.628 27.284 44.82 27.284C45.02 27.284 45.196 27.208 45.348 27.056L48.504 23.852C48.656 23.7 48.732 23.524 48.732 23.324C48.732 23.124 48.656 22.948 48.504 22.796C48.352 22.644 48.176 22.568 47.976 22.568C47.776 22.568 47.6 22.644 47.448 22.796L45.456 24.848L45.504 17.048C45.504 16.848 45.428 16.676 45.276 16.532C45.124 16.38 44.948 16.304 44.748 16.304C44.548 16.304 44.372 16.38 44.22 16.532C44.076 16.676 44.004 16.848 44.004 17.048L43.956 24.644Z\"/>\n\t\t\t\t</svg>\n\t\t\t"),
+      r100: "\n\t\t\t\t<svg viewBox=\"0 0 89 44\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n\t\t\t\t\t<title>".concat(__('Direction Row', 'elementor'), "</title>\n\t\t\t\t\t<rect width=\"89\" height=\"44\"/>\n\t\t\t\t\t<path d=\"M47.856 23.352L45.948 25.296C45.796 25.448 45.72 25.624 45.72 25.824C45.72 26.024 45.796 26.2 45.948 26.352C46.1 26.504 46.276 26.58 46.476 26.58C46.676 26.58 46.852 26.504 47.004 26.352L50.256 23.004C50.408 22.852 50.484 22.676 50.484 22.476C50.484 22.276 50.408 22.1 50.256 21.948L47.052 18.804C46.9 18.652 46.724 18.576 46.524 18.576C46.324 18.576 46.148 18.652 45.996 18.804C45.844 18.956 45.768 19.132 45.768 19.332C45.768 19.524 45.844 19.696 45.996 19.848L48.048 21.852L40.248 21.804C40.048 21.804 39.872 21.88 39.72 22.032C39.576 22.176 39.504 22.348 39.504 22.548C39.504 22.748 39.576 22.924 39.72 23.076C39.872 23.228 40.048 23.304 40.248 23.304L47.856 23.352Z\"/>\n\t\t\t\t</svg>\n\t\t\t"),
       default: "\n\t\t\t\t<div style=\"--text:'".concat(text, "'\" class=\"e-preset--container\">\n\t\t\t\t\t<svg viewBox=\"0 0 90 44\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n\t\t\t\t\t\t<rect width=\"89\" height=\"44\" transform=\"translate(0.5)\" />\n\t\t\t\t\t\t<rect x=\"3\" y=\"2.5\" width=\"84\" height=\"39\" rx=\"2.5\" stroke=\"#FCFCFC\" stroke-linejoin=\"round\" stroke-dasharray=\"3 2\"/>\n\t\t\t\t\t</svg>\n\t\t\t\t</div>\n\t\t\t")
     };
     return presets[presetId] || presets.default;
   },
   getContainerPresets: function getContainerPresets() {
-    return ['100', '50-50', '33-33-33', '33-66', '25-25-25-25', '25-50-25', '50-50-50-50', '50-50-100', 'c100-c50-50', '33-33-33-33-33-33', '33-33-33-33-66', '66-33-33-66'];
+    return ['c100', 'r100', '50-50', '33-66', '25-25-25-25', '25-50-25', '50-50-50-50', '50-50-100', 'c100-c50-50', '33-33-33-33-33-33', '33-33-33-33-66', '66-33-33-66'];
   }
 };
 module.exports = presetsFactory;
