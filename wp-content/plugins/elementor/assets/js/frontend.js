@@ -1,4 +1,4 @@
-/*! elementor - v3.6.1 - 23-03-2022 */
+/*! elementor - v3.6.2 - 04-04-2022 */
 "use strict";
 (self["webpackChunkelementor"] = self["webpackChunkelementor"] || []).push([["frontend"],{
 
@@ -1874,6 +1874,7 @@ class Swiper {
 
 
     jQuery(container).closest('.elementor-widget-wrap').addClass('e-swiper-container');
+    jQuery(container).closest('.elementor-widget').addClass('e-widget-swiper');
     return new Promise(resolve => {
       if (!elementorFrontend.config.experimentalFeatures.e_optimized_assets_loading) {
         return resolve(this.createSwiperInstance(container, this.config));

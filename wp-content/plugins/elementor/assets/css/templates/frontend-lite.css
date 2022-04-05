@@ -1452,8 +1452,9 @@ ul.elementor-icon-list-items.elementor-inline-items {
     min-width: 0; }
     .e-container .elementor-widget-video, .e-container .elementor-widget-google_maps {
       flex-basis: 100%; }
-    .e-container .elementor-widget-media-carousel {
-      max-width: 100%; }
+    .e-container .elementor-widget.e-widget-swiper {
+      max-width: 100%;
+      flex-basis: 100%; }
   .e-container > .e-container > .elementor-element-overlay .elementor-editor-element-setting, .elementor-widget .e-container > .elementor-element-overlay .elementor-editor-element-setting {
     position: relative;
     background-color: #556068; }

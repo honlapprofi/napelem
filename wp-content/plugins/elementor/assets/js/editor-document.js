@@ -1,4 +1,4 @@
-/*! elementor - v3.6.1 - 23-03-2022 */
+/*! elementor - v3.6.2 - 04-04-2022 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -5899,6 +5899,7 @@ var Paste = /*#__PURE__*/function (_CommandHistory) {
         var index = 'undefined' === typeof at ? targetContainer.view.collection.length : at;
         data.forEach(function (model) {
           switch (model.elType) {
+            case 'container':
             case 'section':
               {
                 // If is inner create section for `inner-section`.
@@ -15395,10 +15396,12 @@ BaseElementView = BaseContainer.extend({
 
     this.$el.html5Draggable({
       onDragStart: function onDragStart(e) {
+        var _this4$options$dragga;
+
         e.stopPropagation(); // Need to stop this event when the element is absolute since it clashes with this one.
         // See `behaviors/widget-draggable.js`.
 
-        if (_this4.options.draggable.isActive) {
+        if ((_this4$options$dragga = _this4.options.draggable) !== null && _this4$options$dragga !== void 0 && _this4$options$dragga.isActive) {
           return;
         }
 
@@ -16544,17 +16547,17 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/help
 
 var _values = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/values */ "../node_modules/@babel/runtime-corejs2/core-js/object/values.js"));
 
-__webpack_require__(/*! core-js/modules/es6.string.includes.js */ "../node_modules/core-js/modules/es6.string.includes.js");
+__webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
 
 __webpack_require__(/*! core-js/modules/es7.array.includes.js */ "../node_modules/core-js/modules/es7.array.includes.js");
 
-__webpack_require__(/*! core-js/modules/es6.array.find.js */ "../node_modules/core-js/modules/es6.array.find.js");
+var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/defineProperty */ "../node_modules/@babel/runtime-corejs2/helpers/defineProperty.js"));
 
 var _inline = _interopRequireDefault(__webpack_require__(/*! elementor-views/add-section/inline */ "../assets/dev/js/editor/views/add-section/inline.js"));
 
 var _widgetResizeable = _interopRequireDefault(__webpack_require__(/*! ./behaviors/widget-resizeable */ "../assets/dev/js/editor/elements/views/behaviors/widget-resizeable.js"));
 
-var _directionMode = __webpack_require__(/*! elementor-document/ui-states/direction-mode */ "../assets/dev/js/editor/document/ui-states/direction-mode.js");
+var _containerHelper = _interopRequireDefault(__webpack_require__(/*! elementor-editor-utils/container-helper */ "../assets/dev/js/editor/utils/container-helper.js"));
 
 // Most of the code has been copied from `section.js`.
 var BaseElementView = __webpack_require__(/*! elementor-elements/views/base */ "../assets/dev/js/editor/elements/views/base.js"),
@@ -16580,7 +16583,7 @@ var ContainerView = BaseElementView.extend({
   getCurrentUiStates: function getCurrentUiStates() {
     var currentDirection = this.container.settings.get('flex_direction');
     return {
-      directionMode: currentDirection || _directionMode.DIRECTION_COLUMN
+      directionMode: currentDirection || _containerHelper.default.DIRECTION_DEFAULT
     };
   },
   behaviors: function behaviors() {
@@ -16636,13 +16639,19 @@ var ContainerView = BaseElementView.extend({
 
     return parent.view.getNestingLevel() + 1;
   },
+  getDroppableAxis: function getDroppableAxis() {
+    var _axisMap;
+
+    var isColumnDefault = _containerHelper.default.DIRECTION_DEFAULT === _containerHelper.default.DIRECTION_COLUMN,
+        currentDirection = this.getContainer().settings.get('flex_direction');
+    var axisMap = (_axisMap = {}, (0, _defineProperty2.default)(_axisMap, _containerHelper.default.DIRECTION_COLUMN, 'vertical'), (0, _defineProperty2.default)(_axisMap, _containerHelper.default.DIRECTION_COLUMN_REVERSED, 'vertical'), (0, _defineProperty2.default)(_axisMap, _containerHelper.default.DIRECTION_ROW, 'horizontal'), (0, _defineProperty2.default)(_axisMap, _containerHelper.default.DIRECTION_ROW_REVERSED, 'horizontal'), (0, _defineProperty2.default)(_axisMap, '', isColumnDefault ? 'vertical' : 'horizontal'), _axisMap);
+    return axisMap[currentDirection];
+  },
   getDroppableOptions: function getDroppableOptions() {
     var _this = this;
 
-    // Determine the axis based on the flex direction.
-    var axis = this.getContainer().settings.get('flex_direction').includes('column') ? ['vertical'] : ['horizontal'];
     return {
-      axis: axis,
+      axis: this.getDroppableAxis(),
       items: '> .elementor-element, > .elementor-empty-view .elementor-first-add',
       groups: ['elementor-element'],
       horizontalThreshold: 5,
@@ -16818,6 +16827,14 @@ var ContainerView = BaseElementView.extend({
 
       _this2.$el.html5Droppable(_this2.getDroppableOptions());
     });
+  },
+  renderOnChange: function renderOnChange(settings) {
+    BaseElementView.prototype.renderOnChange.apply(this, arguments); // Re-initialize the droppable in order to make sure the axis works properly.
+
+    if (!!settings.changed.flex_direction) {
+      this.$el.html5Droppable('destroy');
+      this.$el.html5Droppable(this.getDroppableOptions());
+    }
   },
   onDragStart: function onDragStart() {
     this.$el.html5Droppable('destroy');
@@ -17379,9 +17396,16 @@ var ContainerHelper = /*#__PURE__*/function () {
 
       try {
         switch (preset) {
-          // Single Container without sub Containers.
-          case '100':
+          // Single column Container without sub Containers.
+          case 'c100':
             newContainer = ContainerHelper.createContainer({}, target, options);
+            break;
+          // Single row Container without sub Containers.
+
+          case 'r100':
+            newContainer = ContainerHelper.createContainer({
+              flex_direction: ContainerHelper.DIRECTION_ROW
+            }, target, options);
             break;
           // Exceptional preset.
 
@@ -17477,6 +17501,7 @@ exports.ContainerHelper = ContainerHelper;
 (0, _defineProperty2.default)(ContainerHelper, "DIRECTION_COLUMN", 'column');
 (0, _defineProperty2.default)(ContainerHelper, "DIRECTION_ROW_REVERSED", 'row-reverse');
 (0, _defineProperty2.default)(ContainerHelper, "DIRECTION_COLUMN_REVERSED", 'column-reverse');
+(0, _defineProperty2.default)(ContainerHelper, "DIRECTION_DEFAULT", ContainerHelper.DIRECTION_COLUMN);
 var _default = ContainerHelper;
 exports["default"] = _default;
 

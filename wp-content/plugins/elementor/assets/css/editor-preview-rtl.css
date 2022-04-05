@@ -1,4 +1,4 @@
-/*! elementor - v3.6.1 - 23-03-2022 */
+/*! elementor - v3.6.2 - 04-04-2022 */
 @charset "UTF-8";
 .elementor-control-unit-1 {
   width: 27px; }
@@ -3320,13 +3320,13 @@ html.elementor-html {
       .e-container-select-preset__list .e-container-preset svg {
         width: 100%;
         height: auto; }
-      .e-container-select-preset__list .e-container-preset path,
+      .e-container-select-preset__list .e-container-preset path {
+        fill: #ffffff; }
       .e-container-select-preset__list .e-container-preset rect {
         fill: #d5dadf;
         -webkit-transition: .3s all;
         -o-transition: .3s all;
         transition: .3s all; }
-      .e-container-select-preset__list .e-container-preset:hover path,
       .e-container-select-preset__list .e-container-preset:hover rect {
         fill: #6d7882; }
 /*# sourceMappingURL=editor-preview-rtl.css.map */
