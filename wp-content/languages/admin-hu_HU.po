@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.9.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-03-03 08:31:59+0000\n"
+"PO-Revision-Date: 2022-04-05 08:13:45+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,7 +35,7 @@ msgid "Continue"
 msgstr "Folytatás"
 
 #. translators: %s: Learn WordPress link.
-#: wp-admin/about.php:329
+#: wp-admin/about.php:354
 #, gp-priority: normal
 msgid "Want to dive into 5.9 but don&#8217;t know where to start? Visit <a href=\"%s\">learn.wordpress.org</a> for expanding resources on new features in WordPress 5.9."
 msgstr "Szeretnénk elmélyülni az 5.9 újdonságaiban, de fogalmunk sincs, merre induljunk? Keressük fel a <a href=\"%s\">learn.wordpress.org</a> weboldalt a webhelyet a WordPress 5.9 új funkcióival kapcsolatos források tanulmányozásához."
@@ -96,104 +96,104 @@ msgstr "Bővebben az %s verzióról."
 msgid "WordPress is free and open source software"
 msgstr "A WordPress ingyenes és nyílt forráskódú szoftver"
 
-#: wp-admin/about.php:324
+#: wp-admin/about.php:349
 #, gp-priority: normal
 msgid "Learn more about the new features in 5.9"
 msgstr "Bővebben az 5.9 újdonságairól"
 
-#: wp-admin/about.php:303
+#: wp-admin/about.php:328
 #, gp-priority: normal
 msgid "A refactored Gallery block"
 msgstr "Újraírt galéria blokk"
 
-#: wp-admin/about.php:279
+#: wp-admin/about.php:304
 #, gp-priority: normal
 msgid "Multiple stylesheets for a block"
 msgstr "Több stíluslap egy blokkhoz"
 
-#: wp-admin/about.php:265
+#: wp-admin/about.php:290
 #, gp-priority: normal
 msgid "Introducing block themes"
 msgstr "Bevezetés a blokk világába"
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:255
+#: wp-admin/about.php:280
 #, gp-priority: normal
 msgid "WordPress %s for developers"
 msgstr "WordPress %s fejlesztőknek"
 
-#: wp-admin/about.php:237
+#: wp-admin/about.php:262
 #, gp-priority: normal
 msgid "Treat every image in a Gallery block the same way you would treat it in the Image block."
 msgstr "Úgy kezelhetünk minden egyes képet a Galéria blokkban, ahogyan a Kép blokkban is."
 
-#: wp-admin/about.php:234
+#: wp-admin/about.php:259
 #, gp-priority: normal
 msgid "A better Gallery block"
 msgstr "Egy jobb galéria blokk"
 
-#: wp-admin/about.php:223
+#: wp-admin/about.php:248
 #, gp-priority: normal
 msgid "A revamped List View"
 msgstr "Megújított listanézet"
 
-#: wp-admin/about.php:203
+#: wp-admin/about.php:228
 #, gp-priority: normal
 msgid "The power of patterns"
 msgstr "A minták ereje"
 
-#: wp-admin/about.php:192
+#: wp-admin/about.php:217
 #, gp-priority: normal
 msgid "Better block controls"
 msgstr "Jobb blokk-felügyelet"
 
-#: wp-admin/about.php:180
+#: wp-admin/about.php:205
 #, gp-priority: normal
 msgid "Do you love to blog or produce content? New tweaks to the publishing flow help you say more, faster."
 msgstr "Szeretünk blogolni, vagy tartalmat készíteni? A közlésben a megújított közzétételi folyamat segít több mindent, és gyorsabban elmondani. "
 
-#: wp-admin/about.php:177
+#: wp-admin/about.php:202
 #, gp-priority: normal
 msgid "More improvements and updates"
 msgstr "További fejlesztések és frissítések "
 
-#: wp-admin/about.php:165
+#: wp-admin/about.php:190
 #, gp-priority: normal
 msgid "Blocks come to site navigation, the heart of user experience."
 msgstr "A blokkok megérkeztek az navigációba, a felhasználói élmény középpontjába."
 
-#: wp-admin/about.php:162
+#: wp-admin/about.php:187
 #, gp-priority: normal
 msgid "The Navigation block"
 msgstr "A Navigációs blokk"
 
-#: wp-admin/about.php:142
+#: wp-admin/about.php:167
 #, gp-priority: normal
 msgid "Your personal paintbox awaits"
 msgstr "Vár ránk a személyes festékdobozunk"
 
 #. translators: %s: Link to Themes screen.
-#: wp-admin/about.php:130
+#: wp-admin/about.php:155
 #, gp-priority: normal
 msgid "The Twenty Twenty&#8209;Two theme is already available to you. It came installed with WordPress 5.9, and you will find it with <a href=\"%s\">your other installed themes</a>."
 msgstr "A Twenty Twenty Two sablon már elérhető. Az 5.9 verzióval érkezett, és a <a href=\"%s\">telepített sablonok</a> között megtalálható."
 
-#: wp-admin/about.php:120
+#: wp-admin/about.php:145
 #, gp-priority: normal
 msgid "And say hello to the first default block theme in the history of WordPress. This is more than just a new default theme. It&#8217;s a brand-new way to work with WordPress themes."
 msgstr "És köszöntsük a WordPress történetének első blokkra épülő - alapértelmezett - sablonát! Ez több, mint egy új alapértelmezett sablon. Ez egy vadonatúj módszer a WordPress sablonokkal történő munkavégzéshez. "
 
-#: wp-admin/about.php:117
+#: wp-admin/about.php:142
 #, gp-priority: normal
 msgid "Say hello to Twenty Twenty&#8209;Two"
 msgstr "Köszöntünk Twenty Twenty Two!"
 
-#: wp-admin/about.php:105
+#: wp-admin/about.php:130
 #, gp-priority: normal
 msgid "It puts you in control of your whole site, right in the WordPress Admin."
 msgstr "A teljes webhely irányítása a kezünkben, egyenesen a WordPress Adminból."
 
-#: wp-admin/about.php:102
+#: wp-admin/about.php:127
 #, gp-priority: normal
 msgid "Full Site Editing is here"
 msgstr "A teljeskörű webhely szerkesztés megérkezett"
@@ -791,7 +791,7 @@ msgid "https://developer.wordpress.org/rest-api/frequently-asked-questions/#why-
 msgstr "https://developer.wordpress.org/rest-api/frequently-asked-questions/#why-is-authentication-not-working"
 
 #. translators: %s: WordPress 5.9 Field Guide link.
-#: wp-admin/about.php:346
+#: wp-admin/about.php:371
 #, gp-priority: normal
 msgid "Check out the latest version of the WordPress Field Guide. It highlights developer notes for each change you may want to be aware of. <a href=\"%s\">WordPress 5.9 Field Guide.</a>"
 msgstr "Nézzük meg a WordPress új mezőútmutatóját. Ez tartalmazza az összes módosításra vonatkozó fejlesztői jegyzetet, amelyekről tudnunk érdemes. <a href=\"%s\">WordPress 5.9 mezőútmutató.</a>"
@@ -879,7 +879,7 @@ msgstr "Új alkalmazás jelszó hozzáadása"
 msgid "Required to create an Application Password, but not to update the user."
 msgstr "Alkalmazás jelszó létrehozása szükséges, a felhasználó frissítése nélkül."
 
-#: wp-admin/about.php:359
+#: wp-admin/about.php:384
 #, gp-priority: normal
 msgid "Go to Updates"
 msgstr "Tovább a Frissítésekre"
@@ -1300,7 +1300,7 @@ msgstr "A \"%1$s\" érték kisebb, mint az \"%2$s\" érték."
 msgid "Environment type"
 msgstr "Környezet típusa"
 
-#: wp-admin/about.php:341
+#: wp-admin/about.php:366
 #, gp-priority: normal
 msgid "Check the Field Guide for more!"
 msgstr "Nézzük meg a Mező útmutatót további részletekért!"
@@ -3398,6 +3398,12 @@ msgid_plural "Your site has %1$d inactive themes, other than %2$s, the default W
 msgstr[0] "A weboldal %1$d kikapcsolt sablont tartalmaz, amelyik más, mint a %2$s alapértelmezett sablon. A használatban lévő sablon: %3$s."
 msgstr[1] "A weboldal %1$d kikapcsolt sablont tartalmaz, amelyek mások, mint a %2$s alapértelmezett sablon. A használatban lévő sablon: %3$s."
 
+#: wp-admin/includes/class-wp-site-health.php:682
+#: wp-admin/includes/class-wp-site-health.php:698
+#, gp-priority: normal
+msgid "You should consider removing any unused themes to enhance your site&#8217;s security."
+msgstr "A weboldal biztonságának fokozása érdekében megfontolandó a nem használt sablonok eltávolítása."
+
 #. translators: 1: The amount of inactive themes. 2: The currently active
 #. theme.
 #: wp-admin/includes/class-wp-site-health.php:674
@@ -3415,6 +3421,11 @@ msgid "Your site has %d inactive theme."
 msgid_plural "Your site has %d inactive themes."
 msgstr[0] "A weboldal %d nem használt sablont tartalmaz."
 msgstr[1] "A weboldal %d nem használt sablont tartalmaz."
+
+#: wp-admin/includes/class-wp-site-health.php:470
+#, gp-priority: normal
+msgid "Inactive plugins are tempting targets for attackers. If you&#8217;re not going to use a plugin, you should consider removing it."
+msgstr "A használaton kívüli bővítmények a támadók csábító célpontjai. Amennyiben nem használunk többé egy bővítményt, megfontolandó annak eltávolítása."
 
 #. translators: %d: The number of inactive plugins.
 #: wp-admin/includes/class-wp-site-health.php:463
@@ -3837,6 +3848,11 @@ msgstr "A webhely úgy van beállítva, hogy jelenítse meg a hibákat a látoga
 msgid "The value, %s, has been added to this website&#8217;s configuration file. This means any errors on the site will be written to a file which is potentially available to all users."
 msgstr "Az érték, %s, hozzá lett adva az oldal konfigurációs állományához. Ez azt jelenti, hogy az esetlegesen jelentkező hibaüzenetek egy fájlban lesznek eltárolva, amihez előfordulhat hogy felhasználók is hozzáférhetnek."
 
+#: wp-admin/includes/class-wp-site-health.php:1469
+#, gp-priority: normal
+msgid "Your site is set to log errors to a potentially public file"
+msgstr "A weboldal naplózása egy valószínűleg publikusan elérhető fájlba van irányítva"
+
 #: wp-admin/includes/class-wp-site-health.php:1454
 #, gp-priority: normal
 msgid "Debug mode is often enabled to gather more details about an error or site failure, but may contain sensitive information which should not be available on a publicly available website."
@@ -3912,6 +3928,13 @@ msgstr "A WordPress használatához legalább %1$s %2$s verziójára van szüks�
 msgid "Severely outdated SQL server"
 msgstr "Az SQL kiszolgáló súlyosan elavult"
 
+#. translators: 1: The database engine in use (MySQL or MariaDB). 2: Database
+#. server recommended version number.
+#: wp-admin/includes/class-wp-site-health.php:1203
+#, gp-priority: normal
+msgid "For optimal performance and security reasons, you should consider running %1$s version %2$s or higher. Contact your web hosting company to correct this."
+msgstr "Teljesítmény és biztonsági okokból megfontolandó a %1$s %2$s vagy magasabb verziójának a használata. Vegyük fel a kapcsolatot a tárhelyszolgáltatóval a hiba javítása érdekében."
+
 #: wp-admin/includes/class-wp-site-health.php:1197
 #, gp-priority: normal
 msgid "Outdated SQL server"
@@ -3965,6 +3988,20 @@ msgstr "A webhelyünk nem rendelkezik alapértelmezett sablonnal. Ezek arra val�
 #, gp-priority: normal
 msgid "Have a default theme available"
 msgstr "Legyen elérhető alapértelmezett sablon"
+
+#. translators: 1: The default theme for WordPress. 2: The currently active
+#. theme. 3: The active theme's parent theme.
+#: wp-admin/includes/class-wp-site-health.php:656
+#, gp-priority: normal
+msgid "To enhance your site&#8217;s security, you should consider removing any themes you&#8217;re not using. You should keep %1$s, the default WordPress theme, %2$s, your current theme, and %3$s, its parent theme."
+msgstr "Az oldal biztonságának fokozása érdekében megfontolandó nem használt sablonok eltávolítása. Tartsuk meg a sablonok közül az alapértelmezett WordPress %1$s sablont, az aktuális %2$s sablont és annak szülő sablonját %3$s."
+
+#. translators: 1: The currently active theme. 2: The active theme's parent
+#. theme.
+#: wp-admin/includes/class-wp-site-health.php:637
+#, gp-priority: normal
+msgid "To enhance your site&#8217;s security, you should consider removing any themes you&#8217;re not using. You should keep your current theme, %1$s, and %2$s, its parent theme."
+msgstr "Az oldal biztonságának fokozása érdekében megfontolandó nem használt sablonok eltávolítása. Tartsuk meg az aktuális %1$s sablont és %2$s, szülő sablont."
 
 #: wp-admin/includes/class-wp-site-health.php:457
 #, gp-priority: normal
@@ -4063,6 +4100,11 @@ msgstr "WordPress frissítés elérhető (%s)"
 #, gp-priority: normal
 msgid "Check for updates manually"
 msgstr "Frissítések kézi ellenőrzése"
+
+#: wp-admin/includes/class-wp-site-health.php:287
+#, gp-priority: normal
+msgid "Unable to check if any new versions of WordPress are available."
+msgstr "Nem sikerült ellenőriznünk, hogy elérhető-e újabb WordPress verzió."
 
 #. translators: %s: Name of the filter used.
 #: wp-admin/includes/class-wp-site-health-auto-updates.php:449
@@ -4917,9 +4959,9 @@ msgid "Cannot Install"
 msgstr "Nem telepíthető"
 
 #. translators: %s: WordPress version.
-#: wp-admin/about.php:64 wp-admin/about.php:89 wp-admin/includes/update.php:302
-#: wp-admin/index.php:119 wp-admin/install.php:238 wp-admin/update-core.php:94
-#: wp-admin/upgrade.php:80
+#: wp-admin/about.php:64 wp-admin/about.php:89 wp-admin/about.php:114
+#: wp-admin/includes/update.php:302 wp-admin/index.php:119
+#: wp-admin/install.php:238 wp-admin/update-core.php:94 wp-admin/upgrade.php:80
 #, gp-priority: normal
 msgid "https://wordpress.org/support/wordpress-version/version-%s/"
 msgstr "https://wordpress.org/support/wordpress-version/version-%s/"
@@ -5210,6 +5252,13 @@ msgstr "Oldalak nem találhatók."
 #, gp-priority: normal
 msgid "After your Privacy Policy page is set, we suggest that you edit it."
 msgstr "Az adatkezelési tájékoztató oldal beállítását követően javasoljuk a szöveg szerkesztését."
+
+#. translators: 1: Privacy Policy guide URL, 2: Additional link attributes, 3:
+#. Accessibility text.
+#: wp-admin/options-privacy.php:230
+#, gp-priority: normal
+msgid "Need help putting together your new Privacy Policy page? <a href=\"%1$s\" %2$s>Check out our Privacy Policy guide%3$s</a> for recommendations on what content to include, along with policies suggested by your plugins and theme."
+msgstr "Jól jönne egy kis segítség az új Adatkezelési tájékoztató oldalhoz? <a href=\"%1$s\" %2$s>Ez az útmutató%3$s</a> javaslatokkal segít, a bővítmények és sablonok tanácsaival egyetemben."
 
 #: wp-admin/privacy-policy-guide.php:65 wp-admin/privacy-policy-guide.php:74
 #, gp-priority: normal
@@ -6114,6 +6163,11 @@ msgstr "Amennyiben úgy döntünk, hogy bármilyen okból szerkesztünk egy fáj
 msgid "If you absolutely have to make direct edits to this plugin, use a file manager to create a copy with a new name and hang on to the original. That way, you can re-enable a functional version if something goes wrong."
 msgstr "Ha valamilyen okból múlhatatlanul módosítanunk kell ezt a bővítményt, akkor használjunk egy fájlkezelőt, amellyel egy új néven létrehozunk egy másolatot, és az eredetit eltesszük egy biztonságos helyre. Bármilyen hiba történik, könnyedén vissza tudjuk kapcsolni a működő változatot."
 
+#: wp-admin/plugin-editor.php:329
+#, gp-priority: normal
+msgid "You appear to be making direct edits to your plugin in the WordPress dashboard. Editing plugins directly is not recommended as it may introduce incompatibilities that break your site and your changes may be lost in future updates."
+msgstr "Úgy tűnik, hogy közvetlenül szeretnénk szerkeszteni a bővítményünket a WordPress vezérlőpultjából. Ez nem jó ötlet! A bővítmények közvetlen szerkesztése inkompatibilitási problémákat okozat, elronthatja a webhelyünket és még a módosításainkat is elveszíthetjük a jövőben frissítésekkel."
+
 #. translators: 1: Documentation URL, 2: URL to Reading Settings screen.
 #: wp-admin/options-writing.php:224
 #, gp-priority: normal
@@ -6751,6 +6805,11 @@ msgstr "Elnézést, a bejegyzéshez történő csatoláshoz nincs elegendő jogo
 #, gp-priority: normal
 msgid "https://wordpress.org/plugins/"
 msgstr "https://wordpress.org/plugins/"
+
+#: wp-admin/customize.php:238
+#, gp-priority: normal
+msgid "The Customizer allows you to preview changes to your site before publishing them. You can navigate to different pages on your site within the preview. Edit shortcuts are shown for some editable elements. The Customizer is intended for use with non-block themes."
+msgstr "A Testreszabóval a változásokat még azok közzététele előtt meg lehet tekinteni. Az előnézetben lehetőség van különböző oldalakra navigálni a honlapon belül. A parancsikonok néhány szerkeszthető elemre mutatnak; az előnézet bármelyik részére történő kattintással lehet őket ki- és bekapcsolni. A testreszabó a nem blokkos sablonokhoz készült."
 
 #: wp-admin/customize.php:72 wp-admin/customize.php:81
 #, gp-priority: normal
@@ -7806,7 +7865,7 @@ msgid "(Currently set to: %s)"
 msgstr "(Jelenlegi beállítás: %s)"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:383
+#: wp-admin/about.php:408
 #, gp-priority: normal
 msgid "<strong>Version %s</strong> addressed one security issue."
 msgstr "<strong>%s verzió</strong> egy biztonsági hibát javított."
@@ -7821,17 +7880,17 @@ msgstr "https://en.gravatar.com/"
 msgid "Profile Picture"
 msgstr "Adatlap-kép"
 
-#: wp-admin/about.php:44 wp-admin/about.php:380
+#: wp-admin/about.php:44 wp-admin/about.php:405
 #, gp-priority: normal
 msgid "Maintenance and Security Releases"
 msgstr "Hibajavító- és biztonsági frissítések"
 
-#: wp-admin/about.php:377
+#: wp-admin/about.php:402
 #, gp-priority: normal
 msgid "Security Releases"
 msgstr "Biztonsági frissítések"
 
-#: wp-admin/about.php:374
+#: wp-admin/about.php:399
 #, gp-priority: normal
 msgid "Maintenance Releases"
 msgstr "Hibajavító frissítések"
@@ -9546,7 +9605,7 @@ msgstr "https://wordpress.org/support/forum/how-to-and-troubleshooting"
 #: wp-admin/index.php:86
 #, gp-priority: normal
 msgid "<strong>At a Glance</strong> &mdash; Displays a summary of the content on your site and identifies which theme and version of WordPress you are using."
-msgstr "<strong>Röviden</strong> &mdash; Összegzést ad a honlapon lévő tartalomról, megmutatja, hogy melyik sablont, és melyik WordPress verziót használjuk."
+msgstr "<strong>Áttekintés</strong> &mdash; Összegzést ad a honlapon lévő tartalomról, megmutatja, hogy melyik sablont, és melyik WordPress verziót használjuk."
 
 #: wp-admin/index.php:65
 #, gp-priority: normal
@@ -9675,7 +9734,7 @@ msgstr "Amennyiben beállításra kerül, akkor eredményeként egy emlékeztet�
 #: wp-admin/includes/dashboard.php:67
 #, gp-priority: normal
 msgid "At a Glance"
-msgstr "Ránézésre"
+msgstr "Áttekintés"
 
 #: wp-admin/themes.php:530 wp-admin/themes.php:889
 #, gp-priority: normal
@@ -11949,14 +12008,15 @@ msgstr "Eszköztár mutatása az oldal megtekintésekor"
 
 #. translators: %s: HelpHub URL.
 #. translators: %s: Documentation URL.
-#: wp-admin/about.php:61 wp-admin/about.php:86 wp-admin/about.php:406
+#: wp-admin/about.php:61 wp-admin/about.php:86 wp-admin/about.php:111
+#: wp-admin/about.php:431
 #, gp-priority: normal
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "További információk: <a href=\"%s\">Verzió információk</a>."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:49 wp-admin/about.php:400
+#: wp-admin/about.php:74 wp-admin/about.php:425
 #, gp-priority: normal
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
@@ -11965,7 +12025,7 @@ msgstr[1] "<strong>%1$s verzió</strong> biztonsági réseket, és %2$s hibát j
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:394
+#: wp-admin/about.php:419
 #, gp-priority: normal
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
@@ -11974,7 +12034,7 @@ msgstr[1] "<strong>%1$s verzió</strong> egy biztonsági rést, és %2$s hibát 
 
 #. translators: 1: WordPress version number, 2: plural number of bugs.
 #. translators: 1: WordPress version number, 2: Plural number of bugs.
-#: wp-admin/about.php:74 wp-admin/about.php:388
+#: wp-admin/about.php:49 wp-admin/about.php:99 wp-admin/about.php:413
 #, gp-priority: normal
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
@@ -11982,22 +12042,22 @@ msgstr[0] "<strong>%1$s verzió</strong> %2$s hibát javít."
 msgstr[1] "<strong>%1$s verzió</strong> %2$s hibát javít."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:385
+#: wp-admin/about.php:410
 #, gp-priority: normal
 msgid "<strong>Version %s</strong> addressed some security issues."
 msgstr "A <strong>%s verzió</strong> néhány biztonsági hibát javít."
 
-#: wp-admin/about.php:379
+#: wp-admin/about.php:404
 #, gp-priority: normal
 msgid "Maintenance and Security Release"
 msgstr "Karbantartó és biztonsági frissítés"
 
-#: wp-admin/about.php:376
+#: wp-admin/about.php:401
 #, gp-priority: normal
 msgid "Security Release"
 msgstr "Biztonsági frissítés"
 
-#: wp-admin/about.php:373
+#: wp-admin/about.php:398
 #, gp-priority: normal
 msgid "Maintenance Release"
 msgstr "Hibajavító frissítés"
@@ -12352,12 +12412,12 @@ msgstr "A <strong>Szerkesztés</strong> link a bejegyzés szerkesztő képernyő
 msgid "Because this is a multisite installation, you may add accounts that already exist on the Network by specifying a username or email, and defining a role. For more options, such as specifying a password, you have to be a Network Administrator and use the hover link under an existing user&#8217;s name to Edit the user profile under Network Admin > All Users."
 msgstr "Mivel ez egy Multisite telepítés, lehetséges a hálózaton már létező felhasználókat hozzáadni, a felhasználónevük, vagy e-mail-címük megadásával, és egy szerepkör meghatározásával. További lehetőségekhez, mint például jelszó megadáshoz Hálózat Adminisztrátornak kell lenni, és Hálózat-kezelő > Összes felhasználó oldalon a felhasználó neve fölé mozgatva az egeret a Szerkesztés lehetőséget választani."
 
-#: wp-admin/about.php:362
+#: wp-admin/about.php:387
 #, gp-priority: normal
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Vezérlőpulthoz &rarr; Kezdőlap"
 
-#: wp-admin/about.php:359
+#: wp-admin/about.php:384
 #, gp-priority: normal
 msgid "Go to Dashboard &rarr; Updates"
 msgstr "Vezérlőpulthoz &rarr; Frissítések"
@@ -13710,6 +13770,12 @@ msgstr "Az Állapot doboz használatával ugyancsak moderálható a hozzászól�
 msgid "You can edit the information left in a comment if needed. This is often useful when you notice that a commenter has made a typographical error."
 msgstr "Amennyiben szükséges, a hozzászólásban lévő információ szerkeszthető. Ez különösen akkor lehet hasznos, ha azt észleljük, hogy egy hozzászóló betűhibát vétett."
 
+#. translators: %s: Documentation URL.
+#: wp-admin/options-reading.php:34
+#, gp-priority: normal
+msgid "You can also control the display of your content in RSS feeds, including the maximum number of posts to display and whether to show full text or an excerpt. <a href=\"%s\">Learn more about feeds</a>."
+msgstr "Az RSS hírcsatornában megjelenő tartalom szabályozható, beleértve a megjelenítendő bejegyzések számát, teljes vagy kivonat szöveg megjelenítését. <a href=\"%s\">További információ a hírcsatornákról</a>."
+
 #: wp-admin/options-reading.php:26
 #, gp-priority: normal
 msgid "This screen contains the settings that affect the display of your content."
@@ -14533,7 +14599,7 @@ msgstr "WordPress frissítés"
 msgid "Edit menu item"
 msgstr "Menütétel szerkesztése"
 
-#: wp-admin/about.php:362 wp-admin/includes/network.php:148
+#: wp-admin/about.php:387 wp-admin/includes/network.php:148
 #, gp-priority: normal
 msgid "Go to Dashboard"
 msgstr "Vissza a Vezérlőpulthoz"

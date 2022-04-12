@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.9.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-04-03 13:03:45+0000\n"
+"PO-Revision-Date: 2022-04-05 08:34:00+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -131,6 +131,11 @@ msgstr ","
 msgid "Uncategorized"
 msgstr "Egyéb kategória"
 
+#: wp-includes/script-loader.php:1230
+#, gp-priority: normal
+msgid "Use Site Editor"
+msgstr "Webhelyszerkesztő használata"
+
 #: wp-includes/blocks/site-logo.php:89
 #, gp-priority: normal
 msgid "Site icon."
@@ -189,6 +194,12 @@ msgstr "Oldalszám"
 msgctxt "block title"
 msgid "Next Page"
 msgstr "Következő oldal"
+
+#: wp-includes/blocks/post-navigation-link/block.json
+#, gp-priority: normal
+msgctxt "block description"
+msgid "Displays the next or previous post link that is adjacent to the current post."
+msgstr "Megjeleníti az aktuális bejegyzés melletti következő vagy előző bejegyzés hivatkozását."
 
 #: wp-includes/blocks/post-navigation-link/block.json
 #, gp-priority: normal
@@ -294,6 +305,11 @@ msgstr "Sablonrész terület"
 msgid "Template Part Areas"
 msgstr "Sablonrész területek"
 
+#: wp-includes/rest-api/endpoints/class-wp-rest-url-details-controller.php:138
+#, gp-priority: normal
+msgid "Invalid URL"
+msgstr "Érvénytelen URL"
+
 #: wp-includes/rest-api/endpoints/class-wp-rest-url-details-controller.php:46
 #, gp-priority: normal
 msgid "The URL to process."
@@ -358,6 +374,21 @@ msgstr "A menüt nem lehet törölni."
 #, gp-priority: normal
 msgid "Sorry, you are not allowed to view menus."
 msgstr "Sajnos, a menük megtekintéséhez nincs megfelelő jogosultság."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-menu-items-controller.php:748
+#, gp-priority: normal
+msgid "Name of type."
+msgstr "Típus neve."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:484
+#, gp-priority: normal
+msgid "Global settings."
+msgstr "Globális beállítások."
+
+#: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:479
+#, gp-priority: normal
+msgid "Global styles."
+msgstr "Globális stílusok."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php:135
 #, gp-priority: normal

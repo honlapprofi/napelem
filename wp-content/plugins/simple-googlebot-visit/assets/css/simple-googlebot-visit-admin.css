@@ -1,0 +1,454 @@
+.column-simple-googlebot-visit {
+  width: 10%;
+}
+
+.column-simple-googlebot-visit span {
+  display: block;
+}
+
+.column-simple-googlebot-visit span[title] {
+  -webkit-text-decoration: dotted underline;
+  text-decoration: dotted underline;
+}
+
+#simple-googlebot-visit-admin {
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  #simple-googlebot-visit-admin {
+    padding: 2rem;
+  }
+}
+
+#simple-googlebot-visit-admin figure {
+  display: block;
+  margin: 0 0 1rem 0;
+}
+
+#simple-googlebot-visit-admin figure img {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+}
+
+#simple-googlebot-visit-admin .admin-content {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.05);
+  border: 1px solid #ddd;
+}
+
+#simple-googlebot-visit-admin .admin-content .admin-block > a {
+  font-weight: 500;
+  display: block;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  background: rgb(238, 238, 238);
+  background: linear-gradient(
+    0deg,
+    rgba(238, 238, 238, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+#simple-googlebot-visit-admin .admin-content .admin-block > a,
+#simple-googlebot-visit-admin .admin-content .admin-block > a:active,
+#simple-googlebot-visit-admin .admin-content .admin-block > a:focus,
+#simple-googlebot-visit-admin .admin-content .admin-block > a:focus:active {
+  color: #000;
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none;
+}
+
+#simple-googlebot-visit-admin .admin-content .admin-block:nth-child(1) > a {
+  border: none;
+}
+
+#simple-googlebot-visit-admin .admin-content .admin-block > a:before {
+  margin-right: 0.5rem;
+  color: #4499a5;
+  vertical-align: middle !important;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > a:before {
+  content: '\f111';
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='last-visits']
+  > a:before {
+  content: '\f239';
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='why']
+  > a:before {
+  content: '\f179';
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='about']
+  > a:before {
+  content: '\f110';
+}
+
+#simple-googlebot-visit-admin .admin-content .admin-block > div {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+@media (min-width: 768px) {
+  #simple-googlebot-visit-admin .admin-content .admin-block > div {
+    padding: 2rem;
+  }
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block.admin-block-hidden
+  > div {
+  display: none;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block
+  > div
+  .admin-block-visit {
+  border-top: 1px dashed #ddd;
+  padding: 0.25rem 0;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block
+  > div
+  .admin-block-visit:nth-child(1) {
+  border-top: none;
+  padding-top: 0;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block
+  > div
+  .admin-block-visit:last-of-type {
+  padding-bottom: 0;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block
+  > div
+  .admin-block-visit
+  a,
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block
+  > div
+  .admin-block-visit
+  a:hover {
+  color: #028dab;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block
+  > div
+  .admin-block-visit
+  a:before {
+  content: '\f472';
+  margin-right: 0.5rem;
+  text-decoration: none;
+  vertical-align: middle !important;
+  color: #000;
+  opacity: 0.75;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block
+  > div
+  .admin-block-visit.admin-block-visit-mobile
+  a:before {
+  content: '\f470';
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-settings-loading {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: 1;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field {
+  border-top: 1px dashed #ccc;
+  padding: 1rem 0;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field:nth-child(1) {
+  border-top: none;
+  padding-top: 0;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field:last-of-type {
+  padding-bottom: 0;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field
+  .sgbv-field-info {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field
+  .sgbv-field-info:before {
+  margin-right: 1rem;
+  border-radius: 0.25rem;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field[data-value='true']
+  .sgbv-field-info:before {
+  content: '\f147';
+  background-color: #4499a5;
+}
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field[data-value='false']
+  .sgbv-field-info:before {
+  content: '\f335';
+  background-color: #c05c45;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field
+  select {
+  display: none;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field
+  .custom-post-types-container {
+  background-color: #eee;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field
+  .custom-post-types-container
+  .custom-post-types-list {
+  overflow: auto;
+  margin: 0;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field
+  .custom-post-types-container
+  .custom-post-types-list
+  li {
+  background-color: #4499a5;
+  border-radius: 0.25rem;
+  float: left;
+  margin: 0 0.75rem 0.75rem 0;
+  display: flex;
+  overflow: hidden;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field
+  .custom-post-types-container
+  .custom-post-types-list
+  li[data-value='{CUSTOM_TYPE_VALUE}'] {
+  display: none;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field
+  .custom-post-types-container
+  .custom-post-types-list
+  li
+  > * {
+  padding: 0.5rem 1rem;
+  color: #fff !important;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field
+  .custom-post-types-container
+  .custom-post-types-list
+  li
+  > a {
+  background-color: rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field
+  .custom-post-types-container
+  .custom-post-types-input {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field
+  .custom-post-types-container
+  .custom-post-types-input
+  a {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #4499a5;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field
+  .custom-post-types-container
+  .custom-post-types-input
+  a:before {
+  content: '\f147';
+  color: #fff;
+}
+
+#simple-googlebot-visit-admin
+  .admin-content
+  .admin-block[data-type='settings']
+  > div
+  .sgbv-field
+  .custom-post-types-container
+  .custom-post-types-input
+  input {
+  width: 100%;
+  padding: 0.5rem !important;
+  box-sizing: border-box;
+  border: none !important;
+  outline: none;
+}
+
+#simple-googlebot-visit-admin .admin-content .admin-block > div p {
+  margin: 0 0 0.5rem 0;
+}
+
+#simple-googlebot-visit-admin .admin-content .admin-block > div p:last-of-type {
+  margin: 0;
+}
+
+#simple-googlebot-visit-admin .admin-content .admin-block > div a,
+#simple-googlebot-visit-admin .admin-content .admin-block > div a:hover {
+  text-decoration: none;
+  color: #c05c45;
+}
+
+#simple-googlebot-visit-admin .simple-googlebot-visit-admin-footer p {
+  display: block;
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+}
+
+#simple-googlebot-visit-admin .simple-googlebot-visit-admin-footer p a,
+#simple-googlebot-visit-admin .simple-googlebot-visit-admin-footer p a:hover {
+  text-decoration: none;
+  color: #c05c45;
+}
+
+.settings_page_simple-googlebot-visit #wpcontent {
+  padding-left: 0 !important;
+}
+
+.settings_page_simple-googlebot-visit #wpfooter {
+  display: none;
+}
+
+.settings_page_simple-googlebot-visit #wpbody-content {
+  padding-bottom: 0 !important;
+}
