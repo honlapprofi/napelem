@@ -1,0 +1,9 @@
+* Added: [NEW!] Introducing Stats Bar. Now, you can view [Analytics stats on the frontend](https://rankmath.com/kb/analytics-stats-bar/)
+* Improved: Optimized the [Redirection](https://rankmath.com/kb/setting-up-redirections/) queries for better performance
+* Fixed: PHP warnings on some setups when [Admin Menu Bar](https://rankmath.com/kb/quick-actions/) was enabled
+* Fixed: [Remove Product Base](https://rankmath.com/kb/general-settings/#remove-base) option was not working well on auto-translated secondary languages products created using WPML
+* Fixed: Duplicate sitemap was getting generated. Now, this duplicate sitemap page will redirect to the main sitemap
+* Fixed: [Content AI Media count](https://rankmath.com/kb/seo-score-vs-content-ai-score/#media-count) was showing different counts in different editors
+* Fixed: Content AI was not detecting the videos added using the Elementor's Video widget
+* Fixed: Content AI was not detecting the iframe videos
+* Fixed: Average position in [Analytics](https://rankmath.com/kb/analytics/) page was showing the wrong color

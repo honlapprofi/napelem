@@ -1,0 +1,22 @@
+== Changelog ==
+
+= 1.2.3 =
+* Added compatibility with Wordpress 5.9.
+
+= 1.2.2 =
+* Fixed bug with version 8 of PHP.
+
+= 1.2.1 =
+* Added compatibility with Wordpress 5.7.2.
+
+= 1.2.0 =
+* Added support for custom post types.
+
+= 1.1.0 =
+* Added support for woocommerce products.
+* Added translations for spanish (Spain).
+* Updated database table structure to add terms.
+* Fixed post type error.
+
+= 1.0.0 =
+* Initial release.
