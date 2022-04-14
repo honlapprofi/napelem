@@ -4,8 +4,8 @@ Donate link: https://gtm4wp.com/
 Tags: google tag manager, tag manager, gtm, google, adwords, google adwords, google ads, adwords remarketing, google ads remarketing, remarketing, google analytics, analytics, facebook ads, facebook remarketing, facebook pixel, google optimize, personalisation
 Requires at least: 3.4.0
 Requires PHP: 5.6
-Tested up to: 5.8.2
-Stable tag: 1.14.2
+Tested up to: 5.9.0
+Stable tag: 1.15
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -152,7 +152,7 @@ and/or custom JavaScript variables you can secure the Tag Manager container.
 
 Google Tag Manager for WordPress integrates with several popular plugins. More integration to come!
 
-* Contact Form 7: fire an event upon successful form submission
+* Contact Form 7: fire an event when a Contact Form 7 form was submitted with any result (mail sent, mail failed, spam detected, invalid input)
 * WooCommerce:
 	* Classic e-commerce (deprecated):
 		* fire an event when visitors add products to their cart
@@ -163,6 +163,8 @@ Google Tag Manager for WordPress integrates with several popular plugins. More i
 		*	implementation of [Enhanced E-commerce GA4](https://developers.google.com/tag-manager/ecommerce-ga4)
 		* Does not support promotions since WooCommerce does not have such a feature (yet)
 		* Does not support refunds
+* Google Optimize: load your Google Optimize container directly from your website with the ability to use the data layer variables provided during page load
+* AMP: load your AMP container on the AMP version of your pages
 
 = Server side containers =
 
@@ -232,6 +234,23 @@ https://gtm4wp.com/how-to-articles/how-to-exclude-admin-users-from-being-tracked
 6. Scroll tracking
 
 == Changelog ==
+
+= 1.15 =
+
+* Added: pagePostType data layer variable will now return 404-error on 404 pages and search-results on search result pages
+* Added: Google Tag Manager container code can be disabled for specific WordPress user roles under Advanced plugin options. A browser console warning will be shown in such cases to prevent confusion
+* Added: support for all Contact Form 7 events for more granual tracking: gtm4wp.contactForm7MailSent, gtm4wp.contactForm7MailFailed, gtm4wp.contactForm7SpamDetected, gtm4wp.contactForm7InvalidInput
+* Added: additional data layer variables for date attributes: pagePostDateDayName, pagePostDateHour, pagePostDateMinute, pagePostDateIso, pagePostDateUnix - by [ajtatum](https://github.com/ajtatum)
+* Fixed: unclickable products in WooCommerce product lists in Firefox when visiting site in Strict privacy mode or using private browsing
+* Fixed: tracking step 2 on WooCommerce checkout page was broken
+* Updated: removed CDATA blocks as they are not required in simple HTML and they break some cases where code optimizer is being used
+* Updated: products per impression in WooCommerce integration now defaults to 10 instead of 0. This allows view_item_list event to fire on new sites as well
+* Updated: code placement options. Separated container on/off option and replaced code placement with the new terminology: compatibility mode
+* Updated: removed optional chaining operator usage (?.) in JavaScript codes for better compatibility with outdated browsers
+* Updated: changed 'Do not flag orders as being tracked' description to be more precise about what happens if turned on or left off
+* Updated: if you enter your custom domain name for server side tagging with the https:// prefix, it will be removed before domain name validation
+* Updated: all script blocks to be ignored by Cookiebot if this integration is enabled
+* Updated: do not track WooCommerce order where payment failed
 
 = 1.14.2 =
 
@@ -748,6 +767,10 @@ Please report all bugs found in my plugin using the [contact form on my website]
 * First beta release
 
 == Upgrade Notice ==
+
+= 1.15 =
+
+Various updates, fixes and improvements
 
 = 1.14.2 =
 

@@ -688,6 +688,11 @@ function gtm4wp_woocommerce_datalayer_filter_items( $dataLayer ) {
 			}
 		}
 
+		if ( isset( $order ) && ( "failed" == $order->get_status() ) ) {
+			// do not track order where payment failed
+			unset( $order );
+		}
+
 		if ( isset( $order ) ) {
 			$dataLayer = array_merge( $dataLayer, gtm4wp_get_purchase_datalayer( $order, $order_items ) );
 
@@ -835,16 +840,22 @@ function gtm4wp_woocommerce_thankyou( $order_id ) {
 		}
 	}
 
+	if ( isset( $order ) && ( "failed" == $order->get_status() ) ) {
+		// do not track order where payment failed
+		unset( $order );
+	}
+
 	if ( isset( $order ) ) {
 		$dataLayer = gtm4wp_get_purchase_datalayer( $order, NULL );
 
 		$has_html5_support = current_theme_supports( 'html5' );
+		$add_cookiebot_ignore = $gtm4wp_options[ GTM4WP_OPTION_INTEGRATE_COOKIEBOT ];
 
 		echo '
-<script data-cfasync="false" data-pagespeed-no-defer' . ( $has_html5_support ? ' type="text/javascript"' : '' ) . '>//<![CDATA[
+<script data-cfasync="false" data-pagespeed-no-defer' . ( $has_html5_support ? ' type="text/javascript"' : '' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . '>
 	window.' . $gtm4wp_datalayer_name . ' = window.' . $gtm4wp_datalayer_name . ' || [];
 	window.' . $gtm4wp_datalayer_name . '.push(' . json_encode( $dataLayer ) . ');
-//]]></script>';
+</script>';
 
 		if ( ! $do_not_flag_tracked_order ) {
 			update_post_meta( $order_id, '_ga_tracked', 1 );
@@ -1236,9 +1247,12 @@ function gtm4wp_add_productdata_to_wc_block($content, $data, $product) {
 }
 
 function gtm4wp_woocommerce_header_top() {
-	$has_html5_support = current_theme_supports( 'html5' );
+	global $gtm4wp_options;
 
-	echo "<script" . ( $has_html5_support ? ' type="text/javascript"' : '' ) . ">
+	$has_html5_support = current_theme_supports( 'html5' );
+	$add_cookiebot_ignore = $gtm4wp_options[ GTM4WP_OPTION_INTEGRATE_COOKIEBOT ];
+
+	echo "<script" . ( $has_html5_support ? ' type="text/javascript"' : '' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . ">
 const gtm4wp_is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 if ( gtm4wp_is_safari ) {
 	window.addEventListener('pageshow', function(event) {
