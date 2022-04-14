@@ -204,6 +204,11 @@ function gtm4wp_add_basic_datalayer_data( $dataLayer ) {
 			$dataLayer['pagePostDateYear']  = get_the_date( 'Y' );
 			$dataLayer['pagePostDateMonth'] = get_the_date( 'm' );
 			$dataLayer['pagePostDateDay']   = get_the_date( 'd' );
+			$dataLayer['pagePostDateDayName']   = get_the_date( 'l' );
+			$dataLayer['pagePostDateHour']   = get_the_date( 'H' );
+			$dataLayer['pagePostDateMinute']   = get_the_date( 'i' );
+			$dataLayer['pagePostDateIso']   = get_the_date( 'c' );
+			$dataLayer['pagePostDateUnix']   = get_the_date( 'U' );
 		}
 
 		if ( $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_POSTTERMLIST ] ) {
@@ -288,6 +293,8 @@ function gtm4wp_add_basic_datalayer_data( $dataLayer ) {
 	}
 
 	if ( is_search() ) {
+		$dataLayer['pagePostType'] = 'search-results';
+
 		$dataLayer['siteSearchTerm'] = get_search_query();
 		$dataLayer['siteSearchFrom'] = '';
 		if ( ! empty( $_SERVER['HTTP_REFERER'] ) ) {
@@ -307,6 +314,10 @@ function gtm4wp_add_basic_datalayer_data( $dataLayer ) {
 
 	if ( ! is_front_page() && is_home() && $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_POSTTYPE ] ) {
 		$dataLayer['pagePostType'] = 'bloghome';
+	}
+
+	if ( is_404() ) {
+		$dataLayer['pagePostType'] = '404-error';
 	}
 
 	if ( $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_BROWSERDATA ] || $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_OSDATA ] || $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_DEVICEDATA ] ) {
@@ -512,14 +523,37 @@ function gtm4wp_wp_loaded() {
 	}
 }
 
+function gtm4wp_get_container_placement_string() {
+	global $gtm4wp_options;
+
+	switch($gtm4wp_options[ GTM4WP_OPTION_GTM_PLACEMENT ]) {
+		case GTM4WP_PLACEMENT_FOOTER: return "footer";
+		case GTM4WP_PLACEMENT_BODYOPEN: return "manual";
+		case GTM4WP_PLACEMENT_BODYOPEN_AUTO: return "automatic";
+		case GTM4WP_PLACEMENT_OFF: return "off";
+		default: return "unknown (" . $gtm4wp_options[ GTM4WP_OPTION_GTM_PLACEMENT ] . ")";
+	}
+}
+
 function gtm4wp_get_the_gtm_tag() {
 	global $gtm4wp_options, $gtm4wp_datalayer_name, $gtm4wp_container_code_written;
 
+	$has_html5_support = current_theme_supports( 'html5' );
+	$add_cookiebot_ignore = $gtm4wp_options[ GTM4WP_OPTION_INTEGRATE_COOKIEBOT ];
+
 	$_gtm_tag = '
+<!-- GTM Container placement set to ' . gtm4wp_get_container_placement_string() . ' -->
 <!-- Google Tag Manager (noscript) -->';
 
 	if ( GTM4WP_PLACEMENT_OFF == $gtm4wp_options[ GTM4WP_OPTION_GTM_PLACEMENT ] ) {
 		$gtm4wp_container_code_written = true;
+
+		$_gtm_tag .= '
+<script' . ( $has_html5_support ? '' : ' type="text/javascript"' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . '>
+	const console_cmd = console.warn || console.log;
+	console_cmd && console_cmd("[GTM4WP] Google Tag Manager container code placement set to OFF !!!");
+	console_cmd && console_cmd("[GTM4WP] Data layer codes are active but GTM container must be loaded using custom coding !!!");
+</script>';
 	}
 
 	if ( ( $gtm4wp_options[ GTM4WP_OPTION_GTM_CODE ] != '' ) && ( ! $gtm4wp_container_code_written ) ) {
@@ -595,6 +629,7 @@ function gtm4wp_wp_footer() {
 	}
 
 	$has_html5_support = current_theme_supports( 'html5' );
+	$add_cookiebot_ignore = $gtm4wp_options[ GTM4WP_OPTION_INTEGRATE_COOKIEBOT ];
 
 	if ( $gtm4wp_options[ GTM4WP_OPTION_EVENTS_NEWUSERREG ] ) {
 		$user_logged_in = array_key_exists( "gtm4wp_user_logged_in", $_COOKIE ) ?
@@ -603,7 +638,7 @@ function gtm4wp_wp_footer() {
 
 		if ( $user_logged_in ) {
 			echo "
-<script" . ( $has_html5_support ? '' : ' type="text/javascript"' ) . ">
+<script" . ( $has_html5_support ? '' : ' type="text/javascript"' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . ">
 	if ( window." . $gtm4wp_datalayer_name . " ) {
 		window." . $gtm4wp_datalayer_name . ".push({
 			'event': 'gtm4wp.userLoggedIn'
@@ -622,7 +657,7 @@ function gtm4wp_wp_footer() {
 
 		if ( $user_registered ) {
 			echo "
-<script" . ( $has_html5_support ? '' : ' type="text/javascript"' ) . ">
+<script" . ( $has_html5_support ? '' : ' type="text/javascript"' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . ">
 	if ( window." . $gtm4wp_datalayer_name . " ) {
 		window." . $gtm4wp_datalayer_name . ".push({
 			'event': 'gtm4wp.userRegistered'
@@ -674,10 +709,11 @@ function gtm4wp_wp_header_top( $echo = true ) {
 	global $gtm4wp_options, $gtm4wp_datalayer_name;
 
 	$has_html5_support = current_theme_supports( 'html5' );
+	$add_cookiebot_ignore = $gtm4wp_options[ GTM4WP_OPTION_INTEGRATE_COOKIEBOT ];
 
 	$_gtm_top_content = '
 <!-- Google Tag Manager for WordPress by gtm4wp.com -->
-<script data-cfasync="false" data-pagespeed-no-defer' . ( $has_html5_support ? ' type="text/javascript"' : '' ) . '>//<![CDATA[
+<script data-cfasync="false" data-pagespeed-no-defer' . ( $has_html5_support ? ' type="text/javascript"' : '' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . '>
 	var gtm4wp_datalayer_name = "' . $gtm4wp_datalayer_name . '";
 	var ' . $gtm4wp_datalayer_name . ' = ' . $gtm4wp_datalayer_name . ' || [];';
 
@@ -695,7 +731,6 @@ function gtm4wp_wp_header_top( $echo = true ) {
 	}
 
 	$_gtm_top_content .= '
-//]]>
 </script>
 <!-- End Google Tag Manager for WordPress by gtm4wp.com -->';
 
@@ -712,10 +747,13 @@ function gtm4wp_wp_header_begin( $echo = true ) {
 	global $gtm4wp_datalayer_name, $gtm4wp_datalayer_json, $gtm4wp_options, $woocommerce;
 
 	$has_html5_support = current_theme_supports( 'html5' );
+	$add_cookiebot_ignore = $gtm4wp_options[ GTM4WP_OPTION_INTEGRATE_COOKIEBOT ];
 
 	$_gtm_header_content = '
 <!-- Google Tag Manager for WordPress by gtm4wp.com -->
-<script data-cfasync="false" data-pagespeed-no-defer' . ( $has_html5_support ? ' type="text/javascript"' : '' ) . '>//<![CDATA[';
+<!-- GTM Container placement set to ' . gtm4wp_get_container_placement_string() . ' -->
+<script data-cfasync="false" data-pagespeed-no-defer' . ( $has_html5_support ? ' type="text/javascript"' : '' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . '>
+	const console_cmd = console.warn || console.log;';
 
 	if ( $gtm4wp_options[ GTM4WP_OPTION_GTM_CODE ] != '' ) {
 		$gtm4wp_datalayer_data = array();
@@ -831,12 +869,42 @@ function gtm4wp_wp_header_begin( $echo = true ) {
 	' . $gtm4wp_datalayer_name . '.push( dataLayer_content );';
 	}
 
-	$_gtm_header_content .= '//]]>
+	$_gtm_header_content .= '
 </script>';
 
 	$_gtm_header_content .= apply_filters( GTM4WP_WPFILTER_AFTER_DATALAYER, '' );
 
-	if ( ( $gtm4wp_options[ GTM4WP_OPTION_GTM_CODE ] != '' ) && ( GTM4WP_PLACEMENT_OFF != $gtm4wp_options[ GTM4WP_OPTION_GTM_PLACEMENT ] ) ) {
+	$output_container_code = true;
+	if ( GTM4WP_PLACEMENT_OFF == $gtm4wp_options[ GTM4WP_OPTION_GTM_PLACEMENT ] ) {
+		$output_container_code = false;
+
+		$_gtm_header_content .= '
+<script' . ( $has_html5_support ? '' : ' type="text/javascript"' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . '>
+	console_cmd && console_cmd("[GTM4WP] Google Tag Manager container code placement set to OFF !!!");
+	console_cmd && console_cmd("[GTM4WP] Data layer codes are active but GTM container must be loaded using custom coding !!!");
+</script>';
+	}
+
+	$disabled_roles = explode( ',', $gtm4wp_options[ GTM4WP_OPTION_NOGTMFORLOGGEDIN ] );
+	if (count($disabled_roles) > 0 ) {
+		$current_user = wp_get_current_user();
+		foreach( $current_user->roles as $user_role ) {
+			if ( in_array( $user_role, $disabled_roles ) ) {
+				$output_container_code = false;
+
+				$_gtm_header_content .= '
+<script' . ( $has_html5_support ? '' : ' type="text/javascript"' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . '>
+	console_cmd && console_cmd("[GTM4WP] Google Tag Manager container code was disabled for this user role: ' . $user_role . ' !!!");
+	console_cmd && console_cmd("[GTM4WP] Logout or login with a user having a different user role!");
+	console_cmd && console_cmd("[GTM4WP] Data layer codes are active but GTM container code is omitted !!!");
+</script>';
+
+				break;
+			}
+		}
+	}
+
+	if ( ( $gtm4wp_options[ GTM4WP_OPTION_GTM_CODE ] != '' ) && $output_container_code ) {
 		$_gtm_codes = explode( ',', str_replace( array( ';', ' ' ), array( ',', '' ), $gtm4wp_options[ GTM4WP_OPTION_GTM_CODE ] ) );
 		$add_cookiebot_ignore = $gtm4wp_options[ GTM4WP_OPTION_INTEGRATE_COOKIEBOT ];
 
@@ -854,12 +922,12 @@ function gtm4wp_wp_header_begin( $echo = true ) {
 			}
 
 			$_gtm_tag .= '
-<script data-cfasync="false"' . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . '>//<![CDATA[
+<script data-cfasync="false"' . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . '>
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':
 new Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=
 \'//' . $_gtm_domain_name . '/gtm.\'' . '+\'js?id=\'+i+dl' . $_gtm_env . ';f.parentNode.insertBefore(j,f);
-})(window,document,\'script\',\'' . $gtm4wp_datalayer_name . '\',\'' . $one_gtm_code . '\');//]]>
+})(window,document,\'script\',\'' . $gtm4wp_datalayer_name . '\',\'' . $one_gtm_code . '\');
 </script>';
 		}
 
