@@ -237,6 +237,7 @@ return array(
     'WP_Rocket\\Engine\\Capabilities\\ServiceProvider' => $baseDir . '/inc/Engine/Capabilities/ServiceProvider.php',
     'WP_Rocket\\Engine\\Capabilities\\Subscriber' => $baseDir . '/inc/Engine/Capabilities/Subscriber.php',
     'WP_Rocket\\Engine\\Common\\Queue\\AbstractASQueue' => $baseDir . '/inc/Engine/Common/Queue/AbstractASQueue.php',
+    'WP_Rocket\\Engine\\Common\\Queue\\Cleaner' => $baseDir . '/inc/Engine/Common/Queue/Cleaner.php',
     'WP_Rocket\\Engine\\Common\\Queue\\QueueInterface' => $baseDir . '/inc/Engine/Common/Queue/QueueInterface.php',
     'WP_Rocket\\Engine\\Common\\Queue\\RUCSSQueueRunner' => $baseDir . '/inc/Engine/Common/Queue/RUCSSQueueRunner.php',
     'WP_Rocket\\Engine\\CriticalPath\\APIClient' => $baseDir . '/inc/Engine/CriticalPath/APIClient.php',
