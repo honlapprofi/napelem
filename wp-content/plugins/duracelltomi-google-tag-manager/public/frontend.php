@@ -1,6 +1,5 @@
 <?php
 define( 'GTM4WP_WPFILTER_COMPILE_DATALAYER', 'gtm4wp_compile_datalayer' );
-define( 'GTM4WP_WPFILTER_COMPILE_REMARKTING', 'gtm4wp_compile_remarkering' );
 define( 'GTM4WP_WPFILTER_AFTER_DATALAYER', 'gtm4wp_after_datalayer' );
 define( 'GTM4WP_WPFILTER_GETTHEGTMTAG', 'gtm4wp_get_the_gtm_tag' );
 define( 'GTM4WP_WPFILTER_ADDGLOBALVARS', 'gtm4wp_add_global_vars' );
@@ -402,7 +401,7 @@ function gtm4wp_add_basic_datalayer_data( $dataLayer ) {
 	}
 
 	if ( $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_MISCGEOCF ] && isset( $_SERVER['HTTP_CF_IPCOUNTRY'] ) ) {
-		$dataLayer['geoCloudflareCountryCode'] = $_SERVER['HTTP_CF_IPCOUNTRY'];
+		$dataLayer['geoCloudflareCountryCode'] = esc_js( $_SERVER['HTTP_CF_IPCOUNTRY'] );
 	}
 
 	if ( $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_WEATHER ] || $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_MISCGEO ] ) {
@@ -550,9 +549,8 @@ function gtm4wp_get_the_gtm_tag() {
 
 		$_gtm_tag .= '
 <script' . ( $has_html5_support ? '' : ' type="text/javascript"' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . '>
-	const console_cmd = console.warn || console.log;
-	console_cmd && console_cmd("[GTM4WP] Google Tag Manager container code placement set to OFF !!!");
-	console_cmd && console_cmd("[GTM4WP] Data layer codes are active but GTM container must be loaded using custom coding !!!");
+	console.warn && console.warn("[GTM4WP] Google Tag Manager container code placement set to OFF !!!");
+	console.warn && console.warn("[GTM4WP] Data layer codes are active but GTM container must be loaded using custom coding !!!");
 </script>';
 	}
 
@@ -678,16 +676,6 @@ function gtm4wp_wp_body_open() {
 	}
 }
 
-function gtm4wp_filter_visitor_keys( $dataLayer ) {
-	foreach ( $dataLayer as $dl_key => $dl_value ) {
-		if ( strpos( $dl_key, 'visitor' ) !== false ) {
-			unset( $dataLayer[ $dl_key ] );
-		}
-	}
-
-	return $dataLayer;
-}
-
 /**
  * GTM4WP global JS variables WordPress filter
  *
@@ -752,37 +740,17 @@ function gtm4wp_wp_header_begin( $echo = true ) {
 	$_gtm_header_content = '
 <!-- Google Tag Manager for WordPress by gtm4wp.com -->
 <!-- GTM Container placement set to ' . gtm4wp_get_container_placement_string() . ' -->
-<script data-cfasync="false" data-pagespeed-no-defer' . ( $has_html5_support ? ' type="text/javascript"' : '' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . '>
-	const console_cmd = console.warn || console.log;';
+<script data-cfasync="false" data-pagespeed-no-defer' . ( $has_html5_support ? ' type="text/javascript"' : '' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . '>';
 
 	if ( $gtm4wp_options[ GTM4WP_OPTION_GTM_CODE ] != '' ) {
 		$gtm4wp_datalayer_data = array();
 		$gtm4wp_datalayer_data = (array) apply_filters( GTM4WP_WPFILTER_COMPILE_DATALAYER, $gtm4wp_datalayer_data );
-
-		if ( $gtm4wp_options[ GTM4WP_OPTION_INCLUDE_REMARKETING ] ) {
-			// add Google Ads remarketing tags as suggested here:
-			// https://support.google.com/tagmanager/answer/3002580?hl=en
-			add_filter( GTM4WP_WPFILTER_COMPILE_REMARKTING, 'gtm4wp_filter_visitor_keys' );
-			$gtm4wp_remarketing_tags = (array) apply_filters( GTM4WP_WPFILTER_COMPILE_REMARKTING, $gtm4wp_datalayer_data );
-
-			$_gtm_header_content                       .= "\nvar google_tag_params = ";
-			$_gtm_header_content                       .= json_encode( $gtm4wp_remarketing_tags );
-			$_gtm_header_content                       .= ';';
-			$gtm4wp_datalayer_data['google_tag_params'] = '-~-window.google_tag_params-~-';
-		}
 
 		if ( version_compare( PHP_VERSION, '5.4.0' ) >= 0 ) {
 			$gtm4wp_datalayer_json = json_encode( $gtm4wp_datalayer_data, JSON_UNESCAPED_UNICODE );
 		} else {
 			$gtm4wp_datalayer_json = json_encode( $gtm4wp_datalayer_data );
 		}
-
-		// Clean up and then push datalayer to AMP
-		$gtm4wp_datalayer_json = str_replace(
-			array( '"-~-', '-~-"' ),
-			array( '', '' ),
-			str_replace( '', '-', $gtm4wp_datalayer_json )
-		);
 
 		$_gtm_header_content .= '
 	var dataLayer_content = ' . $gtm4wp_datalayer_json . ';';
@@ -880,8 +848,8 @@ function gtm4wp_wp_header_begin( $echo = true ) {
 
 		$_gtm_header_content .= '
 <script' . ( $has_html5_support ? '' : ' type="text/javascript"' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . '>
-	console_cmd && console_cmd("[GTM4WP] Google Tag Manager container code placement set to OFF !!!");
-	console_cmd && console_cmd("[GTM4WP] Data layer codes are active but GTM container must be loaded using custom coding !!!");
+	console.warn && console.warn("[GTM4WP] Google Tag Manager container code placement set to OFF !!!");
+	console.warn && console.warn("[GTM4WP] Data layer codes are active but GTM container must be loaded using custom coding !!!");
 </script>';
 	}
 
@@ -894,9 +862,9 @@ function gtm4wp_wp_header_begin( $echo = true ) {
 
 				$_gtm_header_content .= '
 <script' . ( $has_html5_support ? '' : ' type="text/javascript"' ) . ( $add_cookiebot_ignore ? ' data-cookieconsent="ignore"' : '' ) . '>
-	console_cmd && console_cmd("[GTM4WP] Google Tag Manager container code was disabled for this user role: ' . $user_role . ' !!!");
-	console_cmd && console_cmd("[GTM4WP] Logout or login with a user having a different user role!");
-	console_cmd && console_cmd("[GTM4WP] Data layer codes are active but GTM container code is omitted !!!");
+	console.warn && console.warn("[GTM4WP] Google Tag Manager container code was disabled for this user role: ' . $user_role . ' !!!");
+	console.warn && console.warn("[GTM4WP] Logout or login with a user having a different user role!");
+	console.warn && console.warn("[GTM4WP] Data layer codes are active but GTM container code is omitted !!!");
 </script>';
 
 				break;
