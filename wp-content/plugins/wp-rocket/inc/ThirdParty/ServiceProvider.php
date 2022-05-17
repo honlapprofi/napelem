@@ -47,6 +47,7 @@ class ServiceProvider extends AbstractServiceProvider {
 		'ezoic',
 		'pwa',
 		'flatsome',
+		'convertplug',
 	];
 
 	/**
@@ -158,7 +159,14 @@ class ServiceProvider extends AbstractServiceProvider {
 			->share( 'pwa', 'WP_Rocket\ThirdParty\Plugins\PWA' )
 			->addTag( 'common_subscriber' );
 		$this->getContainer()
+			->share( 'yoast_seo', 'WP_Rocket\ThirdParty\Plugins\SEO\Yoast' )
+			->addArgument( $options )
+			->addTag( 'common_subscriber' );
+		$this->getContainer()
 			->share( 'flatsome', 'WP_Rocket\ThirdParty\Themes\Flatsome' )
+			->addTag( 'common_subscriber' );
+		$this->getContainer()
+			->share( 'convertplug', 'WP_Rocket\ThirdParty\Plugins\ConvertPlug' )
 			->addTag( 'common_subscriber' );
 	}
 }

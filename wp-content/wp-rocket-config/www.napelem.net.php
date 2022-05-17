@@ -70,6 +70,8 @@ $rocket_cache_ignored_parameters = array(
   'dm_i' => 1,
   'epik' => 1,
   'pp' => 1,
+  'gbraid' => 1,
+  'wbraid' => 1,
 );
 $rocket_cache_mandatory_cookies = '';
 $rocket_cache_dynamic_cookies = array();
