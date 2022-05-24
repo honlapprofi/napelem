@@ -23,33 +23,9 @@
  * ╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
  */
 
+
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Kangaroos cannot jump here' );
 }
 
-// Include plugin bootstrap file
-require_once dirname( __FILE__ ) .
-	DIRECTORY_SEPARATOR .
-	'all-in-one-wp-migration.php';
-
-/**
- * Trigger Uninstall process only if WP_UNINSTALL_PLUGIN is defined
- */
-if ( defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-	global $wpdb, $wp_filesystem;
-
-	if ( Ai1wm_Cron::exists( 'ai1wm_storage_cleanup' ) ) {
-		Ai1wm_Cron::clear( 'ai1wm_storage_cleanup' );
-	}
-
-	if ( Ai1wm_Cron::exists( 'ai1wm_cleanup_cron' ) ) {
-		Ai1wm_Cron::clear( 'ai1wm_cleanup_cron' );
-	}
-
-	// Delete any options or other data stored in the database here
-	delete_option( AI1WM_STATUS );
-	delete_option( AI1WM_SECRET_KEY );
-	delete_option( AI1WM_AUTH_USER );
-	delete_option( AI1WM_AUTH_PASSWORD );
-	delete_option( 'ai1wm_backups_path' );
-}
+printf( ' <span class="ai1wm-icon-bullhorn" title="%s"></span>', __( 'Notification', AI1WM_PLUGIN_NAME ) );

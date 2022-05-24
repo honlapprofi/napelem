@@ -158,4 +158,13 @@ class Ai1wm_Backups {
 
 		return ( $a['mtime'] > $b['mtime'] ) ? - 1 : 1;
 	}
+
+	/**
+	 * Check if backups are downloadable
+	 */
+	public static function are_downloadable() {
+		$path = untrailingslashit( ABSPATH );
+
+		return substr( AI1WM_BACKUPS_PATH, 0, strlen( $path ) ) === $path;
+	}
 }
