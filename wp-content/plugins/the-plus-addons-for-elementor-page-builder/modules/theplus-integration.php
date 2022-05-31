@@ -70,7 +70,12 @@ if ( ! class_exists( 'L_Theplus_Elements_Integration' ) ) {
 			foreach ( $plus_control as $control_id => $class_name ) {
 				if ( $this->include_plus_control( $control_id, true ) ) {
 					//new $class_name();
-					$controls_manager->register_control( $control_id, new $class_name() );
+					//$controls_manager->register_control( $control_id, new $class_name() );
+					if ( version_compare( ELEMENTOR_VERSION, '3.5.0', '>=' ) ) {						
+                        $controls_manager->register( new $class_name()  );
+                    } else {
+                        $controls_manager->register_control( $control_id, new $class_name() );
+                    }
 				}
 			}
 

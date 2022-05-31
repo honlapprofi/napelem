@@ -33,6 +33,8 @@
     width: 100%;
     height: 100%;
 	overflow: hidden;
+    left:0;
+    top:0;
 }
 .tp-post-image.tp-feature-image-as-bg .tp-featured-image {
     width: 100%;
@@ -48,7 +50,7 @@
     height: 100%;
     background: rgb(0 0 0 / 30%);
 }
-.tp-post-image.tp-feature-image-as-bg .tp-featured-image:before,section.elementor-element.elementor-top-section,section.elementor-element.elementor-inner-section,.elementor-column{
+.tp-post-image.tp-feature-image-as-bg .tp-featured-image:before,section.elementor-element.elementor-top-section,section.elementor-element.elementor-inner-section,.elementor-column,.elementor-element.e-container{
 	-webkit-transition:all 0.3s linear;
 	-o-transition:all 0.3s linear;
 	transition:all 0.3s linear;

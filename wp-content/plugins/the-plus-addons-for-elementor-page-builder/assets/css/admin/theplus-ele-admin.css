@@ -2913,3 +2913,15 @@ label.theplus-filter-widget-search {
     justify-content: center;
 	color: #8072fc;
 }
+.plus-widget-list:not(.plus_extra_listout) .plus-widget-list-wrap .widget-chkpr{top:0;left:0;position:absolute;padding:2px 6px;background:#FF5A6E;color:#fff;border-radius:4px 0 4px 0;font-size:10px;text-transform:uppercase;font-weight:500;letter-spacing:0;/*opacity:0;*/transition:all 0.3s linear}
+/*.plus-widget-list:not(.plus_extra_listout) .plus-widget-list-wrap:hover .widget-chkpr{opacity:1}*/
+.plus-widget-list:not(.plus_extra_listout) .plus-widget-list-wrap .widget-used.widget-chkpr {background: #6FC784;}
+
+.elementor-control-tp_rule_woo_cur_pro_price_value input,
+.elementor-control-tp_rule_woo_cur_pro_stock_value input,
+.elementor-control-tp_rule_woo_cart_total_value input,
+.elementor-control-tp_rule_woo_cart_subtotal_value input,
+.elementor-control-tp_rule_woo_cart_item_value input,
+.elementor-control-tp_rule_woo_purchase_item_value input,
+.elementor-control-tp_rule_toolset_number_value input,
+.elementor-control-tp_rule_pods_number_value input{width: 100%;}

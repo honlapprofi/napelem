@@ -650,8 +650,29 @@ class L_ThePlus_Dark_Mode extends Widget_Base {
 				'separator' => 'before',
 				'render_type' => 'ui',
 				'selectors' => [					
-					'.tp_dm_style2 .darkmode-toggle' => 'width: calc(10px + {{SIZE}}{{UNIT}});height: calc(-20px + {{SIZE}}{{UNIT}});',			
-					'.tp_dm_style2 .darkmode-toggle .tp-dark-mode-slider:before' => 'height: calc(26px + {{SIZE}}{{UNIT}});width: calc(26px + {{SIZE}}{{UNIT}});',
+					'.tp_dm_style2 .darkmode-toggle' => 'width: calc(10px + {{SIZE}}{{UNIT}}) !important;height: calc(-20px + {{SIZE}}{{UNIT}}) !important;',			
+					'.tp_dm_style2 .darkmode-toggle .tp-dark-mode-slider:before' => 'height: calc(26px + {{SIZE}}{{UNIT}}) !important;width: calc(26px + {{SIZE}}{{UNIT}}) !important;',
+				],
+            ]
+        );
+		$this->add_responsive_control(
+            'switcher_overall_size_height',
+            [
+                'type' => Controls_Manager::SLIDER,
+				'label' => esc_html__('Switcher Height', 'tpebl'),
+				'size_units' => [ 'px' ],
+				'range' => [
+					'px' => [
+						'min' => 10,
+						'max' => 50,
+						'step' => 1,
+					],
+				],
+				'separator' => 'before',
+				'render_type' => 'ui',
+				'selectors' => [					
+					'.tp_dm_style2 .darkmode-toggle' => 'height: {{SIZE}}{{UNIT}} !important;',			
+					'.tp_dm_style2 .darkmode-toggle .tp-dark-mode-slider:before' => 'height: {{SIZE}}{{UNIT}} !important;',
 				],
             ]
         );

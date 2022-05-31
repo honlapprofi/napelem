@@ -3,18 +3,18 @@
 * Plugin Name: The Plus Addons for Elementor
 * Plugin URI: https://theplusaddons.com/
 * Description: Biggest collection of Widgets & Features to supercharge your Elementor Page builder in WordPress.
-* Version: 5.0.8
+* Version: 5.0.9
 * Author: POSIMYTH
 * Author URI: https://posimyth.com/
 * Text Domain: tpebl
 * Elementor tested up to: 3.6
-* Elementor Pro tested up to: 3.6
+* Elementor Pro tested up to: 3.7
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-defined( 'L_THEPLUS_VERSION' ) or define( 'L_THEPLUS_VERSION', '5.0.8' );
+defined( 'L_THEPLUS_VERSION' ) or define( 'L_THEPLUS_VERSION', '5.0.9' );
 define( 'L_THEPLUS_FILE__', __FILE__ );
 
 define( 'L_THEPLUS_PATH', plugin_dir_path( __FILE__ ) );

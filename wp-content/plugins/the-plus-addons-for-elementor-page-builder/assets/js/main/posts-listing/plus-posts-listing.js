@@ -1,7 +1,7 @@
 /*posts listing*/( function( $ ) {
 	"use strict";
 	var WidgetThePlusHandler = function ($scope, $) {
-		var wid_sec=$scope.parents('section.elementor-element');
+		var wid_sec=$scope.parents('section.elementor-element,.elementor-element.e-container');
 
 		if($scope.hasClass("elementor-widget") && $scope.find('.list-isotope').length>0){
 			var b = window.theplus || {};

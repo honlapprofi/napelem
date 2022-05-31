@@ -65,6 +65,7 @@ class L_ThePlus_Featured_Image extends Widget_Base {
                 'options' => [                    
                     'tp-fibg-section' => esc_html__('Section', 'tpebl'),
                     'tp-fibg-inner-section' => esc_html__('Inner Section', 'tpebl'),
+					'tp-fibg-container' => esc_html__('Container', 'tpebl'),
                     'tp-fibg-column' => esc_html__('Column', 'tpebl'),                    
                 ],
 				'condition' => [
@@ -280,6 +281,7 @@ class L_ThePlus_Featured_Image extends Widget_Base {
                 'default' => '',
                 'selectors' => [
                     'section.elementor-element.elementor-top-section:hover .tp-post-image.tp-feature-image-as-bg .tp-featured-image:before,
+					.elementor-element.e-container:hover .tp-post-image.tp-feature-image-as-bg .tp-featured-image:before,
 					section.elementor-element.elementor-inner-section:hover .tp-post-image.tp-feature-image-as-bg .tp-featured-image:before,
 					.elementor-column:hover .tp-post-image.tp-feature-image-as-bg .tp-featured-image:before' => 'background:{{VALUE}};',
                 ],
@@ -293,6 +295,7 @@ class L_ThePlus_Featured_Image extends Widget_Base {
 				'placeholder' => esc_html__( 'all .3s linear', 'tpebl' ),
 				'selectors' => [
 					'section.elementor-element.elementor-top-section:hover .tp-post-image.tp-feature-image-as-bg .tp-featured-image,
+					.elementor-element.e-container:hover .tp-post-image.tp-feature-image-as-bg .tp-featured-image,
 					section.elementor-element.elementor-inner-section:hover .tp-post-image.tp-feature-image-as-bg .tp-featured-image,
 					.elementor-column:hover .tp-post-image.tp-feature-image-as-bg .tp-featured-image' => '-webkit-transition: {{VALUE}};-moz-transition: {{VALUE}};-o-transition: {{VALUE}};-ms-transition: {{VALUE}};'
 				],
@@ -307,6 +310,7 @@ class L_ThePlus_Featured_Image extends Widget_Base {
 				'placeholder' => esc_html__( 'skew(-25deg)', 'tpebl' ),
 				'selectors' => [
 					'section.elementor-element.elementor-top-section:hover .tp-post-image.tp-feature-image-as-bg .tp-featured-image,
+					.elementor-element.e-container:hover .tp-post-image.tp-feature-image-as-bg .tp-featured-image,
 					section.elementor-element.elementor-inner-section:hover .tp-post-image.tp-feature-image-as-bg .tp-featured-image,
 					.elementor-column:hover .tp-post-image.tp-feature-image-as-bg .tp-featured-image' => 'transform: {{VALUE}};-ms-transform: {{VALUE}};-moz-transform: {{VALUE}};-webkit-transform: {{VALUE}};transform-style: preserve-3d;-ms-transform-style: preserve-3d;-moz-transform-style: preserve-3d;-webkit-transform-style: preserve-3d;'
 				],	

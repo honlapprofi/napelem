@@ -1,7 +1,7 @@
 /*slick carousel*/( function( $ ) {
 	"use strict";
 	var WidgetThePlusHandler = function ($scope, $) {
-		var wid_sec=$scope.parents('section.elementor-element');
+		var wid_sec=$scope.parents('section.elementor-element,.elementor-element.e-container');
 		if(wid_sec.find('.list-carousel-slick').length>0){
 			var carousel_elem = $scope.find('.list-carousel-slick').eq(0);
 				if (carousel_elem.length > 0) {

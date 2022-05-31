@@ -209,7 +209,7 @@ final class L_Theplus_Element_Load {
 		wp_send_json_success( $output );
 	}
 	
-	public function tp_check_elements_status_scan( $post_id ='', $tp_widgets_list ){
+	public function tp_check_elements_status_scan( $post_id ='', $tp_widgets_list='' ){
 		if ( ! wp_verify_nonce( $_REQUEST['security'], 'theplus-addons' ) ) {
 			wp_send_json_error( esc_html__('Invalid security', 'tpebl') );
 		}
