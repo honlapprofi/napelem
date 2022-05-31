@@ -8,12 +8,12 @@ defined( 'ABSPATH' ) || exit;
 
 define( 'WP_ROCKET_ADVANCED_CACHE', true );
 
-$rocket_path        = '/home/napelem5/public_html/wp-content/plugins/wp-rocket/';
-$rocket_config_path = '/home/napelem5/public_html/wp-content/wp-rocket-config/';
-$rocket_cache_path  = '/home/napelem5/public_html/wp-content/cache/wp-rocket/';
+$rocket_path        = '/Users/voroslaszlo/Local Sites/napelem/app/public/wp-content/plugins/wp-rocket/';
+$rocket_config_path = '/Users/voroslaszlo/Local Sites/napelem/app/public/wp-content/wp-rocket-config/';
+$rocket_cache_path  = '/Users/voroslaszlo/Local Sites/napelem/app/public/wp-content/cache/wp-rocket/';
 
 if (
-	version_compare( phpversion(), '7.0', '<' )
+	version_compare( phpversion(), '7.1', '<' )
 	|| ! file_exists( $rocket_path )
 	|| ! file_exists( $rocket_config_path )
 	|| ! file_exists( $rocket_cache_path )
