@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Plugins - Really Simple SSL - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-03-23 07:19:49+0000\n"
+"PO-Revision-Date: 2022-05-28 19:54:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
 "Language: hu\n"
 "Project-Id-Version: Plugins - Really Simple SSL - Stable (latest release)\n"
 
@@ -323,7 +323,7 @@ msgstr "Tipp: Bármikor elmentheted a mostani állapotot és később is befejez
 
 #: lets-encrypt/wizard/config/steps.php:52
 msgid "Letʼs Encrypt is a free, automated and open certificate authority brought to you by the nonprofit Internet Security Research Group (ISRG)."
-msgstr "A Let's Encrypt egy ingyenes, automatikus és nyjlt tanúsítványhatóság amit a nonprofit Internet Security Research Group (ISRG) üzemeltet."
+msgstr "A Let's Encrypt egy ingyenes, automatikus és nyílt tanúsítványhatóság amit a nonprofit Internet Security Research Group (ISRG) üzemeltet."
 
 #: lets-encrypt/wizard/config/questions.php:99
 msgid "By selecting your hosting provider we can tell you if your hosting provider already supports free SSL, and how you can activate it."
@@ -834,10 +834,6 @@ msgstr "A WP motorban nemrégiben bekövetkezett változás miatt automatikusan 
 #: class-site-health.php:75
 msgid "Not all recommended security headers are installed"
 msgstr "Nem minden ajánlott security header van telepítve"
-
-#: grid/templates/other-plugins.php:40
-msgid "Beautiful recipes optimized for Google "
-msgstr "Gyönyörű receptek Google-ra optimizálva"
 
 #: class-site-health.php:55
 msgid "Recommended security headers installed"
