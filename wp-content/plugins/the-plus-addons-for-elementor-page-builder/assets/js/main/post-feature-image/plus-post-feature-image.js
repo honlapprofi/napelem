@@ -10,6 +10,8 @@
 						fi_bg_elem.closest('section.elementor-element.elementor-inner-section').prepend(fi_bg_elem);
 					}else if($tp_fi_bg_type == 'tp-fibg-column'){
 						fi_bg_elem.closest('.elementor-column').prepend(fi_bg_elem);
+					}else if($tp_fi_bg_type == 'tp-fibg-container'){
+						fi_bg_elem.closest('.e-container').prepend(fi_bg_elem);
 					}
 				}
 			}

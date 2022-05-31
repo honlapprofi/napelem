@@ -1,7 +1,7 @@
 ( function( $ ) {
 	'use strict';
 	var WidgetThePlusHandlerBackEnd = function ($scope, $) {
-		var wid_sec=$scope.parents('section.elementor-element');
+		var wid_sec=$scope.parents('section.elementor-element,.elementor-element.e-container');
 		
 		/*--- on load animation ----*/
 		if(wid_sec.find(".animate-general").length){

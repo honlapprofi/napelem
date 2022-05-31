@@ -1015,6 +1015,8 @@
                 <condition key="widgetType">tp-video-player</condition>
             </conditions>
 			<fields>                
+               	<field type="Video-TP: Youtube id" editor_type="LINE">youtube_id</field>
+         		<field type="Video-TP: Vimeo id" editor_type="LINE">vimeo_id</field>
                 <field type="Video: Title" editor_type="LINE">video_title</field>
 				<field type="Video: Description" editor_type="AREA">video_desc</field>
             </fields>

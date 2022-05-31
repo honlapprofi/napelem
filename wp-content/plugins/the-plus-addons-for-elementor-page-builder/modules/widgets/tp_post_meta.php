@@ -101,6 +101,21 @@ class L_ThePlus_Post_Meta extends Widget_Base {
 				],
 			]
 		);
+		$repeater->add_control(
+			'category_taxonomies_load_cat_tag',[
+				'label' => esc_html__( 'Type','tpebl' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'tpcategory',
+				'options' => [
+					'tpcategory' => esc_html__( 'Category','tpebl' ),
+					'tptag' => esc_html__( 'Tag','tpebl' ),
+				],
+				'condition' => [
+					'sortfield' => 'category',
+					'category_taxonomies_load' => 'bypost',
+				],
+			]
+		);
 		$this->add_control(
             'metaSort',
             [
@@ -1505,7 +1520,11 @@ class L_ThePlus_Post_Meta extends Widget_Base {
 									$category_taxonomies = !empty($item['category_taxonomies']) ? $item['category_taxonomies'] : 'category';
 									
 									if(!empty($item['category_taxonomies_load']) && $item['category_taxonomies_load']=='bypost'){
-										$terms=get_the_category($post_id);
+										if(!empty($item['category_taxonomies_load_cat_tag']) && $item['category_taxonomies_load_cat_tag'] == 'tptag'){
+											$terms=get_the_tags($post_id);
+										}else{
+											$terms=get_the_category($post_id);
+										}
 									}else{
 										$terms = get_terms($category_taxonomies, array(
 												'orderby'    => 'count',

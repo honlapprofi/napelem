@@ -297,7 +297,7 @@
 				type: "post",
 				data: {
 					action: 'theplus_widget_search',
-					filter: search,
+					filter: search.toLowerCase(),
 					security: theplus_nonce
 				},
 				beforeSend: function() {
@@ -336,10 +336,26 @@
 					},
 				}).success(function(response) {
 						if(response.success && response.data){
-							SacanedData = response.data.widgets;
+							SacanedData = response.data.widgets;							
 							$( ".tp-widget-scan-area .tp-widget-scan" ).addClass( "tp-scan-done" );
 							$( ".tp-widget-scan-area .tp-widget-scan-disable" ).addClass( "tp-scaned-show" );
 							$( ".tp-widget-scan-area .tp-widget-scan-disable-text" ).text(response.data.message).addClass( "tp-scaned-show" );
+							
+							if(SacanedData){								
+								jQuery.each( Object.entries(SacanedData), function( i, val ) {
+									$( ".plus-widget-list:not(.plus_extra_listout) .plus-widget-list-wrap" ).each(function( index ) {
+										if($(this).data("id") === val[0]){
+											$(this).prepend(`<div class="widget-used widget-chkpr">Used  ${val[1]} Times</div> `);
+										}
+									});
+								 });
+								
+								// $( ".plus-widget-list:not(.plus_extra_listout) .plus-widget-list-wrap" ).each(function( index ) {
+								// 	if($(this).find('.widget-chkpr').length == 0){
+								// 		$(this).prepend(`<div class="widget-unused widget-chkpr">Unused</div> `);
+								// 	}
+								// });
+							}
 						}
 				});
 		});

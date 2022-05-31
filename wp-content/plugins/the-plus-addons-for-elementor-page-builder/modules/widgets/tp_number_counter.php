@@ -137,7 +137,8 @@ class L_ThePlus_Number_Counter extends Widget_Base {
 				'label' => esc_html__( 'Number Value', 'tpebl' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => esc_html__( '1000', 'tpebl' ),
-				'description' => esc_html__('Enter the value of number/digits you want to showcase in icon counter. E.g, 100,999,etc..','tpebl' ),				
+				'description' => esc_html__('Enter the value of number/digits you want to showcase in icon counter. E.g, 100,999,etc..','tpebl' ),
+				'dynamic' => ['active'   => true,],
 			]
 		);
 		$this->add_control(
@@ -146,8 +147,8 @@ class L_ThePlus_Number_Counter extends Widget_Base {
 				'label' => esc_html__( 'Animation Starting Number Value', 'tpebl' ),
 				'type' => Controls_Manager::NUMBER,
 				'default' => esc_html__( '0', 'tpebl' ),
-				'description' => esc_html__('Enter the digit from which you want to start the animation on scroll. E.g. 0,10,80, etc','tpebl' ),				
-				
+				'description' => esc_html__('Enter the digit from which you want to start the animation on scroll. E.g. 0,10,80, etc','tpebl' ),
+				'dynamic' => ['active'   => true,],				
 			]
 		);
 		$this->add_control(
@@ -166,6 +167,7 @@ class L_ThePlus_Number_Counter extends Widget_Base {
 						'step' => 5,
 					],
 				],
+				'dynamic' => ['active'   => true,],
 				'description' => esc_html__('Enter the value of number you want while animation.','tpebl' ),
             ]
         );
@@ -185,6 +187,7 @@ class L_ThePlus_Number_Counter extends Widget_Base {
 						'step' => 10,
 					],
 				],
+				'dynamic' => ['active'   => true,],
             ]
         );
 		

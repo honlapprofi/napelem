@@ -422,7 +422,7 @@ class L_Theplus_Elementor_Plugin_Options
 				'videoUrl' => 'https://www.youtube.com/embed/_zdX4iGcbtA',
 				'tag' => 'pro',
 				'labelIcon' => '<svg xmlns="http://www.w3.org/2000/svg" width="16.867" height="23" viewBox="0 0 448 512"><path d="M440 0H296a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h56v224a128 128 0 0 1-256 0V32h56a8 8 0 0 0 8-8V8a8 8 0 0 0-8-8H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h56v224c0 88.22 71.78 160 160 160s160-71.78 160-160V32h56a8 8 0 0 0 8-8V8a8 8 0 0 0-8-8zm0 480H8a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h432a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8z"/></svg>',
-				'keyword' => ['advanced typography'],
+				'keyword' => ['advanced typography','typography'],
 			],
 			'tp_advanced_buttons' => [
 				'label' => esc_html__('Advanced Buttons','tpebl'),
@@ -431,7 +431,7 @@ class L_Theplus_Elementor_Plugin_Options
 				'videoUrl' => 'https://www.youtube.com/embed/BxIrCaIRAE0',
 				'tag' => 'pro',
 				'labelIcon' => '<svg xmlns="http://www.w3.org/2000/svg" width="16.867" height="23" viewBox="0 0 576 512"><path d="M504.485 264.485c-4.686-4.686-12.284-4.686-16.971 0l-67.029 67.029c-7.56 7.56-2.206 20.485 8.485 20.485h49.129C461.111 420.749 390.501 473.6 304 479.452V192h52c6.627 0 12-5.373 12-12v-8c0-6.627-5.373-12-12-12h-52v-34.016c28.513-7.339 49.336-33.833 47.933-64.947-1.48-32.811-28.101-59.458-60.911-60.967C254.302-1.619 224 27.652 224 64c0 29.821 20.396 54.879 48 61.984V160h-52c-6.627 0-12 5.373-12 12v8c0 6.627 5.373 12 12 12h52v287.452C185.498 473.6 114.888 420.749 97.901 352h49.129c10.691 0 16.045-12.926 8.485-20.485l-67.029-67.03c-4.686-4.686-12.284-4.686-16.971 0l-67.029 67.03C-3.074 339.074 2.28 352 12.971 352h52.136C83.963 448.392 182.863 512 288 512c110.901 0 204.938-68.213 222.893-160h52.136c10.691 0 16.045-12.926 8.485-20.485l-67.029-67.03zM256 64c0-17.645 14.355-32 32-32s32 14.355 32 32-14.355 32-32 32-32-14.355-32-32zM61.255 320L80 301.255 98.745 320h-37.49zm416 0L496 301.255 514.745 320h-37.49z"/></svg>',
-				'keyword' => ['buttons', 'advance buttons', 'call to action buttons', 'CTA buttons', 'download buttons', 'creative buttons'],
+				'keyword' => ['buttons', 'advanced buttons', 'advance buttons', 'call to action buttons', 'CTA buttons', 'download buttons', 'creative buttons'],
 			],			
 			'tp_shape_divider' => [
 				'label' => esc_html__('Advanced Separators','tpebl'),
@@ -1043,7 +1043,7 @@ class L_Theplus_Elementor_Plugin_Options
 				'videoUrl' => 'https://www.youtube.com/embed/3ude_wxrqVo',
 				'tag' => 'pro',
 				'labelIcon' => '<svg xmlns="http://www.w3.org/2000/svg" width="16.867" height="23" viewBox="0 0 320 512"><path d="M192 256c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32zm88-32c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm-240 0c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32z"/></svg>',
-				'keyword' => ['process', 'steps', 'sequence','process bar'],
+				'keyword' => ['process', 'steps','process steps', 'sequence','process bar'],
 			],
 			'tp_row_background' => [
 				'label' => esc_html__('Row Background','tpebl'),
@@ -1531,7 +1531,7 @@ class L_Theplus_Elementor_Plugin_Options
 					$filter_class = 'filter-widget-'.$widget['filter'];
 				}				
 				$output .='<div class="theplus-panel-col theplus-panel-col-25 widget-'.esc_attr($widget['tag']).' '.$filter_class.'">';
-					$output .='<div class="plus-widget-list-wrap">';
+					$output .='<div class="plus-widget-list-wrap" data-id='.$key.'>';
 						$output .='<div class="widget-pin-free-pro">'.esc_html($widget['tag']).'</div>';
 						$output .='<div class="plus-widget-list-inner">';
 							$output .='<span class="widget-icon">'.$widget['labelIcon'].'</span>';
@@ -1889,32 +1889,37 @@ class L_Theplus_Elementor_Plugin_Options
 				$output .='</div>';
 				
 				/*rate us*/
-				if( get_option('tp-rateus-notice') !='never' && ( get_option('tp-rateus-notice') === false || get_option('tp-rateus-notice') < date('M d, Y')) ){
-					if(get_option('tp-rateus-notice') === false){
-						add_option('tp-rateus-notice',date('M d, Y', strtotime("+14 day")));
-					}else{
-						$output .= '<div class="theplus-rateus-wrapper">
-					<div class="theplus-rateus-close"><a href="#">X</a></div>
-						<div class="theplus-rateus-title">'.esc_html__("Thank you for selecting the The Plus Addons to Supercharge your Elementor workflow, we would love to hear your experience.",'tpebl').'</div>
-							<div class="theplus-rateus-description">'.esc_html__("Please consider taking a few seconds, to share your valuable review",'tpebl').'</div>
-							<div class="theplus-rateus-button">
-								<div class="theplus-rateus-button-iwill"><a href="https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/reviews/?filter=5" target="_blank">'.esc_html__("Sure, I will ❤",'tpebl').'</a></div>
-								<div class="theplus-rateus-button-done"><a href="#">'.esc_html__("Already done 😊",'tpebl').'</a></div>
-								<div class="theplus-rateus-button-sep">|</div>
-								<div class="theplus-rateus-button-help">';
-								if(defined('THEPLUS_VERSION')){
-									$output .= '<a href="https://store.posimyth.com/helpdesk" target="_blank">'.esc_html__("Need Help? 😥",'tpebl').'</a>';
-								}else{
-									$output .= '<a href="https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/" target="_blank">'.esc_html__("Need Help? 😥",'tpebl').'</a>';
-								}								
-								
-								$output .= '</div>
-							</div>
-						</div>';
+				$hidden_label='';
+				if(defined('THEPLUS_VERSION')){
+					$hidden_label = theplus_white_label_option('tp_hidden_label');
+				}				
+				if( empty($hidden_label) && $hidden_label !='on' ){
+					if( get_option('tp-rateus-notice') !='never' && ( get_option('tp-rateus-notice') === false || get_option('tp-rateus-notice') < date('M d, Y')) ){
+						if(get_option('tp-rateus-notice') === false){
+							add_option('tp-rateus-notice',date('M d, Y', strtotime("+14 day")));
+						}else{
+							$output .= '<div class="theplus-rateus-wrapper">
+						<div class="theplus-rateus-close"><a href="#">X</a></div>
+							<div class="theplus-rateus-title">'.esc_html__("Thank you for selecting the The Plus Addons to Supercharge your Elementor workflow, we would love to hear your experience.",'tpebl').'</div>
+								<div class="theplus-rateus-description">'.esc_html__("Please consider taking a few seconds, to share your valuable review",'tpebl').'</div>
+								<div class="theplus-rateus-button">
+									<div class="theplus-rateus-button-iwill"><a href="https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/reviews/?filter=5" target="_blank">'.esc_html__("Sure, I will ❤",'tpebl').'</a></div>
+									<div class="theplus-rateus-button-done"><a href="#">'.esc_html__("Already done 😊",'tpebl').'</a></div>
+									<div class="theplus-rateus-button-sep">|</div>
+									<div class="theplus-rateus-button-help">';
+									if(defined('THEPLUS_VERSION')){
+										$output .= '<a href="https://store.posimyth.com/helpdesk" target="_blank">'.esc_html__("Need Help? 😥",'tpebl').'</a>';
+									}else{
+										$output .= '<a href="https://wordpress.org/support/plugin/the-plus-addons-for-elementor-page-builder/" target="_blank">'.esc_html__("Need Help? 😥",'tpebl').'</a>';
+									}								
+									
+									$output .= '</div>
+								</div>
+							</div>';
+						}
+						
 					}
-					
 				}
-				
 				/*rate us*/
 				
 				/*Content Options*/
@@ -1978,8 +1983,8 @@ class L_Theplus_Elementor_Plugin_Options
 										echo '</div>';
 										/*plus extras*/
 										echo '<div class="plus-extras-feature-list">											
-												<h3 class="plus-extras-feature-list-title">Plus Features</h3>
-												<p class="plus-extras-feature-list-description">List of features added in The Plus Addons for Elementor. You can enable/disable them from below.</p>
+												<h3 class="plus-extras-feature-list-title">'.esc_html__("Plus Extras").'</h3>
+												<p class="plus-extras-feature-list-description">'.esc_html__("List of features added in The Plus Addons for Elementor. You can enable/disable them from below.").'</p>
 											</div>';
 										echo '<div class="theplus-panel-row theplus-mt-50 plus-widget-list '.$pro_tag.' plus_extra_listout">';
 											echo $this->theplus_extra_list_rendered();
@@ -2021,8 +2026,8 @@ class L_Theplus_Elementor_Plugin_Options
 							/*elementor widget start*/
 							if($tab_form['id']=='theplus_elementor_widget'){
 							echo '<div class="plus-ele-widget-list">											
-								<h3 class="plus-ele-widget-list-title">Elementor Free & Pro Widgets Manager</h3>
-								<p class="plus-ele-widget-list-description">This is beta feature. You may enable/disable any widgets as well as scan widgets to auto disable all at once. Below is a collection of widgets for Elementor Free and Elementor Pro version.</p>
+								<h3 class="plus-ele-widget-list-title">'.esc_html__("Elementor Free & Pro Widgets Manager").'</h3>
+								<p class="plus-ele-widget-list-description">'.esc_html__("You may enable/disable any widgets as well as scan widgets to auto disable all at once. Below is a collection of widgets for Elementor Free and Elementor Pro version.").'</p>
 							</div>';
 							echo '<div class="theplus-panel-col theplus-panel-col-100"><div class="panel-plus-widget-filter">';	
 							echo '<label class="panel-widget-head panel-widget-check-all"><span><svg xmlns="http://www.w3.org/2000/svg" width="23.532" height="20.533" viewBox="0 0 23.532 20.533">

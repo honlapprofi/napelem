@@ -2,6 +2,7 @@
 use Elementor\Controls_Manager;
 use Elementor\Widget_Base;
 use Elementor\Utils;
+use Elementor\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class L_Theplus_Equal_Height extends Elementor\Widget_Base {
@@ -11,7 +12,14 @@ class L_Theplus_Equal_Height extends Elementor\Widget_Base {
 		
 		if((isset($plus_extras) && empty($plus_extras) && empty($theplus_options)) || (!empty($plus_extras) && in_array('plus_equal_height',$plus_extras))){
 			
-			add_action( 'elementor/element/section/section_advanced/after_section_end', [ $this, 'tp_equalheight_controls' ], 10, 2 );add_action( 'elementor/element/column/_section_responsive/after_section_end', [ $this, 'tp_equalheight_controls' ], 10, 2 );add_action( 'elementor/element/common/section_custom_css_pro/after_section_end', [ $this, 'tp_equalheight_controls' ], 10, 2 );
+			add_action( 'elementor/element/section/section_advanced/after_section_end', [ $this, 'tp_equalheight_controls' ], 10, 2 );
+			add_action( 'elementor/element/column/_section_responsive/after_section_end', [ $this, 'tp_equalheight_controls' ], 10, 2 );
+			add_action( 'elementor/element/common/section_custom_css_pro/after_section_end', [ $this, 'tp_equalheight_controls' ], 10, 2 );
+			
+			$experiments_manager = Plugin::$instance->experiments;		
+			if($experiments_manager->is_feature_active( 'container' )){
+				add_action( 'elementor/element/container/section_layout/after_section_end', [ $this, 'tp_equalheight_controls' ], 10, 2  );
+			}
 			
 			//add_action( 'elementor/frontend/section/before_render', [ $this, 'plus_before_render'], 10, 1 );			
 			//add_action( 'elementor/frontend/widget/before_render', [ $this, 'plus_before_render' ], 10, 1 );
@@ -27,7 +35,7 @@ class L_Theplus_Equal_Height extends Elementor\Widget_Base {
 		$element->start_controls_section(
 			'plus_equal_height_section',
 			[
-				'label' => esc_html__( 'PlusExtras : Equal Height', 'tpebl' ),
+				'label' => esc_html__( 'Plus Extras : Equal Height', 'tpebl' ),
 				'tab'   => Controls_Manager::TAB_ADVANCED,
 			]
 		);

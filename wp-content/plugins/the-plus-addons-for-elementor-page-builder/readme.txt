@@ -2,9 +2,9 @@
 Contributors: posimyththemes, ankitposimyth, nirmalkavaiya, sagarpatel124
 Tags: Elementor, elementor widgets, elements, elementor addon, elementor templates, elementor widgets, extensions
 Requires at least: 5.7.0
-Tested up to: 5.9
+Tested up to: 6.0
 Requires PHP: 5.6
-Stable tag: 5.0.8
+Stable tag: 5.0.9
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -278,6 +278,18 @@ We have the most advanced caching architecture, Which will never bloat your site
 
 
 == Changelog ==
+
+= 5.0.9 =
+Compatibility : WordPress 6.0
+Compatibility : Elementor Pro 3.7
+Update : Container Compatibility : Live Copy
+Update : Post Feature Image : Container option in background
+Update : Post Meta : Taxonomies Type Option (Category/Tag)
+Update : Number Counter : Dynamic Tag option for Number Value, Animation Starting Value and Gap
+Update : Advanced Shadow : Container Compatibility
+Update : Equal Height : Container Compatibility
+Update : Glass Morphism : Container Compatibility
+Update : Wrapper Link : Container Compatibility 
 
 = 5.0.8 =
 Compatibility : Elementor 3.6 Compatibility Verified & Tag Update

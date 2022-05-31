@@ -2,6 +2,7 @@
 use Elementor\Controls_Manager;
 use Elementor\Widget_Base;
 use Elementor\Utils;
+use Elementor\Plugin;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class L_Theplus_Section_Column_Link extends Elementor\Widget_Base {
@@ -15,6 +16,11 @@ class L_Theplus_Section_Column_Link extends Elementor\Widget_Base {
 			add_action( 'elementor/element/section/_section_responsive/after_section_end', [ $this, 'tp_section_column_link' ], 10, 2 );
 			add_action( 'elementor/element/common/section_custom_css_pro/after_section_end', [ $this, 'tp_section_column_link' ], 10, 2 );
 			
+			$experiments_manager = Plugin::$instance->experiments;		
+			if($experiments_manager->is_feature_active( 'container' )){		
+				add_action( 'elementor/element/container/section_layout/after_section_end', [ $this, 'tp_section_column_link' ], 10, 2  );
+			}
+
 			add_action( 'elementor/frontend/before_render', [ $this, 'plus_before_render'], 10, 1 );
 			
 			add_action( 'elementor/frontend/before_enqueue_scripts', [ $this, 'tp_enqueue_scripts' ], 10 );
@@ -29,7 +35,7 @@ class L_Theplus_Section_Column_Link extends Elementor\Widget_Base {
 		$element->start_controls_section(
 			'plus_sc_link_section',
 			[
-				'label' => esc_html__( 'PlusExtras : Wrapper Link', 'tpebl' ),
+				'label' => esc_html__( 'Plus Extras : Wrapper Link', 'tpebl' ),
 				'tab'   => Controls_Manager::TAB_ADVANCED,
 			]
 		);
@@ -64,7 +70,8 @@ class L_Theplus_Section_Column_Link extends Elementor\Widget_Base {
 	public function plus_before_render($element) {		
 		$settings = $element->get_settings();
 		$settings = $element->get_settings_for_display();
-		if((!empty($settings['sc_link_switch']) && $settings['sc_link_switch']=='yes') && !empty($settings['sc_link'])){			
+		
+		if((!empty($settings['sc_link_switch']) && $settings['sc_link_switch']=='yes') && !empty($settings['sc_link']) && !empty($settings['sc_link']['url'])){			
 			$element->add_render_attribute( '_wrapper', 
 			array(			
 				'data-tp-sc-link' => $settings['sc_link']['url'],

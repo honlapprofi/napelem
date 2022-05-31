@@ -165,8 +165,12 @@ Class L_Plus_Generator
 			//Remove Last Semi colons
 			$output = preg_replace('/;}/', '}', $output);
 		}
+		if(!empty($output)){
+			return file_put_contents(l_theplus_library()->secure_path_url(L_THEPLUS_ASSET_PATH . DIRECTORY_SEPARATOR . $file), $output);
+		}
 
-        return file_put_contents(l_theplus_library()->secure_path_url(L_THEPLUS_ASSET_PATH . DIRECTORY_SEPARATOR . $file), $output);
+		return false;
+        
     }
 
     
@@ -203,8 +207,12 @@ Class L_Plus_Generator
         $css_url = array_merge($css_url, $this->plus_dependency_widgets($elements, 'css'));
 
         // merge files widgets
-        $this->plus_merge_files($css_url, ($file_name ? $file_name : 'theplus') . '.min.css','css');
-        $this->plus_merge_files($js_url, ($file_name ? $file_name : 'theplus') . '.min.js','js');
+		if(!empty($js_url)){
+			$this->plus_merge_files($js_url, ($file_name ? $file_name : 'theplus') . '.min.js','js');
+		}
+		if(!empty($css_url)){
+			$this->plus_merge_files($css_url, ($file_name ? $file_name : 'theplus') . '.min.css','css');
+		}
     }
 
 	 /**
@@ -250,6 +258,25 @@ Class L_Plus_Generator
         }
         return false;
     }
+
+	public function check_css_js_cache_files($post_type = null, $post_id = null, $type = 'css')
+    {
+		if( empty( $type) ){
+			return false;
+		}
+		if($type == 'css'){
+			$css_url = L_THEPLUS_ASSET_PATH . DIRECTORY_SEPARATOR . ($post_type ? 'theplus-' . $post_type : 'theplus') . ($post_id ? '-' . $post_id : '') . '.min.css';
+			if ( is_readable(l_theplus_library()->secure_path_url($css_url)) ) {
+				return true;
+			}
+		}else if($type == 'js'){
+			$js_url = L_THEPLUS_ASSET_PATH . DIRECTORY_SEPARATOR . ($post_type ? 'theplus-' . $post_type : 'theplus') . ($post_id ? '-' . $post_id : '') . '.min.js';
+			if ( is_readable(l_theplus_library()->secure_path_url($js_url)) ) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	/**
      * Widgets dependency for modules
@@ -440,7 +467,7 @@ Class L_Plus_Generator
 		
 		if (l_theplus_library()->is_preview_mode()) {
 			
-			// generate fallback scripts
+			// generate fallback scripts			
 			if (!$this->check_cache_files()) {
 				$plus_widget_settings = l_theplus_library()->get_plus_widget_settings();
 				if(has_filter('plus_widget_setting')) {
@@ -512,9 +539,9 @@ Class L_Plus_Generator
 				$separate_path = $this->plus_load_separate_file($elements);				
 				l_theplus_library()->remove_files_unlink($post_type, $queried_obj);
 			}else{
-				if (!$this->check_cache_files($post_type, $queried_obj) && !empty($elements)) {
+				if (!$this->check_css_js_cache_files($post_type, $queried_obj,'css') && !$this->check_css_js_cache_files($post_type, $queried_obj,'js') && !empty($elements)) {
 					$this->plus_generate_scripts($elements, 'theplus-' . $post_type . '-' . $queried_obj);
-				}
+				}				
 			}
 		}
 
@@ -541,8 +568,8 @@ Class L_Plus_Generator
 				$css_file = $tp_url . '/assets/css/main/general/theplus.min.css';
 				$js_file = $tp_url . '/assets/js/main/general/theplus.min.js';
 			}
-		}else{
-			if ($this->check_cache_files($post_type, $queried_obj)) {
+		}else{			
+			if ($this->check_css_js_cache_files($post_type, $queried_obj,'css') || $this->check_css_js_cache_files($post_type, $queried_obj,'js')) {
 				$css_file = L_THEPLUS_ASSET_URL . '/theplus-' . $post_type . '-' . $queried_obj . '.min.css';
 				$js_file = L_THEPLUS_ASSET_URL . '/theplus-' . $post_type . '-' . $queried_obj . '.min.js';
 			} else {			
@@ -591,7 +618,10 @@ Class L_Plus_Generator
 			
 		}else if(!$this->get_caching_option()){
 			wp_enqueue_style('theplus-front-css',$this->pathurl_security($css_file),false,$plus_version);
-			wp_enqueue_script('theplus-front-js',$this->pathurl_security($js_file),['jquery'],$plus_version,true);
+			
+			if ($this->check_css_js_cache_files($post_type, $queried_obj,'js')) {
+				wp_enqueue_script('theplus-front-js',$this->pathurl_security($js_file),['jquery'],$plus_version,true);
+			}
 		}
 		
 		$js_inline3 = 'var theplus_ajax_url = "'.admin_url("admin-ajax.php").'";
