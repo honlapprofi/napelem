@@ -1,11 +1,11 @@
-=== Google Tag Manager for WordPress ===
+=== GTM4WP ===
 Contributors: duracelltomi
 Donate link: https://gtm4wp.com/
 Tags: google tag manager, tag manager, gtm, google, adwords, google adwords, google ads, adwords remarketing, google ads remarketing, remarketing, google analytics, analytics, facebook ads, facebook remarketing, facebook pixel, google optimize, personalisation
 Requires at least: 3.4.0
 Requires PHP: 5.6
-Tested up to: 5.9.3
-Stable tag: 1.15.1
+Tested up to: 6.0.0
+Stable tag: 1.15.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -136,7 +136,7 @@ http://cutroni.com/blog/2012/02/21/advanced-content-tracking-with-google-analyti
 
 = Google Ads remarketing =
 
-Google Tag Manager for WordPress can add each dataLayer variable as a Google Ads remarketing custom parameter list.
+GTM4WP can add each dataLayer variable as a Google Ads remarketing custom parameter list.
 This enables you to build sophisticated remarketing lists.
 
 = Blacklist & Whitelist Tag Manager tags, triggers and variables =
@@ -150,7 +150,7 @@ and/or custom JavaScript variables you can secure the Tag Manager container.
 
 = Integration =
 
-Google Tag Manager for WordPress integrates with several popular plugins. More integration to come!
+GTM4WP integrates with several popular plugins. More integration to come!
 
 * Contact Form 7: fire an event when a Contact Form 7 form was submitted with any result (mail sent, mail failed, spam detected, invalid input)
 * WooCommerce:
@@ -234,6 +234,12 @@ https://gtm4wp.com/how-to-articles/how-to-exclude-admin-users-from-being-tracked
 6. Scroll tracking
 
 == Changelog ==
+
+= 1.15.2 =
+
+* Fixed: Stored XSS when using the scroll tracking feature and an admin changes the content element ID into a JavaScript code.
+
+Full scan of the plugin is also in works to fix any other possible XSS issues.
 
 = 1.15.1 =
 
@@ -779,6 +785,14 @@ Please report all bugs found in my plugin using the [contact form on my website]
 * First beta release
 
 == Upgrade Notice ==
+
+= 1.15.2 =
+
+Bugfix release
+
+= 1.15.1 =
+
+Bugfix release
 
 = 1.15 =
 
