@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.0.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-05-29 15:20:53+0000\n"
+"PO-Revision-Date: 2022-06-07 12:23:30+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -513,6 +513,11 @@ msgctxt "unit symbol"
 msgid "YB"
 msgstr "YB"
 
+#: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:133
+#: wp-admin/includes/class-walker-nav-menu-edit.php:235
+msgid "The description will be displayed in the menu if the active theme supports it."
+msgstr "A leírás megjelenik a menüben, ha az aktív sablon támogatja."
+
 #: wp-includes/class-wp-theme.php:993
 msgctxt "color scheme"
 msgid "Light"
@@ -746,6 +751,10 @@ msgstr "Szerkesztő (béta)"
 #: wp-admin/network/sites.php:209
 msgid "Confirm"
 msgstr "Megerősítés"
+
+#: wp-includes/wp-db.php:2918
+msgid "Could not retrieve table charset."
+msgstr "A tábla karakterkészletének lekérdezése nem sikerült."
 
 #: wp-includes/class-wp-taxonomy.php:607
 msgid "The name is how it appears on your site."
@@ -1083,7 +1092,7 @@ msgstr "%s nevű fájl nem létezik!"
 #: wp-includes/functions.php:2870 wp-includes/script-loader.php:919
 #: wp-includes/js/dist/media-utils.js:609 wp-admin/includes/file.php:934
 msgid "Sorry, you are not allowed to upload this file type."
-msgstr "Elnézést, a megadott fájltípus feltöltéséhez nincs megfelelő jogosultság.."
+msgstr "Elnézést, a megadott fájltípus feltöltéséhez nincs megfelelő jogosultság."
 
 #: wp-includes/customize/class-wp-customize-theme-control.php:260
 #: wp-admin/includes/theme.php:1011
@@ -5830,7 +5839,7 @@ msgstr "Elnézést, ezen felhasználó számára nem engedélyezett a blokkok ol
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php:122
 msgid "Sorry, you are not allowed to read blocks of this post."
-msgstr "Elnézést, a bejegyzés blokkjainak olvasása nem engedélyezett."
+msgstr "Elnézést, a bejegyzés blokkjainak olvasásához nincs megfelelő jogosultság."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php:91
 msgid "ID of the post context."
@@ -7787,12 +7796,12 @@ msgstr "Kiemelt kép eltávolítása"
 #: wp-includes/class-wp-post-type.php:848
 msgctxt "page"
 msgid "Set featured image"
-msgstr "Beállítás kiemelt képként"
+msgstr "Kiemelt kép beállítása"
 
 #: wp-includes/class-wp-post-type.php:848
 msgctxt "post"
 msgid "Set featured image"
-msgstr "Beállítás kiemelt képként"
+msgstr "Kiemelt kép beállítása"
 
 #: wp-includes/class-wp-post-type.php:847
 msgctxt "page"
@@ -11485,7 +11494,7 @@ msgstr "Menü létrehozása"
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:153
 #: wp-admin/includes/class-walker-nav-menu-edit.php:268
 msgid "Original: %s"
-msgstr "%s eredeti"
+msgstr "Eredetileg: %s"
 
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:125
 #: wp-admin/edit-link-form.php:33
