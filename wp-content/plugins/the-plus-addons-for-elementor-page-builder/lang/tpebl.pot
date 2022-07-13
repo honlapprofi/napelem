@@ -601,7 +601,7 @@ msgid "Column Mouse Cursor"
 msgstr ""
 
 #: includes/theplus_options.php:1414
-msgid "Display Rules"
+msgid "Display Condition"
 msgstr ""
 
 #: includes/theplus_options.php:1423

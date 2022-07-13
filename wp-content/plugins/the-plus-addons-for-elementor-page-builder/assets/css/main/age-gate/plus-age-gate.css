@@ -288,3 +288,7 @@
       min-width: 100%;    
     }  
 }
+.tp-agegate-wrapper .tp-agegate-boxes .tp-agegate-method .tp-age-btn-yes svg, .tp-agegate-wrapper .tp-agegate-boxes .tp-agegate-method .tp-age-btn-no svg {
+    width: 12px;
+    height: 12px;
+}

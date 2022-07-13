@@ -2262,7 +2262,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 		$second_button_text = !empty($settings['second_button_text']) ? $settings['second_button_text'] : '';	
 		$second_icon_position=!empty($settings['second_icon_position']) ? $settings['second_icon_position'] : 'age_scnd_icon_prefix';	 
 
-		$button_icon=$second_button_icon=$right_img_class=$bg_image_main_wrapper=$data_attr=$lazybgclass1='';		
+		$button_icon=$second_button_icon=$right_img_class=$bg_image_main_wrapper=$data_attr=$lazybgclass1='';
 		if(!empty($age_side_image_show) && $age_side_image_show=='yes'){
 			$right_img_class = 'tp-equ-width-50';
 		}				
@@ -2296,8 +2296,7 @@ class L_ThePlus_Age_Gate extends Widget_Base {
 										$output .= '<div class="tp-age-ii">'.$imgSrc.'</div>';
 									}else{
 										$output .= '<div class="tp-age-ii"><img src='.$settings['age_head_img']['url'].' class="tp-agegate-image"></div>';
-									}
-									
+									}									
 							}
 							if(!empty($age_gate_title) && $age_gate_title=='yes' && !empty($age_gate_title_input)){
 								$output .= '<div class="tp-agegate-title">'.$age_gate_title_input.'</div>';
