@@ -461,6 +461,7 @@ Class L_Plus_Generator
 				true
 			);
 			$js_inline1 = 'var theplus_ajax_url = "'.admin_url("admin-ajax.php").'";
+			var theplus_ajax_post_url = "'.admin_url("admin-post.php").'";
             var theplus_nonce = "'.wp_create_nonce("theplus-addons").'";';
 			echo wp_print_inline_script_tag($js_inline1);			
 		}
@@ -494,18 +495,19 @@ Class L_Plus_Generator
 				'plus-editor-css',
 				$this->pathurl_security($css_file),
 				false,
-				L_THEPLUS_VERSION
+				time()
 			);
 
 			wp_enqueue_script(
 				'plus-editor-js',
 				$this->pathurl_security($js_file),
 				['jquery'],
-				L_THEPLUS_VERSION,
+				time(),
 				true
 			);
 			
 			$js_inline2 = 'var theplus_ajax_url = "'.admin_url("admin-ajax.php").'";
+			var theplus_ajax_post_url = "'.admin_url("admin-post.php").'";
             var theplus_nonce = "'.wp_create_nonce("theplus-addons").'";';
 			echo wp_print_inline_script_tag($js_inline2);
 			// hook extended assets
@@ -619,12 +621,13 @@ Class L_Plus_Generator
 		}else if(!$this->get_caching_option()){
 			wp_enqueue_style('theplus-front-css',$this->pathurl_security($css_file),false,$plus_version);
 			
-			if ($this->check_css_js_cache_files($post_type, $queried_obj,'js')) {
+			//if ($this->check_css_js_cache_files($post_type, $queried_obj,'js')) {
 				wp_enqueue_script('theplus-front-js',$this->pathurl_security($js_file),['jquery'],$plus_version,true);
-			}
+			//}
 		}
 		
 		$js_inline3 = 'var theplus_ajax_url = "'.admin_url("admin-ajax.php").'";
+		var theplus_ajax_post_url = "'.admin_url("admin-post.php").'";
 		var theplus_nonce = "'.wp_create_nonce("theplus-addons").'";';
 		echo wp_print_inline_script_tag($js_inline3);
 		

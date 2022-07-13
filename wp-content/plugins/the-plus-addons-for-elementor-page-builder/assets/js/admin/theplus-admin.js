@@ -24,7 +24,7 @@
 				
 				smart_action = "smart_perf_clear_cache";
 				//elementor widget manager
-				$('.form-theplus_performance').append('<div class="tp-perf-ele-wid"><label class="tp-perf-ele-wid-label">Elementor Free & Pro Widgets Manager</label><div class="tp-perf-ele-wid-desc">You can enable/disable widgets of elementor\'s free and pro version. It also having scan feature to auto find used widgets on website and disable rest widgets.</div><a href="'+window.location.pathname+'?page=theplus_elementor_widget" rel="noopener noreferrer" class="tp-perf-ele-wid-button">GO TO WIDGETS MANAGER</a><div class="tp-perf-ele-wid-notice">Note : This is beta feature. You may enable/disable any widgets as well as scan widgets to auto disable all at once. But, Make sure to have complete backup of site before using this.</div></div>');
+				$('.form-theplus_performance').append('<div class="tp-perf-ele-wid"><label class="tp-perf-ele-wid-label">Elementor Free & Pro Widgets Manager</label><div class="tp-perf-ele-wid-desc">You can enable/disable widgets of elementor\'s free and pro version. It also having scan feature to auto find used widgets on website and disable rest widgets.</div><a href="'+window.location.pathname+'?page=theplus_elementor_widget" rel="noopener noreferrer" class="tp-perf-ele-wid-button">GO TO WIDGETS MANAGER</a><div class="tp-perf-ele-wid-notice">Note : You may enable/disable any widgets as well as scan widgets to auto disable all at once. But, Make sure to have complete backup of site before using this.</div></div>');
 			
 				$( '#cmb2-metabox-theplus_performance #plus_cache_option' ).on('change',function(e) {
 					var $this = this.value;
@@ -72,8 +72,6 @@
 			});
 		}
 	});
-	
-    
 
 	jQuery(document).on( 'click', '.plus-key-notify .notice-dismiss', function() {
 		jQuery.ajax({
@@ -377,6 +375,10 @@
 				}).success(function(response) {
 					if(response.success && response.data){
 						location.reload();
+					}else if(response.data == ''){
+						jQuery("span.tp-widget-scan-disable-text.tp-scaned-show.tp-loading-text").html("No widgets used yet.");
+						jQuery("span.tp-widget-scan-disable-text.tp-scaned-show.tp-loading-text").css("width", "max-content");
+						jQuery("button.tp-loading1.tp-scaned-show.tp-widget-scan-disable").removeClass("tp-loading1");						
 					}
 				});
 		});		

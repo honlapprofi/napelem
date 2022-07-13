@@ -137,6 +137,7 @@ final class L_Theplus_Element_Load {
 		wp_enqueue_script( 'theplus-admin-js', L_THEPLUS_ASSETS_URL .'js/admin/theplus-admin.js', array(),L_THEPLUS_VERSION,false );
 		
 		$js_inline = 'var theplus_ajax_url = "'.admin_url("admin-ajax.php").'";
+		var theplus_ajax_post_url = "'.admin_url("admin-post.php").'";
         var theplus_nonce = "'.wp_create_nonce("theplus-addons").'";';
 		echo wp_print_inline_script_tag($js_inline);
 	}

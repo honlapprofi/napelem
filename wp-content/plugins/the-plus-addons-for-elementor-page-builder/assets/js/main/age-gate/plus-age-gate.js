@@ -9,7 +9,7 @@
 			var container = $scope.find('.tp-agegate-wrapper'),
 			age_cookies_days  = container.data('age_cookies_days'),
 			exd = localStorage.getItem("max-age-expire");
-			container.closest("body").find("header").css("display","none");
+			//container.closest("body").find("header").css("display","none");
 			container.closest("body").css("overflow","hidden");
 			var cdate = new Date();
 			var endDate = new Date();
@@ -36,7 +36,7 @@
 						$(".age_vmb").on("click", function(){
 							localStorage.setItem("max-age-expire", endDate );
 							$(this).closest(".tp-agegate-wrapper").hide();
-							$(this).closest("body").find("header").css("display","block");
+							//$(this).closest("body").find("header").css("display","block");
 							$(this).closest("body").css("overflow","");
 						}); 	
 					}else{
@@ -61,7 +61,7 @@
 					}else{	
 						localStorage.setItem("max-age-expire", endDate );
 						$(this).closest('.tp-agegate-wrapper').hide();
-						$(this).closest("body").find("header").css("display","block");
+						//$(this).closest("body").find("header").css("display","block");
 						$(this).closest("body").css("overflow","");
 				   }
 				}); 
@@ -73,7 +73,7 @@
 				$(".tp-agegate-wrapper .tp-age-btn-yes").on("click", function(){
 					localStorage.setItem("max-age-expire", endDate );
 					$(this).closest('.tp-agegate-wrapper').hide();
-					$(this).closest("body").find("header").css("display","block");
+					//$(this).closest("body").find("header").css("display","block");
 					$(this).closest("body").css("overflow","");
 				});
 				$(".tp-agegate-wrapper .tp-age-btn-no").on("click", function(){
